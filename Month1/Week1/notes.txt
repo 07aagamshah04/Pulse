@@ -1,0 +1,60 @@
+let say you have app running on port 8080 then definitely there is process running over there which has pid and let say you have cpp app running with pid 1345 and in there file descriptor 0,1,2 already reserved for stdin,stdout,stderr (not 1,2,3 - correcting myself) and now as you create different sockets read,accept and all get different fd.
+
+correction: different FDs are NOT for parallelism. this server is single-threaded and handles ONE client at a time, sequentially. different FDs just let the kernel/program tell separate connections apart. real parallelism (threads/epoll/async) is a later month, not week 1.
+
+---
+
+CONCEPT: accept() and the backlog queue (observed this myself)
+
+tried connecting with two nc terminals at the same time:
+- only ONE client actually gets served (read/echo/close) at a time
+- the second nc still LOOKS "connected" on the client side, even though the server hasn't touched it yet
+- once the first client's connection finishes (server calls accept() again in the loop), the second one immediately gets picked up
+
+why this happens: the TCP handshake for the 2nd client completes at the KERNEL level immediately, regardless of whether the server app has called accept() yet. listen(fd, 128) is what sets up that queue - the kernel holds handshake-completed-but-not-yet-accepted connections here, up to 128 of them. accept() just pulls the next one off this queue.
+
+so there's a real gap between:
+  "TCP connected" (client's nc thinks it's connected - handshake done)
+  vs
+  "application accepted" (server's accept() actually returned this connection's fd)
+
+the backlog queue is exactly what sits in that gap.
+
+---
+
+COMMANDS LEARNED / USED THIS WEEK
+
+build:
+  mkdir -p build && cd build
+  cmake ..     -> reads CMakeLists.txt, generates a Makefile (doesn't compile anything itself)
+  make         -> actually runs g++ on each .cpp, links into the pulse executable
+
+run:
+  ./pulse 8080
+
+test client:
+  nc localhost 8080        -> connect, type something, see it echoed back
+
+find the process:
+  ps aux | grep pulse
+  (gotcha: grep matches its OWN command line too since it contains "pulse" -
+   use `ps aux | grep [p]ulse` or `pgrep -fa pulse` to avoid seeing that noise)
+
+inspect the listening socket:
+  ss -ltnp                 -> confirms pulse is LISTENING on 8080, shows its PID
+
+inspect open file descriptors:
+  ls -l /proc/<PID>/fd     -> replace <PID> with the real number from ps/ss
+    - with no client connected: see 0,1,2 (stdin/stdout/stderr) + 3 (listening socket)
+    - with a client connected (before it disconnects): a NEW fd (e.g. 4) shows up for that connection, alongside the untouched listening fd 3
+
+---
+
+HOW I TESTED IT (Week 1)
+
+1. built with cmake + make, ran ./pulse 8080
+2. connected with nc, sent "hello", got "hello" echoed back - confirmed read()/write() path works
+3. checked ps aux | grep pulse and ss -ltnp - found the real PID, saw it LISTENING
+4. ran ls -l /proc/<PID>/fd with no client connected - saw fd 3 = listening socket
+5. opened a second nc while the first was still connected/being handled - saw the 2nd one queue up (backlog), only picked up after the 1st client's request finished
+6. confirmed via /proc/<PID>/fd that a client connection gets its own separate fd (4) on top of the listening fd (3), and that it disappears again after that client's request is handled and the socket closes
