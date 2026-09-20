@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Pulse Month 1 Week 2</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+      @page { margin: 1in; }
+      body {
+        font-family: -apple-system, "Segoe UI", Calibri, Arial, sans-serif;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2em 1em;
+        line-height: 1.55;
+        color: #1a1a1a;
+        font-size: 15px;
+      }
+      h1 { font-size: 1.7em; border-bottom: 2px solid #333; padding-bottom: 0.2em; margin-top: 1.6em; }
+      h2 { font-size: 1.3em; border-bottom: 1px solid #ccc; padding-bottom: 0.15em; margin-top: 1.4em; }
+      h3 { font-size: 1.08em; margin-top: 1.2em; }
+      pre {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.8em 1em;
+        overflow-x: auto;
+        font-size: 0.85em;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      pre code { background: none; padding: 0; }
+      table { border-collapse: collapse; margin: 1em 0; }
+      th, td { border: 1px solid #ccc; padding: 0.4em 0.8em; }
+      blockquote { border-left: 3px solid #999; margin-left: 0; padding-left: 1em; color: #444; }
+      #TOC { background: #f9f9f9; border: 1px solid #ddd; padding: 1em 1.5em; border-radius: 4px; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+      .analogy {
+        background: #eef6ff;
+        border-left: 4px solid #3b82f6;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .example {
+        background: #f6fff0;
+        border-left: 4px solid #4caf50;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .analogy p:first-child, .example p:first-child { margin-top: 0; }
+      .analogy p:last-child, .example p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Pulse Month 1 Week 2</h1>
+<p class="subtitle">HTTP Parsing + Routing</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#how-to-use-this-document"
+id="toc-how-to-use-this-document">How to use this document</a></li>
+<li><a href="#part-1-the-anatomy-of-an-http-request"
+id="toc-part-1-the-anatomy-of-an-http-request">Part 1 — The anatomy of
+an HTTP request</a></li>
+<li><a
+href="#part-2-why-tcp-cant-do-this-part-for-you-recap-why-it-matters-now"
+id="toc-part-2-why-tcp-cant-do-this-part-for-you-recap-why-it-matters-now">Part
+2 — Why TCP can’t do this part for you (recap + why it matters
+now)</a></li>
+<li><a href="#part-3-designing-request-and-response"
+id="toc-part-3-designing-request-and-response">Part 3 — Designing
+<code>Request</code> and <code>Response</code></a></li>
+<li><a href="#part-4-routing" id="toc-part-4-routing">Part 4 —
+Routing</a></li>
+<li><a href="#part-5-status-codes-and-building-a-real-response"
+id="toc-part-5-status-codes-and-building-a-real-response">Part 5 —
+Status codes and building a real response</a></li>
+<li><a href="#part-6-testing-this-week"
+id="toc-part-6-testing-this-week">Part 6 — Testing this week</a></li>
+<li><a
+href="#part-7-concept-check-answer-these-yourself-before-moving-to-week-3"
+id="toc-part-7-concept-check-answer-these-yourself-before-moving-to-week-3">Part
+7 — Concept check (answer these yourself before moving to Week
+3)</a></li>
+</ul>
+</nav>
+<h1 id="how-to-use-this-document">How to use this document</h1>
+<p>Same format as Week 1: every concept gets an explanation, a blue
+<strong>analogy</strong> box, and a green <strong>real example</strong>
+box you can actually reproduce. This does <strong>not</strong> contain a
+working HTTP parser or router — building those is Week 2’s exercise.
+Read once end-to-end before writing anything.</p>
+<p>Week 1 built a server that reads raw bytes and echoes them back, with
+no idea what those bytes mean. Week 2’s whole job is: give those bytes
+meaning.</p>
+<hr />
+<h1 id="part-1-the-anatomy-of-an-http-request">Part 1 — The anatomy of
+an HTTP request</h1>
+<p>An HTTP request is just <strong>text</strong>, sent over the TCP
+byte-stream connection you already built. Nothing magic — it’s a
+specific, agreed-upon format layered on top of “here are some
+bytes.”</p>
+<pre class="http"><code>GET /hello HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/8.5.0
+Accept: */*
+</code></pre>
+<p>Broken into its named parts:</p>
+<pre class="text"><code>GET /hello HTTP/1.1        &lt;- the REQUEST LINE: method, path, HTTP version
+Host: localhost:8080       &lt;- a HEADER: name, colon, value
+User-Agent: curl/8.5.0     &lt;- another header
+Accept: */*                &lt;- another header
+                            &lt;- a BLANK LINE — this ends the headers
+(body would go here, if any)</code></pre>
+<div class="analogy">
+<p><b>Analogy:</b> think of a paper letter. The request line is the
+envelope’s front — “to this address, by this method” (GET/POST, like “by
+registered mail” vs “by courier”). The headers are metadata written on
+the envelope itself — sender, date, special instructions — read before
+you even open it. The blank line is the fold where the envelope ends and
+the actual letter (body) begins. TCP doesn’t understand any of this
+structure — it just faithfully delivers the sealed envelope
+byte-for-byte; only your parser knows how to open it.</p>
+</div>
+<p><strong>The exact grammar</strong>, since this is what your parser
+has to actually recognize:</p>
+<ul>
+<li>Request line: <code>METHOD SP PATH SP HTTP-VERSION CRLF</code> —
+three tokens separated by single spaces, ending in <code>\r\n</code>
+(CRLF — carriage return + line feed, not just <code>\n</code>; this is
+HTTP’s line ending, even on Linux).</li>
+<li>Each header line: <code>Name: value CRLF</code> — a name, a colon,
+optional whitespace, the value, then <code>\r\n</code>.</li>
+<li>Headers end with <strong>one blank line</strong>: <code>\r\n</code>
+immediately after the last header, with nothing between the two
+<code>\r\n</code>s.</li>
+<li>Body (if present) comes immediately after that blank line, and its
+length is announced by the <code>Content-Length</code> header — the
+parser doesn’t guess where the body ends, it’s told.</li>
+</ul>
+<div class="example">
+<p><b>Real example — see the actual bytes, not just the pretty-printed
+version:</b> run this in Ubuntu and look closely at the raw output:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-v</span> http://localhost:8080/hello</span></code></pre></div>
+<pre class="text"><code>&gt; GET /hello HTTP/1.1
+&gt; Host: localhost:8080
+&gt; User-Agent: curl/8.5.0
+&gt; Accept: */*
+&gt;</code></pre>
+<p>Every line curl marks with <code>&gt;</code> is a line it actually
+sent, byte for byte — including that last bare <code>&gt;</code> with
+nothing after it, which is the blank line. <code>curl -v</code> is one
+of the most useful tools for Week 2: it shows you exactly what bytes go
+out and come back, with no guessing.</p>
+</div>
+<hr />
+<h1
+id="part-2-why-tcp-cant-do-this-part-for-you-recap-why-it-matters-now">Part
+2 — Why TCP can’t do this part for you (recap + why it matters now)</h1>
+<p>From Week 1: TCP delivers a byte stream, reliably and in order, but
+has no concept of “requests” or “messages” — it doesn’t know where one
+logically ends and another begins. That was an abstract point in Week 1.
+In Week 2 it becomes a concrete engineering problem: <strong>your parser
+is the only thing standing between “a pile of bytes” and “a Method, a
+Path, and some Headers.”</strong></p>
+<div class="example">
+<p><b>Real example, proving it again, HTTP-flavored this time:</b>
+connect raw and type a request by hand:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> localhost 8080</span></code></pre></div>
+<pre class="http"><code>GET /hello HTTP/1.1
+Host: localhost
+</code></pre>
+<p>(press enter twice — once to end the Host header line, once more for
+the blank line)</p>
+<p>Your Week 1 server would print these bytes and echo them back
+verbatim, with zero understanding that “GET” is a method or “/hello” is
+a path — they were just bytes. Week 2’s parser is what turns this pile
+of bytes into something your code can actually make decisions about,
+like “route this to the /hello handler.”</p>
+</div>
+<hr />
+<h1 id="part-3-designing-request-and-response">Part 3 — Designing
+<code>Request</code> and <code>Response</code></h1>
+<p>The project spec calls for internal representations:</p>
+<pre class="text"><code>Raw bytes -&gt; HTTP Parser -&gt; Request -&gt; Application -&gt; Response -&gt; Raw HTTP bytes</code></pre>
+<p>A <code>Request</code> is just a structured, parsed-out version of
+what Part 1 described — something like “a method, a path, a version, and
+a collection of header name/value pairs” (plus a body, once you support
+one). A <code>Response</code> is the mirror image on the way out: a
+status code, headers, and a body, which then needs to be
+<strong>serialized</strong> back into the exact text format from Part 1
+before it goes out over <code>write()</code>.</p>
+<div class="analogy">
+<p><b>Analogy:</b> the parser is a customs officer opening that sealed
+envelope from Part 1 and filling out a standardized form from its
+contents — “sender: X, method: registered mail, contents: …”. Everything
+after that point (routing, handling) works with the tidy form, not the
+original envelope. Before handing a reply back to the courier, someone
+has to re-seal it into a properly formatted envelope again (the
+Response, serialized back to bytes) — the courier
+(TCP/<code>write()</code>) doesn’t know or care what’s inside, same as
+Week 1.</p>
+</div>
+<p><strong>Design questions worth thinking through yourself before
+coding</strong> (this is the actual Week 2 design exercise, not
+something to skip past):</p>
+<ul>
+<li>What’s the minimal set of fields a <code>Request</code> needs to
+answer “which handler should run, and with what information”?</li>
+<li>Should header lookups be case-sensitive? (Real HTTP header names are
+case-insensitive — <code>Host</code> and <code>host</code> must be
+treated as the same header. Decide how your storage handles that before
+you build it, not after a bug shows up.)</li>
+<li>What should parsing do when the request is malformed (no blank line,
+missing version)? This is where <code>400 Bad Request</code> in Part 5
+comes from.</li>
+</ul>
+<hr />
+<h1 id="part-4-routing">Part 4 — Routing</h1>
+<p>A router is just a lookup: given a <code>(method, path)</code> pair,
+find the right handler function, or report “no such route.”
+Conceptually:</p>
+<pre class="text"><code>GET /        -&gt; handler that returns &quot;Hello from Pulse!&quot;
+GET /hello   -&gt; handler that returns &quot;Hello from Pulse!&quot;
+GET /health  -&gt; handler that returns &quot;OK&quot;
+(anything else) -&gt; 404 Not Found</code></pre>
+<div class="analogy">
+<p><b>Analogy:</b> a hotel switchboard. Every call comes in on the same
+phone line (the same listening socket, same <code>accept()</code> loop
+from Week 1) — the switchboard operator’s only job is reading the room
+number the caller asked for (the path) and connecting the call to the
+right room (handler). The operator doesn’t cook the room’s dinner or
+make the bed — routing is purely “which handler runs,” not the handler’s
+own logic.</p>
+</div>
+<div class="example">
+<p><b>Real example of what “no such route” looks like on the
+wire:</b></p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-v</span> http://localhost:8080/does-not-exist</span></code></pre></div>
+<p>A correctly-behaving server responds with a real, well-formed HTTP
+response — just with a 404 status instead of 200:</p>
+<pre class="text"><code>&lt; HTTP/1.1 404 Not Found
+&lt; Content-Length: 0
+&lt;</code></pre>
+<p>Note this is NOT the connection failing or <code>curl</code> erroring
+out — the TCP connection succeeds fine, your server accepted it, read
+it, parsed it, and made a deliberate decision to respond with 404.
+That’s the router doing its job correctly, not a bug.</p>
+</div>
+<hr />
+<h1 id="part-5-status-codes-and-building-a-real-response">Part 5 —
+Status codes and building a real response</h1>
+<p>An HTTP response has the same shape as a request, mirrored:</p>
+<pre class="http"><code>HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 18
+
+Hello from Pulse!</code></pre>
+<pre class="text"><code>HTTP/1.1 200 OK             &lt;- STATUS LINE: version, status code, reason phrase
+Content-Type: text/plain    &lt;- header
+Content-Length: 18          &lt;- header — MUST match the body&#39;s exact byte length
+                             &lt;- blank line, same rule as requests
+Hello from Pulse!           &lt;- body</code></pre>
+<p><strong>Why <code>Content-Length</code> matters so much:</strong>
+unlike your Week 1 echo server (which just wrote whatever bytes it read,
+then closed the connection so the client knew “that’s everything”), a
+real HTTP client needs to know <em>exactly</em> how many body bytes to
+expect, because with <code>Connection: keep-alive</code> the connection
+might stay open for more requests afterward — there’s no “close the
+connection to signal I’m done” available anymore.
+<code>Content-Length</code> is what tells the client precisely where
+this response ends.</p>
+<div class="example">
+<p><b>Real example of a Content-Length mismatch bug, worth causing on
+purpose:</b> hand-write a response with the wrong Content-Length
+(e.g. claim 20 when the body is actually 18 bytes) and test it with
+curl. You’ll see curl either hang waiting for 2 more bytes that never
+come, or misbehave in some other way — a very concrete demonstration of
+why this header isn’t optional decoration.</p>
+</div>
+<p>Status codes you need this week, and when each applies:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>When your server sends it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>200 OK</code></td>
+<td>Success</td>
+<td>A known route, valid request</td>
+</tr>
+<tr>
+<td><code>400 Bad Request</code></td>
+<td>Client sent malformed HTTP</td>
+<td>Parser couldn’t make sense of the request line/headers at all</td>
+</tr>
+<tr>
+<td><code>404 Not Found</code></td>
+<td>No such route</td>
+<td>Method+path the router doesn’t recognize</td>
+</tr>
+<tr>
+<td><code>405 Method Not Allowed</code></td>
+<td>Path exists, method doesn’t</td>
+<td>e.g. <code>POST /health</code> if <code>/health</code> only supports
+GET</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="part-6-testing-this-week">Part 6 — Testing this week</h1>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-v</span> http://localhost:8080/</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-v</span> http://localhost:8080/hello</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-v</span> http://localhost:8080/health</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-v</span> http://localhost:8080/random          <span class="co"># expect 404</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-v</span> <span class="at">-X</span> POST http://localhost:8080/hello   <span class="co"># expect 405, once you support it</span></span></code></pre></div>
+<p>Also test with an actual browser — open
+<code>http://localhost:8080/hello</code> and confirm the page renders. A
+browser sends real-world headers your hand-typed <code>nc</code> tests
+won’t (cookies, <code>Accept-Language</code>, etc.) — good for noticing
+if your parser is too fragile about headers it doesn’t recognize (it
+should ignore unknown headers, not fail on them).</p>
+<p>And once more, raw and manual — this is still the most important
+habit from Week 1, don’t drop it just because <code>curl</code> is more
+convenient:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> localhost 8080</span></code></pre></div>
+<pre class="http"><code>GET /hello HTTP/1.1
+Host: localhost
+</code></pre>
+<hr />
+<h1
+id="part-7-concept-check-answer-these-yourself-before-moving-to-week-3">Part
+7 — Concept check (answer these yourself before moving to Week 3)</h1>
+<p><strong>Why can’t the parser just split on spaces and call it
+done?</strong> Because headers can contain values with spaces in them
+(<code>User-Agent: curl/8.5.0 libcurl/...</code>), and a naive
+space-split doesn’t respect the request line vs. header-line
+vs. blank-line structure — the grammar in Part 1 has to be followed by
+line first, then by field within each line.</p>
+<p><strong>Why must header name comparisons be
+case-insensitive?</strong> Because the HTTP spec defines them that way —
+a client is free to send <code>host:</code> or <code>Host:</code> or
+<code>HOST:</code> and mean the same thing. If your lookup is
+case-sensitive, a perfectly valid request can silently fail to match a
+header your handler expected.</p>
+<p><strong>Why does a malformed request deserve <code>400</code>, not
+just closing the connection?</strong> Because <code>400</code> is itself
+a valid, well-formed HTTP response — it tells the client (and whoever’s
+debugging with <code>curl -v</code>) specifically “I understood you were
+trying to speak HTTP, and what you sent doesn’t parse,” which is far
+more diagnosable than the connection just silently dropping.</p>
+<p><strong>Why is <code>Content-Length</code> the body’s job to
+announce, rather than the parser detecting “end of body” some other
+way?</strong> Because TCP is a stream with no built-in message
+boundaries (Week 1, Part 3) — there’s no “end of body” marker in the
+bytes themselves that isn’t ambiguous with real body content. The length
+has to be stated up front so the reader knows exactly how many bytes to
+treat as body versus the start of whatever comes next.</p>
+<p><strong>What should happen if two different routes could both match a
+request?</strong> Trick question, worth thinking about: with the simple
+<code>(method, path)</code> exact-match router this week calls for, this
+can’t actually happen — every <code>(method, path)</code> pair maps to
+at most one handler. This becomes a real design question later if you
+ever add pattern-matched routes (<code>/users/:id</code>) — not this
+week’s problem, but worth noticing why it isn’t one yet.</p>
+</body>
+</html>

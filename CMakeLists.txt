@@ -35,13 +35,21 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_compile_options(-Wall -Wextra)
 
 # The actual thing being built: an executable named "pulse", made by compiling
-# these three .cpp files together and linking them into one binary. Each .cpp
+# these .cpp files together and linking them into one binary. Each .cpp
 # is compiled to an object file independently (see Part 1 of the Week 1 doc —
 # "Compilation and linking"), then the linker combines them here.
+#
+# MONTH 1 / WEEK 2: http_response.cpp, http_parser.cpp, and router.cpp are
+# new this week. http_request.hpp has no matching .cpp (it's header-only —
+# see the comment at the top of that file for why) so it doesn't need
+# listing here; headers never do, only the .cpp files that need compiling.
 add_executable(pulse
     src/main.cpp
     src/socket.cpp
     src/tcp_server.cpp
+    src/http_response.cpp
+    src/http_parser.cpp
+    src/router.cpp
 )
 
 # Tells the compiler to also look in include/ when a .cpp file writes

@@ -1,0 +1,86 @@
+WEEK 2 — WHAT TO TEST AND HOW
+
+build:
+  cd /mnt/c/Users/aagam/OneDrive/Desktop/Pulse
+  mkdir -p build && cd build
+  cmake ..
+  make
+  ./pulse 8080
+
+---
+
+TEST 1 — the three real routes (new terminal)
+
+  curl -i http://localhost:8080/
+  curl -i http://localhost:8080/hello
+  curl -i http://localhost:8080/health
+
+expect: 200 OK, correct body text, Content-Length matching the body's actual
+byte length. -i shows headers, not just body.
+
+---
+
+TEST 2 — 404 (unregistered path)
+
+  curl -i http://localhost:8080/doesnotexist
+
+expect: 404 Not Found, Content-Length: 0
+
+---
+
+TEST 3 — 405 (path exists, wrong method)
+
+  curl -i -X POST http://localhost:8080/hello
+
+expect: 405 Method Not Allowed, Content-Length: 0
+this proves the router tells apart "no such path at all" (404) from "path
+exists but not for this method" (405) - two different lookups in
+Router::route (path lookup, then method lookup within that path).
+
+---
+
+TEST 4 — raw hand-typed request (same habit as week 1, still important)
+
+  nc localhost 8080
+
+then type:
+  GET /hello HTTP/1.1
+  Host: localhost
+  (blank line - press enter twice)
+
+expect: a real, well-formed HTTP response, exactly like curl gets, but typed
+by hand byte by byte so I actually see the CRLF/blank-line grammar working.
+
+---
+
+TEST 5 — trigger 400 Bad Request ON PURPOSE
+
+  nc localhost 8080
+
+type just: hello   (press enter once)
+
+expect: HTTP/1.1 400 Bad Request
+
+why this works: "hello\r\n" has no "\r\n\r\n" blank-line separator anywhere
+in it, so HttpParser::parse returns nullopt before it even tries to read a
+method/path/version. this is literally the SAME test as week 1's very first
+"type hello into nc" test - week 1 echoed it back verbatim (no understanding
+of what the bytes meant), week 2 correctly rejects it as not-HTTP. same
+input, different (correct) behavior, because the server actually parses now.
+
+---
+
+TEST 6 — browser
+
+  open http://localhost:8080/hello in an actual browser, confirm it renders
+
+---
+
+RESULTS (filled in after actually running these)
+
+[ ] TEST 1 - GET / , /hello , /health all returned 200 with correct bodies
+[ ] TEST 2 - 404 confirmed on unknown path
+[ ] TEST 3 - 405 confirmed on POST /hello
+[ ] TEST 4 - raw nc request worked
+[ ] TEST 5 - 400 confirmed on garbage input via nc
+[ ] TEST 6 - browser rendered /hello correctly

@@ -170,6 +170,21 @@ public:
       whereas a non-const one couldn't be. fd() and valid() are pure
       getters, so marking them const is both accurate and required for
       them to be usable in read-only contexts. */
+   /* Month 1 / Week 1 — C++ note: this function's body ({ return fd_; }) is
+      written directly here, inside the class — not just declared here with
+      the real body off in socket.cpp (compare to close(), declared below
+      and defined only in socket.cpp). Because this header gets #include'd
+      by multiple .cpp files (socket.cpp, tcp_server.cpp, and transitively
+      main.cpp), each one compiles its OWN copy of this body — which would
+      normally cause the exact "multiple definition" linker error described
+      for to_lower_ascii in http_util.hpp. It doesn't, because C++ has a
+      specific rule for exactly this case: a member function written
+      entirely inside its class definition is AUTOMATICALLY treated as if
+      you had typed "inline" in front of it — the compiler grants that
+      permission silently. close() needs no such permission at all, because
+      its one real definition lives in exactly one .cpp file and is
+      therefore only ever compiled once, no matter how many files include
+      this header. */
    int fd() const noexcept { return fd_; } // read-only access to the raw fd, for passing into the actual POSIX calls (::read, ::write, ::bind, etc.) which only know how to work with plain ints, not our C++ class
 
    bool valid() const noexcept { return fd_ != -1; } // true if this Socket currently owns a real, open fd

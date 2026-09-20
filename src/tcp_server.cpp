@@ -1,12 +1,14 @@
 #include "tcp_server.hpp"
 
-#include <arpa/inet.h>   // htons, ntohs, inet_ntoa — byte-order + address-printing helpers
-#include <cstring>       // strerror — turns an errno number into a human-readable message
+#include "http_parser.hpp"   // Month 1 / Week 2: HttpParser::parse — see handle_client() below
+#include <arpa/inet.h>        // htons, ntohs, inet_ntoa — byte-order + address-printing helpers
+#include <cstring>            // strerror — turns an errno number into a human-readable message
 #include <iostream>
-#include <netinet/in.h>  // struct sockaddr_in
+#include <netinet/in.h>       // struct sockaddr_in
 #include <stdexcept>
-#include <sys/socket.h>  // socket(), bind(), listen(), accept(), setsockopt()
-#include <unistd.h>      // read(), write()
+#include <sys/socket.h>       // socket(), bind(), listen(), accept(), setsockopt()
+#include <unistd.h>           // read(), write()
+#include <utility>            // std::move
 
 namespace
 {
@@ -49,7 +51,8 @@ namespace
     }
 }
 
-TcpServer::TcpServer(uint16_t port, int backlog) : port_(port)
+// Month 1 / Week 2: `router` taken by value and moved into router_ below — TcpServer becomes the sole owner, main.cpp doesn't need its copy anymore after this call
+TcpServer::TcpServer(uint16_t port, Router router, int backlog) : port_(port), router_(std::move(router))
 {
     /* -------------------------------------------------------------------
      * MONTH 1 / WEEK 1 — socket()
@@ -188,15 +191,38 @@ void TcpServer::handle_client(Socket client) const
         return;
     }
 
-    std::cout << "Received " << n << " bytes: " << std::string(buf, static_cast<size_t>(n));
+    std::cout << "Received " << n << " bytes:\n" << std::string(buf, static_cast<size_t>(n));
+
+    /* -------------------------------------------------------------------
+     * MONTH 1 / WEEK 2 — parse, then route
+     * This replaces Week 1's "echo the bytes straight back." Week 1's
+     * read() above is UNCHANGED — still one read() call, still no
+     * reassembly across multiple reads (see http_parser.hpp's scope note,
+     * and Part 2 of the Week 2 doc). What happens to those bytes AFTER
+     * read() is what's new this week.
+     * ------------------------------------------------------------------- */
+    std::string raw_request(buf, static_cast<size_t>(n));
+
+    HttpResponse response = HttpResponse::bad_request();   // Month 1 / Week 2: default assumption — overwritten below the moment parsing actually succeeds
+    if (auto request = HttpParser::parse(raw_request))
+    {
+        std::cout << "Parsed: " << request->method << " " << request->path << " " << request->version << "\n";
+        response = router_.route(*request);   // Month 1 / Week 2: router_ decides 200 (a matching handler ran) vs 404 (no such path) vs 405 (path exists, wrong method) — see router.cpp
+    }
+    else
+    {
+        std::cout << "Failed to parse request — responding 400 Bad Request.\n";
+    }
 
     /* -------------------------------------------------------------------
      * MONTH 1 / WEEK 1 — write() (via write_all, defined above)
-     * Echoes the exact bytes we received straight back to the client —
-     * this is the "hello -> hello" round trip from the project spec's
-     * Week 1 diagram, and proves write() actually reached the client.
+     * write_all() itself is unchanged from Week 1 — still loops until every
+     * byte is actually sent. What changed is WHAT we're sending: a real
+     * serialized HTTP response (response.to_string(), Part 5 of the Week 2
+     * doc) instead of Week 1's raw echoed bytes.
      * ------------------------------------------------------------------- */
-    write_all(client.fd(), buf, static_cast<size_t>(n));
+    std::string response_bytes = response.to_string();
+    write_all(client.fd(), response_bytes.data(), response_bytes.size());
 
     /* Month 1 / Week 1: no explicit close() call here — see the comment
        above this function's definition. `client`'s destructor
