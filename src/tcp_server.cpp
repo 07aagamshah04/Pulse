@@ -49,6 +49,17 @@ namespace
             sent += static_cast<size_t>(n);
         }
     }
+
+    /* Month 1 / Week 3: a hard cap on how large the accumulated buffer in
+       handle_client() is allowed to grow while still waiting for a request
+       to complete. Without this, a client that never sends a valid
+       "\r\n\r\n" (or claims a huge Content-Length and then never finishes
+       sending the body) would make the read loop below grow raw_request
+       forever, one read() at a time, consuming unbounded memory for a
+       single connection. This is a defensive limit, not a feature — see
+       Part 4 of the Week 3 doc for the related "leftover bytes" edge case
+       this same loop deliberately does NOT try to solve. */
+    constexpr size_t kMaxRequestSize = 1024 * 1024;   // 1 MiB
 }
 
 // Month 1 / Week 2: `router` taken by value and moved into router_ below — TcpServer becomes the sole owner, main.cpp doesn't need its copy anymore after this call
@@ -165,61 +176,84 @@ void TcpServer::run()
    of the doc and socket.hpp/.cpp. */
 void TcpServer::handle_client(Socket client) const
 {
-    char buf[4096];
+    /* Month 1 / Week 3: raw_request is now an ACCUMULATION buffer, not a
+       one-shot snapshot. Week 1/2 used a fixed char buf[4096] and trusted
+       one read() to fill it with a complete request — Part 1 of the Week 3
+       doc walks through exactly why that assumption is a real bug. This
+       std::string grows across as many read() calls as it takes. `chunk`
+       below is just the temporary landing spot for each individual
+       read() call, not the request itself. */
+    std::string raw_request;
+    char chunk[4096];
+
+    HttpResponse response = HttpResponse::bad_request();   // default assumption — overwritten below the moment we actually know more
 
     /* -------------------------------------------------------------------
-     * MONTH 1 / WEEK 1 — read()
-     * ONE read() call — deliberately not a loop. The project spec's Week 1
-     * build is exactly "read bytes, print, respond, close" with no
-     * reassembly logic; handling a request split across multiple read()
-     * calls is Week 3's dedicated experiment, on purpose. n is the number
-     * of bytes ACTUALLY received — can be less than sizeof(buf).
+     * MONTH 1 / WEEK 3 — the read-accumulate-reparse loop
+     * This is the fix for Part 1-3 of the Week 3 doc. Each iteration:
+     *   1. ask the parser "is what we have SO FAR a complete request?"
+     *   2. Complete or Malformed -> we have our answer, stop looping
+     *   3. Incomplete -> read() more bytes, append them, try again
+     * Week 1's single read() call and Week 2's single parse() call are
+     * both still present below — they're just now inside a loop instead
+     * of running exactly once.
      * ------------------------------------------------------------------- */
-    ssize_t n = ::read(client.fd(), buf, sizeof(buf));
-
-    if (n < 0)
+    for (;;)
     {
-        std::cerr << "read: " << std::strerror(errno) << "\n";   // n == -1 means an error — check errno
-        return;   // `client` destructs here -> closes automatically
-    }
-    if (n == 0)
-    {
-        /* Month 1 / Week 1: n == 0 is NOT an error — it means the client
-           closed their end (sent a TCP FIN) before sending any data. See
-           Part 6 of the doc, "what happens when the client disconnects." */
-        std::cout << "Client disconnected before sending anything.\n";
-        return;
-    }
+        ParseResult result = HttpParser::parse(raw_request);
 
-    std::cout << "Received " << n << " bytes:\n" << std::string(buf, static_cast<size_t>(n));
+        if (result.status == ParseStatus::Complete)
+        {
+            std::cout << "Parsed (" << raw_request.size() << " bytes total): "
+                       << result.request.method << " " << result.request.path << " " << result.request.version << "\n";
+            response = router_.route(result.request);   // Month 1 / Week 2 (unchanged): 200 / 404 / 405 — see router.cpp
+            break;
+        }
+
+        if (result.status == ParseStatus::Malformed)
+        {
+            std::cout << "Malformed request (" << raw_request.size() << " bytes so far) — responding 400 Bad Request.\n";
+            break;   // `response` is already the bad_request() default from above
+        }
+
+        // Month 1 / Week 3: ParseStatus::Incomplete — not done yet, but also not stuck forever (see kMaxRequestSize above)
+        if (raw_request.size() > kMaxRequestSize)
+        {
+            std::cout << "Request exceeded " << kMaxRequestSize << " bytes without completing — responding 400 Bad Request.\n";
+            break;
+        }
+
+        /* -----------------------------------------------------------
+         * MONTH 1 / WEEK 1 — read() itself is UNCHANGED: still the same
+         * syscall, same meaning (n bytes actually received, which can
+         * be less than sizeof(chunk)). What's new is that this call now
+         * sits inside a loop instead of running exactly once.
+         * ----------------------------------------------------------- */
+        ssize_t n = ::read(client.fd(), chunk, sizeof(chunk));
+
+        if (n < 0)
+        {
+            std::cerr << "read: " << std::strerror(errno) << "\n";   // n == -1 means an error — check errno
+            return;   // `client` destructs here -> closes automatically, no response sent
+        }
+        if (n == 0)
+        {
+            /* Month 1 / Week 1 concept, Week 3 nuance: n == 0 still means
+               "the client closed their end" (Part 6 of the Week 1 doc) —
+               but now it can happen PARTWAY through an otherwise-valid
+               request, not only "before sending anything." Either way,
+               there's no complete request to respond to, so we just close. */
+            std::cout << "Client disconnected before completing a request (" << raw_request.size() << " bytes received so far).\n";
+            return;
+        }
+
+        raw_request.append(chunk, static_cast<size_t>(n));   // Month 1 / Week 3: append, don't overwrite — this is the actual "accumulate" step
+    }
 
     /* -------------------------------------------------------------------
-     * MONTH 1 / WEEK 2 — parse, then route
-     * This replaces Week 1's "echo the bytes straight back." Week 1's
-     * read() above is UNCHANGED — still one read() call, still no
-     * reassembly across multiple reads (see http_parser.hpp's scope note,
-     * and Part 2 of the Week 2 doc). What happens to those bytes AFTER
-     * read() is what's new this week.
-     * ------------------------------------------------------------------- */
-    std::string raw_request(buf, static_cast<size_t>(n));
-
-    HttpResponse response = HttpResponse::bad_request();   // Month 1 / Week 2: default assumption — overwritten below the moment parsing actually succeeds
-    if (auto request = HttpParser::parse(raw_request))
-    {
-        std::cout << "Parsed: " << request->method << " " << request->path << " " << request->version << "\n";
-        response = router_.route(*request);   // Month 1 / Week 2: router_ decides 200 (a matching handler ran) vs 404 (no such path) vs 405 (path exists, wrong method) — see router.cpp
-    }
-    else
-    {
-        std::cout << "Failed to parse request — responding 400 Bad Request.\n";
-    }
-
-    /* -------------------------------------------------------------------
-     * MONTH 1 / WEEK 1 — write() (via write_all, defined above)
-     * write_all() itself is unchanged from Week 1 — still loops until every
-     * byte is actually sent. What changed is WHAT we're sending: a real
-     * serialized HTTP response (response.to_string(), Part 5 of the Week 2
-     * doc) instead of Week 1's raw echoed bytes.
+     * MONTH 1 / WEEK 1 — write() (via write_all, defined above), UNCHANGED
+     * Still loops until every byte is actually sent. Still sends a real
+     * serialized HTTP response (Part 5 of the Week 2 doc).
      * ------------------------------------------------------------------- */
     std::string response_bytes = response.to_string();
     write_all(client.fd(), response_bytes.data(), response_bytes.size());

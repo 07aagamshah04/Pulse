@@ -34,6 +34,18 @@ std::string HttpResponse::to_string() const
      * ------------------------------------------------------------------- */
     out << "Content-Length: " << body_.size() << "\r\n";
 
+    /* -------------------------------------------------------------------
+     * MONTH 1 / WEEK 3 — Connection: close
+     * See Part 6 of the Week 3 doc: this server has behaved like
+     * Connection: close since Week 1 (TcpServer::handle_client closes the
+     * socket after exactly one request — see tcp_server.cpp) — it just
+     * never SAID so explicitly. Sending this header makes that behavior
+     * honest instead of accidental: any real client now knows not to
+     * expect this connection to stay open for a second request, instead
+     * of finding out the hard way.
+     * ------------------------------------------------------------------- */
+    out << "Connection: close\r\n";
+
     out << "\r\n";   // Month 1 / Week 2: the blank line — same rule as requests, this is what separates headers from body
     out << body_;
 

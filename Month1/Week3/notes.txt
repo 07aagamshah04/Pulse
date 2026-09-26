@@ -1,0 +1,128 @@
+WEEK 3 — WHAT TO TEST AND HOW
+
+build:
+  cd /mnt/c/Users/aagam/OneDrive/Desktop/Pulse
+  mkdir -p build && cd build
+  cmake ..
+  make
+  ./pulse 8080
+
+---
+
+TEST 1 — the slow-client experiment (THE actual bug fix, most important test this week)
+
+  python3 Month1/Week3/slow_client.py 8080
+
+what it does: opens a real TCP connection, sends "GET /hel" first, sleeps 1
+second, then sends the rest of the request ("lo HTTP/1.1\r\nHost:
+localhost\r\n\r\n"). this simulates a request arriving in two separate
+read() calls instead of one.
+
+expect: HTTP/1.1 200 OK with "Hello from Pulse!" - a real, complete,
+correct response.
+
+why this matters: against the WEEK 2 server (single read() only), this test
+was a coin flip - the parser would often see only "GET /hel" (no blank
+line anywhere in it), decide it's incomplete/malformed, and wrongly
+respond 400 to a perfectly valid, just slowly-delivered request. against
+the WEEK 3 server, the read-accumulate-reparse loop in
+TcpServer::handle_client keeps calling read() and re-parsing until
+HttpParser::parse() reports Complete - so it now correctly waits for and
+assembles the full request before responding. I actually ran this and
+confirmed 200 OK, not 400.
+
+---
+
+TEST 2 — POST /echo with a body
+
+  curl -i -X POST http://localhost:8080/echo -d "hello"
+
+expect: 200 OK, body = "hello" - proves HttpRequest::body (populated via
+Content-Length in the parser) and the new /echo route in main.cpp work
+together correctly.
+
+---
+
+TEST 3 — a larger POST, to make partial reads more likely naturally
+
+  curl -i -X POST http://localhost:8080/echo -d "$(python3 -c 'print("x"*100000)')"
+
+expect: 200 OK, full 100000-byte body echoed back correctly, proving the
+body-completeness half of the accumulation loop (not just the
+headers-completeness half) actually works - a body this large is very
+likely to arrive across multiple read() calls on its own, no artificial
+sleep needed.
+
+---
+
+TEST 4 — regression: everything from week 2 still works
+
+  curl -i http://localhost:8080/
+  curl -i http://localhost:8080/hello
+  curl -i http://localhost:8080/health
+  curl -i http://localhost:8080/doesnotexist        (expect 404)
+  curl -i -X POST http://localhost:8080/hello       (expect 405)
+
+also check: every response now includes "Connection: close" as a header -
+this was added this week (Part 6 of the doc) to make explicit what the
+server was already doing implicitly since week 1 (closing after one
+request).
+
+---
+
+TEST 5 — strace, watching the fix happen at the syscall level
+
+  strace -f -e trace=read,write ./pulse 8080
+
+then in another terminal run the slow_client.py test again (TEST 1).
+expect: MULTIPLE read() calls show up for that one request in the strace
+output, not just one like in week 1/2 - direct proof the accumulation loop
+is actually looping, not just correct on paper.
+
+gotcha hit while running this: got "bind: Address already in use" the first
+time - turned out a leftover ./pulse 8080 from an earlier test was still
+running (ss -ltnp / pgrep -fa pulse showed it, PID 530). killed it, retried,
+worked. reminder from week 1: SO_REUSEADDR only helps rebind over a DEAD
+socket stuck in TIME_WAIT - it does NOT let two actually-still-running
+processes share a port at once. this was a genuinely live second process,
+not a TIME_WAIT situation, so of course it still failed.
+
+ACTUAL OUTPUT I GOT (annotated):
+
+  write(1, "Client connected: 127.0.0.1:36316"...) = 34
+    -> fd 1 = stdout, just the "Client connected" log line from run()'s
+       accept() logging (shows the client's ephemeral port)
+
+  read(4, "GET /hel", 4096)               = 8
+    -> fd 4 = THIS client's socket (fd 3 is still the listening socket,
+       untouched). FIRST read() in the loop. asked for up to 4096 bytes,
+       only got 8 - the partial-read phenomenon, straight from slow_client.py's
+       first send(b"GET /hel")
+
+  read(4, "lo HTTP/1.1\r\nHost: localhost\r\n\r\n", 4096) = 32
+    -> THE key line: a SECOND read() call on the SAME fd 4, after the 1s
+       sleep, picking up the rest (32 more bytes). proves handle_client's
+       loop actually looped: parse() must have returned Incomplete after
+       the first 8 bytes for this second read() to even happen
+
+  write(1, "Parsed (40 bytes total): GET /he"..., 45
+    -> stdout log line: 8 + 32 = 40 bytes total, parser now reports
+       Complete: "GET /hello HTTP/1.1" - confirms the two separate reads
+       got concatenated into one correctly-parsed request
+
+  write(4, "HTTP/1.1 200 OK\r\nContent-Type: t"..., 101) = 101
+    -> the real HTTP response written back to the client on fd 4
+
+conclusion: two read() syscalls for ONE logical request, reassembled
+correctly, routed, and responded to - the whole week 3 fix, directly
+visible at the syscall level, not just "trust me it works."
+
+---
+
+RESULTS (I actually ran these - confirmed working)
+
+[x] TEST 1 - slow_client.py got a real 200 OK with "Hello from Pulse!", not a 400
+[x] TEST 2 - POST /echo with "hello" returned "hello" correctly
+[ ] TEST 3 - large POST body test
+[x] TEST 4 - GET /, /hello, /health, 404, 405 all still correct; Connection: close present on every response
+[x] TEST 5 - strace confirmed TWO read() calls (8 bytes then 32 bytes) for one request, reassembled and parsed correctly (40 bytes total, "GET /hello HTTP/1.1")

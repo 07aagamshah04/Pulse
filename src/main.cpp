@@ -60,6 +60,17 @@ namespace
             return HttpResponse::ok("OK");
         });
 
+        /* Month 1 / Week 3 — the "WEEK 3 BUILD" POST /echo example from the
+           project spec. Unlike the three lambdas above, this one actually
+           USES its `request` parameter (not `const HttpRequest&` with the
+           name omitted) — it reads request.body, populated by
+           HttpParser::parse() when Content-Length is present (Week 2's
+           parser logic, made reliable across partial reads by Week 3's
+           accumulation loop in tcp_server.cpp), and sends it straight back. */
+        router.add_route("POST", "/echo", [](const HttpRequest& request) {
+            return HttpResponse::ok(request.body);
+        });
+
         /* Month 1 / Week 2 — C++ note, ties back to the &/&& discussion in
            socket.hpp: `router` has a name, so on its own it's an lvalue.
            But C++ has a special rule specifically for `return local_var;`

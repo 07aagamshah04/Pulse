@@ -17,6 +17,14 @@
  * echoed them; Week 2 now parses them as HTTP and routes them (see
  * handle_client() below and tcp_server.cpp) — this is precisely the "turn
  * the TCP server into an HTTP server" step from the Week 2 doc's intro.
+ *
+ * MONTH 1 / WEEK 3 UPDATE: socket()/bind()/listen()/accept() are STILL
+ * unchanged. handle_client() changes again — Week 2 called read() exactly
+ * ONCE and assumed that single call contained a complete request. Week 3
+ * fixes the real bug that assumption had (see Part 1 of the Week 3 doc):
+ * it now calls read() in a LOOP, accumulating bytes, and only stops once
+ * HttpParser::parse() reports the request is actually Complete (or
+ * definitely Malformed) — see tcp_server.cpp.
  * ============================================================================= */
 class TcpServer
 {
@@ -54,7 +62,13 @@ private:
        MONTH 1 / WEEK 2: this function's BODY changed — it used to just
        read() and echo the bytes back (Week 1). Now it reads once, hands
        the bytes to HttpParser::parse(), and either responds 400 (parse
-       failed) or asks router_ to build the real response — see the .cpp. */
+       failed) or asks router_ to build the real response — see the .cpp.
+
+       MONTH 1 / WEEK 3: the BODY changes again — "reads once" above is no
+       longer true. It now loops: parse what's accumulated so far, and if
+       ParseStatus::Incomplete comes back, read() more and try again. Only
+       Complete or Malformed ends the loop. See the .cpp for the full loop
+       and Part 3 of the Week 3 doc for why this is necessary at all. */
     void handle_client(Socket client) const;
 
     Socket listen_socket_;   // Month 1 / Week 1: the ONE listening socket — see Part 5 of the doc ("why there are two file descriptors") for why this is separate from each client's socket
