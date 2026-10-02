@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Pulse Month 1 Week 4</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+      @page { margin: 1in; }
+      body {
+        font-family: -apple-system, "Segoe UI", Calibri, Arial, sans-serif;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2em 1em;
+        line-height: 1.55;
+        color: #1a1a1a;
+        font-size: 15px;
+      }
+      h1 { font-size: 1.7em; border-bottom: 2px solid #333; padding-bottom: 0.2em; margin-top: 1.6em; }
+      h2 { font-size: 1.3em; border-bottom: 1px solid #ccc; padding-bottom: 0.15em; margin-top: 1.4em; }
+      h3 { font-size: 1.08em; margin-top: 1.2em; }
+      pre {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.8em 1em;
+        overflow-x: auto;
+        font-size: 0.85em;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      pre code { background: none; padding: 0; }
+      table { border-collapse: collapse; margin: 1em 0; }
+      th, td { border: 1px solid #ccc; padding: 0.4em 0.8em; }
+      blockquote { border-left: 3px solid #999; margin-left: 0; padding-left: 1em; color: #444; }
+      #TOC { background: #f9f9f9; border: 1px solid #ddd; padding: 1em 1.5em; border-radius: 4px; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+      .analogy {
+        background: #eef6ff;
+        border-left: 4px solid #3b82f6;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .example {
+        background: #f6fff0;
+        border-left: 4px solid #4caf50;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .analogy p:first-child, .example p:first-child { margin-top: 0; }
+      .analogy p:last-child, .example p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Pulse Month 1 Week 4</h1>
+<p class="subtitle">Cleanup, Documentation, and a Baseline Benchmark</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#how-to-use-this-document"
+id="toc-how-to-use-this-document">How to use this document</a></li>
+<li><a
+href="#part-1-why-just-cleanup-is-a-real-part-of-the-project-not-filler"
+id="toc-part-1-why-just-cleanup-is-a-real-part-of-the-project-not-filler">Part
+1 — why “just cleanup” is a real part of the project, not
+filler</a></li>
+<li><a href="#part-2-code-review-not-a-rewrite"
+id="toc-part-2-code-review-not-a-rewrite">Part 2 — code review, not a
+rewrite</a></li>
+<li><a href="#part-3-what-a-benchmark-is-actually-for-at-this-stage"
+id="toc-part-3-what-a-benchmark-is-actually-for-at-this-stage">Part 3 —
+what a benchmark is actually for, at this stage</a></li>
+<li><a href="#part-4-predicting-your-own-results-before-you-run-them"
+id="toc-part-4-predicting-your-own-results-before-you-run-them">Part 4 —
+predicting your own results before you run them</a></li>
+<li><a href="#part-5-running-the-actual-benchmark"
+id="toc-part-5-running-the-actual-benchmark">Part 5 — running the actual
+benchmark</a></li>
+<li><a href="#part-6-what-actually-goes-in-the-readme-this-week"
+id="toc-part-6-what-actually-goes-in-the-readme-this-week">Part 6 — what
+actually goes in the README this week</a></li>
+<li><a
+href="#part-7-the-month-1-checklists-from-your-own-spec-go-through-them-literally"
+id="toc-part-7-the-month-1-checklists-from-your-own-spec-go-through-them-literally">Part
+7 — the Month 1 checklists (from your own spec — go through them
+literally)</a></li>
+<li><a href="#part-8-concept-check" id="toc-part-8-concept-check">Part 8
+— concept check</a></li>
+</ul>
+</nav>
+<h1 id="how-to-use-this-document">How to use this document</h1>
+<p>Same format as Weeks 1-3: explanation, a blue
+<strong>analogy</strong> box, a green <strong>real example</strong> box.
+This week is different in kind from the previous three, though — there
+is no new server feature to build. The exercise is: review what exists,
+document it honestly, and measure it honestly. Read this once, then do
+the review/write-up/benchmark yourself.</p>
+<hr />
+<h1
+id="part-1-why-just-cleanup-is-a-real-part-of-the-project-not-filler">Part
+1 — why “just cleanup” is a real part of the project, not filler</h1>
+<p>It’s tempting to treat Week 4 as the boring week between “real”
+weeks. It isn’t. Look back at your own project’s “LEARNING METHOD”
+loop:</p>
+<pre class="text"><code>1. Learn -&gt; 2. Predict -&gt; 3. Implement -&gt; 4. Run -&gt; 5. Break -&gt;
+6. Observe -&gt; 7. Explain why -&gt; 8. Fix -&gt; 9. Document it</code></pre>
+<p>Steps 7 and 9 — <em>explain why</em> and <em>document it</em> — are
+not afterthoughts tacked onto the real work; they’re where understanding
+actually gets tested. You can write code that works without being able
+to explain why it works. You cannot write an honest architecture doc, or
+accurately predict your own benchmark numbers before running them,
+without actually understanding the system. That’s the whole point of
+this week.</p>
+<div class="analogy">
+<p><b>Analogy:</b> a pilot’s post-flight debrief isn’t paperwork bolted
+onto flying the plane — it’s how a near-miss today becomes a lesson
+instead of a repeated mistake next month. Skipping the debrief doesn’t
+save real time; it just defers the cost to later, with less context
+available when it’s paid.</p>
+</div>
+<p><strong>Why this matters specifically for the “final principle” in
+your project spec</strong> — the whole point of Pulse is being able to
+open it in an interview and explain what you built and why. A README
+that just says “a C++ HTTP server” proves nothing an interviewer
+couldn’t guess from the repo name. A README that explains <em>why</em>
+<code>accept()</code> returns a different fd than the listening socket,
+<em>why</em> the parser distinguishes malformed from incomplete, and
+<em>what your own benchmark actually measured and why the numbers look
+the way they do</em> — that’s the artifact that’s actually worth
+having.</p>
+<hr />
+<h1 id="part-2-code-review-not-a-rewrite">Part 2 — code review, not a
+rewrite</h1>
+<p>Your project spec explicitly warns: <strong>do not add major features
+this week.</strong> The target layout it describes:</p>
+<pre class="text"><code>pulse/
+├── CMakeLists.txt
+├── README.md
+├── include/
+│   ├── server.hpp / http.hpp / router.hpp (or your actual split)
+├── src/
+│   └── ...
+└── tests/</code></pre>
+<div class="example">
+<p><b>Real example — do this as an actual exercise, not a rhetorical
+question:</b> open every header in <code>include/</code> in order and,
+for each one, answer out loud: “what is this file’s ONE job?” If you
+can’t answer in one sentence, that’s a real signal — not necessarily
+that something’s wrong, but that it’s worth checking whether a file has
+quietly picked up more than one responsibility over three weeks of
+incremental changes. (For reference, walk through what you already have:
+<code>socket.hpp</code> — RAII ownership of one fd.
+<code>http_request.hpp</code> — the parsed form of a request.
+<code>http_response.hpp</code> — building and serializing a response.
+<code>http_parser.hpp</code> — turning bytes into a Request.
+<code>router.hpp</code> — matching (method, path) to a handler.
+<code>tcp_server.hpp</code> — the accept/read/route/respond loop. Each
+one answers in a sentence — that’s what “clean” looks like, not zero
+code smell, just a clear single job per file.)</p>
+</div>
+<p>This week is about <strong>noticing rot</strong>, not preventing it
+from ever existing: a variable name that made sense in Week 1 but is
+misleading now that Week 3 changed what it holds, a comment that’s gone
+stale because the code it describes changed underneath it, an
+inconsistency in how errors are reported between two files that grew
+somewhat independently. Go find at least a few real (not invented)
+examples of this in your own code before moving on — this is a genuine
+skill, not busywork.</p>
+<hr />
+<h1 id="part-3-what-a-benchmark-is-actually-for-at-this-stage">Part 3 —
+what a benchmark is actually for, at this stage</h1>
+<p>Your project spec is explicit and worth repeating verbatim:
+<strong>“Do NOT claim the server is ‘high performance’ yet… the
+objective is: establish a baseline.”</strong></p>
+<div class="analogy">
+<p><b>Analogy:</b> the first time you time yourself running a mile, the
+number isn’t a verdict on your fitness — it’s a reference point. Every
+future improvement (better shoes, more training, a different route) gets
+measured against THIS number, not against some abstract “good” runner’s
+time. A baseline’s entire value is being honest and reproducible, not
+impressive.</p>
+</div>
+<p><strong>What to measure</strong>, per the spec:</p>
+<pre class="text"><code>requests
+requests/sec
+latency
+CPU usage
+memory</code></pre>
+<p><strong>Why these specific numbers, and what each one is actually
+telling you:</strong></p>
+<ul>
+<li><strong>requests / requests-per-second (throughput)</strong>: how
+many complete request/response cycles your server finishes per unit
+time. This is the headline number, but it’s meaningless without the next
+one.</li>
+<li><strong>latency</strong>: how long a single request takes, end to
+end. A server can have high throughput and terrible latency (queuing
+everyone, nobody gets an answer fast) or the reverse — throughput and
+latency are two different questions, not one.</li>
+<li><strong>CPU usage</strong>: is the bottleneck the CPU doing real
+work, or is the process mostly <em>waiting</em> (on
+<code>accept()</code>, on <code>read()</code>)? For a blocking,
+single-threaded server like Pulse right now, expect CPU usage to be
+<em>low</em> even under load — it’s not fully “using” the machine, it’s
+queued up waiting on I/O and the backlog, which is itself a useful,
+honest observation to record.</li>
+<li><strong>memory</strong>: does memory grow with load, or stay flat?
+For Pulse specifically, this connects directly to the
+<code>kMaxRequestSize</code> cap from Week 3 — worth confirming memory
+stays bounded even under many/large requests, not just assuming it.</li>
+</ul>
+<hr />
+<h1 id="part-4-predicting-your-own-results-before-you-run-them">Part 4 —
+predicting your own results before you run them</h1>
+<p>This is the “Predict” step from your own learning loop, applied to a
+benchmark instead of a feature. Before running anything, answer these
+yourself:</p>
+<div class="example">
+<p><b>Real example — actually write down your predictions before running
+the benchmark, then compare:</b></p>
+<ul>
+<li>Pulse’s <code>run()</code> loop calls <code>accept()</code>, then
+fully handles ONE client (read, parse, route, write, close) before
+calling <code>accept()</code> again (Week 1, Part 5; unchanged through
+Week 3). What do you predict happens to <b>latency</b> for the 10th
+concurrent client if you send 10 requests at once, versus sending them
+one at a time? (Think back to the backlog-queue observation from your
+own Week 1 notes.)</li>
+<li>Given the server is blocking and sequential, do you expect
+throughput to increase, stay flat, or decrease as you raise concurrency
+from 1 to 50? Why?</li>
+<li>Do you expect CPU usage to be high or low during this benchmark?
+What is the process actually spending its time doing while a client is
+connected but hasn’t sent anything yet?</li>
+</ul>
+<p>Write your answers down BEFORE running <code>ab</code>. A baseline
+you predicted correctly means you understand the system. A baseline that
+surprises you is even more valuable — it means you found a gap between
+your mental model and reality, which is exactly what Step 6 (“Observe”)
+and Step 7 (“Explain why”) of your learning loop are for.</p>
+</div>
+<hr />
+<h1 id="part-5-running-the-actual-benchmark">Part 5 — running the actual
+benchmark</h1>
+<p>Install a load generator first (needs your password, run it
+yourself):</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> apache2-utils</span></code></pre></div>
+<p>This gives you <code>ab</code> (Apache Bench) — simple, ubiquitous,
+sufficient for a baseline.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1000 requests total, one at a time (concurrency 1) - the simplest possible baseline</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ab</span> <span class="at">-n</span> 1000 <span class="at">-c</span> 1 http://localhost:8080/</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># same 1000 requests, but 10 at a time - see what changes given the sequential accept() loop</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ab</span> <span class="at">-n</span> 1000 <span class="at">-c</span> 10 http://localhost:8080/</span></code></pre></div>
+<p>Read the output for: <code>Requests per second</code>,
+<code>Time per request</code> (both the “mean” and the “mean, across all
+concurrent requests” variants — they mean different things, worth
+understanding why), and <code>Failed requests</code> (should be 0 — if
+it isn’t, that’s a real finding, not something to hide from your
+writeup).</p>
+<p>While <code>ab</code> runs, in another terminal, capture
+CPU/memory:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-o</span> pid,%cpu,%mem,rss,cmd <span class="at">-p</span> <span class="va">$(</span><span class="ex">pgrep</span> <span class="at">-f</span> <span class="st">&#39;pulse 8080&#39;</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span><span class="va">)</span></span></code></pre></div>
+<p>Run this a few times during the benchmark (or wrap it in a
+<code>while true; do ...; sleep 0.5; done</code> loop) to see if the
+numbers move.</p>
+<div class="example">
+<p><b>Real example of a specific thing to notice:</b> compare the
+<code>-c 1</code> and <code>-c 10</code> runs’ “Requests per second”
+numbers. If your prediction from Part 4 was “sequential server, so
+concurrency shouldn’t help much,” check whether the actual numbers
+agree. If they don’t, that’s worth digging into rather than smoothing
+over in your writeup — e.g., is the OS-level backlog queue absorbing
+enough of the burst that it doesn’t show up as clearly as expected at
+this small scale?</p>
+</div>
+<hr />
+<h1 id="part-6-what-actually-goes-in-the-readme-this-week">Part 6 — what
+actually goes in the README this week</h1>
+<p>Your project spec: <em>“README contains architecture and
+learnings.”</em> Concretely, that means:</p>
+<ol type="1">
+<li><strong>The request path diagram</strong> — you already have this
+exact diagram in the Month 1 spec itself (Browser → TCP → socket/accept
+→ read → HTTP parser → Router → Handler → Response → write → TCP →
+Browser). Put a version of it in the README, in your own words, not
+copy-pasted.</li>
+<li><strong>Which syscalls are used, and one sentence on why each is
+needed</strong> — <code>socket</code>, <code>bind</code>,
+<code>listen</code>, <code>accept</code>, <code>read</code>,
+<code>write</code>, <code>close</code>, <code>setsockopt</code>. You’ve
+written far more than a sentence on each already, across three weeks of
+doc reading — this is where you compress that down to what actually
+belongs in a repo’s front door.</li>
+<li><strong>Deliberate simplifications, stated as decisions, not hidden
+as gaps</strong> — e.g. “single-threaded, one client at a time by design
+— concurrency is a later month’s topic,” “no pipelining/keep-alive
+support,” “a fixed 1 MiB cap on accumulated request size.” A senior
+engineer reading this should come away thinking “they know exactly what
+they didn’t build and why,” not wondering if you noticed.</li>
+<li><strong>The baseline benchmark numbers themselves</strong>, with the
+machine/environment they were measured on (your project spec’s own
+template):</li>
+</ol>
+<pre class="text"><code>Machine:
+CPU:
+RAM:
+OS:
+
+Concurrency:
+Requests:
+Throughput:
+Latency:</code></pre>
+<hr />
+<h1
+id="part-7-the-month-1-checklists-from-your-own-spec-go-through-them-literally">Part
+7 — the Month 1 checklists (from your own spec — go through them
+literally)</h1>
+<p><strong>Final Month 1 Demo</strong> — you should be able to actually
+do all of these, live, right now: 1. <code>./pulse 8080</code> starts
+cleanly. 2. A browser loads <code>http://localhost:8080/hello</code>. 3.
+<code>curl http://localhost:8080/health</code> returns <code>OK</code>.
+4. <code>curl -X POST http://localhost:8080/echo -d "hello"</code>
+echoes the body. 5.
+<code>curl http://localhost:8080/does-not-exist</code> returns 404. 6.
+<code>ss -ltnp</code> shows Pulse listening. 7.
+<code>strace ./pulse 8080</code> shows the real syscalls. 8. You can
+draw the full request path from memory, unaided.</p>
+<p><strong>Month 1 success criteria</strong> — go down this list from
+the spec and honestly check each box; don’t check one you can’t
+currently demonstrate:</p>
+<pre class="text"><code>[ ] C++ project builds cleanly
+[ ] Server listens on a configurable port
+[ ] TCP connection works
+[ ] HTTP GET works
+[ ] HTTP POST works at a basic level
+[ ] HTTP headers are parsed
+[ ] HTTP response is generated
+[ ] Routing works
+[ ] 404 works
+[ ] curl works
+[ ] Browser works
+[ ] Multiple sequential clients work
+[ ] Partial TCP reads are handled correctly
+[ ] ss has been used to inspect the server
+[ ] strace has been used to inspect the server
+[ ] README contains architecture and learnings
+[ ] Basic benchmark has been recorded</code></pre>
+<hr />
+<h1 id="part-8-concept-check">Part 8 — concept check</h1>
+<p><strong>Why is “establish a baseline” the right goal, rather than
+“make it fast”?</strong> Because you cannot know whether a future change
+(adding threads, <code>epoll</code>, connection pooling) actually helped
+without a trustworthy “before” number to compare against — optimizing
+without a baseline is just guessing whether you made things better.</p>
+<p><strong>Why might CPU usage stay low even while the server is “under
+load” from a benchmark tool’s perspective?</strong> Because Pulse’s
+<code>accept()</code>/<code>read()</code> calls are blocking — the
+process spends most of its time asleep, waiting on the kernel to hand it
+work, not actively computing. Low CPU usage under load is not
+automatically “good performance” — it can just as easily mean the
+bottleneck is elsewhere (like sequential handling of one client at a
+time), which the throughput/latency numbers would reveal instead.</p>
+<p><strong>Why does the spec insist on NOT adding features this
+week?</strong> Because mixing “cleaning up and measuring what exists”
+with “adding new behavior” makes both worse: your benchmark numbers stop
+being a clean baseline for the <em>documented</em> architecture if the
+code changes mid-week, and your documentation risks describing a moving
+target instead of a settled one.</p>
+</body>
+</html>

@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Pulse Week 4 Notes</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+      @page { margin: 1in; }
+      body {
+        font-family: -apple-system, "Segoe UI", Calibri, Arial, sans-serif;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2em 1em;
+        line-height: 1.55;
+        color: #1a1a1a;
+        font-size: 15px;
+      }
+      h1 { font-size: 1.7em; border-bottom: 2px solid #333; padding-bottom: 0.2em; margin-top: 1.6em; }
+      h2 { font-size: 1.3em; border-bottom: 1px solid #ccc; padding-bottom: 0.15em; margin-top: 1.4em; }
+      h3 { font-size: 1.08em; margin-top: 1.2em; }
+      pre {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.8em 1em;
+        overflow-x: auto;
+        font-size: 0.85em;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      pre code { background: none; padding: 0; }
+      table { border-collapse: collapse; margin: 1em 0; }
+      th, td { border: 1px solid #ccc; padding: 0.4em 0.8em; }
+      blockquote { border-left: 3px solid #999; margin-left: 0; padding-left: 1em; color: #444; }
+      #TOC { background: #f9f9f9; border: 1px solid #ddd; padding: 1em 1.5em; border-radius: 4px; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+      .analogy {
+        background: #eef6ff;
+        border-left: 4px solid #3b82f6;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .example {
+        background: #f6fff0;
+        border-left: 4px solid #4caf50;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .analogy p:first-child, .example p:first-child { margin-top: 0; }
+      .analogy p:last-child, .example p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Pulse Week 4 Notes</h1>
+<p class="subtitle">Benchmark &amp; Testing Log</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#what-actually-happened-plain-english-no-jargon"
+id="toc-what-actually-happened-plain-english-no-jargon">What actually
+happened — plain English, no jargon</a>
+<ul>
+<li><a href="#the-3-numbers-that-actually-matter"
+id="toc-the-3-numbers-that-actually-matter">The 3 numbers that actually
+matter</a></li>
+<li><a href="#why-both-of-those-can-be-true-at-the-same-time"
+id="toc-why-both-of-those-can-be-true-at-the-same-time">Why both of
+those can be true at the same time</a></li>
+<li><a href="#did-my-3-guesses-match-reality"
+id="toc-did-my-3-guesses-match-reality">Did my 3 guesses match
+reality?</a></li>
+<li><a href="#cpu-and-memory-confirming-guess-3-with-real-numbers"
+id="toc-cpu-and-memory-confirming-guess-3-with-real-numbers">CPU and
+memory — confirming guess #3 with real numbers</a></li>
+<li><a
+href="#second-check-this-time-with-the-server-genuinely-under-load"
+id="toc-second-check-this-time-with-the-server-genuinely-under-load">Second
+check — this time with the server genuinely under load</a>
+<ul>
+<li><a href="#what-is-rss-in-plain-terms"
+id="toc-what-is-rss-in-plain-terms">What is RSS, in plain
+terms?</a></li>
+<li><a
+href="#why-does-it-actually-stay-flat-the-full-mechanism-not-just-it-did"
+id="toc-why-does-it-actually-stay-flat-the-full-mechanism-not-just-it-did">Why
+does it actually stay flat? (the full mechanism, not just “it
+did”)</a></li>
+<li><a href="#what-is-this-test-actually-trying-to-catch-the-intuition"
+id="toc-what-is-this-test-actually-trying-to-catch-the-intuition">What
+is this test actually trying to catch? (the intuition)</a></li>
+</ul></li>
+<li><a href="#benchmark-environment-for-the-record"
+id="toc-benchmark-environment-for-the-record">Benchmark environment (for
+the record)</a>
+<ul>
+<li><a href="#header-fields-identical-both-runs"
+id="toc-header-fields-identical-both-runs">Header fields (identical both
+runs)</a></li>
+<li><a href="#every-number-from-both-runs"
+id="toc-every-number-from-both-runs">Every number from both
+runs</a></li>
+<li><a href="#connection-times-ms"
+id="toc-connection-times-ms">Connection Times (ms)</a></li>
+<li><a href="#percentage-of-requests-served-within-a-certain-time-ms"
+id="toc-percentage-of-requests-served-within-a-certain-time-ms">Percentage
+of requests served within a certain time (ms)</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#commands-run-this-week"
+id="toc-commands-run-this-week">Commands run this week</a></li>
+<li><a href="#whats-left" id="toc-whats-left">What’s left</a></li>
+</ul>
+</nav>
+<style>
+.tldr { background:#fff8e1; border:2px solid #f0c040; border-radius:8px; padding:1.2em 1.5em; margin:1.5em 0; font-size:1.05em; line-height:1.6; }
+.stat-row { display:flex; gap:1em; flex-wrap:wrap; margin:1.5em 0; }
+.stat-card { flex:1; min-width:180px; background:#f5f5f5; border:1px solid #ddd; border-radius:8px; padding:1em 1.2em; text-align:center; }
+.stat-card .label { font-size:0.82em; color:#555; text-transform:uppercase; letter-spacing:0.03em; }
+.stat-card .values { font-size:1.6em; font-weight:bold; margin:0.3em 0; }
+.stat-card .up { color:#c0392b; }
+.stat-card .flat { color:#2e7d32; }
+.stat-card .note { font-size:0.8em; color:#777; }
+.verdict-right { color:#2e7d32; font-weight:bold; }
+.verdict-wrong { color:#c0392b; font-weight:bold; }
+details { background:#fafafa; border:1px solid #ddd; border-radius:6px; padding:0.3em 1.2em 1em; margin:1.5em 0; }
+details[open] { padding-bottom:1.2em; }
+summary { cursor:pointer; font-weight:600; padding:0.8em 0; }
+</style>
+<h1 id="what-actually-happened-plain-english-no-jargon">What actually
+happened — plain English, no jargon</h1>
+<div class="tldr">
+<p><b>What I did:</b> sent 1000 requests to my server two different ways
+— one at a time, then 10 at once — and measured what happened each way.
+<br><br> <b>What happened, in one sentence:</b> sending requests
+10-at-a-time let the server get through all 1000 of them faster
+<i>overall</i>, but each <i>individual</i> request took a bit longer to
+get its reply — because the server only ever truly works on one client
+at a time, so the others have to wait their turn.</p>
+</div>
+<h2 id="the-3-numbers-that-actually-matter">The 3 numbers that actually
+matter</h2>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+Requests handled per second
+</div>
+<div class="values">
+2023 <span class="up">→</span> 5372
+</div>
+<div class="note">
+went UP a lot with 10 clients at once
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+Time for ONE request to get a reply
+</div>
+<div class="values">
+0.49ms <span class="up">→</span> 1.86ms
+</div>
+<div class="note">
+went up a little — each one waits its turn
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+Requests that failed
+</div>
+<div class="values">
+0 <span class="flat">→</span> 0
+</div>
+<div class="note">
+nothing broke, either way
+</div>
+</div>
+</div>
+<h2 id="why-both-of-those-can-be-true-at-the-same-time">Why both of
+those can be true at the same time</h2>
+<div class="analogy">
+<p><b>One cashier, one line:</b> imagine a single cashier (the server)
+who can only serve one customer fully at a time. If 10 customers show up
+together and form a line, the cashier can keep working almost
+back-to-back with barely a gap — so the <i>store</i> serves more
+customers per hour overall. But any ONE customer in that line of 10
+waits longer for their own turn than someone who walked in completely
+alone. That’s exactly what happened here: more total throughput (a
+busier cashier), but each individual customer’s own wait time goes up a
+bit. The cashier isn’t suddenly working on two customers simultaneously
+— they’re just never standing around with nobody in line.</p>
+</div>
+<h2 id="did-my-3-guesses-match-reality">Did my 3 guesses match
+reality?</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>I guessed</th>
+<th>What actually happened</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Latency would go up</td>
+<td>✅ Yes — 0.49ms → 1.86ms (about 3.8x slower per request)</td>
+<td><span class="verdict-right">Right</span></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Throughput would stay flat</td>
+<td>❌ No — it more than doubled (2023 → 5372 req/sec)</td>
+<td><span class="verdict-wrong">Wrong</span></td>
+</tr>
+<tr>
+<td>3</td>
+<td>A queued client uses no CPU, just waits</td>
+<td>✅ Confirmed, twice — <code>0.0%</code> at idle, and still only
+~12.6% of one core under sustained heavy load (see below)</td>
+<td><span class="verdict-right">Right</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why #2 was wrong, in plain terms:</strong> I expected “server
+does one thing at a time, so more clients shouldn’t help.” That’s true
+for the server’s actual <em>work</em> (reading, parsing, responding) —
+but it’s not true for <em>connecting</em>. While the server is busy
+answering client #1, the other 9 clients can already be finishing their
+initial handshake with the operating system in the background, so
+they’re ready and waiting the instant the server is free — instead of
+each one having to start that handshake from scratch only after the
+previous customer fully left. More line-forming, same single
+cashier.</p>
+<h2 id="cpu-and-memory-confirming-guess-3-with-real-numbers">CPU and
+memory — confirming guess #3 with real numbers</h2>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+CPU used by the server
+</div>
+<div class="values flat">
+0.0%
+</div>
+<div class="note">
+same reading all 5 times sampled
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+Memory held (RSS)
+</div>
+<div class="values flat">
+~3.75 MB
+</div>
+<div class="note">
+identical across every sample — flat, no growth
+</div>
+</div>
+</div>
+<p>Both numbers stayed exactly the same across all 5 snapshots, 0.5
+seconds apart. That’s the “memory should stay flat under load, not grow”
+question from Part 3 of the Week 4 doc, answered: it stayed flat. 3.75
+MB is a rounding error against this machine’s 3.5 GB of available
+RAM.</p>
+<div class="example">
+<b>Caveat at the time:</b> this first snapshot wasn’t confirmed to be
+taken <i>while</i> <code>ab</code> was actively hammering the server —
+turned out it was captured at idle, so “0% CPU” was expected trivially
+and didn’t yet prove “low CPU even under real load.” Redone properly
+below.
+</div>
+<h2
+id="second-check-this-time-with-the-server-genuinely-under-load">Second
+check — this time with the server genuinely under load</h2>
+<p>To get real overlap, the benchmark needed to run long enough for
+<code>ps</code> to actually catch it mid-flight:
+<code>ab -n 50000 -c 10</code> (50,000 requests instead of 1,000)
+running in one terminal, <code>ps</code> sampling every 0.5s in another,
+started together.</p>
+<p><strong>The benchmark itself, at 50x the volume — results essentially
+unchanged</strong>, which is itself a good finding (consistent behavior
+isn’t a fluke of a small sample):</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th><code>-c 10</code>, 1,000 requests</th>
+<th><code>-c 10</code>, 50,000 requests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time taken</td>
+<td>0.186 s</td>
+<td>9.275 s</td>
+</tr>
+<tr>
+<td>Requests/sec</td>
+<td>5371.87</td>
+<td>5390.55</td>
+</tr>
+<tr>
+<td>Time per request (mean)</td>
+<td>1.862 ms</td>
+<td>1.855 ms</td>
+</tr>
+<tr>
+<td>Failed requests</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>100% (worst case)</td>
+<td>4 ms</td>
+<td>16 ms</td>
+</tr>
+</tbody>
+</table>
+<p><code>ab</code> printed a <code>WARNING</code> this run about the
+“Waiting” time’s median and mean not matching a normal distribution —
+that’s <code>ab</code> itself flagging that one specific average looked
+a bit skewed, not an error or something that broke.</p>
+<p><strong>The CPU numbers — climbing, but not for the reason it looks
+like:</strong></p>
+<pre><code>%CPU:  3.3  4.1  4.8  5.6  6.4  7.1  7.8  8.5  9.2  9.9  10.6  11.2  11.9  12.6  12.6</code></pre>
+<div class="analogy">
+<b>Why this climbs instead of jumping straight to the real number:</b>
+<code>ps</code>’s <code>%CPU</code> column isn’t “what’s happening right
+now” — it’s a running average: <i>(total CPU time used so far) / (total
+time the process has been alive so far)</i>, recalculated fresh on every
+check. Pulse had been sitting idle for a while before this benchmark
+started, using ~0% the whole time. The instant <code>ab</code> starts
+hammering it, Pulse begins actually burning real (tiny amounts of) CPU
+time continuously — but that old idle time is still sitting in the
+average’s denominator. Each new sample recalculates using more
+accumulated busy time, so the number keeps creeping toward the true
+current rate instead of jumping to it immediately. Nothing is runaway or
+leaking — this is the average <i>converging</i>, not the real workload
+growing.
+</div>
+<p><strong>And even at its peak, <code>12.6%</code> is of <em>one</em>
+CPU core</strong> — on this 12-core machine (<code>nproc</code>), that’s
+a trivial slice of total capacity. This is a genuinely useful finding:
+Pulse is nowhere near CPU-bound even under sustained load. The actual
+bottleneck in this architecture is the sequential, one-client-at-a-time
+<code>accept()</code> loop (Week 1), not a shortage of CPU — exactly the
+gap a later month’s concurrency work (threads/<code>epoll</code>) would
+exist to close.</p>
+<p><strong>Memory held firm at exactly <code>3840 KB</code> across all
+15 samples</strong> — the same number as the idle test, now confirmed
+under 50x the load. Stronger evidence for “memory stays flat” than the
+first test could offer alone.</p>
+<h3 id="what-is-rss-in-plain-terms">What is RSS, in plain terms?</h3>
+<p>RAM is one shared pool used by every running program on the machine.
+<strong>RSS = how much of that real, physical RAM this one program is
+actually holding onto, right now</strong> — not how much it’s allowed to
+use, not disk space, the actual physical memory assigned to it at the
+moment you check.</p>
+<div class="analogy">
+RAM is one big shared shelf in a warehouse. RSS is how many actual boxes
+Pulse currently has sitting on that shelf. Other programs have their own
+boxes on the same shelf. <code>3840 KB</code> means Pulse’s boxes, right
+now, take up 3840 KB — nothing hypothetical, nothing
+reserved-but-unused.
+</div>
+<p><strong>What’s actually inside those ~3.75 MB:</strong></p>
+<ol type="1">
+<li><strong>The compiled program itself</strong> — the machine
+instructions that make up <code>pulse</code>. Present from the moment it
+starts, regardless of whether any client has ever connected.</li>
+<li><strong>Shared libraries it needs to function</strong> —
+<code>libstdc++</code> (gives you <code>std::string</code>,
+<code>std::vector</code>, …) and <code>libc</code> (wraps syscalls like
+<code>read</code>/<code>write</code>). Every C++ program needs these
+loaded.</li>
+<li><strong>The stack</strong> — holds local variables and function-call
+bookkeeping while code runs (e.g. <code>raw_request</code> lives here
+while <code>handle_client</code> executes).</li>
+<li><strong>The heap</strong> — where things like
+<code>std::string</code>’s actual character data get allocated once they
+outgrow a tiny built-in size.</li>
+</ol>
+<p>Items 1 and 2 are <strong>fixed</strong> — the cost of the program
+simply existing, unaffected by request count. That’s the “constant”
+part.</p>
+<p><strong>The sharper reason item 4 doesn’t make RSS climb per
+request</strong> — one level deeper than “the C++ objects get destroyed”
+(true, but not the whole story): when <code>raw_request</code> needs
+space, it doesn’t ask the operating system directly — it asks your
+process’s <em>own</em> internal memory manager (glibc’s allocator). When
+<code>handle_client()</code> returns and <code>raw_request</code> is
+destroyed, that memory goes back to the process’s own allocator — but
+the allocator usually does <strong>not</strong> hand it back to the OS
+immediately. It keeps it on hand, ready to reuse for the next
+request.</p>
+<div class="analogy">
+Like a toolbox kept at your desk instead of a hardware store. You take a
+tool out, use it, put it back in the <i>same</i> box — the box on your
+desk doesn’t get bigger each time, because you’re reusing it, not buying
+a new one per task and stacking them up. The first couple of requests
+made Pulse grab a small toolbox from the OS. Every request since has
+just been reusing that same toolbox internally — which is why the
+OS-reported RSS number never climbs, without any code having to manage
+that explicitly.
+</div>
+<h3
+id="why-does-it-actually-stay-flat-the-full-mechanism-not-just-it-did">Why
+does it actually stay flat? (the full mechanism, not just “it did”)</h3>
+<p>Walking through what <code>handle_client()</code> genuinely does, per
+request:</p>
+<ol type="1">
+<li><code>accept()</code> returns a client fd, wrapped in a
+<code>Socket</code> (one <code>int</code>), handed into
+<code>handle_client()</code>.</li>
+<li><code>std::string raw_request;</code> is a <strong>local
+variable</strong> living on that one call’s stack frame — it grows via
+<code>.append()</code> as bytes arrive, backed by heap memory that
+<em>this specific variable</em> owns.</li>
+<li>Once parsing succeeds, a local <code>HttpRequest</code>, then a
+local <code>HttpResponse</code>, then a local
+<code>response_bytes</code> string get built — still all local to this
+one call.</li>
+<li><code>handle_client()</code> returns. Every one of those locals —
+<code>raw_request</code>, the parsed request, the response, and
+<code>client</code> the <code>Socket</code> itself — goes out of scope
+right there. Their destructors run immediately: heap buffers free back
+to the allocator, and <code>Socket</code>’s destructor closes the fd
+(the exact RAII mechanism from Week 1).</li>
+<li>The next connection starts this whole cycle again from zero. Nothing
+survives — there’s no global cache, no connection pool, no shared
+mutable state anywhere in this codebase that a request could add to and
+leave behind.</li>
+</ol>
+<p>Memory doesn’t stay flat because of anything done to “clean up.” It
+stays flat because <strong>there is nothing left to accumulate</strong>,
+by construction — every byte allocated for one request is scoped to that
+function call and freed the instant it returns, before the next request
+even begins.</p>
+<h3 id="what-is-this-test-actually-trying-to-catch-the-intuition">What
+is this test actually trying to catch? (the intuition)</h3>
+<p><code>3840 KB</code> by itself means nothing. What matters is whether
+it’s the <em>same</em> number regardless of how many requests have been
+thrown at it. The failure mode this test exists to catch is a server
+where memory climbs a little with every request and never comes back
+down — a leak, typically caused by something like a global list every
+request appends to with nothing ever clearing it, or an ever-growing
+cache. If Pulse had that bug, this exact <code>ps</code> loop would show
+<code>RSS</code> climbing across the 15 samples instead of holding at
+<code>3840</code> all fifteen times.</p>
+<div class="analogy">
+<b>Why pin this down now, in Week 4 specifically:</b> Pulse is about to
+stop being this simple. Future months add exactly the kind of state that
+<i>can</i> leak — connection pools, caches, keep-alive connections held
+open across requests, thread pools. Once that complexity exists, “is
+memory flat?” stops being obviously true just by reading the code —
+you’d have to actually measure it. Having this Week 4 number on record
+as the honest “before” picture means that if a future change ever makes
+memory start climbing under this same benchmark, you’ll know precisely
+which change introduced the regression — instead of discovering a leak
+months later with no idea when it started.
+</div>
+<h2 id="benchmark-environment-for-the-record">Benchmark environment (for
+the record)</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td>Machine</td>
+<td>Windows 11 PC, running Pulse inside WSL2 (Ubuntu)</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>12 logical processors visible to WSL2 (<code>nproc</code>) — not
+necessarily the full physical core count of the host</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>3.5 GiB allocated to the WSL2 VM (<code>free -h</code>) — not the
+host’s total physical RAM; WSL2 typically gets a subset</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Ubuntu 26.04 LTS, under WSL2 on Windows 11 — <strong>not bare-metal
+Linux</strong>, worth stating since a VM layer can add its own
+overhead/variance</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<details>
+<summary>
+Click to expand: the full raw <code>ab</code> output, explained field by
+field (optional — only if you want every number)
+</summary>
+<h3 id="header-fields-identical-both-runs">Header fields (identical both
+runs)</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Server Software</td>
+<td><em>(blank)</em></td>
+<td>Pulse never sends a <code>Server:</code> header — see
+<code>HttpResponse::to_string()</code> in
+<code>http_response.cpp</code>. A deliberate gap, not a bug.</td>
+</tr>
+<tr>
+<td>Server Hostname / Port</td>
+<td><code>localhost</code> / <code>8080</code></td>
+<td>Which address <code>ab</code> pointed at.</td>
+</tr>
+<tr>
+<td>Document Path</td>
+<td><code>/</code></td>
+<td>The route under test.</td>
+</tr>
+<tr>
+<td>Document Length</td>
+<td><code>17 bytes</code></td>
+<td>Body size only — matches <code>"Hello from Pulse!"</code>
+exactly.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="every-number-from-both-runs">Every number from both runs</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th><code>-c 1</code></th>
+<th><code>-c 10</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concurrency Level</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Time taken for tests</td>
+<td>0.494 s</td>
+<td>0.186 s</td>
+</tr>
+<tr>
+<td>Complete requests</td>
+<td>1000</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>Failed requests</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Total transferred</td>
+<td>101000 B</td>
+<td>101000 B</td>
+</tr>
+<tr>
+<td>HTML transferred</td>
+<td>17000 B</td>
+<td>17000 B</td>
+</tr>
+<tr>
+<td>Requests per second</td>
+<td>2023.03</td>
+<td>5371.87</td>
+</tr>
+<tr>
+<td>Time per request (mean)</td>
+<td>0.494 ms</td>
+<td>1.862 ms</td>
+</tr>
+<tr>
+<td>Time per request (mean, across all concurrent)</td>
+<td>0.494 ms</td>
+<td>0.186 ms</td>
+</tr>
+<tr>
+<td>Transfer rate</td>
+<td>199.54 KB/s</td>
+<td>529.84 KB/s</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total transferred → 101000 / 1000 = 101 bytes per
+response</strong> (headers + body). Cross-check: Week 2 testing measured
+<code>response.to_string()</code> as exactly 101 bytes for this route —
+matches.</p>
+<p><strong>HTML transferred → 17000 / 1000 = 17 bytes per
+response</strong> (body only). <code>101 - 17 = 84 bytes</code> of
+headers per response.</p>
+<p><strong>The two “Time per request” lines</strong>, which look
+confusingly similar: the plain <strong>mean</strong>
+(<code>1.862 ms</code> at <code>-c 10</code>) is how long one real
+request took, including time spent waiting its turn — use this for
+latency. The <strong>“mean, across all concurrent requests”</strong>
+(<code>0.186 ms</code>) is just <code>(time taken) / (requests)</code> —
+an average-throughput number, not a real wait time. Relationship:
+<code>1.862 / 10 = 0.186</code>. Sanity check:
+<code>1000 / 0.186s = 5371/s</code>, matching requests/sec exactly.</p>
+<h3 id="connection-times-ms">Connection Times (ms)</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Connect</th>
+<th>Processing</th>
+<th>Waiting</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>-c 1</code></strong> min/mean[sd]/median/max</td>
+<td>0/0[0.3]/0/8</td>
+<td>0/0[0.2]/0/7</td>
+<td>0/0[0.2]/0/7</td>
+<td>0/0[0.5]/0/<strong>14</strong></td>
+</tr>
+<tr>
+<td><strong><code>-c 10</code></strong> min/mean[sd]/median/max</td>
+<td>0/0[0.2]/0/1</td>
+<td>0/1[0.6]/1/4</td>
+<td>0/1[0.6]/1/4</td>
+<td>1/2[0.5]/2/<strong>4</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Connect</em> = time for the TCP handshake. <em>Processing</em> =
+request sent → full response received. <em>Waiting</em> = request sent →
+first response byte (nearly identical to Processing here, responses are
+too small for a gap). <em>Total</em> = Connect + Processing.</p>
+<p><em>min/mean/sd/median/max</em> are plain statistics: fastest,
+average, how spread-out the numbers are, the middle value, and worst
+case, respectively.</p>
+<div class="example">
+<b>Interesting outlier:</b> at <code>-c 1</code>, Connect max = 8ms and
+Total max = 14ms, despite both means being ~0ms — almost certainly the
+very first request, before anything “warmed up.” At <code>-c 10</code>,
+max Total is only 4ms — tighter and more consistent.
+</div>
+<h3
+id="percentage-of-requests-served-within-a-certain-time-ms">Percentage
+of requests served within a certain time (ms)</h3>
+<table>
+<thead>
+<tr>
+<th>Percentile</th>
+<th><code>-c 1</code></th>
+<th><code>-c 10</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>50% / 66% / 75% / 80% / 90%</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>95% / 98%</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>99%</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>100% (longest)</td>
+<td><strong>14</strong></td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>This is a <strong>tail latency</strong> view: “95% → 1” means 95% of
+all 1000 requests finished in 1ms or less — it shows how bad it gets for
+the unlucky few, which a single average hides. At <code>-c 1</code>, the
+jump from 99% (1ms) to 100% (14ms) is that same cold-start outlier. At
+<code>-c 10</code>, the worst case (4ms) is barely worse than the 99th
+percentile — a smoother, more predictable spread, even though every
+number here is higher than <code>-c 1</code>’s typical case (the queuing
+effect from Prediction 1).</p>
+</details>
+<hr />
+<h1 id="commands-run-this-week">Commands run this week</h1>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. install benchmark tool</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">-y</span> apache2-utils</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. fresh build</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/c/Users/aagam/OneDrive/Desktop/Pulse</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> build <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> build</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> ..</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. start server (left running in its own terminal)</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ex">./pulse</span> 8080</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. the two benchmark runs</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="ex">ab</span> <span class="at">-n</span> 1000 <span class="at">-c</span> 1 http://localhost:8080/</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ex">ab</span> <span class="at">-n</span> 1000 <span class="at">-c</span> 10 http://localhost:8080/</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. CPU/mem snapshots</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> 1 2 3 4 5<span class="kw">;</span> <span class="cf">do</span> <span class="fu">ps</span> <span class="at">-o</span> pid,%cpu,%mem,rss,cmd <span class="at">-p</span> <span class="va">$(</span><span class="ex">pgrep</span> <span class="at">-f</span> <span class="st">&#39;pulse 8080&#39;</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span><span class="va">)</span><span class="kw">;</span> <span class="fu">sleep</span> 0.5<span class="kw">;</span> <span class="cf">done</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. machine info</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">nproc</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">free</span> <span class="at">-h</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /etc/os-release <span class="kw">|</span> <span class="fu">grep</span> PRETTY_NAME</span></code></pre></div>
+<hr />
+<h1 id="whats-left">What’s left</h1>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Predictions written and
+checked against reality</label></li>
+<li><label><input type="checkbox" checked="" />Benchmark run
+(<code>-c 1</code> and <code>-c 10</code>)</label></li>
+<li><label><input type="checkbox" checked="" /><code>ps</code> CPU/mem
+snapshot (step 5) — caveat: confirm it overlapped with an actual
+<code>ab</code> run</label></li>
+<li><label><input type="checkbox" checked="" />Machine info (step
+6)</label></li>
+<li><label><input type="checkbox" checked="" />Code review of all files
+(nothing flagged)</label></li>
+<li><label><input type="checkbox" />README architecture + benchmark
+section</label></li>
+<li><label><input type="checkbox" />Month 1 Final Demo
+checklist</label></li>
+<li><label><input type="checkbox" />Month 1 Success Criteria
+checklist</label></li>
+</ul>
+<p>Next: draft the README’s architecture + benchmark section, then go
+through the two Month 1 checklists together.</p>
+</body>
+</html>

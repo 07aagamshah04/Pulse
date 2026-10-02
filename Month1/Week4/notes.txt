@@ -1,0 +1,296 @@
+WEEK 4 — CLEANUP, DOCS, BENCHMARK: PLAN
+
+STAGE A — predictions (write answers here BEFORE running the benchmark)
+
+1. sending 10 requests at once vs one at a time - what happens to the LAST
+   client's latency, given run()'s accept() loop fully handles one client
+   before accepting the next?
+   my prediction: high latency
+   CORRECT ANSWER: latency goes UP - measured mean time/request went
+   0.494ms -> 1.862ms (~3.8x) at concurrency 10. a request arriving while
+   another is being served queues behind it (same backlog mechanism as
+   week 1's notes). my prediction was RIGHT in direction. (stays small in
+   absolute terms only because each request is so cheap to actually handle.)
+
+2. concurrency 1 -> 10 - do requests/sec go up, stay flat, or go down? why?
+   my prediction: flat
+   CORRECT ANSWER: UP, not flat - req/sec more than doubled (2023 -> 5372).
+   my prediction was WRONG. reason: server PROCESSING is still sequential
+   (unchanged), but CONNECTION SETUP (TCP handshake) is not serialized the
+   same way - at c=10 the kernel can complete handshakes for the next
+   several clients in the backlog queue WHILE the server is still busy
+   with the current one, so accept() rarely has to wait for a brand-new
+   handshake to start. that's connection-setup overlap, not the server's
+   own work becoming parallel.
+
+3. do I expect CPU usage to be high or low during the benchmark? what is
+   the process actually doing while a client is connected but hasn't sent
+   anything yet?
+   my prediction: it is kept in queue till accpet
+   CORRECT ANSWER: LOW CPU usage overall, and while queued (not yet
+   accept()ed) a connection consumes ZERO cpu time - it's pure kernel
+   bookkeeping in the backlog, no process code runs for it at all. my
+   prediction was CONCEPTUALLY CORRECT (the "kept in queue till accept"
+   part). the actual % number still needs the ps snapshot (step 5,
+   still pending) to confirm "low" numerically.
+
+---
+
+STAGE B — commands to run myself, then give full output to claude
+
+1. install benchmark tool (needs my password):
+   sudo apt install -y apache2-utils
+
+2. fresh build:
+   cd /mnt/c/Users/aagam/OneDrive/Desktop/Pulse
+   mkdir -p build && cd build
+   cmake ..
+   make
+
+3. start server (leave running in this terminal):
+   ./pulse 8080
+
+4. second terminal - the two benchmark runs (paste FULL output of both):
+   ab -n 1000 -c 1 http://localhost:8080/
+   ab -n 1000 -c 10 http://localhost:8080/
+
+5. third terminal - WHILE the -c 10 run is going, capture CPU/mem a few times:
+   for i in 1 2 3 4 5; do ps -o pid,%cpu,%mem,rss,cmd -p $(pgrep -f 'pulse 8080' | head -1); sleep 0.5; done
+
+6. machine info for the benchmark record template:
+   nproc
+   free -h
+   cat /etc/os-release | grep PRETTY_NAME
+
+---
+
+ACTUAL RESULTS — ab benchmark (2026-09-30) — FULL FIELD-BY-FIELD EXPLANATION
+
+--- header fields (both runs) ---
+
+Server Software:        (blank)
+  -> ab shows this blank because Pulse never sends a "Server:" header at
+     all - real servers (Apache, nginx) send "Server: nginx/1.24..." for
+     diagnostics, but it's optional per the HTTP spec. check
+     HttpResponse::to_string() in http_response.cpp - it only ever writes
+     Content-Type, Content-Length, Connection, plus whatever a handler adds
+     via add_header(). not a bug, just something never implemented -
+     worth stating as a deliberate gap in the README (Part 6 of the doc).
+
+Server Hostname: localhost / Server Port: 8080
+  -> just which address ab pointed at, same both runs.
+
+Document Path: /  /  Document Length: 17 bytes
+  -> which route was hit (the "/" route -> "Hello from Pulse!", which
+     is genuinely 17 bytes), and the BODY size only (not headers).
+     same both runs since it's hammering the same route both times.
+
+--- per-run fields ---
+
+                              | -c 1        | -c 10
+Concurrency Level             | 1           | 10
+Time taken for tests          | 0.494 s     | 0.186 s
+Complete requests             | 1000        | 1000
+Failed requests                | 0           | 0
+Total transferred             | 101000 B    | 101000 B
+HTML transferred              | 17000 B     | 17000 B
+Requests per second           | 2023.03     | 5371.87
+Time per request (mean)       | 0.494 ms    | 1.862 ms
+Time per request (mean, all)  | 0.494 ms    | 0.186 ms
+Transfer rate                 | 199.54 KB/s | 529.84 KB/s
+
+Complete requests / Failed requests:
+  -> all 1000 finished, zero errors, both runs - a real result, not
+     assumed. ab counts a request "failed" on connection errors, timeouts,
+     or a response length mismatch - none of those happened.
+
+Total transferred: 101000 bytes -> 101000 / 1000 = 101 bytes PER RESPONSE.
+  -> this is headers + body together. cross-check: back in week 2 testing
+     I measured response.to_string() as exactly 101 bytes for this same
+     route - matches perfectly, good confirmation the benchmark is
+     measuring the real thing, not something else.
+
+HTML transferred: 17000 bytes -> 17000 / 1000 = 17 bytes/response.
+  -> this is BODY ONLY (matches Document Length). 101 - 17 = 84 bytes of
+     headers per response (status line + Content-Type + Content-Length +
+     Connection + the blank line).
+
+Requests per second / Time per request (mean) / Time taken for tests:
+  -> already covered in COMPARISON TO PREDICTIONS below - throughput and
+     per-request latency.
+
+Time per request (mean, ACROSS ALL CONCURRENT REQUESTS) - the confusing
+one, since ab prints two differently-scoped numbers with almost the same
+label:
+  -c 1:  0.494 ms  (same as the "mean" line above it, because concurrency
+                     is 1 - there's only ever one request in flight, so
+                     "per request" and "spread across concurrent slots"
+                     are the same thing)
+  -c 10: 0.186 ms  (DIFFERENT from the 1.862 ms "mean" line above it)
+  -> the relationship: 1.862 / 10 = 0.186 - this second number is just
+     (time taken for tests) / (complete requests), i.e. the AVERAGE
+     server-side throughput per request-slot if perfectly spread across
+     all 10 concurrent slots. it is NOT "how long a single request
+     actually waited" - that's the OTHER "mean" line (1.862 ms). use the
+     first one (plain "mean") when talking about latency a client
+     experiences; use this one only to sanity-check it against requests/sec
+     (1000 requests / 0.186 s = 5371/s, matches "Requests per second" above).
+
+Transfer rate: 199.54 -> 529.84 KB/s
+  -> just total bytes transferred per second (total_transferred / time
+     taken) - bandwidth, not latency or request count. goes up here for
+     the same reason requests/sec went up (see prediction 2 below) - more
+     requests completed per second means more total bytes per second too,
+     it's a derived number, not an independent finding.
+
+--- Connection Times (ms) table ---
+
+              -c 1                          -c 10
+           min mean[sd] median max        min mean[sd] median max
+Connect:    0   0  0.3    0     8           0   0  0.2    0     1
+Processing: 0   0  0.2    0     7           0   1  0.6    1     4
+Waiting:    0   0  0.2    0     7           0   1  0.6    1     4
+Total:      0   0  0.5    0    14           1   2  0.5    2     4
+
+what each row means:
+  Connect    = time to complete the TCP handshake (Week 1, Part 3) before
+               any HTTP bytes are even sent
+  Processing = time from request sent to full response received - this is
+               basically the server's read+parse+route+write time
+  Waiting    = time from request sent to the FIRST response byte received
+               (a "time to first byte" style number) - nearly identical to
+               Processing here because these responses are so small there's
+               no meaningful gap between "first byte" and "last byte"
+  Total      = Connect + Processing combined - the whole request/response
+               cycle from the client's point of view
+
+what min/mean/sd/median/max mean (statistics, not this project's syscalls):
+  min    = fastest single request observed
+  mean   = plain average
+  sd     = standard deviation - how spread out the numbers are; small sd
+           means most requests were close to the mean, not wildly different
+  median = the middle value if you sorted every request's time (the 50th
+           percentile) - often more representative than mean when a few
+           slow outliers skew the average
+  max    = slowest single request observed (worst case)
+
+interesting real observation: at -c 1, Connect max = 8ms and Total max =
+14ms, even though the MEAN for both is ~0ms. that's a single outlier (out
+of 1000 requests, most likely the very first one - cold OS/network-stack
+state before anything warmed up) dragging the max way above the typical
+case. at -c 10, max Total is only 4ms - a much tighter, more consistent
+distribution. this exact pattern shows up again below in the percentile
+table.
+
+--- Percentage of requests served within a certain time (ms) ---
+
+  -c 1:  50% 0ms | 66% 0 | 75% 0 | 80% 0 | 90% 0 | 95% 1 | 98% 1 | 99% 1 | 100% 14
+  -c 10: 50% 2ms | 66% 2 | 75% 2 | 80% 2 | 90% 2 | 95% 3 | 98% 3 | 99% 4 | 100% 4
+
+what this table means: "95% 1" means 95% of all 1000 requests finished in
+1ms or less. this is a LATENCY PERCENTILE / TAIL LATENCY view - it answers
+"how bad does it get for the unlucky requests," which a single mean number
+hides completely.
+
+-c 1: the jump from 99% (1ms) to 100% (14ms) is dramatic - one single
+request was ~14x slower than the typical request. this is almost certainly
+that same first-connection cold-start outlier from the Connect Times table
+above, not a real pattern (with only 1000 samples, one outlier can look
+big in a percentile table).
+
+-c 10: much smoother - 99% at 4ms, 100% (worst case) ALSO 4ms. no big
+outlier this run. tighter, more predictable distribution overall, even
+though every individual number here is objectively higher than -c 1's
+typical case (because of the queuing effect from prediction 1 below).
+
+COMPARISON TO PREDICTIONS
+
+1. latency prediction ("high latency" for the last client under load): DIRECTION
+   CORRECT. mean time/request went 0.494ms -> 1.862ms (~3.8x) under concurrency
+   10 - a request arriving while another is being served queues behind it,
+   same backlog mechanism from week 1's notes. absolute number stays tiny
+   because each request is cheap (parse a few dozen bytes, static string,
+   write) - queuing behind 9 others only costs ~1.4ms extra.
+
+2. throughput prediction ("flat"): WRONG, and this is the interesting one.
+   actual: req/sec MORE than doubled (2023 -> 5372). doesn't contradict
+   "server handles one client at a time" once you separate two different
+   things:
+     - SERVER PROCESSING: genuinely sequential, one at a time, unchanged
+     - CONNECTION SETUP (TCP handshake): NOT serialized the same way
+   at -c 1: fully serial from client's view - connect -> wait full response
+   -> close -> connect again. every handshake waits for the PREVIOUS
+   request's entire round trip first.
+   at -c 10: ab keeps 10 connections in flight - while server is busy on
+   request #1, kernel can already complete handshakes for #2-10 in the
+   backlog queue. by the time accept() loops back, a connection is often
+   already sitting there ready, instead of server idling for a brand-new
+   handshake. server's OWN work never parallelizes - this is connection-
+   setup overlap, not request-processing overlap.
+
+3. CPU prediction ("kept in queue till accept"): CONCEPTUALLY CORRECT. a
+   connection sitting in the backlog runs none of my code - pure kernel
+   bookkeeping, essentially free. NOT YET CONFIRMED NUMERICALLY - still
+   need the ps CPU/mem snapshot (stage B step 5) to see the actual %.
+
+still pending: ps CPU/mem snapshot (step 5), machine info (step 6) -
+benchmark record template can't be fully filled in until those are in.
+
+---
+
+STAGE C — code review (DONE - went through every file, nothing flagged
+                       as stale/off; claude to do a second-pass sanity
+                       check as well)
+
+---
+
+STAGE D — once B's output is pasted to claude:
+  - claude compares actual results against my Stage A predictions
+  - claude fills in the benchmark record template (machine/CPU/RAM/OS/
+    concurrency/requests/throughput/latency)
+  - claude drafts the README's architecture + benchmark section
+  - go through the Month 1 Final Demo checklist and Success Criteria
+    checklist from the doc (Part 7) together
+
+RESULTS
+
+[x] Stage A predictions written
+[x] apache2-utils installed
+[x] build succeeded
+[x] ab -c 1 output captured
+[x] ab -c 10 output captured
+[ ] ps CPU/mem snapshots captured
+[ ] machine info captured
+[x] Stage C code review done
+[x] README architecture + benchmark section written
+
+MONTH 1 FINAL DEMO (gone through live, 2026-10-02):
+[x] ./pulse 8080 starts cleanly
+[x] browser loads http://localhost:8080/hello (also curl -i, verified)
+[x] curl http://localhost:8080/health returns OK
+[x] curl -X POST http://localhost:8080/echo -d "hello" echoes "hello"
+[x] curl http://localhost:8080/does-not-exist returns 404
+[x] ss -ltnp shows pulse listening
+[x] strace has been used (week 1 + week 3 sessions - multiple read() calls observed)
+[x] can draw the full request path from memory (see README architecture diagram)
+
+MONTH 1 SUCCESS CRITERIA (gone through live, 2026-10-02):
+[x] C++ project builds cleanly (fresh cmake+make, zero warnings)
+[x] server listens on a configurable port (./pulse <port> arg)
+[x] TCP connection works
+[x] HTTP GET works
+[x] HTTP POST works at a basic level (POST /echo)
+[x] HTTP headers are parsed
+[x] HTTP response is generated
+[x] routing works (/, /hello, /health, /echo)
+[x] 404 works
+[x] curl works
+[x] browser works
+[x] multiple sequential clients work (verified: two nc connections back to back, server stayed alive)
+[x] partial TCP reads are handled correctly (week 3 fix, slow_client.py test)
+[x] ss has been used to inspect the server
+[x] strace has been used to inspect the server
+[x] README contains architecture and learnings
+[x] basic benchmark has been recorded (ab, week 4, test_explain.html)
+
+MONTH 1: COMPLETE.
