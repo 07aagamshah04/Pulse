@@ -1,0 +1,46 @@
+MONTH 2 / WEEK 1 — PREDICTIONS SCRATCHPAD
+
+The full plan, every command explained, and all results live in notes.html.
+This file is only for writing predictions BEFORE running each experiment.
+After we go through the results, they get copied into notes.html.
+
+
+EXPERIMENT 0  (done, see notes.html)
+  - Threads:
+  - curl /hello with the silent client connected: finishes / times out? time out
+  - STAT and WCHAN of Pulse's thread: Sleep, waiting
+  - LISTEN Recv-Q: 0   curl connection's Recv-Q: 83
+
+
+EXPERIMENT 1 — A and B
+  1. 1a: out of 100 runs:   AB = cant determined   BA = same cant
+  2. 1a: why? (t1 was created first. Does that matter?) no
+  3. 1b: two clean blocks AAAA...BBBB, or mixed AAABBAAB...? mix
+  4. 1b: will all 3 runs look the same? which all 3
+  5. Week 2 link: what could Pulse's log look like when two connection
+     threads print at the same time? mix
+
+
+EXPERIMENT 2 — busy threads (1 thread, 1 round ~ 2.5 s)
+  1. real time for   2 threads: 5   4: 10   8: 20   16: 40
+  2. 8 threads: user time vs real time? why?
+  3. Threads: during the 8-thread run = ____  (careful)
+  4. ps -L, 8 workers: worker %CPU ____ STAT ____ / main thread %CPU ____ STAT ____
+  5. pidstat -u total process %CPU:  8 threads ____   16 threads ____
+  6. does each thread stay on the same CPU (PSR) between the 2 snapshots?
+  7. will threads finish in order 0, 1, 2, 3...?
+  8. pidstat -w: bigger column for workers, cswch/s or nvcswch/s?
+     different for 8 vs 16 threads?
+
+
+EXPERIMENT 3 — sleeping threads
+  1. Part A real time, 3 s sleep each:  1: ____  8: ____  16: ____  100: ____
+  2. Part A user time? (compare Exp 2)
+  3. Threads:  16 workers = ____   100 workers = ____
+  4. STAT:  workers ____   main thread ____
+  5. WCHAN: workers ____   main thread ____   same or different?
+  6. pidstat total %CPU:  16 threads ____  100 threads ____   any %wait?
+  7. pidstat -w while sleeping:  cswch/s ____  nvcswch/s ____
+  8. VmSize with 100 threads vs 16: how much bigger? ____   VmRSS? ____
+     (hint: Concepts doc Part 4, stack size per thread)
+  9. Pulse: could Week 2 Pulse handle 100 slow clients at once? cost?

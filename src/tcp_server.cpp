@@ -1,14 +1,14 @@
 #include "tcp_server.hpp"
 
-#include "http_parser.hpp"   // Month 1 / Week 2: HttpParser::parse — see handle_client() below
-#include <arpa/inet.h>        // htons, ntohs, inet_ntoa — byte-order + address-printing helpers
-#include <cstring>            // strerror — turns an errno number into a human-readable message
+#include "http_parser.hpp" // Month 1 / Week 2: HttpParser::parse — see handle_client() below
+#include <arpa/inet.h>     // htons, ntohs, inet_ntoa — byte-order + address-printing helpers
+#include <cstring>         // strerror — turns an errno number into a human-readable message
 #include <iostream>
-#include <netinet/in.h>       // struct sockaddr_in
+#include <netinet/in.h> // struct sockaddr_in
 #include <stdexcept>
-#include <sys/socket.h>       // socket(), bind(), listen(), accept(), setsockopt()
-#include <unistd.h>           // read(), write()
-#include <utility>            // std::move
+#include <sys/socket.h> // socket(), bind(), listen(), accept(), setsockopt()
+#include <unistd.h>     // read(), write()
+#include <utility>      // std::move
 
 namespace
 {
@@ -25,7 +25,7 @@ namespace
        into English (e.g. "Address already in use"). This function exists
        so we don't repeat "check for -1, build an error message, throw"
        after every single call. */
-    [[noreturn]] void throw_errno(const char* what)
+    [[noreturn]] void throw_errno(const char *what)
     {
         // [[noreturn]]: a promise to the compiler that this function always throws, never returns normally
         throw std::runtime_error(std::string(what) + ": " + std::strerror(errno));
@@ -36,7 +36,7 @@ namespace
        necessarily all of them, especially for larger buffers. This loops,
        re-calling write() with whatever is left, until everything requested
        has actually gone out (or an error happens). */
-    void write_all(int fd, const char* data, size_t len)
+    void write_all(int fd, const char *data, size_t len)
     {
         size_t sent = 0;
         while (sent < len)
@@ -59,7 +59,7 @@ namespace
        single connection. This is a defensive limit, not a feature — see
        Part 4 of the Week 3 doc for the related "leftover bytes" edge case
        this same loop deliberately does NOT try to solve. */
-    constexpr size_t kMaxRequestSize = 1024 * 1024;   // 1 MiB
+    constexpr size_t kMaxRequestSize = 1024 * 1024; // 1 MiB
 }
 
 // Month 1 / Week 2: `router` taken by value and moved into router_ below — TcpServer becomes the sole owner, main.cpp doesn't need its copy anymore after this call
@@ -78,7 +78,7 @@ TcpServer::TcpServer(uint16_t port, Router router, int backlog) : port_(port), r
     {
         throw_errno("socket");
     }
-    listen_socket_ = Socket(fd);   // hand ownership of this fd to our RAII wrapper immediately
+    listen_socket_ = Socket(fd); // hand ownership of this fd to our RAII wrapper immediately
 
     /* -------------------------------------------------------------------
      * MONTH 1 / WEEK 1 — setsockopt(), SO_REUSEADDR
@@ -100,9 +100,9 @@ TcpServer::TcpServer(uint16_t port, Router router, int backlog) : port_(port), r
      * claim. See Part 4 of the doc for what each field means.
      * ------------------------------------------------------------------- */
     sockaddr_in addr{};
-    addr.sin_family = AF_INET;               // must match the domain we gave socket() above
-    addr.sin_addr.s_addr = INADDR_ANY;       // "any local interface" — not one specific IP
-    addr.sin_port = htons(port_);            // htons: host byte order -> network byte order. Skipping this binds the WRONG port number — see Part 4 of the doc.
+    addr.sin_family = AF_INET;         // must match the domain we gave socket() above
+    addr.sin_addr.s_addr = INADDR_ANY; // "any local interface" — not one specific IP
+    addr.sin_port = htons(port_);      // htons: host byte order -> network byte order. Skipping this binds the WRONG port number — see Part 4 of the doc.
 
     /* -------------------------------------------------------------------
      * MONTH 1 / WEEK 1 — bind()
@@ -111,7 +111,7 @@ TcpServer::TcpServer(uint16_t port, Router router, int backlog) : port_(port), r
      * works for IPv4, IPv6, Unix sockets, etc.) — see Part 4 of the doc,
      * "why struct sockaddr* and not struct sockaddr_in*".
      * ------------------------------------------------------------------- */
-    if (::bind(listen_socket_.fd(), reinterpret_cast<sockaddr*>(&addr), sizeof(addr)) == -1)
+    if (::bind(listen_socket_.fd(), reinterpret_cast<sockaddr *>(&addr), sizeof(addr)) == -1)
     {
         throw_errno("bind");
     }
@@ -133,7 +133,7 @@ TcpServer::TcpServer(uint16_t port, Router router, int backlog) : port_(port), r
 
 void TcpServer::run()
 {
-    for (;;)   // Month 1 / Week 1 — C++ note: an intentional infinite loop, "for ever" — stopped only by Ctrl+C (SIGINT) from outside the program
+    for (;;) // Month 1 / Week 1 — C++ note: an intentional infinite loop, "for ever" — stopped only by Ctrl+C (SIGINT) from outside the program
     {
         sockaddr_in client_addr{};
         socklen_t addr_len = sizeof(client_addr);
@@ -151,7 +151,7 @@ void TcpServer::run()
          * accept() again right after. This is the "two file descriptors"
          * idea from Part 5 of the doc.
          * --------------------------------------------------------------- */
-        int client_fd = ::accept(listen_socket_.fd(), reinterpret_cast<sockaddr*>(&client_addr), &addr_len);
+        int client_fd = ::accept(listen_socket_.fd(), reinterpret_cast<sockaddr *>(&client_addr), &addr_len);
         if (client_fd == -1)
         {
             // Month 1 / Week 1: one failed accept() shouldn't kill the whole server — log it and go back to waiting for the next client
@@ -161,7 +161,7 @@ void TcpServer::run()
 
         // Month 1 / Week 1: client_addr is now filled in with the CLIENT's real IP/port — proof each connection is independently tracked by the kernel (see Part 4 of the doc's accept() example)
         std::cout << "Client connected: " << inet_ntoa(client_addr.sin_addr)
-                   << ":" << ntohs(client_addr.sin_port) << "\n";
+                  << ":" << ntohs(client_addr.sin_port) << "\n";
 
         // Month 1 / Week 1: wrap the raw client_fd in a Socket immediately, then hand ownership into handle_client() — from here on we never have to remember to close this fd manually
         handle_client(Socket(client_fd));
@@ -186,7 +186,7 @@ void TcpServer::handle_client(Socket client) const
     std::string raw_request;
     char chunk[4096];
 
-    HttpResponse response = HttpResponse::bad_request();   // default assumption — overwritten below the moment we actually know more
+    HttpResponse response = HttpResponse::bad_request(); // default assumption — overwritten below the moment we actually know more
 
     /* -------------------------------------------------------------------
      * MONTH 1 / WEEK 3 — the read-accumulate-reparse loop
@@ -205,15 +205,15 @@ void TcpServer::handle_client(Socket client) const
         if (result.status == ParseStatus::Complete)
         {
             std::cout << "Parsed (" << raw_request.size() << " bytes total): "
-                       << result.request.method << " " << result.request.path << " " << result.request.version << "\n";
-            response = router_.route(result.request);   // Month 1 / Week 2 (unchanged): 200 / 404 / 405 — see router.cpp
+                      << result.request.method << " " << result.request.path << " " << result.request.version << "\n";
+            response = router_.route(result.request); // Month 1 / Week 2 (unchanged): 200 / 404 / 405 — see router.cpp
             break;
         }
 
         if (result.status == ParseStatus::Malformed)
         {
             std::cout << "Malformed request (" << raw_request.size() << " bytes so far) — responding 400 Bad Request.\n";
-            break;   // `response` is already the bad_request() default from above
+            break; // `response` is already the bad_request() default from above
         }
 
         // Month 1 / Week 3: ParseStatus::Incomplete — not done yet, but also not stuck forever (see kMaxRequestSize above)
@@ -233,8 +233,8 @@ void TcpServer::handle_client(Socket client) const
 
         if (n < 0)
         {
-            std::cerr << "read: " << std::strerror(errno) << "\n";   // n == -1 means an error — check errno
-            return;   // `client` destructs here -> closes automatically, no response sent
+            std::cerr << "read: " << std::strerror(errno) << "\n"; // n == -1 means an error — check errno
+            return;                                                // `client` destructs here -> closes automatically, no response sent
         }
         if (n == 0)
         {
@@ -247,7 +247,7 @@ void TcpServer::handle_client(Socket client) const
             return;
         }
 
-        raw_request.append(chunk, static_cast<size_t>(n));   // Month 1 / Week 3: append, don't overwrite — this is the actual "accumulate" step
+        raw_request.append(chunk, static_cast<size_t>(n)); // Month 1 / Week 3: append, don't overwrite — this is the actual "accumulate" step
     }
 
     /* -------------------------------------------------------------------

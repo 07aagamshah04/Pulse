@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Pulse Month 2 Week 1</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+
+    @media print {
+      html {
+        background-color: white;
+      }
+
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+
+      p,
+      h2,
+      h3 {
+        orphans: 3;
+        widows: 3;
+      }
+
+      h2,
+      h3,
+      h4 {
+        page-break-after: avoid;
+      }
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    a {
+      color: #1a1a1a;
+    }
+
+    a:visited {
+      color: #1a1a1a;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 1.4em;
+    }
+
+    h5,
+    h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+
+    h6 {
+      font-weight: normal;
+    }
+
+    ol,
+    ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+
+    li>ol,
+    li>ul {
+      margin-top: 0;
+    }
+
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+
+    .sourceCode {
+      background-color: transparent;
+      overflow: visible;
+    }
+
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    table caption {
+      margin-bottom: 0.75em;
+    }
+
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+
+    #TOC li {
+      list-style: none;
+    }
+
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+
+    #TOC>ul {
+      padding-left: 0;
+    }
+
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+    code {
+      white-space: pre-wrap;
+    }
+
+    span.smallcaps {
+      font-variant: small-caps;
+    }
+
+    div.columns {
+      display: flex;
+      gap: min(4vw, 1.5em);
+    }
+
+    div.column {
+      flex: auto;
+      overflow-x: auto;
+    }
+
+    div.hanging-indent {
+      margin-left: 1.5em;
+      text-indent: -1.5em;
+    }
+
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class] {
+      list-style: none;
+    }
+
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+
+    .display.math {
+      display: block;
+      text-align: center;
+      margin: 0.5rem auto;
+    }
+
+    /* CSS for syntax highlighting */
+    pre>code.sourceCode {
+      white-space: pre;
+      position: relative;
+    }
+
+    pre>code.sourceCode>span {
+      line-height: 1.25;
+    }
+
+    pre>code.sourceCode>span:empty {
+      height: 1.2em;
+    }
+
+    .sourceCode {
+      overflow: visible;
+    }
+
+    code.sourceCode>span {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    div.sourceCode {
+      margin: 1em 0;
+    }
+
+    pre.sourceCode {
+      margin: 0;
+    }
+
+    @media screen {
+      div.sourceCode {
+        overflow: auto;
+      }
+    }
+
+    @media print {
+      pre>code.sourceCode {
+        white-space: pre-wrap;
+      }
+
+      pre>code.sourceCode>span {
+        display: inline-block;
+        text-indent: -5em;
+        padding-left: 5em;
+      }
+    }
+
+    pre.numberSource code {
+      counter-reset: source-line 0;
+    }
+
+    pre.numberSource code>span {
+      position: relative;
+      left: -4em;
+      counter-increment: source-line;
+    }
+
+    pre.numberSource code>span>a:first-child::before {
+      content: counter(source-line);
+      position: relative;
+      left: -1em;
+      text-align: right;
+      vertical-align: baseline;
+      border: none;
+      display: inline-block;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 0 4px;
+      width: 4em;
+      color: #aaaaaa;
+    }
+
+    pre.numberSource {
+      margin-left: 3em;
+      border-left: 1px solid #aaaaaa;
+      padding-left: 4px;
+    }
+
+    div.sourceCode {}
+
+    @media screen {
+      pre>code.sourceCode>span>a:first-child::before {
+        text-decoration: underline;
+      }
+    }
+
+    code span.al {
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    /* Alert */
+    code span.an {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Annotation */
+    code span.at {
+      color: #7d9029;
+    }
+
+    /* Attribute */
+    code span.bn {
+      color: #40a070;
+    }
+
+    /* BaseN */
+    code span.bu {
+      color: #008000;
+    }
+
+    /* BuiltIn */
+    code span.cf {
+      color: #007020;
+      font-weight: bold;
+    }
+
+    /* ControlFlow */
+    code span.ch {
+      color: #4070a0;
+    }
+
+    /* Char */
+    code span.cn {
+      color: #880000;
+    }
+
+    /* Constant */
+    code span.co {
+      color: #60a0b0;
+      font-style: italic;
+    }
+
+    /* Comment */
+    code span.cv {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* CommentVar */
+    code span.do {
+      color: #ba2121;
+      font-style: italic;
+    }
+
+    /* Documentation */
+    code span.dt {
+      color: #902000;
+    }
+
+    /* DataType */
+    code span.dv {
+      color: #40a070;
+    }
+
+    /* DecVal */
+    code span.er {
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    /* Error */
+    code span.ex {}
+
+    /* Extension */
+    code span.fl {
+      color: #40a070;
+    }
+
+    /* Float */
+    code span.fu {
+      color: #06287e;
+    }
+
+    /* Function */
+    code span.im {
+      color: #008000;
+      font-weight: bold;
+    }
+
+    /* Import */
+    code span.in {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Information */
+    code span.kw {
+      color: #007020;
+      font-weight: bold;
+    }
+
+    /* Keyword */
+    code span.op {
+      color: #666666;
+    }
+
+    /* Operator */
+    code span.ot {
+      color: #007020;
+    }
+
+    /* Other */
+    code span.pp {
+      color: #bc7a00;
+    }
+
+    /* Preprocessor */
+    code span.sc {
+      color: #4070a0;
+    }
+
+    /* SpecialChar */
+    code span.ss {
+      color: #bb6688;
+    }
+
+    /* SpecialString */
+    code span.st {
+      color: #4070a0;
+    }
+
+    /* String */
+    code span.va {
+      color: #19177c;
+    }
+
+    /* Variable */
+    code span.vs {
+      color: #4070a0;
+    }
+
+    /* VerbatimString */
+    code span.wa {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Warning */
+  </style>
+  <style>
+    @page {
+      margin: 1in;
+    }
+
+    body {
+      font-family: -apple-system, "Segoe UI", Calibri, Arial, sans-serif;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2em 1em;
+      line-height: 1.55;
+      color: #1a1a1a;
+      font-size: 15px;
+    }
+
+    h1 {
+      font-size: 1.7em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.2em;
+      margin-top: 1.6em;
+    }
+
+    h2 {
+      font-size: 1.3em;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.15em;
+      margin-top: 1.4em;
+    }
+
+    h3 {
+      font-size: 1.08em;
+      margin-top: 1.2em;
+    }
+
+    pre {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 0.8em 1em;
+      overflow-x: auto;
+      font-size: 0.85em;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 1em 0;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 0.4em 0.8em;
+    }
+
+    blockquote {
+      border-left: 3px solid #999;
+      margin-left: 0;
+      padding-left: 1em;
+      color: #444;
+    }
+
+    #TOC {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 1em 1.5em;
+      border-radius: 4px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 2em 0;
+    }
+
+    .analogy {
+      background: #eef6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 0.7em 1.1em;
+      margin: 1em 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .example {
+      background: #f6fff0;
+      border-left: 4px solid #4caf50;
+      padding: 0.7em 1.1em;
+      margin: 1em 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .analogy p:first-child,
+    .example p:first-child {
+      margin-top: 0;
+    }
+
+    .analogy p:last-child,
+    .example p:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="title-block-header">
+    <h1 class="title">Pulse — Month 2, Week 1: Concepts</h1>
+    <p class="subtitle">Threads, explained through Pulse’s own code</p>
+  </header>
+  <nav id="TOC" role="doc-toc">
+    <ul>
+      <li><a href="#how-to-use-this-document" id="toc-how-to-use-this-document">How to use this document</a></li>
+      <li><a href="#part-1-the-problem-on-your-own-server" id="toc-part-1-the-problem-on-your-own-server">Part 1 — The
+          problem, on
+          your own server</a></li>
+      <li><a href="#part-2-where-is-pulse-stuck-stack-and-program-counter-in-your-code"
+          id="toc-part-2-where-is-pulse-stuck-stack-and-program-counter-in-your-code">Part
+          2 — <em>Where</em> is Pulse stuck? (stack and program counter, in your
+          code)</a></li>
+      <li><a href="#part-3-what-pulse-will-look-like-with-threads"
+          id="toc-part-3-what-pulse-will-look-like-with-threads">Part 3 — What
+          Pulse will look like with threads</a></li>
+      <li><a href="#part-4-what-pulses-threads-will-share-and-what-each-owns"
+          id="toc-part-4-what-pulses-threads-will-share-and-what-each-owns">Part 4
+          — What Pulse’s threads will share, and what each owns</a>
+        <ul>
+          <li><a href="#start-here-the-simple-version" id="toc-start-here-the-simple-version">Start here: the simple
+              version</a>
+            <ul>
+              <li><a href="#step-1-notebook-vs-whiteboard" id="toc-step-1-notebook-vs-whiteboard">Step 1: notebook vs
+                  whiteboard</a></li>
+              <li><a href="#step-2-see-it-with-two-ints" id="toc-step-2-see-it-with-two-ints">Step 2: see it with two
+                  ints</a></li>
+              <li><a href="#step-3-the-same-rule-applied-to-pulse" id="toc-step-3-the-same-rule-applied-to-pulse">Step
+                  3: the same rule,
+                  applied to Pulse</a></li>
+              <li><a href="#step-4-the-rule-in-one-sentence" id="toc-step-4-the-rule-in-one-sentence">Step 4: the rule
+                  in one
+                  sentence</a></li>
+            </ul>
+          </li>
+          <li><a href="#the-full-list-for-reference" id="toc-the-full-list-for-reference">The full list, for
+              reference</a>
+            <ul>
+              <li><a href="#why-threads-and-not-a-separate-process-per-connection"
+                  id="toc-why-threads-and-not-a-separate-process-per-connection">Why
+                  threads, and not a separate process per connection?</a></li>
+              <li><a href="#the-fd-table-being-shared-the-week-2-ownership-question"
+                  id="toc-the-fd-table-being-shared-the-week-2-ownership-question">The fd
+                  table being shared: the Week 2 ownership question</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#part-5-why-a-stuck-thread-wont-freeze-the-rest-of-pulse"
+          id="toc-part-5-why-a-stuck-thread-wont-freeze-the-rest-of-pulse">Part 5
+          — Why a stuck thread won’t freeze the rest of Pulse</a>
+        <ul>
+          <li><a href="#concurrent-vs-parallel-and-which-one-pulse-actually-needs"
+              id="toc-concurrent-vs-parallel-and-which-one-pulse-actually-needs">Concurrent
+              vs parallel, and which one Pulse actually needs</a></li>
+          <li><a href="#context-switches-the-cost-youll-measure-in-week-4"
+              id="toc-context-switches-the-cost-youll-measure-in-week-4">Context
+              switches: the cost you’ll measure in Week 4</a></li>
+        </ul>
+      </li>
+      <li><a href="#part-6-seeing-pulses-threads-from-the-terminal"
+          id="toc-part-6-seeing-pulses-threads-from-the-terminal">Part 6 — Seeing
+          Pulse’s threads from the terminal</a></li>
+      <li><a href="#part-7-stdthreadhandle_client-client_fd-word-by-word"
+          id="toc-part-7-stdthreadhandle_client-client_fd-word-by-word">Part 7 —
+          <code>std::thread(handle_client, client_fd)</code>, word by word</a>
+        <ul>
+          <li><a href="#include-thread-and--pthread"
+              id="toc-include-thread-and--pthread"><code>#include &lt;thread&gt;</code>
+              and <code>-pthread</code></a></li>
+          <li><a href="#stdthread-what_to_run-arguments..."
+              id="toc-stdthread-what_to_run-arguments..."><code>std::thread( WHAT_TO_RUN, ARGUMENTS... )</code></a></li>
+          <li><a href="#arguments-are-copied-into-the-new-thread-and-why-thats-good-for-pulse"
+              id="toc-arguments-are-copied-into-the-new-thread-and-why-thats-good-for-pulse">Arguments
+              are COPIED into the new thread, and why that’s good for Pulse</a></li>
+          <li><a href="#the-classic-pulse-bug-this-protects-you-from-lambdas-capturing-by-reference"
+              id="toc-the-classic-pulse-bug-this-protects-you-from-lambdas-capturing-by-reference">The
+              classic Pulse bug this protects you from: lambdas capturing by
+              reference</a></li>
+          <li><a href="#stdthread-is-move-only-exactly-like-your-socket"
+              id="toc-stdthread-is-move-only-exactly-like-your-socket"><code>std::thread</code>
+              is move-only, exactly like your <code>Socket</code></a></li>
+          <li><a href="#small-helpers-youll-use-in-experiments" id="toc-small-helpers-youll-use-in-experiments">Small
+              helpers you’ll use
+              in experiments</a></li>
+        </ul>
+      </li>
+      <li><a href="#part-8-why-.detach-not-.join" id="toc-part-8-why-.detach-not-.join">Part 8 — Why
+          <code>.detach()</code>, not <code>.join()</code>?</a>
+        <ul>
+          <li><a href="#try-join-in-pulses-accept-loop-and-you-get-month-1-back"
+              id="toc-try-join-in-pulses-accept-loop-and-you-get-month-1-back">Try
+              <code>join()</code> in Pulse’s accept loop, and you get Month 1
+              back</a></li>
+          <li><a href="#the-specs-question-why-doesnt-t1.join-t2.join-make-it-single-threaded"
+              id="toc-the-specs-question-why-doesnt-t1.join-t2.join-make-it-single-threaded">The
+              spec’s question: “Why doesn’t <code>t1.join(); t2.join();</code> make it
+              single-threaded?”</a></li>
+          <li><a href="#forgetting-both-the-whole-program-crashes"
+              id="toc-forgetting-both-the-whole-program-crashes">Forgetting both: the
+              whole program crashes</a></li>
+          <li><a href="#two-things-to-know-about-detach-before-week-2"
+              id="toc-two-things-to-know-about-detach-before-week-2">Two things to
+              know about <code>detach()</code> before Week 2</a></li>
+        </ul>
+      </li>
+      <li><a href="#part-9-what-pulses-log-output-will-look-like"
+          id="toc-part-9-what-pulses-log-output-will-look-like">Part 9 — What
+          Pulse’s log output will look like</a></li>
+      <li><a href="#part-10-this-weeks-experiments-and-the-pulse-question-each-answers"
+          id="toc-part-10-this-weeks-experiments-and-the-pulse-question-each-answers">Part
+          10 — This week’s experiments, and the Pulse question each
+          answers</a></li>
+      <li><a href="#part-11-concept-check" id="toc-part-11-concept-check">Part
+          11 — Concept check</a></li>
+    </ul>
+  </nav>
+  <h1 id="how-to-use-this-document">How to use this document</h1>
+  <p>Week 2 will add essentially one line to
+    <code>TcpServer::run()</code>. The spec’s version:
+  </p>
+  <div class="sourceCode" id="cb1">
+    <pre
+      class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>thread<span class="op">(</span>handle_client<span class="op">,</span> client_fd<span class="op">).</span>detach<span class="op">();</span></span></code></pre>
+  </div>
+  <p><strong>This entire document exists to explain what that one line
+      creates, why it fixes Pulse, and what new problems it brings.</strong>
+    Every part starts from Pulse: your <code>tcp_server.cpp</code>, your
+    benchmark numbers, your server running. The general OS/C++ concept comes
+    <em>after</em>, as the explanation of what you just saw.
+  </p>
+  <p>Every output in this doc is real. It was produced by building and
+    running <strong>your actual Month 1 Pulse</strong> (or a tiny demo where
+    Pulse can’t show it yet) in your WSL2 Ubuntu. Your PIDs and addresses
+    will differ; the patterns won’t.</p>
+  <table>
+    <colgroup>
+      <col style="width: 50%" />
+      <col style="width: 50%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Part</th>
+        <th>The Pulse question it answers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>What exactly goes wrong in Month 1 Pulse? (run it yourself)</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><em>Where</em> in the code is Pulse stuck, and what is a “thread” in
+          those terms?</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>What will Pulse look like with threads?</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Which of Pulse’s variables will threads share, and which does each
+          get its own copy of?</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Why doesn’t a stuck thread freeze the rest of Pulse?</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>How will you <em>see</em> Pulse’s threads from the terminal?</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>What does <code>std::thread(handle_client, client_fd)</code>
+          actually mean, word by word?</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Why <code>.detach()</code> and not <code>.join()</code>?</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>What will Pulse’s log output look like with threads?</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>This week’s experiments, and which Pulse question each one
+          answers</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Concept check</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <h1 id="part-1-the-problem-on-your-own-server">Part 1 — The problem, on
+    your own server</h1>
+  <p>Your Month 1 benchmark said: <em>CPU near 0–12% of one core, memory
+      flat, “not CPU-bound.”</em> Here’s what that means in practice. Run this
+    yourself; it’s the “before” picture for all of Month 2.</p>
+  <div class="example">
+    <p><b>Real run: one silent client freezes Pulse for everyone.</b></p>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># terminal 1</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./build/pulse</span> 8080</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># terminal 2: a client that connects and then sends NOTHING (holds the connection open)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> localhost 8080</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># terminal 3: a normal, perfectly valid request, given 5 seconds to finish</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> <span class="at">-m</span> 5 <span class="at">-w</span> <span class="st">&quot;http_code=%{http_code}\n&quot;</span> localhost:8080/hello</span></code></pre>
+    </div>
+    <p>What actually happened (port 8090 in this run):</p>
+    <pre><code>curl result: http_code=000
+curl exit code: 28
+curl took: 5.040167710 s</code></pre>
+    <p><code>/hello</code> normally answers in about <b>0.010 s</b>. Here
+      curl waited the full 5 seconds and gave up (<code>exit code 28</code> =
+      curl’s “timeout”; <code>http_code=000</code> = no response at all). As
+      soon as the silent <code>nc</code> was closed, the same
+      <code>curl</code> got <code>Hello from Pulse!</code> in 0.010 s.
+    </p>
+  </div>
+  <p>Now, <em>while</em> curl was stuck, here’s what Pulse and the kernel
+    looked like:</p>
+  <div class="example">
+    <p><b>Real run: looking inside, while curl waits.</b></p>
+    <pre><code>$ grep Threads /proc/485/status
+Threads:    1</code></pre>
+    <p>Pulse has exactly <b>one</b> thread. That’s the root of everything
+      below.</p>
+    <pre><code>$ ps -L -o tid,stat,wchan:22,comm -p 485
+    TID STAT WCHAN                  COMMAND
+    485 S+   wait_woken             pulse</code></pre>
+    <p>That one thread is in state <code>S</code> = <b>sleeping</b>, and
+      <code>WCHAN</code> (“wait channel”: the kernel function it’s parked in)
+      is <code>wait_woken</code>, i.e. waiting for an event, here “data to
+      arrive on a socket”. It isn’t using any CPU. It’s waiting for the silent
+      client to send something, which it never will.
+    </p>
+    <pre><code>$ ss -ltn &quot;sport = :8090&quot;
+State  Recv-Q Send-Q Local Address:Port Peer Address:Port
+LISTEN 1      128          0.0.0.0:8090      0.0.0.0:*
+
+$ ss -tn state established &quot;sport = :8090&quot;
+Recv-Q Send-Q Local Address:Port Peer Address:Port
+0      0          127.0.0.1:8090    127.0.0.1:44922     ← the silent nc client
+83     0          127.0.0.1:8090    127.0.0.1:44936     ← curl</code></pre>
+    This is the most revealing output in this whole doc:
+    <ul>
+      <li>
+        <b>LISTEN <code>Recv-Q 1</code></b>: on a listening socket, Recv-Q is
+        the number of connections the kernel has <i>fully finished</i> the TCP
+        handshake for, sitting in the <code>listen()</code> backlog queue
+        waiting for Pulse to call <code>accept()</code>. That <code>1</code> is
+        curl. (The <code>128</code> is your backlog size from
+        <code>TcpServer</code>’s constructor.)
+      </li>
+      <li>
+        <b>curl’s connection, <code>Recv-Q 83</code></b>: curl has already sent
+        its whole request. All <b>83 bytes</b> of <code>GET /hello HTTP/1.1
+…</code> are sitting in the kernel’s receive buffer for that connection.
+        Pulse just never read them.
+      </li>
+      <li>
+        <b>nc’s connection, <code>Recv-Q 0</code></b>: nothing sent, so nothing
+        to read. This is the connection Pulse’s one thread is stuck
+        <code>read()</code>ing.
+      </li>
+    </ul>
+  </div>
+  <p><strong>So the kernel did all its work for curl.</strong> The
+    handshake was done, the request bytes had arrived, and everything was
+    ready. Pulse never got to it, because its one and only thread was asleep
+    inside <code>read()</code> for a <em>different</em> client. That’s what
+    “not CPU-bound” looks like in practice: no shortage of CPU, just a
+    shortage of <em>places to wait from</em>.</p>
+  <div class="analogy">
+    <p><b>Analogy:</b> a restaurant with one waiter. The waiter has gone to
+      table 1, and table 1 says “hmm, give me a minute to decide…” and then
+      just sits there. The waiter, by the rules of this restaurant, stands at
+      table 1 until they order. Meanwhile table 2 has already written their
+      order on a slip and left it on the counter (curl’s 83 bytes in Recv-Q).
+      The kitchen is idle, the order is ready, and nobody picks it up. The fix
+      isn’t a faster waiter. It’s a second waiter.</p>
+  </div>
+  <hr />
+  <h1 id="part-2-where-is-pulse-stuck-stack-and-program-counter-in-your-code">Part
+    2 — <em>Where</em> is Pulse stuck? (stack and program counter, in your
+    code)</h1>
+  <p>“Pulse’s thread is stuck in <code>read()</code>” can be made exact. A
+    debugger can pause a running program and print the chain of function
+    calls it’s currently inside. Here’s Pulse, paused while stuck on the
+    silent client:</p>
+  <div class="example">
+    <p><b>Real run: <code>gdb</code> backtrace of Month 1 Pulse, stuck on a
+        silent client.</b></p>
+    <pre><code>#0  __internal_syscall_cancel (a1=4, a2=140737488343104, a3=4096, ...) at ./nptl/cancellation.c:40
+#1  __syscall_cancel (a1=4, a2=140737488343104, a3=4096, ...)          at ./nptl/cancellation.c:75
+#2  __GI___libc_read (fd=..., buf=..., nbytes=...)                      at ../sysdeps/unix/sysv/linux/read.c:26
+#3  TcpServer::handle_client (this=0x7fffffffe130, client=...)          at src/tcp_server.cpp:232
+#4  TcpServer::run (this=0x7fffffffe130)                                 at src/tcp_server.cpp:167
+#5  main (argc=2, argv=0x7fffffffe2c8)                                   at src/main.cpp:126
+
+  Id   Target Id                               Frame
+* 1    Thread 0x7ffff7f7f780 (LWP 456) &quot;pulse&quot; __internal_syscall_cancel (...)</code></pre>
+    <p>Read it bottom-up. That’s the order the calls happened in:</p>
+    <ul>
+      <li>
+        <b>#5 <code>main</code></b>, at <code>main.cpp:126</code>: that’s the
+        line where <code>main</code> calls <code>server.run()</code>.
+      </li>
+      <li>
+        <b>#4 <code>TcpServer::run</code></b>, at
+        <code>tcp_server.cpp:167</code>: the
+        <code>handle_client(Socket(client_fd));</code> line inside the
+        <code>for(;;)</code> accept loop.
+      </li>
+      <li>
+        <b>#3 <code>TcpServer::handle_client</code></b>, at
+        <code>tcp_server.cpp:232</code>: the <code>::read(client.fd(), chunk,
+sizeof(chunk))</code> line.
+      </li>
+      <li>
+        <b>#2–#0</b>: inside glibc’s <code>read()</code>, which is making the
+        actual system call. <code>a1=4</code> is the fd (the client socket; fd 3
+        is the listening socket), <code>a3=4096</code> is
+        <code>sizeof(chunk)</code>. Those are your arguments.
+      </li>
+      <li>
+        The last line, <code>info threads</code>: <b>one</b> thread in the whole
+        program.
+      </li>
+    </ul>
+  </div>
+  <p>That printout <em>is</em> the two things a “thread” is made of:</p>
+  <p><strong>1. The stack.</strong> Each line
+    (<code>#0</code>…<code>#5</code>) is a <strong>stack frame</strong>: the
+    memory for one function call that hasn’t returned yet. Frame #3 holds
+    <code>handle_client</code>’s local variables (<code>raw_request</code>,
+    <code>chunk[4096]</code>, <code>response</code>), plus a note saying
+    “when you return, go back to <code>run()</code> at line 167.” Frame #4
+    holds <code>run()</code>’s locals (<code>client_addr</code>,
+    <code>client_fd</code>). When a function returns, its frame is thrown
+    away. That’s why locals disappear when a function ends. This chain of
+    frames is called <strong>the stack</strong>.
+  </p>
+  <p><strong>2. The program counter.</strong> Frame #0 is “the exact
+    instruction being executed right now.” The CPU keeps that address in a
+    register called the <strong>program counter</strong> (on x86-64,
+    <code>rip</code>). Together with a few dozen other
+    <strong>registers</strong> (the CPU’s own tiny, fastest storage, holding
+    values it’s working on right now), that’s the CPU’s entire notion of
+    “where am I and what am I holding.”
+  </p>
+  <p><strong>So a thread is: one position in the code (program counter +
+      registers) and one stack of “how did I get here” frames.</strong> That’s
+    all it is.</p>
+  <p>Now the problem from Part 1 is easy to state precisely:</p>
+  <blockquote>
+    <p>Pulse has <strong>one</strong> program counter and
+      <strong>one</strong> stack. Right now they say “inside
+      <code>read()</code>, inside <code>handle_client</code> for the silent
+      client.” For Pulse to <em>also</em> be inside <code>accept()</code> for
+      curl, or inside <code>handle_client</code> for curl, it needs a
+      <strong>second</strong> program counter and a <strong>second</strong>
+      stack, at the same time. That is a second thread.
+    </p>
+  </blockquote>
+  <div class="analogy">
+    <p><b>Analogy:</b> you’re following a recipe with one finger on the
+      current step (program counter), and a pile of sticky notes like “after
+      making the sauce, return to step 6” (the stack). One finger can only be
+      on one step. If the step says “wait for the dough to rise”
+      (<code>read()</code>), you’re stuck there. A second cook with their own
+      finger and their own sticky notes can be on a completely different
+      recipe at the same time, in the same kitchen.</p>
+  </div>
+  <hr />
+  <h1 id="part-3-what-pulse-will-look-like-with-threads">Part 3 — What
+    Pulse will look like with threads</h1>
+  <p>Today (Month 1), one thread does everything, in order:</p>
+  <pre><code>main thread:  main → run → accept → handle_client(A) → read ... (stuck while A is slow)
+                                  → handle_client(B) only AFTER A is completely finished</code></pre>
+  <p>After Week 2: the main thread only accepts, and every connection gets
+    its own thread, with its own program counter and its own stack:</p>
+  <pre><code>main thread:   main → run → accept()                       ← always back here, ready for the next client
+thread A:      handle_client(silent nc) → read()           ← stuck, asleep. Only affects A.
+thread B:      handle_client(curl /hello) → write()        ← finishes in ~0.01 s, independently of A</code></pre>
+  <p>If you ran the same gdb command on Week 2 Pulse during the same
+    experiment, <code>info threads</code> would list <strong>three</strong>
+    threads, and each would have its own backtrace like the one in Part 2.
+    Thread A’s backtrace would end in <code>read()</code>. The main thread’s
+    would end in <code>accept()</code>.</p>
+  <p>The key fact that makes this work: <strong><code>handle_client</code>
+      barely has to change.</strong> Each call to it, in each thread, gets its
+    own stack frame on its own stack, so each connection automatically gets
+    its own <code>raw_request</code>, its own <code>chunk[4096]</code>, its
+    own <code>response</code>. Two threads running
+    <code>handle_client</code> at the same moment don’t collide on those,
+    any more than two recursive calls of the same function would.
+  </p>
+  <p>But not <em>everything</em> <code>handle_client</code> touches lives
+    on its own stack. That’s Part 4.</p>
+  <hr />
+  <h1 id="part-4-what-pulses-threads-will-share-and-what-each-owns">Part 4
+    — What Pulse’s threads will share, and what each owns</h1>
+  <h2 id="start-here-the-simple-version">Start here: the simple
+    version</h2>
+  <p>Forget Pulse for a minute. This whole part comes down to <strong>one
+      rule</strong>, and you can see it with two plain <code>int</code>s.</p>
+  <h3 id="step-1-notebook-vs-whiteboard">Step 1: notebook vs
+    whiteboard</h3>
+  <p>Picture a classroom:</p>
+  <ul>
+    <li>Every student has their <strong>own notebook</strong>. What you
+      write in your notebook, nobody else sees or changes.</li>
+    <li>There is <strong>one whiteboard</strong> at the front. Everybody
+      sees it. If one student writes on it, every other student sees the
+      change.</li>
+  </ul>
+  <p>In a program with threads:</p>
+  <ul>
+    <li>Each <strong>thread</strong> is a student.</li>
+    <li>A thread’s <strong>stack</strong> is its notebook. That’s where the
+      <strong>local variables</strong> of the functions it’s running go:
+      anything declared <em>inside</em> a function.
+    </li>
+    <li><strong>Global variables</strong> (declared <em>outside</em> any
+      function), the <strong>heap</strong> (anything made with
+      <code>new</code>), and the <strong>open files/sockets</strong> are the
+      whiteboard. There is only one of each, for all threads.
+    </li>
+  </ul>
+  <h3 id="step-2-see-it-with-two-ints">Step 2: see it with two ints</h3>
+  <div class="example">
+    <p><b>Real run: a local <code>int</code> vs a global <code>int</code>,
+        with two threads.</b></p>
+    <div class="sourceCode" id="cb10">
+      <pre
+        class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> total <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>   <span class="co">// global: declared OUTSIDE any function   → whiteboard</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> count_three<span class="op">(</span><span class="at">const</span> <span class="dt">char</span><span class="op">*</span> who<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> mine <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>   <span class="co">// local: declared INSIDE the function → notebook</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">3</span><span class="op">;</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        mine<span class="op">++;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        total<span class="op">++;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">std::</span>printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">%s</span><span class="st">: mine = </span><span class="sc">%d</span><span class="st">   total = </span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span> who<span class="op">,</span> mine<span class="op">,</span> total<span class="op">);</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>thread t1<span class="op">(</span>count_three<span class="op">,</span> <span class="st">&quot;thread1&quot;</span><span class="op">);</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    t1<span class="op">.</span>join<span class="op">();</span>                               <span class="co">// let thread1 finish first, so the output is easy to read</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>thread t2<span class="op">(</span>count_three<span class="op">,</span> <span class="st">&quot;thread2&quot;</span><span class="op">);</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    t2<span class="op">.</span>join<span class="op">();</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+    </div>
+    <p>Actual output:</p>
+    <pre><code>thread1: mine = 1   total = 1
+thread1: mine = 2   total = 2
+thread1: mine = 3   total = 3
+thread2: mine = 1   total = 4      ← mine starts again from 1. total does NOT.
+thread2: mine = 2   total = 5
+thread2: mine = 3   total = 6</code></pre>
+    <p>Both threads ran the <b>same function</b> with the <b>same variable
+        names</b>. But:</p>
+    <ul>
+      <li>
+        <b><code>mine</code></b> started back at <code>1</code> for thread2.
+        thread2 got its <b>own, fresh</b> <code>mine</code> in its own notebook
+        (stack). thread1’s counting never touched it.
+      </li>
+      <li>
+        <b><code>total</code></b> carried on from <code>3</code> to
+        <code>4</code>. There is only <b>one</b> <code>total</code>, on the
+        whiteboard, and both threads wrote to that same one.
+      </li>
+    </ul>
+    <p>(The <code>join()</code> between the threads is only there to keep
+      the output tidy, one thread after the other. If both threads ran at the
+      same time and both did <code>total++</code>, they could get in each
+      other’s way. That’s exactly the Week 3 problem. For now we’re only
+      asking <i>where</i> things live.)</p>
+  </div>
+  <h3 id="step-3-the-same-rule-applied-to-pulse">Step 3: the same rule,
+    applied to Pulse</h3>
+  <p>Now replace <code>count_three</code> with <code>handle_client</code>,
+    and two students with two clients. In Week 2, two clients connected at
+    the same time means two threads, each running
+    <code>handle_client</code>:
+  </p>
+  <pre><code>   Thread A&#39;s notebook (stack)              Thread B&#39;s notebook (stack)
+   handling the silent nc client            handling curl /hello
+  +------------------------------+         +------------------------------+
+  | handle_client&#39;s locals:      |         | handle_client&#39;s locals:      |
+  |   raw_request = &quot;&quot;           |         |   raw_request = &quot;GET /hello…&quot;|
+  |   chunk[4096]                |         |   chunk[4096]                |
+  |   response                   |         |   response                   |
+  |   client  → fd 4             |         |   client  → fd 5             |
+  +------------------------------+         +------------------------------+
+                 \                                      /
+                  \                                    /
+                   v                                  v
+  +----------------------------------------------------------------------+
+  |                    THE WHITEBOARD: one copy, shared                   |
+  |                                                                      |
+  |   the TcpServer object  →  router_ (the route table), port_,          |
+  |                            listen_socket_                             |
+  |   std::cout  (the terminal everyone&#39;s log lines go to)               |
+  |   the fd table:  3 = listening socket, 4 = nc&#39;s connection,           |
+  |                  5 = curl&#39;s connection                               |
+  |   (Week 3) total_requests counter                                    |
+  +----------------------------------------------------------------------+</code></pre>
+  <p>Read it the same way as the <code>int</code> demo:</p>
+  <ul>
+    <li><strong><code>raw_request</code>, <code>chunk</code>,
+        <code>response</code></strong> are like <code>mine</code>. They’re
+      declared <em>inside</em> <code>handle_client</code>, so each thread gets
+      its own. Thread A’s <code>raw_request</code> being empty (nc sent
+      nothing) has <strong>no effect</strong> on thread B’s
+      <code>raw_request</code>, which holds curl’s request. That’s why
+      <code>handle_client</code> barely needs to change for threads: its
+      working data is already private.
+    </li>
+    <li><strong><code>router_</code></strong> is like <code>total</code>.
+      There’s only one <code>TcpServer</code> object (created once in
+      <code>main()</code>), so there’s one <code>router_</code>, and both
+      threads use that same one to look up routes. That’s fine, because both
+      only <em>read</em> it. Nobody changes the route table while the server
+      is running.
+    </li>
+    <li><strong><code>std::cout</code></strong> is like <code>total</code>.
+      One terminal, shared. That’s why log lines from two connections can mix
+      together (Part 9).</li>
+    <li><strong>The fd table</strong> is like <code>total</code> too. fd
+      <code>4</code> means “nc’s connection” for <em>every</em> thread, not
+      just thread A. If any thread closes fd 4, it’s closed for all of them.
+      That’s the ownership question at the end of this part.
+    </li>
+  </ul>
+  <h3 id="step-4-the-rule-in-one-sentence">Step 4: the rule in one
+    sentence</h3>
+  <blockquote>
+    <p><strong>Declared inside the function the thread is running → that
+        thread’s own private copy. Everything else → one shared copy that every
+        thread sees.</strong></p>
+  </blockquote>
+  <p>There’s one catch to keep in mind. A private variable can still
+    <em>point at</em> something shared. Thread A’s <code>client</code> is
+    its own <code>Socket</code> object, private to it, but the fd number
+    inside it (<code>4</code>) refers to an entry in the shared fd table. A
+    private notebook can still have “see the whiteboard, line 4” written in
+    it.
+  </p>
+  <hr />
+  <h2 id="the-full-list-for-reference">The full list, for reference</h2>
+  <p>Same rule, now covering every variable Pulse touches:</p>
+  <table>
+    <colgroup>
+      <col style="width: 33%" />
+      <col style="width: 33%" />
+      <col style="width: 33%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>In Pulse</th>
+        <th>Where it lives</th>
+        <th>Week 2 consequence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>raw_request</code>, <code>chunk</code>, <code>response</code>,
+          <code>result</code> in <code>handle_client</code>
+        </td>
+        <td>That call’s stack frame → <strong>own copy per thread</strong></td>
+        <td>Safe. Every connection has its own.</td>
+      </tr>
+      <tr>
+        <td><code>client_addr</code>, <code>client_fd</code> in
+          <code>run()</code>
+        </td>
+        <td>The <strong>main</strong> thread’s stack</td>
+        <td>Overwritten by every new <code>accept()</code>. A worker must not
+          depend on the main thread’s variable staying the same (Part 7 shows the
+          bug).</td>
+      </tr>
+      <tr>
+        <td><code>TcpServer server</code> object (<code>listen_socket_</code>,
+          <code>port_</code>, <code>router_</code>)
+        </td>
+        <td>Constructed in <code>main()</code>, so in the <strong>main thread’s
+            stack frame</strong>, reached by every thread through <code>this</code>
+          (<code>this=0x7fffffffe130</code> in the gdb output)</td>
+        <td><strong>Shared.</strong> Every thread’s <code>handle_client</code>
+          reads the <em>same</em> <code>router_</code>. Fine as long as nobody
+          modifies it (Week 3 asks why).</td>
+      </tr>
+      <tr>
+        <td>Anything <code>new</code>’d / heap (the contents of a
+          <code>std::string</code>, <code>std::vector</code>)
+        </td>
+        <td>The heap: one heap for the whole process</td>
+        <td>Shared, if two threads have a pointer to the same object.</td>
+      </tr>
+      <tr>
+        <td>Globals and <code>static</code> variables</td>
+        <td>One copy for the whole process</td>
+        <td><strong>Shared.</strong> Week 3’s <code>total_requests</code>
+          counter will be one, and it’s where race conditions come from.</td>
+      </tr>
+      <tr>
+        <td><code>std::cout</code></td>
+        <td>A global object</td>
+        <td><strong>Shared.</strong> Log lines from different connections will
+          mix (Part 9).</td>
+      </tr>
+      <tr>
+        <td>The <strong>file descriptor table</strong> (fd 3 = listen socket, fd
+          4, 5… = clients)</td>
+        <td>Kernel, one table per process</td>
+        <td><strong>Shared.</strong> fd 4 means the same connection in every
+          thread. This is where the Week 2 “who owns <code>client_fd</code>?”
+          question comes from (below).</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="example">
+    <p><b>Deeper proof (optional): the actual memory addresses.</b> Step 2
+      showed sharing through <i>values</i>. This shows it through
+      <i>addresses</i>: where each variable physically sits in memory.
+    </p>
+    <div class="sourceCode" id="cb13">
+      <pre
+        class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> global_value <span class="op">=</span> <span class="dv">42</span><span class="op">;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> show<span class="op">(</span><span class="at">const</span> <span class="dt">char</span><span class="op">*</span> who<span class="op">,</span> <span class="dt">int</span><span class="op">*</span> heap_ptr<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> local <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>   <span class="co">// lives on THIS thread&#39;s stack</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>printf<span class="op">(</span><span class="st">&quot;</span><span class="sc">%-8s</span><span class="st"> pid=</span><span class="sc">%d</span><span class="st"> tid=</span><span class="sc">%ld</span><span class="st">  &amp;local=</span><span class="sc">%p</span><span class="st">  &amp;global=</span><span class="sc">%p</span><span class="st">  heap=</span><span class="sc">%p\n</span><span class="st">&quot;</span><span class="op">,</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                who<span class="op">,</span> getpid<span class="op">(),</span> <span class="op">(</span><span class="dt">long</span><span class="op">)</span>syscall<span class="op">(</span>SYS_gettid<span class="op">),</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                <span class="op">(</span><span class="dt">void</span><span class="op">*)&amp;</span>local<span class="op">,</span> <span class="op">(</span><span class="dt">void</span><span class="op">*)&amp;</span>global_value<span class="op">,</span> <span class="op">(</span><span class="dt">void</span><span class="op">*)</span>heap_ptr<span class="op">);</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span><span class="op">*</span> heap_ptr <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">(</span><span class="dv">7</span><span class="op">);</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    show<span class="op">(</span><span class="st">&quot;main&quot;</span><span class="op">,</span> heap_ptr<span class="op">);</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>thread t1<span class="op">(</span>show<span class="op">,</span> <span class="st">&quot;thread1&quot;</span><span class="op">,</span> heap_ptr<span class="op">);</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>thread t2<span class="op">(</span>show<span class="op">,</span> <span class="st">&quot;thread2&quot;</span><span class="op">,</span> heap_ptr<span class="op">);</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    t1<span class="op">.</span>join<span class="op">();</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    t2<span class="op">.</span>join<span class="op">();</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">delete</span> heap_ptr<span class="op">;</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+    </div>
+    <p>Actual output:</p>
+    <pre><code>main     pid=542 tid=542  &amp;local=0x7ffeaa90fe64  &amp;global=0x5664aa093010  heap=0x5664ab985020
+thread1  pid=542 tid=543  &amp;local=0x73a1d8bfece4  &amp;global=0x5664aa093010  heap=0x5664ab985020
+thread2  pid=542 tid=544  &amp;local=0x73a1d83fdce4  &amp;global=0x5664aa093010  heap=0x5664ab985020</code></pre>
+    <ul>
+      <li>
+        <b>Same <code>pid</code></b>, different <b><code>tid</code></b>: one
+        process, three threads.
+      </li>
+      <li>
+        <b><code>&amp;global</code> and <code>heap</code> identical</b>: shared.
+        All three see the exact same bytes.
+      </li>
+      <li>
+        <b><code>&amp;local</code> different in every thread</b>: same function,
+        same variable name, three separate stacks. In Pulse terms: three
+        connections, three separate <code>raw_request</code>s.
+      </li>
+      <li>
+        <code>0x73a1d8bfece4 − 0x73a1d83fdce4 = 0x801000</code> = <b>8 MiB + 4
+          KiB</b>. Each thread gets an 8 MiB stack (the Linux default;
+        <code>ulimit -s</code> prints <code>8192</code> KiB), plus one 4 KiB
+        “guard page” with no access allowed, so that a stack overflow crashes
+        immediately instead of overwriting the next thread’s stack.
+      </li>
+    </ul>
+  </div>
+  <p><strong>Why the 8 MiB matters for Pulse:</strong>
+    thread-per-connection means <strong>one 8 MiB stack reserved per open
+      connection</strong>. 100 connections ≈ 800 MiB of reserved address
+    space; your WSL2 VM has 3.5 GiB of RAM. It isn’t as bad as it sounds,
+    because the kernel only gives a stack real RAM for the parts that are
+    actually touched (<code>handle_client</code> uses a few KiB). But it’s
+    exactly the “why can’t threads scale forever” question that <strong>Week
+      4</strong> measures. Your Month 1 baseline RSS of <strong>3840
+      KB</strong> is the number to compare against.</p>
+  <h3 id="why-threads-and-not-a-separate-process-per-connection">Why
+    threads, and not a separate process per connection?</h3>
+  <p>Pulse <em>could</em> call <code>fork()</code> per connection: a whole
+    new process, which is what early Apache did. The difference is exactly
+    the shared/private split above:</p>
+  <div class="example">
+    <p><b>Real run: a child process vs a thread changing the same
+        global.</b></p>
+    <div class="sourceCode" id="cb15">
+      <pre
+        class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">pid_t</span> pid <span class="op">=</span> fork<span class="op">();</span>                          <span class="co">// new PROCESS (gets its own copy of all memory)</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>pid <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span> counter <span class="op">=</span> <span class="dv">100</span><span class="op">;</span> <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span> <span class="op">}</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    waitpid<span class="op">(</span>pid<span class="op">,</span> <span class="kw">nullptr</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>printf<span class="op">(</span><span class="st">&quot;after child process set it: counter = </span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span> counter<span class="op">);</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>thread t<span class="op">([]</span> <span class="op">{</span> counter <span class="op">=</span> <span class="dv">100</span><span class="op">;</span> <span class="op">});</span>        <span class="co">// new THREAD (same memory)</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    t<span class="op">.</span>join<span class="op">();</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>printf<span class="op">(</span><span class="st">&quot;after thread set it:        counter = </span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span> counter<span class="op">);</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+    </div>
+    <pre><code>after child process set it: counter = 0
+after thread set it:        counter = 100</code></pre>
+    <p>A child process changes only <i>its own copy</i>. With
+      fork-per-connection, Week 3’s shared request counter couldn’t simply be
+      a variable. Every connection would be counting in its own private copy.
+      Threads share by default: cheaper, simpler, and also the source of every
+      Week 3 bug.</p>
+  </div>
+  <h3 id="the-fd-table-being-shared-the-week-2-ownership-question">The fd
+    table being shared: the Week 2 ownership question</h3>
+  <p>Today, in <code>run()</code>:</p>
+  <div class="sourceCode" id="cb17">
+    <pre
+      class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> client_fd <span class="op">=</span> <span class="op">::</span>accept<span class="op">(...);</span>        <span class="co">// say it returns 4</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>handle_client<span class="op">(</span>Socket<span class="op">(</span>client_fd<span class="op">));</span>     <span class="co">// Socket&#39;s destructor close()s fd 4 when handle_client returns</span></span></code></pre>
+  </div>
+  <p>With threads, fd <code>4</code> is handed to a worker thread, and the
+    fd table is shared, so <code>4</code> means <em>the same connection</em>
+    in both threads. Now imagine the <strong>main</strong> thread
+    accidentally closes it (for example, a <code>Socket</code> object in the
+    accept loop goes out of scope and its destructor runs):</p>
+  <ol type="1">
+    <li>The worker’s next <code>read(4, ...)</code> fails, because its
+      connection is closed out from under it.</li>
+    <li>Worse: the next <code>accept()</code> reuses the lowest free number,
+      so the <em>next</em> client also gets fd <strong>4</strong>. The worker
+      is now reading <strong>someone else’s request</strong> and may write its
+      response to the wrong client.</li>
+  </ol>
+  <p>That’s why the spec asks, before any Week 2 code: <strong>“Who owns
+      <code>client_fd</code>?”</strong> Your <code>Socket</code> class (RAII,
+    move-only, closes in its destructor) is precisely the tool for making
+    ownership explicit. <em>How</em> to hand it to a thread is Week 2’s job.
+    Part 7 gives you the pieces.</p>
+  <hr />
+  <h1 id="part-5-why-a-stuck-thread-wont-freeze-the-rest-of-pulse">Part 5
+    — Why a stuck thread won’t freeze the rest of Pulse</h1>
+  <p>Back to Part 1’s output: Pulse’s thread was <code>S</code> (sleeping)
+    in <code>wait_woken</code>. What does sleeping mean to the kernel?</p>
+  <p>Your WSL2 VM has <strong>12 CPUs</strong> (<code>nproc</code> → 12).
+    Each CPU runs one thread at a time. The kernel’s
+    <strong>scheduler</strong> decides which thread runs on which CPU. Every
+    thread is, roughly, in one of two states:
+  </p>
+  <table>
+    <colgroup>
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+      <col style="width: 25%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>State</th>
+        <th><code>ps</code> letter</th>
+        <th>Meaning</th>
+        <th>Pulse example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Runnable / running</strong></td>
+        <td><code>R</code></td>
+        <td>Has work to do; on a CPU or waiting for one</td>
+        <td>Parsing a request, building a response</td>
+      </tr>
+      <tr>
+        <td><strong>Sleeping (blocked)</strong></td>
+        <td><code>S</code></td>
+        <td>Waiting for an event. <strong>The scheduler ignores it entirely and
+            it uses 0 CPU</strong> until the event happens.</td>
+        <td>Inside <code>read()</code> waiting for bytes, inside
+          <code>accept()</code> waiting for a client
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>When the silent client’s thread is in <code>read()</code>, it’s
+    <code>S</code>. It isn’t spinning, it isn’t taking a turn, it’s simply
+    parked. The scheduler runs whatever threads <em>are</em> runnable: the
+    main thread returning from <code>accept()</code>, curl’s thread parsing
+    and writing. When bytes finally arrive for the silent client’s socket,
+    the kernel wakes that thread (<code>S</code> → <code>R</code>), and it
+    continues from exactly where frame #0 left off.
+  </p>
+  <blockquote>
+    <p><strong>Blocking I/O + multiple threads = concurrent
+        connections.</strong> Blocking was never the problem in Month 1.
+      Blocking the <em>only</em> thread was.</p>
+  </blockquote>
+  <h3 id="concurrent-vs-parallel-and-which-one-pulse-actually-needs">Concurrent
+    vs parallel, and which one Pulse actually needs</h3>
+  <ul>
+    <li><strong>Concurrent</strong>: several things <em>in progress</em> at
+      overlapping times (they might take turns on one CPU).</li>
+    <li><strong>Parallel</strong>: several things <em>executing at the same
+        instant</em> on different CPUs.</li>
+  </ul>
+  <p>Your benchmark showed Pulse uses ~0–12% of <strong>one</strong> core.
+    Pulse doesn’t need more computing happening at once; it needs
+    <strong>more waiting happening at once</strong>. That’s concurrency.
+    Pulse would get the fix from Part 1 even on a 1-CPU machine, because the
+    slow client’s thread is asleep, not using the CPU.
+  </p>
+  <div class="analogy">
+    <p><b>Analogy:</b> a chess master playing 20 opponents simultaneously
+      walks board to board. 20 games are <b>concurrent</b>, but only one move
+      happens at a time. It works because most of each game is the <i>opponent
+        thinking</i>, and the master doesn’t stand there waiting for it. Pulse’s
+      connections are mostly “the client (network) thinking.”</p>
+  </div>
+  <h3 id="context-switches-the-cost-youll-measure-in-week-4">Context
+    switches: the cost you’ll measure in Week 4</h3>
+  <p>When a CPU stops running thread A and starts thread B, the kernel
+    saves A’s registers/program counter and loads B’s. That’s a
+    <strong>context switch</strong> (the same “save the finger position,
+    resume later” idea from Part 2). It’s cheap, but not free, and with
+    hundreds of Pulse threads there are lots of them. You can count them per
+    process:
+  </p>
+  <div class="sourceCode" id="cb18">
+    <pre
+      class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> ctxt /proc/<span class="op">&lt;</span>pid<span class="op">&gt;</span>/status</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">voluntary_ctxt_switches:</span>     ...   <span class="co"># thread blocked (read/accept/sleep) and gave the CPU up itself</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ex">nonvoluntary_ctxt_switches:</span>  ...   <span class="co"># scheduler took the CPU away because its time slice was up</span></span></code></pre>
+  </div>
+  <p>For Pulse, nearly all will be voluntary: threads blocking in
+    <code>read()</code>/<code>accept()</code>.
+  </p>
+  <hr />
+  <h1 id="part-6-seeing-pulses-threads-from-the-terminal">Part 6 — Seeing
+    Pulse’s threads from the terminal</h1>
+  <p>To Linux, a thread is a <strong>task</strong>, the same kind of thing
+    as a process. The only difference is that it’s created (via the
+    <code>clone()</code> system call) <em>sharing</em> its creator’s memory
+    and fd table instead of getting its own. That’s why the tools show
+    threads almost like processes:
+  </p>
+  <table>
+    <colgroup>
+      <col style="width: 33%" />
+      <col style="width: 33%" />
+      <col style="width: 33%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Meaning</th>
+        <th>Where you see it</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>TID</strong></td>
+        <td>One per thread, unique</td>
+        <td><code>SPID</code> column in <code>ps -T</code>,
+          <code>TID</code>/<code>LWP</code> in <code>ps -L</code>,
+          <code>/proc/&lt;pid&gt;/task/&lt;tid&gt;</code>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>PID</strong> (as <code>ps</code>/<code>getpid()</code> show
+          it)</td>
+        <td>One per process; the same for all its threads; equals the
+          <strong>main</strong> thread’s TID
+        </td>
+        <td><code>PID</code> column. In Part 4’s demo, main had
+          <code>pid=542 tid=542</code>.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>(<code>LWP</code> = “light-weight process,” an old name for a thread
+    that some <code>ps</code> columns still use. Same thing as TID.)</p>
+  <div class="example">
+    <p><b>Real run: what Week 2 Pulse will look like with 3 connections
+        open.</b> Here faked with a tiny program whose 3 extra threads just
+      sleep, since Pulse can’t do it yet:</p>
+    <pre><code>$ ps -T -p 454
+    PID    SPID TTY          TIME CMD
+    454     454 pts/0    00:00:00 sleepers      ← main thread  (in Pulse: the accept loop)
+    454     456 pts/0    00:00:00 sleepers      ← thread 1     (in Pulse: connection 1)
+    454     457 pts/0    00:00:00 sleepers      ← thread 2     (in Pulse: connection 2)
+    454     458 pts/0    00:00:00 sleepers      ← thread 3     (in Pulse: connection 3)
+
+$ grep -E &quot;^(Threads|VmSize|VmRSS)&quot; /proc/454/status
+VmSize:    31484 kB          ← reserved address space: includes 3 × 8 MiB thread stacks
+VmRSS:      3712 kB          ← physical RAM actually used: the stacks are mostly untouched
+Threads:    4</code></pre>
+    <p>Compare Part 1: Month 1 Pulse showed <code>Threads: 1</code>, even
+      with 2 clients connected. In Week 2, that number going up and down as
+      clients connect and disconnect is how you’ll know thread-per-connection
+      is working.</p>
+  </div>
+  <p><strong>Tools you’ll use</strong> (first install the missing two:
+    <code>sudo apt install htop sysstat</code>):
+  </p>
+  <table>
+    <colgroup>
+      <col style="width: 33%" />
+      <col style="width: 33%" />
+      <col style="width: 33%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Command</th>
+        <th>What it shows</th>
+        <th>Use it for</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>grep Threads /proc/&lt;PID&gt;/status</code></td>
+        <td>Thread count, right now</td>
+        <td>Quickest check</td>
+      </tr>
+      <tr>
+        <td><code>ps -T -p &lt;PID&gt;</code></td>
+        <td>One row per thread</td>
+        <td>Snapshot</td>
+      </tr>
+      <tr>
+        <td><code>ps -L -o tid,psr,stat,wchan:20,pcpu,comm -p &lt;PID&gt;</code></td>
+        <td>Per thread: which CPU (<code>PSR</code>), state
+          (<code>R</code>/<code>S</code>), what it’s waiting in
+          (<code>WCHAN</code>), CPU%</td>
+        <td>“Which threads are stuck, and where”</td>
+      </tr>
+      <tr>
+        <td><code>top -H -p &lt;PID&gt;</code></td>
+        <td>Live, per thread; press <code>1</code> for per-CPU bars</td>
+        <td>Watching CPU use move around</td>
+      </tr>
+      <tr>
+        <td><code>htop</code></td>
+        <td>Same, nicer; <code>H</code> toggles threads, <code>F4</code>
+          filters</td>
+        <td>Interactive</td>
+      </tr>
+      <tr>
+        <td><code>pidstat -t -p &lt;PID&gt; 1</code></td>
+        <td>Per-thread CPU, printed every second</td>
+        <td>Pasting into <code>notes.txt</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Reading <code>%CPU</code> with threads:</strong> plain
+    <code>top</code> sums all of a process’s threads, so it can exceed 100%.
+    Four threads, each fully busy on its own CPU = ~400%. That’s “four CPUs’
+    worth,” not a bug. In <code>top -H</code>, each thread row maxes at
+    ~100%.
+  </p>
+  <hr />
+  <h1 id="part-7-stdthreadhandle_client-client_fd-word-by-word">Part 7 —
+    <code>std::thread(handle_client, client_fd)</code>, word by word
+  </h1>
+  <p>Now the C++ side. Take the spec’s Week 2 line apart.</p>
+  <h3 id="include-thread-and--pthread"><code>#include &lt;thread&gt;</code>
+    and <code>-pthread</code></h3>
+  <p><code>std::thread</code> is in the <code>&lt;thread&gt;</code> header
+    (C++11 and later). On Linux it’s built on top of the POSIX threads
+    library (“pthreads”), so compiling needs the <code>-pthread</code> flag:
+    <code>g++ -std=c++17 -Wall -pthread x.cpp</code>. In CMake, Pulse’s
+    <code>CMakeLists.txt</code> will need
+    <code>find_package(Threads REQUIRED)</code> and
+    <code>target_link_libraries(pulse PRIVATE Threads::Threads)</code> in
+    Week 2. Under the hood, constructing a <code>std::thread</code> calls
+    <code>pthread_create</code>, which calls the <code>clone()</code> system
+    call from Part 6.
+  </p>
+  <h3 id="stdthread-what_to_run-arguments..."><code>std::thread( WHAT_TO_RUN, ARGUMENTS... )</code></h3>
+  <ul>
+    <li><strong>First argument:</strong> the thing to run: a function, or a
+      lambda (like the route handlers in your <code>main.cpp</code>).</li>
+    <li><strong>Remaining arguments:</strong> passed to it.
+      <code>std::thread(handle_client, client_fd)</code> means “on a new
+      thread, call <code>handle_client(client_fd)</code>.”
+    </li>
+    <li><strong>It starts running immediately</strong>, inside the
+      constructor. There’s no <code>.start()</code>. By the time the <em>next
+        line</em> of <code>run()</code> executes, the new thread may already be
+      reading, may have finished, or may not have been scheduled yet. You
+      can’t know which, and correct code must not care.</li>
+  </ul>
+  <p>(In real Pulse, <code>handle_client</code> is a <em>member
+      function</em> of <code>TcpServer</code>, so it needs a
+    <code>TcpServer</code> object to be called on. Passing a member function
+    to <code>std::thread</code> has a specific syntax. That’s a Week 2
+    detail; the spec’s line is the concept.)
+  </p>
+  <h3 id="arguments-are-copied-into-the-new-thread-and-why-thats-good-for-pulse">Arguments
+    are COPIED into the new thread, and why that’s good for Pulse</h3>
+  <p><code>std::thread</code> makes its own copy of every argument before
+    the new thread starts. Look at <code>run()</code> and you’ll see why
+    that matters: <code>client_fd</code> is a local of the accept loop. The
+    moment the main thread loops back around and calls <code>accept()</code>
+    again, <code>client_fd</code> gets <strong>overwritten</strong> with the
+    next client’s number. If the worker were still looking at the main
+    thread’s variable, it would suddenly see a different connection. Because
+    <code>std::thread</code> copied the value, the worker has its own
+    <code>4</code>, and the main thread can do whatever it likes with
+    <code>client_fd</code> afterwards.
+  </p>
+  <div class="example">
+    <p><b>Real run: copy vs <code>std::ref</code>.</b></p>
+    <div class="sourceCode" id="cb20">
+      <pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> add_ten<span class="op">(</span><span class="dt">int</span><span class="op">&amp;</span> x<span class="op">)</span>     <span class="op">{</span> x <span class="op">+=</span> <span class="dv">10</span><span class="op">;</span> <span class="op">}</span>   <span class="co">// takes a REFERENCE: changes the caller&#39;s variable</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> add_ten_copy<span class="op">(</span><span class="dt">int</span> x<span class="op">)</span> <span class="op">{</span> x <span class="op">+=</span> <span class="dv">10</span><span class="op">;</span> <span class="op">}</span>   <span class="co">// takes a COPY: changes only its own copy</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> a <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>thread t1<span class="op">(</span>add_ten_copy<span class="op">,</span> a<span class="op">);</span>      t1<span class="op">.</span>join<span class="op">();</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>thread t2<span class="op">(</span>add_ten<span class="op">,</span> <span class="bu">std::</span>ref<span class="op">(</span>b<span class="op">));</span> t2<span class="op">.</span>join<span class="op">();</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>printf<span class="op">(</span><span class="st">&quot;a = </span><span class="sc">%d</span><span class="st"> (copy given to thread)</span><span class="sc">\n</span><span class="st">b = </span><span class="sc">%d</span><span class="st"> (std::ref given to thread)</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> a<span class="op">,</span> b<span class="op">);</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
+    </div>
+    <pre><code>a = 1 (copy given to thread)
+b = 11 (std::ref given to thread)</code></pre>
+    <p><code>std::ref(b)</code> (from <code>&lt;functional&gt;</code>) is
+      how you deliberately say “pass a reference, not a copy.” Writing
+      <code>std::thread t2(add_ten, b);</code> without it <b>won’t
+        compile</b>: <code>std::thread</code> passes its internal copy as a
+      temporary (an rvalue, in your Month 1 &amp;/&amp;&amp; terms), and a
+      non-const <code>int&amp;</code> can’t bind to an rvalue. The library
+      refuses to silently let you modify a copy you’d never see again.
+    </p>
+  </div>
+  <h3 id="the-classic-pulse-bug-this-protects-you-from-lambdas-capturing-by-reference">The
+    classic Pulse bug this protects you from: lambdas capturing by
+    reference</h3>
+  <p>You might be tempted to write the Week 2 line with a lambda:</p>
+  <div class="sourceCode" id="cb22">
+    <pre
+      class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>thread<span class="op">([&amp;]</span> <span class="op">{</span> <span class="co">/* use client_fd */</span> <span class="op">}).</span>detach<span class="op">();</span>   <span class="co">// [&amp;] = capture everything BY REFERENCE</span></span></code></pre>
+  </div>
+  <p><code>[&amp;]</code> means the lambda refers to the <em>main
+      thread’s</em> <code>client_fd</code> variable, not a copy. That’s the
+    exact bug from above: the next <code>accept()</code> overwrites it, and
+    connection 1’s thread may end up serving connection 2’s socket. It works
+    fine when you test with one curl at a time and breaks under load. The
+    safe options are <code>[client_fd]</code> / <code>[=]</code> (capture
+    <strong>by copy</strong>) or passing it as an argument (copied
+    automatically).
+  </p>
+  <table>
+    <colgroup>
+      <col style="width: 33%" />
+      <col style="width: 33%" />
+      <col style="width: 33%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Capture</th>
+        <th>Meaning</th>
+        <th>For a Pulse worker thread</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>[]</code></td>
+        <td>Nothing captured</td>
+        <td>Safe</td>
+      </tr>
+      <tr>
+        <td><code>[client_fd]</code> or <code>[=]</code></td>
+        <td>Captured <strong>by copy</strong>, at the moment the lambda is
+          created</td>
+        <td>Safe: the thread has its own value</td>
+      </tr>
+      <tr>
+        <td><code>[&amp;client_fd]</code> or <code>[&amp;]</code></td>
+        <td>Captured <strong>by reference</strong> to the main thread’s
+          variable</td>
+        <td><strong>Bug</strong>: it changes on the next <code>accept()</code>,
+          and dies when <code>run()</code>’s scope does</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="stdthread-is-move-only-exactly-like-your-socket"><code>std::thread</code>
+    is move-only, exactly like your <code>Socket</code></h3>
+  <p>A <code>std::thread</code> object <em>owns</em> one running thread,
+    the same way your <code>Socket</code> owns one fd. Two copies would both
+    claim it. So, exactly as <code>Socket(const Socket&amp;) = delete</code>
+    in <code>socket.hpp</code>:</p>
+  <div class="sourceCode" id="cb23">
+    <pre
+      class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>thread a<span class="op">(</span>work<span class="op">);</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>thread b <span class="op">=</span> a<span class="op">;</span>              <span class="co">// ERROR: copy constructor deleted</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>thread c <span class="op">=</span> <span class="bu">std::</span>move<span class="op">(</span>a<span class="op">);</span>   <span class="co">// OK: c owns the thread now; a owns nothing</span></span></code></pre>
+  </div>
+  <p>For the experiments, where you’ll keep several threads in a
+    <code>std::vector</code>: use <code>threads.emplace_back(work)</code>
+    (builds it directly inside the vector, so there’s no copy) and loop with
+    <code>for (auto&amp; t : threads)</code>. Note the <code>&amp;</code>:
+    <code>for (auto t : threads)</code> would try to copy each one and fails
+    to compile.
+  </p>
+  <p>The same move-only idea is what you’ll use in Week 2 to hand a
+    <code>Socket</code> <em>into</em> a thread so the worker becomes its
+    single owner. That’s the answer to “who owns <code>client_fd</code>?”
+    taking shape.
+  </p>
+  <h3 id="small-helpers-youll-use-in-experiments">Small helpers you’ll use
+    in experiments</h3>
+  <div class="sourceCode" id="cb24">
+    <pre
+      class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>this_thread::sleep_for<span class="op">(</span><span class="bu">std::</span>chrono::seconds<span class="op">(</span><span class="dv">2</span><span class="op">));</span>  <span class="co">// put THIS thread to sleep (state S); others keep running</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>this_thread::get_id<span class="op">();</span>                            <span class="co">// a C++-level ID for the calling thread (printable with &lt;&lt;)</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>thread::hardware_concurrency<span class="op">();</span>                   <span class="co">// CPUs available for true parallelism: 12 on your WSL2</span></span></code></pre>
+  </div>
+  <p><code>std::this_thread</code> is a namespace of functions that act on
+    “whichever thread calls me.” <code>std::chrono::seconds(2)</code> is a
+    typed duration from <code>&lt;chrono&gt;</code>.
+    <code>sleep_for(2)</code> won’t compile, because C++ forces you to say
+    the unit. Note that <code>get_id()</code> is <em>not</em> the TID you
+    see in <code>ps -T</code>. To print that number, use
+    <code>gettid()</code> (from <code>&lt;unistd.h&gt;</code>), as the Part
+    4 demo did.
+  </p>
+  <hr />
+  <h1 id="part-8-why-.detach-not-.join">Part 8 — Why
+    <code>.detach()</code>, not <code>.join()</code>?
+  </h1>
+  <p>Every <code>std::thread</code> object must have exactly one of these
+    called on it before it’s destroyed:</p>
+  <ul>
+    <li><strong><code>t.join()</code></strong> = “the calling thread
+      <strong>waits here</strong> until thread <code>t</code> finishes.”
+    </li>
+    <li><strong><code>t.detach()</code></strong> = “let <code>t</code> run
+      on its own. I won’t wait for it, and when it finishes the system cleans
+      it up.”</li>
+    <li><strong><code>t.joinable()</code></strong> = “does this object still
+      own a thread I haven’t joined/detached?” (<code>false</code> after
+      either one, and after being moved from.)</li>
+  </ul>
+  <h3 id="try-join-in-pulses-accept-loop-and-you-get-month-1-back">Try
+    <code>join()</code> in Pulse’s accept loop, and you get Month 1
+    back
+  </h3>
+  <div class="sourceCode" id="cb25">
+    <pre
+      class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(;;)</span> <span class="op">{</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> client_fd <span class="op">=</span> <span class="op">::</span>accept<span class="op">(...);</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>thread t<span class="op">(</span>handle_client<span class="op">,</span> client_fd<span class="op">);</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    t<span class="op">.</span>join<span class="op">();</span>                       <span class="co">// main thread waits for this connection to finish...</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>                                   <span class="co">// ...before going back to accept() the next one</span></span></code></pre>
+  </div>
+  <p>Timeline with the Part 1 experiment:</p>
+  <pre><code>main:      [accept nc][ join: waiting for nc&#39;s thread ....................... forever ]
+thread nc:            [ read() ... asleep, nc never sends ...................          ]
+curl:      sitting in the listen backlog, Recv-Q 1, never accepted. Same as Month 1.</code></pre>
+  <p>You’d have created a thread and then stood still waiting for it,
+    which is exactly Month 1 with extra steps. That’s why the spec’s line
+    ends in <code>.detach()</code>: the accept loop must
+    <strong>not</strong> wait for any connection. It hands the connection
+    off and goes straight back to <code>accept()</code>.
+  </p>
+  <h3 id="the-specs-question-why-doesnt-t1.join-t2.join-make-it-single-threaded">The
+    spec’s question: “Why doesn’t <code>t1.join(); t2.join();</code> make it
+    single-threaded?”</h3>
+  <p>The example above might make you think “join = sequential.” It isn’t.
+    What made it sequential was <strong>joining <em>before creating</em> the
+      next thread</strong>. Compare:</p>
+  <div class="sourceCode" id="cb27">
+    <pre
+      class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>thread t1<span class="op">(</span>work_a<span class="op">);</span>   <span class="co">// t1 STARTS here</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>thread t2<span class="op">(</span>work_b<span class="op">);</span>   <span class="co">// t2 STARTS here: both are running now</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>t1<span class="op">.</span>join<span class="op">();</span>                <span class="co">// main waits for t1 (t2 keeps running during this wait)</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>t2<span class="op">.</span>join<span class="op">();</span>                <span class="co">// main waits for t2 (often it&#39;s already done, so this returns immediately)</span></span></code></pre>
+  </div>
+  <pre><code>main: [create t1][create t2][ join(t1): waiting ............ ][join(t2)]
+t1:         [============ work_a ============]
+t2:                    [====== work_b ======]
+                        ↑ both running at the same time</code></pre>
+  <p><code>join()</code> doesn’t <em>start</em> or <em>run</em> anything.
+    It only makes the <strong>calling</strong> thread wait. Both threads
+    were already started by their constructors. Total time ≈ the longer job,
+    not the sum. Experiment 2 lets you measure this.</p>
+  <p>So:</p>
+  <table>
+    <colgroup>
+      <col style="width: 50%" />
+      <col style="width: 50%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Who uses it</th>
+        <th>Why</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Experiments this week: <code>join()</code></strong></td>
+        <td><code>main()</code> creates N threads, then must wait for all of
+          them before exiting. Otherwise <code>main</code> returns, the process
+          exits, and every thread is killed mid-work.</td>
+      </tr>
+      <tr>
+        <td><strong>Pulse, Week 2: <code>detach()</code></strong></td>
+        <td>The accept loop runs forever and must never wait on a
+          connection.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="forgetting-both-the-whole-program-crashes">Forgetting both: the
+    whole program crashes</h3>
+  <div class="example">
+    <p><b>Real run: a <code>std::thread</code> destroyed while still
+        joinable.</b></p>
+    <div class="sourceCode" id="cb29">
+      <pre
+        class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>thread t<span class="op">([]</span> <span class="op">{</span> <span class="bu">std::</span>puts<span class="op">(</span><span class="st">&quot;hello from the thread&quot;</span><span class="op">);</span> <span class="op">});</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// no join(), no detach()</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>   <span class="co">// ← t&#39;s destructor runs here</span></span></code></pre>
+    </div>
+    <pre><code>$ ./forgot_join
+terminate called without an active exception
+Aborted
+$ echo $?
+134</code></pre>
+    <p>The destructor of a still-joinable <code>std::thread</code> calls
+      <code>std::terminate()</code>, which aborts the <b>whole process</b>
+      (134 = 128 + signal 6, <code>SIGABRT</code>). “hello from the thread”
+      never even printed. <b>In Pulse terms:</b> forget <code>.detach()</code>
+      in Week 2 and the <i>first</i> client that connects crashes the entire
+      server, because the temporary <code>std::thread</code> is destroyed at
+      the end of that line.
+    </p>
+    <p>Why so harsh? Auto-join in the destructor could hang forever (as in
+      the Pulse example above). Auto-detach could leave a thread using freed
+      memory. C++ refuses to guess, and crashes loudly so you can’t miss it.
+      (C++20’s <code>std::jthread</code> auto-joins; Pulse stays on
+      C++17.)</p>
+  </div>
+  <h3 id="two-things-to-know-about-detach-before-week-2">Two things to
+    know about <code>detach()</code> before Week 2</h3>
+  <ol type="1">
+    <li><strong>A detached thread must not depend on anything that can die
+        before it does.</strong> If it holds a reference/pointer to a local in
+      <code>run()</code> (the <code>[&amp;]</code> bug from Part 7), that
+      local can change or vanish. Give it copies, or move ownership in. (It
+      <em>will</em> use <code>router_</code> through <code>this</code>, which
+      lives in <code>main()</code>’s stack frame. That’s safe only because
+      <code>main()</code> never returns while <code>run()</code> is looping.
+      Worth noticing.)
+    </li>
+    <li><strong>When the process exits, every thread dies
+        instantly</strong>, mid-request, with no destructors run on those
+      threads. Ctrl+C on Week 2 Pulse kills in-flight connections immediately.
+      That’s acceptable for now; “graceful shutdown” is the kind of problem
+      the spec lists under server-global “shutdown state.”</li>
+  </ol>
+  <hr />
+  <h1 id="part-9-what-pulses-log-output-will-look-like">Part 9 — What
+    Pulse’s log output will look like</h1>
+  <p><code>handle_client</code> prints lines like:</p>
+  <div class="sourceCode" id="cb31">
+    <pre
+      class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Parsed (&quot;</span> <span class="op">&lt;&lt;</span> raw_request<span class="op">.</span>size<span class="op">()</span> <span class="op">&lt;&lt;</span> <span class="st">&quot; bytes total): &quot;</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>          <span class="op">&lt;&lt;</span> result<span class="op">.</span>request<span class="op">.</span>method <span class="op">&lt;&lt;</span> <span class="st">&quot; &quot;</span> <span class="op">&lt;&lt;</span> result<span class="op">.</span>request<span class="op">.</span>path <span class="op">&lt;&lt;</span> <span class="op">...;</span></span></code></pre>
+  </div>
+  <p>That’s not one print. It’s <strong>about ten separate
+      <code>&lt;&lt;</code> calls</strong>. <code>std::cout</code> is a single
+    global object, shared by every thread (Part 4). The C++ standard
+    guarantees two threads using it at once won’t corrupt the stream itself,
+    but it does <strong>not</strong> guarantee one thread’s ten pieces stay
+    together. With two connections being handled at once, you can get output
+    like:</p>
+  <pre><code>Parsed (Parsed (83 bytes total): GET 83 bytes total): GET /hello /health HTTP/1.1
+HTTP/1.1</code></pre>
+  <p>And more generally: <strong>which thread runs first is not
+      guaranteed.</strong> Connection A’s thread being <em>created</em> before
+    B’s doesn’t mean A’s code runs before B’s. After creation, both are
+    independent tasks and the scheduler picks. That’s what Experiment 1
+    demonstrates in its simplest form.</p>
+  <p>Scrambled logs are the first, harmless, visible symptom of
+    <em>threads sharing something</em>. The fix is coordinating access with
+    a mutex, which is <strong>Week 3</strong>. For now, just learn to
+    recognize it.
+  </p>
+  <hr />
+  <h1 id="part-10-this-weeks-experiments-and-the-pulse-question-each-answers">Part
+    10 — This week’s experiments, and the Pulse question each answers</h1>
+  <p>Each is a separate tiny <code>.cpp</code> in
+    <code>Month2/Week1/</code>, compiled with
+    <code>g++ -std=c++17 -Wall -pthread</code>. They’re not Pulse changes;
+    they’re small, isolated versions of things Pulse will do in Week 2.
+  </p>
+  <table>
+    <colgroup>
+      <col style="width: 33%" />
+      <col style="width: 33%" />
+      <col style="width: 33%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Experiment</th>
+        <th>What you build</th>
+        <th>Pulse question it answers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>0: Month 1 baseline</strong></td>
+        <td>Nothing new. Rerun Part 1 on your Month 1 Pulse, and record
+          <code>Threads:</code>, <code>ps -L</code> state/WCHAN, <code>ss</code>
+          Recv-Q, and curl’s time.
+        </td>
+        <td>The “before” for Week 2. Next week the same commands should show
+          <code>/hello</code> answering in ~0.01 s with the silent client still
+          connected.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>1: A and B</strong></td>
+        <td>Two threads, one printing <code>A</code>, one printing
+          <code>B</code>. Run it many times in a loop, then make each print its
+          letter many times.
+        </td>
+        <td>If connection A’s thread is created before B’s, does A’s code run
+          first? (Part 9)</td>
+      </tr>
+      <tr>
+        <td><strong>2: 2 / 4 / 8 busy threads</strong></td>
+        <td>Each thread does a few seconds of pure CPU work (a loop,
+          <em>not</em> <code>sleep_for</code>). Time it. Watch with
+          <code>top -H</code>, <code>ps -L</code> (the <code>PSR</code> column),
+          <code>pidstat -t</code>.
+        </td>
+        <td>What happens when threads actually compete for CPUs, and what does
+          <code>join()</code> after creating all of them do to total time? (Part
+          8)
+        </td>
+      </tr>
+      <tr>
+        <td><strong>3: sleeping threads</strong></td>
+        <td>Same as 2, but each thread <code>sleep_for</code>s instead of
+          computing.</td>
+        <td>What do Pulse’s threads, mostly waiting in <code>read()</code>, look
+          like to the scheduler? (Part 5)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Write predictions in <code>notes.txt</code> <em>before</em>
+      running each one.</strong> For example:</p>
+  <ul>
+    <li>Exp 1: will <code>A</code> always come first, since its thread was
+      created first?</li>
+    <li>Exp 2: if one thread’s work takes T seconds alone, how long for 2
+      threads? 4? 8? What would change past 12 threads, and why?</li>
+    <li>Exp 2: what will plain <code>top</code> show as the process’s
+      <code>%CPU</code> with 2 threads? With 8?
+    </li>
+    <li>Exp 3: what will <code>%CPU</code> be? What will <code>STAT</code>
+      and <code>WCHAN</code> say?</li>
+  </ul>
+  <p>Afterwards we go field by field through what you got, right and
+    wrong, the same as Month 1 / Week 4.</p>
+  <hr />
+  <h1 id="part-11-concept-check">Part 11 — Concept check</h1>
+  <p><strong>In Part 1, the kernel had already completed curl’s handshake
+      and received its 83-byte request. Why didn’t curl get a
+      response?</strong> Pulse’s only thread was asleep inside
+    <code>read()</code> for the silent client (<code>handle_client</code>,
+    <code>tcp_server.cpp:232</code>), so it never went back to
+    <code>accept()</code> curl’s connection (LISTEN <code>Recv-Q 1</code>)
+    or read its bytes (connection <code>Recv-Q 83</code>).
+  </p>
+  <p><strong>In the gdb backtrace, what is “the stack” and what is “the
+      program counter”?</strong> The stack is the chain of frames
+    <code>main → run → handle_client → read</code>, each holding that call’s
+    locals and where to return. The program counter is the address of the
+    instruction executing right now (frame #0). One program counter + one
+    stack = one thread.
+  </p>
+  <p><strong>Why does each Week 2 connection automatically get its own
+      <code>raw_request</code> and <code>chunk</code> without any extra
+      code?</strong> They’re locals of <code>handle_client</code>, so they
+    live in that call’s stack frame, and each thread has its own stack, so
+    each thread’s call has its own frame.</p>
+  <p><strong>Which of these will Week 2’s threads share:
+      <code>raw_request</code>, <code>router_</code>, fd 4,
+      <code>std::cout</code>, a global counter?</strong> Everything except
+    <code>raw_request</code>. <code>router_</code> (through
+    <code>this</code>), the fd table, <code>std::cout</code>, and globals
+    are one copy for the whole process.
+  </p>
+  <p><strong>Why is a thread blocked in <code>read()</code> not a problem
+      in Week 2 when it was the whole problem in Month 1?</strong> A blocked
+    thread is sleeping (<code>S</code>): it uses no CPU and the scheduler
+    just runs other threads. In Month 1 the blocked thread was the
+    <em>only</em> thread, so nothing else could run.
+  </p>
+  <p><strong>Pulse uses ~0–12% of one core. Does it need parallelism or
+      concurrency? Why?</strong> Concurrency. Its connections are mostly
+    waiting on the network, not computing, so the win is waiting on many
+    connections at once, not doing more computation at once.</p>
+  <p><strong>Why is <code>std::thread</code> copying its arguments good
+      for <code>client_fd</code>?</strong> The main thread’s
+    <code>client_fd</code> is overwritten by the next <code>accept()</code>.
+    The worker has its own copy, so it keeps the right connection.
+  </p>
+  <p><strong>What’s wrong with
+      <code>std::thread([&amp;] { handle(client_fd); }).detach();</code> in
+      the accept loop?</strong> <code>[&amp;]</code> captures the main
+    thread’s <code>client_fd</code> by reference. When the main thread
+    accepts the next client, the value changes, so the worker can end up
+    serving the wrong connection, or reading a variable that’s gone out of
+    scope.</p>
+  <p><strong>What happens if you <code>join()</code> each connection’s
+      thread right after creating it in <code>run()</code>?</strong> The
+    accept loop waits for that connection to finish before accepting the
+    next: Month 1’s behavior again, with extra steps.</p>
+  <p><strong>Then why doesn’t <code>t1.join(); t2.join();</code> make a
+      program single-threaded?</strong> Both threads were started by their
+    constructors before either join. <code>join()</code> only makes the
+    caller wait; it doesn’t start or run anything. Sequential behavior comes
+    from joining one thread before <em>creating</em> the next.</p>
+  <p><strong>What happens if Week 2 Pulse forgets
+      <code>.detach()</code>?</strong> The temporary <code>std::thread</code>
+    is destroyed while still joinable, its destructor calls
+    <code>std::terminate()</code>, and the whole server aborts on the first
+    connection.
+  </p>
+  <p><strong>Why does each thread’s stack matter for Week 4?</strong> Each
+    thread reserves an 8 MiB stack (+4 KiB guard page). With one thread per
+    connection, the number of connections directly sets how many stacks, how
+    many threads the scheduler juggles, and how many context switches
+    happen.</p>
+  <p><strong>If the main thread closes <code>client_fd</code> after
+      handing it to a worker, what can go wrong?</strong> The fd table is
+    shared, so the worker’s connection is closed under it. And the next
+    <code>accept()</code> can reuse the same fd number, so the worker could
+    read or write a <em>different</em> client’s connection. Hence “who owns
+    <code>client_fd</code>?”
+  </p>
+  <p><strong>Why might two threads’
+      <code>std::cout &lt;&lt; ... &lt;&lt; ...</code> lines come out
+      scrambled?</strong> Each <code>&lt;&lt;</code> is a separate operation
+    on the one shared <code>std::cout</code>. The standard prevents
+    corrupting the stream, not interleaving between pieces. The fix (a
+    mutex) is Week 3.</p>
+</body>
+
+</html>

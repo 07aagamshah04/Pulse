@@ -1,0 +1,3601 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Pulse Month 2 Week 1 Notes</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+      @page { margin: 1in; }
+      body {
+        font-family: -apple-system, "Segoe UI", Calibri, Arial, sans-serif;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2em 1em;
+        line-height: 1.55;
+        color: #1a1a1a;
+        font-size: 15px;
+      }
+      h1 { font-size: 1.7em; border-bottom: 2px solid #333; padding-bottom: 0.2em; margin-top: 1.6em; }
+      h2 { font-size: 1.3em; border-bottom: 1px solid #ccc; padding-bottom: 0.15em; margin-top: 1.4em; }
+      h3 { font-size: 1.08em; margin-top: 1.2em; }
+      pre {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.8em 1em;
+        overflow-x: auto;
+        font-size: 0.85em;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      pre code { background: none; padding: 0; }
+      table { border-collapse: collapse; margin: 1em 0; }
+      th, td { border: 1px solid #ccc; padding: 0.4em 0.8em; }
+      blockquote { border-left: 3px solid #999; margin-left: 0; padding-left: 1em; color: #444; }
+      #TOC { background: #f9f9f9; border: 1px solid #ddd; padding: 1em 1.5em; border-radius: 4px; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+      .analogy {
+        background: #eef6ff;
+        border-left: 4px solid #3b82f6;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .example {
+        background: #f6fff0;
+        border-left: 4px solid #4caf50;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .analogy p:first-child, .example p:first-child { margin-top: 0; }
+      .analogy p:last-child, .example p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Pulse — Month 2, Week 1: Experiment Log</h1>
+<p class="subtitle">What I ran, what I predicted, what actually
+happened, and why</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#how-this-file-works" id="toc-how-this-file-works">How this
+file works</a></li>
+<li><a href="#setup-commands-used-in-every-experiment"
+id="toc-setup-commands-used-in-every-experiment">Setup: commands used in
+every experiment</a></li>
+<li><a href="#experiment-0-one-silent-client-freezes-month-1-pulse"
+id="toc-experiment-0-one-silent-client-freezes-month-1-pulse">Experiment
+0 — One silent client freezes Month 1 Pulse</a>
+<ul>
+<li><a href="#what-happened-in-plain-english"
+id="toc-what-happened-in-plain-english">What happened, in plain
+English</a></li>
+<li><a href="#the-3-numbers-that-matter"
+id="toc-the-3-numbers-that-matter">The 3 numbers that matter</a></li>
+<li><a href="#predictions-vs-reality"
+id="toc-predictions-vs-reality">Predictions vs reality</a>
+<ul>
+<li><a href="#the-wrong-one-and-why-its-the-most-useful-result-here"
+id="toc-the-wrong-one-and-why-its-the-most-useful-result-here">The wrong
+one, and why it’s the most useful result here</a></li>
+<li><a href="#the-blank-one-threads" id="toc-the-blank-one-threads">The
+blank one: Threads</a></li>
+</ul></li>
+<li><a href="#what-happened-step-by-step-with-pulses-own-log"
+id="toc-what-happened-step-by-step-with-pulses-own-log">What happened,
+step by step (with Pulse’s own log)</a></li>
+<li><a href="#every-command-explained"
+id="toc-every-command-explained">Every command, explained</a>
+<ul>
+<li><a href="#terminal-1-build-and-run-pulse"
+id="toc-terminal-1-build-and-run-pulse">Terminal 1: build and run
+Pulse</a></li>
+<li><a href="#terminal-2-the-silent-client"
+id="toc-terminal-2-the-silent-client">Terminal 2: the silent
+client</a></li>
+<li><a href="#terminal-3-the-timed-request"
+id="toc-terminal-3-the-timed-request">Terminal 3: the timed
+request</a></li>
+<li><a href="#terminal-4-looking-inside-pulse"
+id="toc-terminal-4-looking-inside-pulse">Terminal 4: looking inside
+Pulse</a></li>
+</ul></li>
+<li><a
+href="#what-week-2-should-show-instead-write-this-down-now-check-it-next-week"
+id="toc-what-week-2-should-show-instead-write-this-down-now-check-it-next-week">What
+Week 2 should show instead (write this down now, check it next
+week)</a></li>
+<li><a href="#noticed-for-later-not-this-weeks-problem"
+id="toc-noticed-for-later-not-this-weeks-problem">Noticed for later (not
+this week’s problem)</a></li>
+</ul></li>
+<li><a href="#experiment-1-a-and-b-who-runs-first"
+id="toc-experiment-1-a-and-b-who-runs-first">Experiment 1 — A and B: who
+runs first?</a>
+<ul>
+<li><a href="#what-the-programs-do" id="toc-what-the-programs-do">What
+the programs do</a></li>
+<li><a href="#what-i-ran-from-the-pulse-folder-in-wsl"
+id="toc-what-i-ran-from-the-pulse-folder-in-wsl">What I ran (from the
+Pulse folder in WSL)</a>
+<ul>
+<li><a href="#new-commands-explained"
+id="toc-new-commands-explained">New commands, explained</a></li>
+</ul></li>
+<li><a href="#what-happened-in-plain-english-1"
+id="toc-what-happened-in-plain-english-1">What happened, in plain
+English</a></li>
+<li><a href="#the-numbers-that-matter"
+id="toc-the-numbers-that-matter">The numbers that matter</a></li>
+<li><a href="#predictions-vs-reality-1"
+id="toc-predictions-vs-reality-1">Predictions vs reality</a>
+<ul>
+<li><a href="#the-interesting-one-cant-be-determined-vs-98-2"
+id="toc-the-interesting-one-cant-be-determined-vs-98-2">The interesting
+one: “can’t be determined” vs 98 / 2</a></li>
+</ul></li>
+<li><a href="#b-why-the-output-looks-the-way-it-does"
+id="toc-b-why-the-output-looks-the-way-it-does">1b: why the output looks
+the way it does</a>
+<ul>
+<li><a href="#the-shape-of-a-mixed-run"
+id="toc-the-shape-of-a-mixed-run">The shape of a mixed run</a></li>
+<li><a href="#measuring-it-instead-of-eyeballing-it"
+id="toc-measuring-it-instead-of-eyeballing-it">Measuring it instead of
+eyeballing it</a></li>
+<li><a href="#why-letters-mix-but-never-get-garbled"
+id="toc-why-letters-mix-but-never-get-garbled">Why letters mix but never
+get garbled</a></li>
+</ul></li>
+<li><a href="#what-this-means-for-pulse-week-2"
+id="toc-what-this-means-for-pulse-week-2">What this means for Pulse
+(Week 2)</a></li>
+</ul></li>
+<li><a href="#experiment-2-1-2-4-8-16-busy-threads"
+id="toc-experiment-2-1-2-4-8-16-busy-threads">Experiment 2 — 1 / 2 / 4 /
+8 / 16 busy threads</a>
+<ul>
+<li><a href="#what-the-program-does" id="toc-what-the-program-does">What
+the program does</a></li>
+<li><a href="#what-to-run" id="toc-what-to-run">What to run</a>
+<ul>
+<li><a href="#part-a-timing-1-2-4-8-16-threads"
+id="toc-part-a-timing-1-2-4-8-16-threads">Part A: timing 1 / 2 / 4 / 8 /
+16 threads</a></li>
+<li><a href="#part-b-watch-8-threads-fewer-threads-than-cpus"
+id="toc-part-b-watch-8-threads-fewer-threads-than-cpus">Part B: watch 8
+threads (fewer threads than CPUs)</a></li>
+<li><a href="#part-c-watch-16-threads-more-threads-than-cpus"
+id="toc-part-c-watch-16-threads-more-threads-than-cpus">Part C: watch 16
+threads (more threads than CPUs)</a></li>
+<li><a href="#optional-watch-it-live-no-need-to-paste"
+id="toc-optional-watch-it-live-no-need-to-paste">Optional: watch it live
+(no need to paste)</a></li>
+<li><a href="#new-commands-explained-1"
+id="toc-new-commands-explained-1">New commands, explained</a></li>
+</ul></li>
+<li><a href="#what-happened-in-plain-english-2"
+id="toc-what-happened-in-plain-english-2">What happened, in plain
+English</a></li>
+<li><a href="#the-numbers-that-matter-1"
+id="toc-the-numbers-that-matter-1">The numbers that matter</a></li>
+<li><a href="#predictions-vs-reality-2"
+id="toc-predictions-vs-reality-2">Predictions vs reality</a>
+<ul>
+<li><a href="#the-wrong-one-5-10-20-40-assumed-the-threads-take-turns"
+id="toc-the-wrong-one-5-10-20-40-assumed-the-threads-take-turns">The
+wrong one: “5 / 10 / 20 / 40” assumed the threads take turns</a></li>
+</ul></li>
+<li><a href="#part-a-explained-the-timing-table"
+id="toc-part-a-explained-the-timing-table">Part A, explained: the timing
+table</a>
+<ul>
+<li><a
+href="#the-surprise-why-didnt-real-stay-flat-at-1.1-s-up-to-12-threads"
+id="toc-the-surprise-why-didnt-real-stay-flat-at-1.1-s-up-to-12-threads">The
+surprise: why didn’t <code>real</code> stay flat at 1.1 s up to 12
+threads?</a></li>
+</ul></li>
+<li><a href="#part-b-explained-8-threads-fewer-than-12-cpus"
+id="toc-part-b-explained-8-threads-fewer-than-12-cpus">Part B,
+explained: 8 threads (fewer than 12 CPUs)</a></li>
+<li><a href="#part-c-explained-16-threads-more-than-12-cpus"
+id="toc-part-c-explained-16-threads-more-than-12-cpus">Part C,
+explained: 16 threads (more than 12 CPUs)</a></li>
+<li><a href="#what-this-means-for-pulse"
+id="toc-what-this-means-for-pulse">What this means for Pulse</a></li>
+</ul></li>
+<li><a href="#experiment-3-sleeping-threads"
+id="toc-experiment-3-sleeping-threads">Experiment 3 — Sleeping
+threads</a>
+<ul>
+<li><a href="#what-the-program-does-1"
+id="toc-what-the-program-does-1">What the program does</a></li>
+<li><a href="#what-to-run-1" id="toc-what-to-run-1">What to run</a>
+<ul>
+<li><a
+href="#part-a-timing-1-8-16-100-threads-3-second-sleep-each-15-s-total"
+id="toc-part-a-timing-1-8-16-100-threads-3-second-sleep-each-15-s-total">Part
+A: timing 1 / 8 / 16 / 100 threads (3-second sleep each, ~15 s
+total)</a></li>
+<li><a
+href="#part-b-watch-16-sleeping-threads-more-than-12-cpus-the-case-that-hurt-in-experiment-2"
+id="toc-part-b-watch-16-sleeping-threads-more-than-12-cpus-the-case-that-hurt-in-experiment-2">Part
+B: watch 16 sleeping threads (more than 12 CPUs, the case that hurt in
+Experiment 2)</a></li>
+<li><a
+href="#part-c-watch-100-sleeping-threads-8-more-threads-than-cpus"
+id="toc-part-c-watch-100-sleeping-threads-8-more-threads-than-cpus">Part
+C: watch 100 sleeping threads (8× more threads than CPUs)</a></li>
+<li><a href="#new-commands-explained-2"
+id="toc-new-commands-explained-2">New commands, explained</a></li>
+</ul></li>
+<li><a href="#what-happened-in-plain-english-3"
+id="toc-what-happened-in-plain-english-3">What happened, in plain
+English</a></li>
+<li><a href="#the-numbers-that-matter-2"
+id="toc-the-numbers-that-matter-2">The numbers that matter</a></li>
+<li><a href="#predictions-vs-reality-3"
+id="toc-predictions-vs-reality-3">Predictions vs reality</a></li>
+<li><a href="#part-a-explained-the-timing-table-1"
+id="toc-part-a-explained-the-timing-table-1">Part A, explained: the
+timing table</a></li>
+<li><a href="#part-b-explained-16-sleeping-threads"
+id="toc-part-b-explained-16-sleeping-threads">Part B, explained: 16
+sleeping threads</a>
+<ul>
+<li><a
+href="#s-tells-you-a-thread-is-asleep.-wchan-tells-you-what-its-waiting-for."
+id="toc-s-tells-you-a-thread-is-asleep.-wchan-tells-you-what-its-waiting-for."><code>S</code>
+tells you a thread is asleep. <code>WCHAN</code> tells you what it’s
+waiting for.</a></li>
+<li><a href="#psr-16-threads-on-4-cpus-and-it-doesnt-matter"
+id="toc-psr-16-threads-on-4-cpus-and-it-doesnt-matter">PSR: 16 threads
+“on” 4 CPUs, and it doesn’t matter</a></li>
+<li><a href="#pidstat-all-zeros-and-that-is-the-result"
+id="toc-pidstat-all-zeros-and-that-is-the-result">pidstat: all zeros,
+and that <em>is</em> the result</a></li>
+</ul></li>
+<li><a href="#part-c-explained-100-sleeping-threads"
+id="toc-part-c-explained-100-sleeping-threads">Part C, explained: 100
+sleeping threads</a>
+<ul>
+<li><a href="#the-memory-prediction-checked"
+id="toc-the-memory-prediction-checked">The memory prediction,
+checked</a></li>
+</ul></li>
+<li><a href="#what-this-means-for-pulse-1"
+id="toc-what-this-means-for-pulse-1">What this means for Pulse</a></li>
+</ul></li>
+<li><a href="#week-1-done-when" id="toc-week-1-done-when">Week 1 done
+when</a></li>
+</ul>
+</nav>
+<style>
+.tldr { background:#fff8e1; border:2px solid #f0c040; border-radius:8px; padding:1.2em 1.5em; margin:1.5em 0; font-size:1.05em; line-height:1.6; }
+.stat-row { display:flex; gap:1em; flex-wrap:wrap; margin:1.5em 0; }
+.stat-card { flex:1; min-width:180px; background:#f5f5f5; border:1px solid #ddd; border-radius:8px; padding:1em 1.2em; text-align:center; }
+.stat-card .label { font-size:0.82em; color:#555; text-transform:uppercase; letter-spacing:0.03em; }
+.stat-card .values { font-size:1.6em; font-weight:bold; margin:0.3em 0; }
+.stat-card .up { color:#c0392b; }
+.stat-card .flat { color:#2e7d32; }
+.stat-card .note { font-size:0.8em; color:#777; }
+.verdict-right { color:#2e7d32; font-weight:bold; }
+.verdict-wrong { color:#c0392b; font-weight:bold; }
+.pending { background:#f3f3f3; border:1px dashed #aaa; border-radius:6px; padding:0.6em 1em; color:#555; }
+details { background:#fafafa; border:1px solid #ddd; border-radius:6px; padding:0.3em 1.2em 1em; margin:1.5em 0; }
+details[open] { padding-bottom:1.2em; }
+summary { cursor:pointer; font-weight:600; padding:0.8em 0; }
+</style>
+<h1 id="how-this-file-works">How this file works</h1>
+<p>This is the permanent record of Week 1’s experiments: what was run,
+every command explained, what was predicted, what really happened, and
+why.</p>
+<p>For each experiment:</p>
+<ol type="1">
+<li><strong>Before running:</strong> write predictions in
+<code>notes.txt</code> (the scratchpad next to this file).</li>
+<li><strong>Run</strong> the commands listed under that experiment.</li>
+<li><strong>Paste</strong> the full raw output into the chat.</li>
+<li>The results get written up here: predictions vs reality, every field
+explained, raw output kept at the bottom of the section.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Experiment</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>One silent client freezes Month 1 Pulse</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>A and B: who runs first?</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>1 / 2 / 4 / 8 / 16 busy threads</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sleeping threads</td>
+<td><strong>Done</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="setup-commands-used-in-every-experiment">Setup: commands used in
+every experiment</h1>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wsl</span> <span class="at">-d</span> Ubuntu</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/c/Users/aagam/OneDrive/Desktop/Pulse</span></code></pre></div>
+<ul>
+<li><strong><code>wsl -d Ubuntu</code></strong>: from Windows, open a
+shell inside the Ubuntu Linux VM. <code>-d</code> = “distribution”:
+which Linux install to start, since WSL can have several.</li>
+<li><strong><code>cd /mnt/c/...</code></strong>: inside WSL, your
+Windows <code>C:</code> drive appears at <code>/mnt/c</code>. The
+project folder is the same files Windows sees.</li>
+</ul>
+<p>Compiling an experiment:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">g++</span> <span class="at">-std</span><span class="op">=</span>c++17 <span class="at">-Wall</span> <span class="at">-pthread</span> FILE.cpp <span class="at">-o</span> FILE.out</span></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>g++</code></td>
+<td>The C++ compiler</td>
+</tr>
+<tr>
+<td><code>-std=c++17</code></td>
+<td>Use the C++17 language version (same as Pulse’s
+<code>CMakeLists.txt</code>)</td>
+</tr>
+<tr>
+<td><code>-Wall</code></td>
+<td>“Warnings: all”. Report suspicious code, not just errors</td>
+</tr>
+<tr>
+<td><code>-pthread</code></td>
+<td>Link the POSIX threads library that <code>std::thread</code> is
+built on (Concepts doc, Part 7). Without it, thread code can fail to
+link</td>
+</tr>
+<tr>
+<td><code>-o FILE.out</code></td>
+<td>Name of the output program. <code>.out</code> because
+<code>.gitignore</code> ignores <code>*.out</code>, so binaries never
+get committed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>No <code>-O2</code>.</strong> At the default optimization
+level (<code>-O0</code>), the compiler leaves busy loops alone. With
+<code>-O2</code> it can notice a loop’s answer can be calculated without
+looping and delete the work, and then Experiment 2 would measure
+nothing.</p>
+<hr />
+<h1 id="experiment-0-one-silent-client-freezes-month-1-pulse">Experiment
+0 — One silent client freezes Month 1 Pulse</h1>
+<p><strong>Pulse question:</strong> what does “only one thread” look
+like from the outside? <strong>Why it matters:</strong> this is the
+<strong>before</strong> picture. In Week 2, the exact same commands run
+against thread-per-connection Pulse, and the two results get compared
+side by side.</p>
+<h2 id="what-happened-in-plain-english">What happened, in plain
+English</h2>
+<div class="tldr">
+<p><b>What I did:</b> opened a connection to Pulse that sends nothing
+(<code>nc</code>), then sent a perfectly normal <code>GET /hello</code>
+with <code>curl</code>. <br><br> <b>What happened:</b>
+<code>/hello</code>, which normally answers in about <b>0.02
+seconds</b>, waited the full <b>30 seconds</b> and got <b>nothing</b>.
+Pulse wasn’t busy and wasn’t using any CPU. Its one and only thread was
+asleep inside <code>read()</code>, waiting for the silent client to say
+something. The moment the silent client was closed, <code>/hello</code>
+answered instantly again. <br><br> <b>The key insight:</b> the kernel
+had already done everything for curl: connection set up, all 83 bytes of
+the request received. Pulse just never came to pick it up, because its
+one thread was stuck somewhere else.</p>
+</div>
+<h2 id="the-3-numbers-that-matter">The 3 numbers that matter</h2>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+Time for GET /hello
+</div>
+<div class="values">
+0.023s <span class="up">→</span> 30.04s
+</div>
+<div class="note">
+normal vs. with a silent client connected (gave up, no reply)
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+Threads in Pulse
+</div>
+<div class="values">
+<span class="flat">1</span>
+</div>
+<div class="note">
+only one place it can wait from at a time
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+curl’s request, unread in the kernel
+</div>
+<div class="values">
+83 bytes
+</div>
+<div class="note">
+fully arrived, never read by Pulse
+</div>
+</div>
+</div>
+<div class="analogy">
+<p><b>Analogy:</b> a shop with one shopkeeper. Customer 1 walks to the
+counter and just stands there silently. The shopkeeper, by the rules of
+this shop, waits for them to speak. Customer 2 is in the queue holding a
+written note with their full order (the 83 bytes). The shopkeeper is not
+busy, they’re just waiting, and customer 2 eventually gives up and
+leaves. Week 2’s fix is a shopkeeper per customer.</p>
+</div>
+<h2 id="predictions-vs-reality">Predictions vs reality</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Prediction</th>
+<th>What I predicted</th>
+<th>What actually happened</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threads</td>
+<td><em>(left blank)</em></td>
+<td><code>1</code></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>curl /hello with silent client connected</td>
+<td>times out</td>
+<td>timed out after 30.04 s, <code>http_code=000</code>, exit code
+<code>28</code></td>
+<td><span class="verdict-right">Right</span></td>
+</tr>
+<tr>
+<td>STAT and WCHAN of Pulse’s thread</td>
+<td>Sleep, waiting</td>
+<td><code>S+</code>, <code>wait_woken</code></td>
+<td><span class="verdict-right">Right</span></td>
+</tr>
+<tr>
+<td>LISTEN <code>Recv-Q</code></td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td><span class="verdict-wrong">Wrong</span></td>
+</tr>
+<tr>
+<td>curl connection’s <code>Recv-Q</code></td>
+<td>83</td>
+<td>83</td>
+<td><span class="verdict-right">Right</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-wrong-one-and-why-its-the-most-useful-result-here">The wrong
+one, and why it’s the most useful result here</h3>
+<p>The prediction was LISTEN <code>Recv-Q 0</code>, probably reasoning
+“Pulse hasn’t accepted curl, so curl isn’t connected yet, so nothing’s
+there.” The actual answer is <strong>1</strong>, and the reason is:</p>
+<p><strong>The kernel connects clients by itself, without
+Pulse.</strong> When curl connects, the TCP handshake (SYN → SYN-ACK →
+ACK) is done entirely by the Linux kernel. Pulse’s code isn’t involved
+at all. Once the handshake finishes, the kernel puts that finished
+connection in the <strong>accept queue</strong> (the backlog you set
+with <code>listen(fd, 128)</code>). <code>accept()</code> doesn’t create
+a connection. It just <strong>picks up an already-finished one from that
+queue</strong>.</p>
+<p>So:</p>
+<ul>
+<li>LISTEN <code>Recv-Q 1</code> = one fully finished connection
+(curl’s) sitting in the accept queue, waiting for Pulse to call
+<code>accept()</code>.</li>
+<li>curl’s connection shows up as <code>ESTABLISHED</code>, with
+<code>Recv-Q 83</code>, <strong>even though Pulse never accepted
+it</strong>. The kernel even received its 83-byte request and buffered
+it.</li>
+</ul>
+<blockquote>
+<p><strong>“Connected” and “accepted” are different things.</strong>
+Connected = the kernel finished the handshake. Accepted = your program
+picked it up. In Month 1 Pulse, the gap between them can be as long as
+the slowest client before it.</p>
+</blockquote>
+<h3 id="the-blank-one-threads">The blank one: Threads</h3>
+<p><code>1</code>. Month 1 Pulse never creates a thread, so it only has
+the one every process starts with, the <strong>main thread</strong>,
+running <code>main()</code>. Even with two clients connected, there is
+one thread, so there is only one place Pulse can be waiting at any
+moment.</p>
+<h2 id="what-happened-step-by-step-with-pulses-own-log">What happened,
+step by step (with Pulse’s own log)</h2>
+<p>Pulse’s log from Terminal 1:</p>
+<pre><code>Pulse listening on port 8080...
+Client connected: 127.0.0.1:33978
+Client disconnected before completing a request (0 bytes received so far).
+Client connected: 127.0.0.1:38914
+Parsed (83 bytes total): GET /hello HTTP/1.1
+Client connected: 127.0.0.1:44260
+Parsed (83 bytes total): GET /hello HTTP/1.1</code></pre>
+<p>The numbers after <code>127.0.0.1:</code> are each <strong>client’s
+port</strong>: a random port the client’s OS picked for its side of the
+connection. That’s how you tell clients apart in the log and in
+<code>ss</code>:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Client port</th>
+<th>Who</th>
+<th>What Pulse did</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>33978</code></td>
+<td><code>nc</code>, the silent client</td>
+<td><code>accept()</code>ed it, went into <code>handle_client</code>,
+and sat in <code>read()</code> waiting. <strong>This is where Pulse was
+stuck for 30 seconds.</strong></td>
+</tr>
+<tr>
+<td><code>38914</code></td>
+<td><strong>First</strong> curl (the one that timed out)</td>
+<td>Not accepted until <code>nc</code> was closed.</td>
+</tr>
+<tr>
+<td><code>44260</code></td>
+<td>Second curl (after <code>nc</code> was closed)</td>
+<td>Accepted and answered immediately: 0.023 s.</td>
+</tr>
+</tbody>
+</table>
+<p>The full timeline:</p>
+<ol type="1">
+<li><strong><code>nc</code> connects (33978).</strong> Pulse
+<code>accept()</code>s it, calls <code>handle_client</code>, reaches
+<code>::read()</code> and <strong>sleeps</strong>. nc sends
+nothing.</li>
+<li><strong>curl connects (38914).</strong> The kernel finishes the
+handshake on its own and puts the connection in the accept queue (LISTEN
+<code>Recv-Q 1</code>). curl sends its 83-byte request, and the kernel
+stores it (curl’s <code>Recv-Q 83</code>). Pulse knows none of this.
+It’s asleep in <code>read()</code> for nc.</li>
+<li><strong>30 seconds pass.</strong> curl gives up
+(<code>-m 30</code>), closes its side, prints
+<code>http_code=000</code>, exit code <code>28</code>.</li>
+<li><strong>Ctrl+C on nc.</strong> nc closes its connection. Pulse’s
+<code>read()</code> wakes up and returns <code>0</code> (= “client
+closed”), so Pulse logs <em>“Client disconnected before completing a
+request (0 bytes received so far)”</em>, closes it, and loops back to
+<code>accept()</code>.</li>
+<li><strong>Pulse finally <code>accept()</code>s 38914</strong>, the
+first curl, which <strong>already gave up</strong>. Its 83 bytes are
+still waiting in the kernel, so Pulse reads them, logs <em>“Parsed (83
+bytes total): GET /hello”</em>, and writes
+<code>Hello from Pulse!</code> back to a client that’s no longer
+listening.</li>
+<li><strong>Second curl (44260)</strong> arrives with nothing ahead of
+it, so it’s accepted, parsed, and answered in 0.023 s.</li>
+</ol>
+<p>Step 5 is worth noticing: Pulse did the work for the first curl
+<strong>30 seconds late</strong>, for nobody. With one thread, slow
+clients don’t just delay others. They can make the server do work that’s
+already useless by the time it happens.</p>
+<h2 id="every-command-explained">Every command, explained</h2>
+<h3 id="terminal-1-build-and-run-pulse">Terminal 1: build and run
+Pulse</h3>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> build <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> build <span class="kw">&amp;&amp;</span> <span class="fu">cmake</span> .. <span class="kw">&amp;&amp;</span> <span class="fu">make</span> <span class="kw">&amp;&amp;</span> <span class="ex">./pulse</span> 8080</span></code></pre></div>
+<ul>
+<li><strong><code>&amp;&amp;</code></strong> = “run the next command
+<strong>only if</strong> the previous one succeeded.” If
+<code>make</code> fails, <code>./pulse</code> never runs with an old
+binary.</li>
+<li><strong><code>mkdir -p build</code></strong>: make the
+<code>build</code> folder. <code>-p</code> = no error if it already
+exists.</li>
+<li><strong><code>cmake ..</code></strong> then
+<strong><code>make</code></strong>: generate the build files from
+<code>CMakeLists.txt</code> one folder up (<code>..</code>), then
+compile (explained in the README).</li>
+<li><strong><code>./pulse 8080</code></strong>: run the program from
+<em>this</em> folder (<code>./</code>), with port <code>8080</code> as
+<code>argv[1]</code>.</li>
+</ul>
+<h3 id="terminal-2-the-silent-client">Terminal 2: the silent client</h3>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> localhost 8080</span></code></pre></div>
+<ul>
+<li><strong><code>nc</code></strong> (netcat) opens a raw TCP connection
+and connects your keyboard to it. Nothing is sent until you type. By not
+typing, it becomes a client that’s connected but silent: the “slow
+client” in its purest form.</li>
+</ul>
+<h3 id="terminal-3-the-timed-request">Terminal 3: the timed request</h3>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">time</span> curl <span class="at">-s</span> <span class="at">-m</span> 30 <span class="at">-w</span> <span class="st">&quot;\nhttp_code=%{http_code}\n&quot;</span> localhost:8080/hello<span class="kw">;</span> <span class="bu">echo</span> <span class="st">&quot;curl exit code: </span><span class="va">$?</span><span class="st">&quot;</span></span></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>time</code></td>
+<td>Run the command after it, then print how long it took
+(<code>real</code>, <code>user</code>, <code>sys</code>, below)</td>
+</tr>
+<tr>
+<td><code>curl</code></td>
+<td>Make an HTTP request</td>
+</tr>
+<tr>
+<td><code>-s</code></td>
+<td>Silent: don’t show curl’s progress bar</td>
+</tr>
+<tr>
+<td><code>-m 30</code></td>
+<td>Max time: give up after 30 seconds total</td>
+</tr>
+<tr>
+<td><code>-w "...%{http_code}..."</code></td>
+<td>Write out extra info after the response. <code>%{http_code}</code> =
+the status code curl received (<code>200</code>, <code>404</code>…), or
+<code>000</code> if it never got one</td>
+</tr>
+<tr>
+<td><code>;</code></td>
+<td>Run the next command <strong>no matter what</strong> (unlike
+<code>&amp;&amp;</code>). We want the exit code even when curl
+fails</td>
+</tr>
+<tr>
+<td><code>echo "... $?"</code></td>
+<td><code>$?</code> = the <strong>exit code</strong> of the previous
+command. <code>0</code> = success, anything else = a specific
+failure</td>
+</tr>
+</tbody>
+</table>
+<p><strong>curl’s exit codes:</strong> <code>0</code> = success (second
+run). <code>28</code> = “Operation timeout” (first run): the
+<code>-m 30</code> limit was hit.</p>
+<p><strong>Reading <code>time</code>’s three numbers.</strong> This
+connects directly to threads:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Stuck run</th>
+<th>Fast run</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>real</code></td>
+<td><strong>30.044 s</strong></td>
+<td>0.023 s</td>
+<td>Wall-clock time: what a stopwatch would show</td>
+</tr>
+<tr>
+<td><code>user</code></td>
+<td>0.014 s</td>
+<td>0.004 s</td>
+<td>CPU time spent running curl’s own code</td>
+</tr>
+<tr>
+<td><code>sys</code></td>
+<td>0.022 s</td>
+<td>0.017 s</td>
+<td>CPU time the kernel spent working for curl (syscalls)</td>
+</tr>
+</tbody>
+</table>
+<p>In the stuck run, <code>real</code> was 30 s but
+<code>user + sys</code> was only <strong>0.036 s</strong>. curl spent
+99.9% of those 30 seconds <strong>asleep</strong>, waiting, using no
+CPU. Pulse was doing exactly the same thing at the same time
+(<code>STAT S</code>, below). Two programs, both asleep, both waiting on
+someone else, with an idle CPU. That’s the waste Month 2 removes.</p>
+<h3 id="terminal-4-looking-inside-pulse">Terminal 4: looking inside
+Pulse</h3>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">P</span><span class="op">=</span><span class="va">$(</span><span class="ex">pgrep</span> <span class="at">-x</span> pulse<span class="va">)</span></span></code></pre></div>
+<ul>
+<li><strong><code>pgrep -x pulse</code></strong>: print the PID of the
+process named exactly (<code>-x</code>) <code>pulse</code>. Without
+<code>-x</code>, it would also match anything with “pulse” <em>in</em>
+its name.</li>
+<li><strong><code>$( ... )</code></strong> = <strong>command
+substitution</strong>: run the command inside, and put its output
+here.</li>
+<li><strong><code>P=...</code></strong>: store it in a shell variable
+named <code>P</code>. (No spaces around <code>=</code>, which bash
+requires.) After this, <strong><code>$P</code></strong> means “Pulse’s
+PID,” so you don’t have to copy the number by hand.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> Threads /proc/<span class="va">$P</span>/status</span></code></pre></div>
+<ul>
+<li><strong><code>/proc</code></strong> is a fake filesystem: the files
+aren’t on disk. The kernel generates them on the fly when you read them.
+<strong><code>/proc/&lt;PID&gt;/status</code></strong> is a live,
+readable summary of one process.</li>
+<li><strong><code>grep Threads</code></strong>: show only lines
+containing “Threads”.</li>
+<li><strong>Output <code>Threads: 1</code></strong>: the number of
+threads in Pulse right now.</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-L</span> <span class="at">-o</span> tid,stat,wchan:22,comm <span class="at">-p</span> <span class="va">$P</span></span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ps</code></td>
+<td>List processes</td>
+</tr>
+<tr>
+<td><code>-L</code></td>
+<td>One row <strong>per thread</strong> instead of per process</td>
+</tr>
+<tr>
+<td><code>-o tid,stat,wchan:22,comm</code></td>
+<td>Choose exactly which columns to show</td>
+</tr>
+<tr>
+<td><code>-p $P</code></td>
+<td>Only this process</td>
+</tr>
+</tbody>
+</table>
+<p>Output: <code>773   S+   wait_woken   pulse</code></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Column</th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TID</code></td>
+<td><code>773</code></td>
+<td>The thread’s ID. With only one thread, it’s the main thread, so TID
+= PID (Concepts doc, Part 6)</td>
+</tr>
+<tr>
+<td><code>STAT</code></td>
+<td><code>S</code></td>
+<td><strong>Sleeping</strong>: blocked waiting for an event, using
+<strong>zero CPU</strong> (Concepts doc, Part 5)</td>
+</tr>
+<tr>
+<td></td>
+<td><code>+</code></td>
+<td>It belongs to the <strong>foreground</strong> of its terminal (it’s
+the program you launched in Terminal 1 and are “in”). Not about threads,
+just where it’s running</td>
+</tr>
+<tr>
+<td><code>WCHAN</code></td>
+<td><code>wait_woken</code></td>
+<td>“Wait channel”: <strong>the kernel function the thread is parked
+in</strong>. <code>wait_woken</code> = generic “sleep until someone
+wakes me.” Here that someone is the network code, when data arrives on
+the socket. It’s the kernel-side half of the <code>::read()</code> call
+on line 232 of <code>tcp_server.cpp</code></td>
+</tr>
+<tr>
+<td><code>COMMAND</code></td>
+<td><code>pulse</code></td>
+<td>Program name</td>
+</tr>
+</tbody>
+</table>
+<p><code>:22</code> in <code>wchan:22</code> just makes that column 22
+characters wide so long function names don’t get cut off.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ss</span> <span class="at">-ltn</span> <span class="st">&quot;sport = :8080&quot;</span></span></code></pre></div>
+<ul>
+<li><strong><code>ss</code></strong> = “socket statistics”: list the
+sockets the kernel knows about.</li>
+<li><strong><code>-l</code></strong> = listening sockets only,
+<strong><code>-t</code></strong> = TCP only,
+<strong><code>-n</code></strong> = show numbers (<code>8080</code>)
+instead of guessing service names (like <code>http-alt</code>).</li>
+<li><strong><code>"sport = :8080"</code></strong> = a filter: only
+sockets whose <strong>s</strong>ource (local) <strong>port</strong> is
+8080.</li>
+</ul>
+<p>Output: <code>LISTEN   1   128   0.0.0.0:8080   0.0.0.0:*</code></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Column</th>
+<th>Value</th>
+<th>Meaning <strong>for a LISTEN socket</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>State</code></td>
+<td><code>LISTEN</code></td>
+<td>Pulse’s listening socket (fd 3)</td>
+</tr>
+<tr>
+<td><code>Recv-Q</code></td>
+<td><strong><code>1</code></strong></td>
+<td>Finished connections waiting in the accept queue for
+<code>accept()</code>. That’s curl.</td>
+</tr>
+<tr>
+<td><code>Send-Q</code></td>
+<td><code>128</code></td>
+<td>The <strong>maximum</strong> size of that queue: your
+<code>backlog = 128</code> from <code>TcpServer</code>’s
+constructor</td>
+</tr>
+<tr>
+<td>Local Address</td>
+<td><code>0.0.0.0:8080</code></td>
+<td>Listening on all interfaces (<code>INADDR_ANY</code>), port
+8080</td>
+</tr>
+<tr>
+<td>Peer Address</td>
+<td><code>0.0.0.0:*</code></td>
+<td>No specific peer: a listening socket waits for anyone</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ss</span> <span class="at">-tn</span> state established <span class="st">&quot;sport = :8080&quot;</span></span></code></pre></div>
+<ul>
+<li><strong><code>state established</code></strong>: only fully
+connected sockets (handshake done). There’s no <code>-l</code>, because
+these aren’t listening sockets.</li>
+</ul>
+<p>Output:</p>
+<pre><code>Recv-Q   Send-Q   Local Address:Port   Peer Address:Port
+0        0        127.0.0.1:8080       127.0.0.1:33978     ← nc
+83       0        127.0.0.1:8080       127.0.0.1:38914     ← first curl</code></pre>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Column</th>
+<th>Meaning <strong>for an ESTABLISHED socket</strong> (different from
+LISTEN!)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Recv-Q</code></td>
+<td>Bytes that have <strong>arrived</strong> from the client but your
+program <strong>hasn’t <code>read()</code> yet</strong></td>
+</tr>
+<tr>
+<td><code>Send-Q</code></td>
+<td>Bytes your program has written that the client <strong>hasn’t
+confirmed receiving</strong> yet</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>nc’s row, <code>Recv-Q 0</code></strong>: it sent nothing,
+so there’s nothing to read. Pulse is asleep in <code>read()</code> on
+<em>this</em> one, waiting for bytes that never come.</li>
+<li><strong>curl’s row, <code>Recv-Q 83</code></strong>: its entire
+request, <code>GET /hello HTTP/1.1</code> + headers = 83 bytes (the same
+“83 bytes total” Pulse logged later), sitting in the kernel,
+unread.</li>
+</ul>
+<p><code>Recv-Q</code> and <code>Send-Q</code> mean different things
+depending on the socket’s state. On LISTEN they count
+<em>connections</em>. On ESTABLISHED they count <em>bytes</em>. Same
+column name, different unit.</p>
+<h2
+id="what-week-2-should-show-instead-write-this-down-now-check-it-next-week">What
+Week 2 should show instead (write this down now, check it next
+week)</h2>
+<p>Same experiment, thread-per-connection Pulse:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Month 1 (measured above)</th>
+<th>Week 2 (expected)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>curl /hello</code> with <code>nc</code> connected</td>
+<td>30.04 s, timed out</td>
+<td>≈ 0.02 s, <code>200</code></td>
+</tr>
+<tr>
+<td><code>Threads:</code> while nc is connected</td>
+<td>1</td>
+<td>at least 2 (main thread in <code>accept()</code> + nc’s thread in
+<code>read()</code>)</td>
+</tr>
+<tr>
+<td><code>ps -L</code></td>
+<td>one row: <code>S wait_woken</code></td>
+<td>main thread asleep in <code>accept()</code>, nc’s thread asleep in
+<code>read()</code></td>
+</tr>
+<tr>
+<td>LISTEN <code>Recv-Q</code></td>
+<td>1 (curl stuck in the queue)</td>
+<td>0 (accepted right away)</td>
+</tr>
+<tr>
+<td>curl’s <code>Recv-Q</code></td>
+<td>83 (never read)</td>
+<td>0 (read immediately)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="noticed-for-later-not-this-weeks-problem">Noticed for later (not
+this week’s problem)</h2>
+<p><strong>Writing to a client that already left.</strong> In step 5,
+Pulse wrote a response to curl after curl had already closed its side.
+That worked here without an error. The first <code>write()</code> to a
+closed peer usually succeeds (the bytes go into the kernel’s send
+buffer, and the other side answers with a TCP reset). But a
+<strong>second</strong> write to that same socket after the reset
+arrives would raise the <strong><code>SIGPIPE</code></strong> signal,
+and by default <code>SIGPIPE</code> <strong>kills the whole
+process</strong>. Pulse’s responses are small enough to be one
+<code>write()</code>, so it hasn’t happened yet. It’s a real latent bug,
+though, and with threads it would kill every connection at once, not
+just one. It belongs with error handling and robustness later. Logged
+here so it isn’t forgotten.</p>
+<details>
+<summary>
+Raw output: Experiment 0 (click to expand)
+</summary>
+<p><strong>Terminal 1 (Pulse)</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse/build$ ./pulse 8080
+Pulse listening on port 8080...
+Client connected: 127.0.0.1:33978
+Client disconnected before completing a request (0 bytes received so far).
+Client connected: 127.0.0.1:38914
+Parsed (83 bytes total): GET /hello HTTP/1.1
+Client connected: 127.0.0.1:44260
+Parsed (83 bytes total): GET /hello HTTP/1.1</code></pre>
+<p><strong>Terminal 4 (while curl was stuck)</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ P=$(pgrep -x pulse)
+grep Threads /proc/$P/status
+ps -L -o tid,stat,wchan:22,comm -p $P
+ss -ltn &quot;sport = :8080&quot;
+ss -tn state established &quot;sport = :8080&quot;
+Threads:        1
+    TID STAT WCHAN                  COMMAND
+    773 S+   wait_woken             pulse
+State           Recv-Q          Send-Q                   Local Address:Port                   Peer Address:Port
+LISTEN          1               128                            0.0.0.0:8080                        0.0.0.0:*
+Recv-Q            Send-Q                        Local Address:Port                         Peer Address:Port
+0                 0                                 127.0.0.1:8080                            127.0.0.1:33978
+83                0                                 127.0.0.1:8080                            127.0.0.1:38914</code></pre>
+<p><strong>Terminal 3 (curl, both runs)</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ time curl -s -m 30 -w &quot;\nhttp_code=%{http_code}\n&quot; localhost:8080/hello; echo &quot;curl exit code: $?&quot;
+
+http_code=000
+
+real    0m30.044s
+user    0m0.014s
+sys     0m0.022s
+curl exit code: 28
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ time curl -s -m 30 -w &quot;\nhttp_code=%{http_code}\n&quot; localhost:8080/hello; echo &quot;curl exit code: $?&quot;
+Hello from Pulse!
+http_code=200
+
+real    0m0.023s
+user    0m0.004s
+sys     0m0.017s
+curl exit code: 0</code></pre>
+</details>
+<hr />
+<h1 id="experiment-1-a-and-b-who-runs-first">Experiment 1 — A and B: who
+runs first?</h1>
+<p><strong>Files:</strong> <code>Month2/Week1/exp1a_ab.cpp</code> and
+<code>Month2/Week1/exp1b_ab_many.cpp</code> (Concepts doc Parts 7, 8,
+9). Both are written and fully commented. Read the comments in each file
+before running. <strong>Pulse question:</strong> if connection A’s
+thread is created before connection B’s, does A’s code run first? And
+what does output from several threads at once look like?</p>
+<h2 id="what-the-programs-do">What the programs do</h2>
+<ul>
+<li><strong>1a (<code>exp1a_ab.cpp</code>):</strong> creates thread
+<code>t1</code> that prints <code>A</code>, then thread <code>t2</code>
+that prints <code>B</code>, then joins both. Each thread’s whole job is
+one tiny print.</li>
+<li><strong>1b (<code>exp1b_ab_many.cpp</code>):</strong> same, but each
+thread prints its letter <strong>2000 times</strong> with no newline.
+Each thread now runs long enough that both are likely running <em>at the
+same time</em>.</li>
+</ul>
+<h2 id="what-i-ran-from-the-pulse-folder-in-wsl">What I ran (from the
+Pulse folder in WSL)</h2>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compile both</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">g++</span> <span class="at">-std</span><span class="op">=</span>c++17 <span class="at">-Wall</span> <span class="at">-pthread</span> Month2/Week1/exp1a_ab.cpp      <span class="at">-o</span> Month2/Week1/exp1a_ab.out</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="ex">g++</span> <span class="at">-std</span><span class="op">=</span>c++17 <span class="at">-Wall</span> <span class="at">-pthread</span> Month2/Week1/exp1b_ab_many.cpp <span class="at">-o</span> Month2/Week1/exp1b_ab_many.out</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1a: run once to see it, then 100 times and count each order</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./Month2/Week1/exp1a_ab.out</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="va">$(</span><span class="fu">seq</span> 100<span class="va">)</span><span class="kw">;</span> <span class="cf">do</span> <span class="ex">./Month2/Week1/exp1a_ab.out</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="at">-d</span> <span class="st">&#39;\n&#39;</span><span class="kw">;</span> <span class="bu">echo</span><span class="kw">;</span> <span class="cf">done</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 1b: run 3 times</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> 1 2 3<span class="kw">;</span> <span class="cf">do</span> <span class="ex">./Month2/Week1/exp1b_ab_many.out</span><span class="kw">;</span> <span class="bu">echo</span> <span class="st">&quot;-----&quot;</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
+<h3 id="new-commands-explained">New commands, explained</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>for i in $(seq 100); do ...; done</code></td>
+<td>A bash loop: <code>seq 100</code> prints the numbers 1 to 100, and
+the loop runs its body once for each</td>
+</tr>
+<tr>
+<td><code>|</code> (pipe)</td>
+<td>Feed the output of the left command into the input of the right
+command</td>
+</tr>
+<tr>
+<td><code>tr -d '\n'</code></td>
+<td>“translate, delete”: remove newline characters, so one run’s
+<code>A</code> and <code>B</code> lines become one line: <code>AB</code>
+or <code>BA</code></td>
+</tr>
+<tr>
+<td><code>echo</code></td>
+<td>Print a newline, ending that run’s line</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>Sort all 100 lines, so identical ones end up next to each other</td>
+</tr>
+<tr>
+<td><code>uniq -c</code></td>
+<td>Collapse runs of identical lines into one, with a
+<strong>c</strong>ount in front, e.g. <code>&lt;count&gt; AB</code> and
+<code>&lt;count&gt; BA</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-happened-in-plain-english-1">What happened, in plain
+English</h2>
+<div class="tldr">
+<p><b>1a:</b> out of 100 runs, <b>98 printed <code>AB</code> and 2
+printed <code>BA</code></b>. The thread created first <i>usually</i>
+runs first, but not always. Nothing in the code forces the order.
+<br><br> <b>1b:</b> with 2000 letters each, some runs came out as two
+clean blocks (<code>AAAA…BBBB</code>), and others had the A’s and B’s
+<b>mixed together</b> in the middle. No two runs looked the same.
+<br><br> <b>The key insight:</b> “creation order” is not “execution
+order”. It only gives a head start. And a 98% result is the dangerous
+kind: a test can pass 98 times and fail the 99th, with no change to the
+code.</p>
+</div>
+<h2 id="the-numbers-that-matter">The numbers that matter</h2>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+1a: runs that printed A first
+</div>
+<div class="values">
+98 / 100
+</div>
+<div class="note">
+2 runs printed B first, from the same program
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+1b: your 3 runs
+</div>
+<div class="values">
+2 mixed, 1 clean
+</div>
+<div class="note">
+same program, three different outputs
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+1b: blocks per run (10 extra runs)
+</div>
+<div class="values">
+2 → 376
+</div>
+<div class="note">
+2 = perfectly clean, 376 = heavily mixed
+</div>
+</div>
+</div>
+<div class="analogy">
+<p><b>Analogy:</b> two runners, but the starter says “go” to runner A,
+then spends a moment walking over to runner B to say “go” again. In a
+10-metre race (1a: one print), A has almost always finished before B has
+even started, so it looks like “A always wins”. But B still wins
+occasionally, maybe because A tripped (the scheduler paused A’s thread).
+In a long race (1b: 2000 prints), A’s head start gets eaten up, and for
+a stretch both are running side by side, overtaking each other. That’s
+the mixed middle section.</p>
+</div>
+<h2 id="predictions-vs-reality-1">Predictions vs reality</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Prediction</th>
+<th>What I predicted</th>
+<th>What actually happened</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1a: AB vs BA out of 100</td>
+<td>“can’t be determined”</td>
+<td>98 AB, 2 BA</td>
+<td><span class="verdict-right">Right in principle</span>, but the split
+was much more lopsided than “can’t tell” suggests (see below)</td>
+</tr>
+<tr>
+<td>1a: does creating t1 first matter?</td>
+<td>No</td>
+<td>It <strong>biases</strong> the result heavily (98%), but doesn’t
+<strong>guarantee</strong> it (2 runs went BA)</td>
+<td><span class="verdict-right">Half right</span>: it doesn’t
+<em>decide</em> the order, but it <em>does</em> matter</td>
+</tr>
+<tr>
+<td>1b: clean blocks or mixed?</td>
+<td>Mixed</td>
+<td>Runs 1 and 2 mixed. Run 3 looked like two clean blocks</td>
+<td><span class="verdict-right">Right</span>: mixing happens, but not on
+every run</td>
+</tr>
+<tr>
+<td>1b: will all 3 runs look the same?</td>
+<td><em>(unclear answer)</em></td>
+<td>No, all 3 different</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Week 2: Pulse’s log with two threads printing</td>
+<td>Mixed</td>
+<td>That’s exactly what 1b shows (explained below)</td>
+<td><span class="verdict-right">Right</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-interesting-one-cant-be-determined-vs-98-2">The interesting
+one: “can’t be determined” vs 98 / 2</h3>
+<p>The prediction was correct in the way that matters. <strong>For any
+single run, you can’t know</strong> whether it will be AB or BA. But
+over 100 runs the result wasn’t 50/50. It was 98/2. Why so lopsided?</p>
+<p>Look at what the main thread does, in order:</p>
+<pre><code>main:  [create t1 ......][create t2 ......][join t1][join t2]
+t1:                     [print A]                             ← starts here, done in ~microseconds
+t2:                                       [print B]           ← can&#39;t start until t2 is even created</code></pre>
+<ol type="1">
+<li><code>std::thread t1(...)</code> creates t1. Creating a thread is a
+real system call (<code>clone()</code>, Concepts doc Part 6), and it
+takes time, on the order of tens of microseconds.</li>
+<li><strong>t1 starts running immediately</strong>, while main is
+<em>still</em> busy creating t2. t1’s whole job is to print one letter,
+which takes a few microseconds.</li>
+<li>So by the time t2 even <em>exists</em>, t1 has usually already
+finished printing <code>A</code>.</li>
+</ol>
+<p>That’s a <strong>head start</strong>, not a rule. In the 2
+<code>BA</code> runs, something got in t1’s way. For example, the
+scheduler hadn’t put t1 on a CPU yet when t2 started, or t1 got paused
+for a moment by something else running on the machine. Nothing in the
+code prevented it, so occasionally it happened.</p>
+<blockquote>
+<p><strong>Why 98% is the dangerous number.</strong> If the code
+<em>needed</em> A to come first (say, A sets something up that B uses),
+it would work 98 times out of 100. You’d test it a few times, see it
+working, and ship it. Then it fails “randomly”. This is the same lesson
+as Month 1 / Week 3’s single <code>read()</code>: “usually works in
+testing” is not “correct”. The only way to <em>guarantee</em> an order
+between threads is to make them coordinate, which is Week 3 (mutex,
+condition_variable).</p>
+</blockquote>
+<h2 id="b-why-the-output-looks-the-way-it-does">1b: why the output looks
+the way it does</h2>
+<h3 id="the-shape-of-a-mixed-run">The shape of a mixed run</h3>
+<p>Your runs 1 and 2 both have the same three-part shape:</p>
+<pre><code>AAAAAAAAAAAAAAAA……AAAAAAAAAA  ABBABAABBBBAAAB……ABBBA  BBBBBBBBBBB……BBBBBBBBBBB
+└── t1 alone ──────────────┘  └── both running ────┘  └── t2 alone ──────────┘
+   (head start, same reason      (t1 and t2 really        (t1 has finished its
+    as 1a: t2 doesn&#39;t exist       running at the same      2000, only t2 is left)
+    yet)                          time)</code></pre>
+<ol type="1">
+<li><strong>Long block of A’s at the start</strong>: t1’s head start. t2
+hasn’t been created yet, exactly as in 1a.</li>
+<li><strong>Mixed middle</strong>: both threads are alive and printing
+<em>at the same time</em>. With 12 CPUs, they’re probably on two
+different CPUs, so this is truly <strong>parallel</strong>, not just
+taking turns. Whichever thread gets to <code>std::cout</code> first puts
+its letter in next.</li>
+<li><strong>Long block of B’s at the end</strong>: t1 has printed all
+2000 and finished, and t2 is finishing on its own.</li>
+</ol>
+<p>Run 3 looked like two clean blocks: t1 printed all 2000 A’s before t2
+printed its first B. 2000 single-character prints is fast enough that
+sometimes t1 finishes its whole job before t2 gets going. Then it
+behaves exactly like 1a.</p>
+<h3 id="measuring-it-instead-of-eyeballing-it">Measuring it instead of
+eyeballing it</h3>
+<p>To put numbers on “how mixed”, I ran 1b ten more times, counting the
+<strong>blocks</strong> in each run (an unbroken run of the same letter
+= 1 block). 2 blocks means perfectly clean <code>AAAA…BBBB</code>. More
+blocks means more mixing.</p>
+<pre><code>run 1: blocks=2    first=Ax2000  last=Bx2000  total=4000
+run 2: blocks=60   first=Ax1600  last=Bx1915  total=4000
+run 3: blocks=2    first=Ax2000  last=Bx2000  total=4000
+run 4: blocks=2    first=Ax2000  last=Bx2000  total=4000
+run 5: blocks=2    first=Ax2000  last=Bx2000  total=4000
+run 6: blocks=2    first=Ax2000  last=Bx2000  total=4000
+run 7: blocks=376  first=Ax638   last=Bx296   total=4000
+run 8: blocks=2    first=Ax2000  last=Bx2000  total=4000
+run 9: blocks=5    first=Ax1417  last=Ax582   total=4000
+run 10: blocks=2   first=Ax2000  last=Bx2000  total=4000</code></pre>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>blocks</code></td>
+<td>How many unbroken runs of one letter. <code>2</code> = clean,
+<code>376</code> = the threads switched back and forth 375 times</td>
+</tr>
+<tr>
+<td><code>first=Ax1600</code></td>
+<td>The first block was 1600 A’s: t1 got 1600 letters out before t2
+printed anything (the head start)</td>
+</tr>
+<tr>
+<td><code>last=Bx1915</code></td>
+<td>The last block was 1915 B’s: t2 printed that many alone after t1 had
+finished</td>
+</tr>
+<tr>
+<td><code>total=4000</code></td>
+<td>Always exactly 4000 letters (2000 + 2000). <strong>No letter was
+ever lost or garbled</strong>, only reordered</td>
+</tr>
+</tbody>
+</table>
+<p>Three things stand out:</p>
+<ul>
+<li><strong>Run 7</strong> had only a 638-letter head start, then 376
+blocks. The two threads were neck and neck for most of the run.</li>
+<li><strong>Run 9 <em>ended</em> with A’s</strong>
+(<code>last=Ax582</code>). t2 finished its 2000 B’s
+<strong>before</strong> t1 finished its A’s, even though t1 started
+first with a 1417-letter lead. Being created first doesn’t even
+guarantee finishing first.</li>
+<li><strong>7 of 10 were clean here, but 2 of your 3 were
+mixed.</strong> My runs sent the output into a pipe; yours printed
+straight to the terminal. Where the output goes changes how long each
+print takes, which changes how much the threads overlap. That’s one more
+sign the result depends on <strong>timing</strong>, not on the
+code.</li>
+</ul>
+<h3 id="why-letters-mix-but-never-get-garbled">Why letters mix but never
+get garbled</h3>
+<p>Each <code>std::cout &lt;&lt; 'A'</code> is one separate call. The
+C++ standard guarantees that two threads using <code>std::cout</code> at
+the same time won’t <em>corrupt</em> it: every letter comes out whole,
+and the total is always 4000. It does <strong>not</strong> guarantee
+whose letter goes next. So between any two of t1’s letters, a letter
+from t2 can slip in.</p>
+<h2 id="what-this-means-for-pulse-week-2">What this means for Pulse
+(Week 2)</h2>
+<p><strong>1. The order connections are handled in is not
+guaranteed.</strong> If client A connects slightly before client B, A’s
+thread is created first and <em>usually</em> runs first, the same 98%
+head start as 1a. But Pulse’s code must never <em>depend</em> on that.
+Each connection must be handled correctly no matter which thread runs
+when.</p>
+<p><strong>2. Pulse’s logs will mix, like 1b.</strong> One log line in
+<code>handle_client</code> is about ten separate <code>&lt;&lt;</code>
+calls:</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">&quot;Parsed (&quot;</span> <span class="op">&lt;&lt;</span> raw_request<span class="op">.</span>size<span class="op">()</span> <span class="op">&lt;&lt;</span> <span class="st">&quot; bytes total): &quot;</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>          <span class="op">&lt;&lt;</span> result<span class="op">.</span>request<span class="op">.</span>method <span class="op">&lt;&lt;</span> <span class="st">&quot; &quot;</span> <span class="op">&lt;&lt;</span> result<span class="op">.</span>request<span class="op">.</span>path <span class="op">&lt;&lt;</span> <span class="st">&quot; &quot;</span> <span class="op">&lt;&lt;</span> result<span class="op">.</span>request<span class="op">.</span>version <span class="op">&lt;&lt;</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span></code></pre></div>
+<p>1b mixed at single-letter granularity, so Pulse’s ten pieces can mix
+too, when two connections log at the same moment:</p>
+<pre><code>Parsed (Parsed (83 bytes total): 83 bytes total): GET GET /hello /health HTTP/1.1
+HTTP/1.1</code></pre>
+<p><strong>3. It will be rare in light testing and common under
+load.</strong> 1a (short job) almost never overlapped. 1b (longer job)
+overlapped often. A single <code>curl</code> at a time will almost never
+show mixed logs. A benchmark with many simultaneous clients will. That’s
+the same “rare in testing, real in production” pattern again.</p>
+<p>The fix (making each whole log line one uninterruptible unit, using a
+mutex) is Week 3. For Week 2, mixed logs are expected and harmless.
+They’re the first visible sign of threads sharing something, here
+<code>std::cout</code>.</p>
+<details>
+<summary>
+Raw output: Experiment 1 (click to expand)
+</summary>
+<p><strong>1a</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ./Month2/Week1/exp1a_ab.out
+for i in $(seq 100); do ./Month2/Week1/exp1a_ab.out | tr -d &#39;\n&#39;; echo; done | sort | uniq -c
+A
+B
+     98 AB
+      2 BA</code></pre>
+<p><strong>1b</strong>: 3 runs of 4000 letters each. The full
+12,000-character output is too long to keep here letter by letter, so
+this is a description of each run’s shape (the complete output is in the
+chat):</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Run</th>
+<th>Shape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Long block of A’s → a mixed section where A and B alternate in short
+clumps → a stretch of mostly A’s → long block of B’s to the end</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Long block of A’s → a mixed section → a long block of B’s, broken by
+one more short mixed patch near the end → B’s to the end</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Looks like two clean blocks: A’s, then B’s, with no visible
+switching back</td>
+</tr>
+</tbody>
+</table>
+<p>To keep exact numbers next time, use the block-counting command from
+the “Measuring it” section above. It turns a run into one line of
+numbers instead of 4000 letters:</p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="va">out</span><span class="op">=</span><span class="va">$(</span><span class="ex">./Month2/Week1/exp1b_ab_many.out</span><span class="va">)</span><span class="kw">;</span> <span class="bu">echo</span> <span class="at">-n</span> <span class="st">&quot;</span><span class="va">$out</span><span class="st">&quot;</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-o</span> <span class="st">&#39;A\+\|B\+&#39;</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code></pre></div>
+</details>
+<hr />
+<h1 id="experiment-2-1-2-4-8-16-busy-threads">Experiment 2 — 1 / 2 / 4 /
+8 / 16 busy threads</h1>
+<p><strong>File:</strong> <code>Month2/Week1/exp2_busy.cpp</code>,
+written and fully commented (Concepts doc Parts 5, 6, 7, 8). Read the
+comments before running. <strong>Pulse question:</strong> what happens
+when threads actually <em>need</em> the CPU at the same time? Does
+<code>join()</code> make them run one after another? And what changes
+when there are more threads than CPUs?</p>
+<h2 id="what-the-program-does">What the program does</h2>
+<pre><code>./exp2_busy.out &lt;threads&gt; [rounds]</code></pre>
+<ul>
+<li>Creates <code>&lt;threads&gt;</code> threads, all stored in a
+<code>std::vector&lt;std::thread&gt;</code>.</li>
+<li>Each thread does pure CPU work: 1.5 billion additions per round,
+with <strong>no waiting at all</strong> (no <code>read()</code>, no
+sleep). One thread, one round ≈ <strong>2.5 s</strong> on this
+machine.</li>
+<li><code>main</code> creates <strong>all</strong> the threads first,
+then joins all of them, then prints the total time.</li>
+<li>Each thread prints its index and its <strong>TID</strong> when it
+finishes, so you can match it to the rows in <code>ps -L</code>.</li>
+<li><code>[rounds]</code> is optional (default 1). It repeats the work
+so a run lasts long enough to watch with
+<code>ps</code>/<code>pidstat</code>. It’s only used in Parts B and
+C.</li>
+</ul>
+<h2 id="what-to-run">What to run</h2>
+<p>All from the Pulse folder in WSL
+(<code>cd /mnt/c/Users/aagam/OneDrive/Desktop/Pulse</code>).</p>
+<h3 id="part-a-timing-1-2-4-8-16-threads">Part A: timing 1 / 2 / 4 / 8 /
+16 threads</h3>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">g++</span> <span class="at">-std</span><span class="op">=</span>c++17 <span class="at">-Wall</span> <span class="at">-pthread</span> Month2/Week1/exp2_busy.cpp <span class="at">-o</span> Month2/Week1/exp2_busy.out</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> 1 2 4 8 16<span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="st">&quot;===== </span><span class="va">$n</span><span class="st"> threads&quot;</span><span class="kw">;</span> <span class="bu">time</span> ./Month2/Week1/exp2_busy.out <span class="va">$n</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
+<p>This takes about a minute in total. Each run prints the program’s own
+lines, then <code>time</code>’s <code>real</code> / <code>user</code> /
+<code>sys</code>.</p>
+<h3 id="part-b-watch-8-threads-fewer-threads-than-cpus">Part B: watch 8
+threads (fewer threads than CPUs)</h3>
+<p>Two terminals, both in the Pulse folder.</p>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminal 1: start it (4 rounds, so it lasts long enough to look at)</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./Month2/Week1/exp2_busy.out</span> 8 4</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminal 2: run these straight away while Terminal 1 is still working</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="va">P</span><span class="op">=</span><span class="va">$(</span><span class="ex">pgrep</span> <span class="at">-n</span> exp2_busy<span class="va">)</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> Threads /proc/<span class="va">$P</span>/status</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-L</span> <span class="at">-o</span> tid,psr,stat,pcpu,comm <span class="at">-p</span> <span class="va">$P</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sleep</span> 2<span class="kw">;</span> <span class="fu">ps</span> <span class="at">-L</span> <span class="at">-o</span> tid,psr,stat,pcpu,comm <span class="at">-p</span> <span class="va">$P</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="ex">pidstat</span> <span class="at">-u</span> <span class="at">-t</span> <span class="at">-p</span> <span class="va">$P</span> 1 1</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="ex">pidstat</span> <span class="at">-w</span> <span class="at">-t</span> <span class="at">-p</span> <span class="va">$P</span> 1 1</span></code></pre></div>
+<h3 id="part-c-watch-16-threads-more-threads-than-cpus">Part C: watch 16
+threads (more threads than CPUs)</h3>
+<p>Exactly the same as Part B, but in Terminal 1:</p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./Month2/Week1/exp2_busy.out</span> 16 4</span></code></pre></div>
+<p>Then the same 6 commands in Terminal 2.</p>
+<h3 id="optional-watch-it-live-no-need-to-paste">Optional: watch it live
+(no need to paste)</h3>
+<p>While a Part B or C run is going: <code>top -H -p $P</code> (press
+<code>1</code> to see every CPU separately, <code>q</code> to quit), or
+<code>htop</code> (<code>F4</code> → type <code>exp2</code> to filter,
+<code>H</code> toggles showing threads).</p>
+<h3 id="new-commands-explained-1">New commands, explained</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>for n in 1 2 4 8 16; do ...; done</code></td>
+<td>Loop over exactly that list of values; <code>$n</code> is the
+current one</td>
+</tr>
+<tr>
+<td><code>time ./prog</code></td>
+<td>Run the program, then print 3 times:
+<strong><code>real</code></strong> = wall-clock (stopwatch) time,
+<strong><code>user</code></strong> = CPU time spent running the
+program’s own code, <strong>added up across all its threads</strong>,
+<strong><code>sys</code></strong> = CPU time the kernel spent working
+for it</td>
+</tr>
+<tr>
+<td><code>P=$(pgrep -n exp2_busy)</code></td>
+<td><code>pgrep -n</code> = PID of the <strong>n</strong>ewest process
+whose name matches <code>exp2_busy</code></td>
+</tr>
+<tr>
+<td><code>grep Threads /proc/$P/status</code></td>
+<td>How many threads the process has right now</td>
+</tr>
+<tr>
+<td><code>ps -L -o tid,psr,stat,pcpu,comm -p $P</code></td>
+<td>One row per thread (<code>-L</code>). <code>PSR</code> = which CPU
+(0–11) the thread last ran on. <code>STAT</code> = state (<code>R</code>
+running, <code>S</code> sleeping; an extra <code>l</code> means
+“multi-threaded process”, <code>+</code> means foreground).
+<code>%CPU</code> = its CPU use</td>
+</tr>
+<tr>
+<td><code>sleep 2; ps ...</code></td>
+<td>Wait 2 seconds and look again: did any thread move to a different
+CPU?</td>
+</tr>
+<tr>
+<td><code>pidstat -u -t -p $P 1 1</code></td>
+<td><code>-u</code> = CPU usage, <code>-t</code> = per thread, for
+process <code>$P</code>, sampled over <code>1</code> second,
+<code>1</code> time</td>
+</tr>
+<tr>
+<td><code>pidstat -w -t -p $P 1 1</code></td>
+<td><code>-w</code> = <strong>context switches</strong> per thread
+(Concepts doc Part 5): <code>cswch/s</code> = voluntary (the thread gave
+up the CPU itself, e.g. waiting), <code>nvcswch/s</code> = non-voluntary
+(the scheduler took the CPU away from it)</td>
+</tr>
+</tbody>
+</table>
+<p>Why <code>pidstat -w</code> and not
+<code>grep ctxt /proc/$P/status</code>: the counters in
+<code>/proc/&lt;PID&gt;/status</code> belong to the <strong>main thread
+only</strong>, not the whole process. Per-thread counts live in
+<code>/proc/&lt;PID&gt;/task/&lt;TID&gt;/status</code>.
+<code>pidstat -t</code> collects them for every thread at once.</p>
+<h2 id="what-happened-in-plain-english-2">What happened, in plain
+English</h2>
+<div class="tldr">
+<p><b>What I did:</b> ran 1, 2, 4, 8 and 16 threads, each doing the same
+chunk of pure CPU work (about 1.1 s for one thread alone), and timed the
+whole thing. Then I watched an 8-thread run and a 16-thread run with
+<code>ps</code> and <code>pidstat</code>. <br><br> <b>What happened:</b>
+16 threads finished in <b>3.4 seconds</b>, not 16 × 1.1 = 17.6 seconds.
+The threads ran <b>at the same time</b>, on different CPUs.
+<code>join()</code> did not make them take turns. <br><br> <b>But it
+wasn’t free.</b> With 8 threads (fewer than the 12 CPUs), every thread
+had a CPU to itself: 100% each, no waiting, no switching. With 16
+threads (more than 12 CPUs), every CPU was full, each thread spent
+15–35% of its time <b>waiting in line for a CPU</b>, and the scheduler
+was forcibly switching threads about <b>930 times per second</b>.
+<br><br> <b>The key insight:</b> threads only run in parallel up to the
+number of CPUs. Past that, they take turns, and taking turns costs
+context switches. And on this laptop, “12 CPUs” is really 6 cores with 2
+hyperthreads each, so even below 12 the speed-up isn’t perfect.</p>
+</div>
+<h2 id="the-numbers-that-matter-1">The numbers that matter</h2>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+16 threads: real time
+</div>
+<div class="values">
+3.41 s
+</div>
+<div class="note">
+vs. 17.6 s if they had run one after another
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+CPUs in use (pidstat %CPU)
+</div>
+<div class="values">
+800% <span class="up">→</span> 1193%
+</div>
+<div class="note">
+8 threads: 8 CPUs. 16 threads: all 12 full
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+Forced context switches / s
+</div>
+<div class="values">
+~1 <span class="up">→</span> ~930
+</div>
+<div class="note">
+8 threads vs. 16 threads (sum of nvcswch/s)
+</div>
+</div>
+</div>
+<div class="analogy">
+<p><b>Analogy:</b> 12 checkout counters in a supermarket, and each
+thread is a shopper with a full trolley that takes 1 minute to scan. 8
+shoppers: everyone walks straight to a free counter, and they’re all
+done in about a minute. Nobody waits, and nobody gets interrupted. 16
+shoppers: all 12 counters are busy and 4 shoppers are always standing in
+line. To be fair, the store manager (the scheduler) keeps stopping a
+shopper halfway through, sending them back to the line, and letting
+someone waiting take the counter. Everyone gets a fair share, but
+there’s a lot of stopping and swapping (non-voluntary context switches),
+and everyone finishes later. One more twist: these 12 counters are
+really 6 double counters sharing one scanner each (hyperthreads), so two
+shoppers at the same double counter slow each other down.</p>
+</div>
+<h2 id="predictions-vs-reality-2">Predictions vs reality</h2>
+<p>Only prediction 1 was filled in, so it’s the one to look at closely.
+The rest are answered below from the output.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Prediction</th>
+<th>What I predicted</th>
+<th>What actually happened</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. real time for 2 / 4 / 8 / 16 threads</td>
+<td>5 / 10 / 20 / 40 s</td>
+<td><strong>1.19 / 1.38 / 1.84 / 3.41 s</strong></td>
+<td><span class="verdict-wrong">Wrong</span>, and in the most useful way
+(below)</td>
+</tr>
+<tr>
+<td>2. 8 threads: user vs real</td>
+<td><em>(blank)</em></td>
+<td>user 14.06 s vs real 1.84 s: <strong>user is 7.6× real</strong></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>3. <code>Threads:</code> with 8 workers</td>
+<td><em>(blank)</em></td>
+<td><strong>9</strong> (8 workers + the main thread)</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>4. <code>ps -L</code>, 8 workers</td>
+<td><em>(blank)</em></td>
+<td>workers <code>Rl+</code> at 100%. Main thread <code>Sl+</code> at
+0.1–0.3%</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>5. pidstat total %CPU, 8 / 16 threads</td>
+<td><em>(blank)</em></td>
+<td><strong>800% / 1193%</strong></td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>6. same CPU (PSR) between snapshots?</td>
+<td><em>(blank)</em></td>
+<td>8 threads: 7 of 8 stayed put. 16 threads: 12 of 16 moved</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>7. finish in order 0, 1, 2…?</td>
+<td><em>(blank)</em></td>
+<td>No. Different order every run</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>8. <code>cswch/s</code> vs <code>nvcswch/s</code></td>
+<td><em>(blank)</em></td>
+<td><code>cswch/s</code> was 0 everywhere. <code>nvcswch/s</code> ≈ 0
+with 8 threads, <strong>25–94 per thread</strong> with 16</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-wrong-one-5-10-20-40-assumed-the-threads-take-turns">The
+wrong one: “5 / 10 / 20 / 40” assumed the threads take turns</h3>
+<p>The predicted numbers double every time the thread count doubles: 2.5
+s × number of threads. That’s what you’d get if the threads ran
+<strong>one after another</strong>: thread 0 finishes, then thread 1
+starts, and so on. That’s exactly the misunderstanding in the spec’s
+important question, <em>“why doesn’t <code>t1.join(); t2.join();</code>
+make it single-threaded?”</em> (Concepts doc, Part 10).</p>
+<p>What actually happened:</p>
+<pre><code>main:      [create 0..15][ join(0): wait ............ ][join(1)]…[join(15)]   ← each join returns instantly once that thread is done
+thread 0:       [======== work ========]
+thread 1:        [======== work ========]
+thread 2:         [======== work ========]       all running AT THE SAME TIME,
+   …                                               on different CPUs
+thread 15:                [======== work ========]</code></pre>
+<p><code>exp2_busy.cpp</code> creates <strong>all</strong> the threads
+first, then joins them. By the time <code>main</code> reaches the first
+<code>join()</code>, every thread is already running.
+<code>join()</code> only makes <code>main</code> wait. It doesn’t start
+anything or put the threads in a line. So total time ≈ the time for one
+thread’s work (when there are enough CPUs), not the sum.</p>
+<p><strong>If they had run one after another</strong>, using the real
+1.1 s per thread: 2.2 / 4.4 / 8.8 / 17.6 s. Actual: 1.19 / 1.38 / 1.84 /
+3.41 s. 16 threads did <strong>17.6 seconds of single-thread work in
+3.41 seconds</strong>, a 5.2× speed-up.</p>
+<p>(Also: one thread took <strong>1.1 s</strong>, not the 2.5 s I
+measured on another day. The same program’s speed changes with what else
+Windows is running and how hot the laptop is. That’s why each run’s own
+1-thread number is the baseline, not a figure from a different day.)</p>
+<h2 id="part-a-explained-the-timing-table">Part A, explained: the timing
+table</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Threads</th>
+<th><code>real</code></th>
+<th><code>user</code></th>
+<th><code>user ÷ real</code></th>
+<th>CPU time per thread (<code>user ÷ threads</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1.155 s</td>
+<td>1.111 s</td>
+<td>0.96</td>
+<td>1.11 s</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.188 s</td>
+<td>2.336 s</td>
+<td>1.97</td>
+<td>1.17 s</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.377 s</td>
+<td>5.291 s</td>
+<td>3.84</td>
+<td>1.32 s</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1.838 s</td>
+<td>14.062 s</td>
+<td>7.65</td>
+<td>1.76 s</td>
+</tr>
+<tr>
+<td>16</td>
+<td>3.410 s</td>
+<td>38.162 s</td>
+<td>11.19</td>
+<td>2.39 s</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>real</code> vs <code>user</code>, and why
+<code>user</code> can be bigger than <code>real</code>.</strong>
+<code>real</code> is the stopwatch. <code>user</code> is CPU time
+<strong>added up across all threads</strong>. With 8 threads each busy
+for about 1.8 s at the same time, that’s 8 × 1.76 ≈ 14 s of CPU time
+packed into 1.84 s of stopwatch time. So
+<strong><code>user ÷ real</code> ≈ how many CPUs were busy on
+average</strong>: about 1, 2, 4, 7.7, and 11.2 for 16 threads (close to
+all 12). A single-threaded program can never have <code>user</code>
+bigger than <code>real</code>. Seeing it is direct proof of
+parallelism.</p>
+<p><strong><code>sys</code></strong> stayed tiny (0.008–0.070 s): almost
+no kernel work, because the threads never make system calls in the loop.
+The biggest <code>sys</code> is the 16-thread run (0.070 s), the one
+where the scheduler was switching threads the most.</p>
+<p><strong>Finish order</strong> was different in every run (8 threads:
+3, 7, 1, 4, 5, 6, 0, 2). It’s the same lesson as Experiment 1: creation
+order says nothing about which thread finishes first.</p>
+<h3
+id="the-surprise-why-didnt-real-stay-flat-at-1.1-s-up-to-12-threads">The
+surprise: why didn’t <code>real</code> stay flat at 1.1 s up to 12
+threads?</h3>
+<p>If each thread had a CPU to itself, 2, 4 and 8 threads should all
+take about 1.1 s. Instead, 8 threads took 1.84 s, and each thread used
+<strong>1.76 s</strong> of CPU for the same work that took 1.11 s alone
+(last column of the table). The same work cost more CPU time when more
+threads ran at once. Two reasons:</p>
+<ol type="1">
+<li><p><strong>Your “12 CPUs” are 6 real cores.</strong>
+<code>lscpu</code> on this machine:</p>
+<pre><code>Model name:            AMD Ryzen 5 5600H with Radeon Graphics
+CPU(s):                12
+Core(s) per socket:    6
+Thread(s) per core:    2</code></pre>
+<p>Each physical core runs <strong>2 hardware threads</strong>
+(“hyperthreading”, which AMD calls SMT). Linux counts each one as a CPU,
+hence 12. But the two hyperthreads on one core <strong>share that core’s
+actual calculating hardware</strong>. One thread alone gets a whole
+core. Two busy threads on the same core each run noticeably slower. Up
+to about 6 threads, the scheduler can give each one its own core. Past
+6, threads start sharing cores. That’s why the per-thread cost jumps at
+8 (1.76 s) and 16 (2.39 s, about 2× the solo cost: each thread is
+getting roughly half a core).</p></li>
+<li><p><strong>The CPU slows its clock when many cores are
+busy.</strong> With one core busy, a laptop chip can run that core at
+its highest “boost” speed. With all cores busy, it has to stay within
+its power and heat limits, so every core runs slower. This is likely
+part of why even 4 threads cost a bit more (1.32 s vs 1.11 s).</p></li>
+</ol>
+<p>So for pure-CPU work, this laptop behaves more like <strong>6 fast
+cores plus some extra from hyperthreading</strong> than like 12 full
+CPUs.</p>
+<h2 id="part-b-explained-8-threads-fewer-than-12-cpus">Part B,
+explained: 8 threads (fewer than 12 CPUs)</h2>
+<pre><code>Threads:        9</code></pre>
+<p><strong>9, not 8.</strong> The 8 workers plus the <strong>main
+thread</strong> (the one running <code>main()</code>). Every process
+starts with one thread, and creating 8 more makes 9. This is the
+“careful” in prediction 3.</p>
+<pre><code>    TID PSR STAT %CPU COMMAND
+    826   4 Sl+   0.3 exp2_busy.out      ← main thread
+    827   7 Rl+   100 exp2_busy.out      ← worker (thread 0)
+    ...</code></pre>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Column</th>
+<th>Main thread (826)</th>
+<th>Workers (827–834)</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TID</code></td>
+<td>826 = the PID</td>
+<td>827–834</td>
+<td>Main thread’s TID = PID (Concepts doc Part 6). Workers got the next
+numbers. They match the <code>(TID …)</code> printed in Terminal 1</td>
+</tr>
+<tr>
+<td><code>PSR</code></td>
+<td>4</td>
+<td>7, 9, 11, 1, 4, 3, 6, 10</td>
+<td>Which CPU it last ran on: 8 workers spread across 8 different
+CPUs</td>
+</tr>
+<tr>
+<td><code>STAT</code></td>
+<td><strong><code>S</code></strong><code>l+</code></td>
+<td><strong><code>R</code></strong><code>l+</code></td>
+<td><strong><code>S</code> = sleeping</strong>: main is blocked in
+<code>join()</code>, waiting for thread 0 to finish.
+<strong><code>R</code> = running.</strong> <code>l</code> = “this
+process has multiple threads”. <code>+</code> = running in the
+terminal’s foreground</td>
+</tr>
+<tr>
+<td><code>%CPU</code></td>
+<td>0.3 / 0.1</td>
+<td>100</td>
+<td>Main uses almost nothing while it waits in <code>join()</code>. Each
+worker uses one full CPU</td>
+</tr>
+</tbody>
+</table>
+<p>That main-thread row shows a <strong>sleeping thread costs
+nothing</strong>: blocked in <code>join()</code>, it uses 0.1% CPU while
+8 other threads work flat out. Pulse’s threads waiting in
+<code>read()</code> will look like this row. That’s Experiment 3.</p>
+<p><strong>PSR between the two snapshots (2 seconds apart):</strong> 7
+of 8 workers were on the <strong>same CPU</strong> both times. Only 828
+moved (CPU 9 → 8). When there’s a free CPU for everyone, the scheduler
+prefers to leave a thread where it is, because its data is already in
+that CPU’s caches. Moving it would mean re-loading them.</p>
+<p><strong><code>pidstat -u</code>:</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Column</th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TGID</code> row (<code>826 -</code>)</td>
+<td><code>%CPU 800.00</code></td>
+<td>The whole process = <strong>8 CPUs’ worth</strong>. The 8 workers at
+100% each add up to 800%</td>
+</tr>
+<tr>
+<td><code>%usr</code></td>
+<td>100 per worker</td>
+<td>Time spent running the program’s own code (the loop)</td>
+</tr>
+<tr>
+<td><code>%system</code></td>
+<td>0</td>
+<td>Time the kernel spent on its behalf: none, because the loop never
+makes a system call</td>
+</tr>
+<tr>
+<td><code>%wait</code></td>
+<td><strong>0</strong></td>
+<td>Time the thread was <strong>ready to run but waiting for a free
+CPU</strong>. Zero: there were always enough CPUs</td>
+</tr>
+<tr>
+<td><code>CPU</code></td>
+<td>7, 8, 11, …</td>
+<td>The CPU it was on during the sample</td>
+</tr>
+<tr>
+<td>834: <code>101.00</code></td>
+<td></td>
+<td>Just measurement rounding. A thread can’t really use more than 100%
+of one CPU</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>pidstat -w</code>:</strong> <code>cswch/s</code> and
+<code>nvcswch/s</code> are <strong>0 for every thread</strong> (one
+thread had a single non-voluntary switch). Every thread had its own CPU
+and kept it the whole time. Nobody waited, so nobody gave up the CPU
+(<code>cswch</code>), and nobody had it taken away
+(<code>nvcswch</code>).</p>
+<h2 id="part-c-explained-16-threads-more-than-12-cpus">Part C,
+explained: 16 threads (more than 12 CPUs)</h2>
+<p><code>Threads: 17</code> (16 workers + main). Now there are more
+runnable threads than CPUs, and everything changes:</p>
+<p><strong>pidstat -u, the clearest picture:</strong></p>
+<pre><code>TID    %usr   %wait   %CPU
+985   85.58   15.38   85.58
+988   63.46   33.65   63.46
+1000  61.54   35.58   61.54
+...
+TGID row:  %CPU 1193.27</code></pre>
+<ul>
+<li><strong>Process <code>%CPU</code> = 1193%</strong>: about
+<strong>all 12 CPUs</strong>, completely full. It can’t go higher,
+because there are only 12.</li>
+<li><strong>Each worker got 61–86%</strong> of a CPU instead of 100%. 12
+CPUs shared by 16 threads = 12 ÷ 16 = <strong>75% each on
+average</strong>, and the per-thread numbers average out to about
+74%.</li>
+<li><strong><code>%wait</code> appeared: 14–36% per thread.</strong>
+That’s time the thread was <strong>ready to run but had no CPU</strong>:
+standing in line. Look at any row: <code>%usr + %wait ≈ 100%</code>
+(985: 85.58 + 15.38 ≈ 101). A busy thread is always either running or
+waiting for a CPU. It never stops wanting one.</li>
+<li><strong><code>%system</code> 2.88%</strong> for the whole process: a
+little kernel time, versus 0 with 8 threads.</li>
+</ul>
+<p><strong><code>ps -L</code> <code>%CPU</code> (62–88%) vs
+<code>pidstat</code> <code>%CPU</code> (61–86%):</strong> close but not
+identical, because they measure different time windows. <code>ps</code>
+shows the average <strong>since the thread started</strong>.
+<code>pidstat</code> shows the <strong>last 1 second</strong> only.</p>
+<p><strong>PSR:</strong> in the first snapshot, some CPUs show up
+<strong>twice</strong> (CPU 10: threads 988 and 991; CPU 9: 985 and 992;
+CPU 0: 989 and 994; …). That’s two threads taking turns on one CPU.
+Between snapshots, <strong>12 of 16 threads changed CPU</strong>, versus
+1 of 8 in Part B. With more threads than CPUs, the scheduler keeps
+moving threads around to give everyone a fair share.</p>
+<p><strong><code>pidstat -w</code>, the cost:</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>8 threads</th>
+<th>16 threads</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cswch/s</code> (voluntary)</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>nvcswch/s</code> (non-voluntary), per thread</td>
+<td>0 (one thread: 1)</td>
+<td><strong>25 to 94</strong></td>
+</tr>
+<tr>
+<td><code>nvcswch/s</code>, all workers added up</td>
+<td>~1 per second</td>
+<td><strong>~927 per second</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>cswch/s</code> is still 0.</strong> These threads
+never <em>choose</em> to stop. There’s nothing for them to wait for, no
+<code>read()</code>, no sleep.</li>
+<li><strong><code>nvcswch/s</code> exploded.</strong> With 16 threads
+and 12 CPUs, the scheduler has to <strong>forcibly take the CPU
+away</strong> from a running thread (its time slice is up) to let a
+waiting one run. That happened about 927 times per second across the
+process. Each one is a context switch (Concepts doc Part 5): save the
+registers, load another thread’s, and continue with cold caches.</li>
+</ul>
+<p><strong>Time:</strong> 16 threads × 4 rounds took 13.70 s, vs 8.28 s
+for 8 threads × 4 rounds. <strong>Double the work took 1.65× the
+time.</strong> That’s not double, because 8 threads left 4 CPUs idle
+that 16 threads could use. But past 12, adding threads adds no more
+CPUs, only more waiting and switching.</p>
+<h2 id="what-this-means-for-pulse">What this means for Pulse</h2>
+<p><strong>1. <code>join()</code> / <code>detach()</code> don’t
+serialize anything. Threads really do run at the same time.</strong>
+That’s what Week 2 relies on: the silent client’s thread and curl’s
+thread will both be alive at once.</p>
+<p><strong>2. More threads only help up to the number of CPUs, for CPU
+work.</strong> Past that (here, really past about 6 for full speed),
+threads take turns, and taking turns costs forced context switches:
+about 0 → 930 per second just by going from 8 to 16 threads.</p>
+<p><strong>3. Pulse is NOT like this experiment, and that’s the
+point.</strong> These threads wanted the CPU 100% of the time. Pulse’s
+threads will spend almost all their time <strong>asleep</strong> in
+<code>read()</code>/<code>accept()</code>, like the main thread’s row
+here (<code>S</code>, 0.1% CPU), because the Month 1 benchmark showed
+Pulse isn’t CPU-bound. So Pulse can probably have many more threads than
+CPUs without the waiting and switching seen in Part C, because sleeping
+threads aren’t in line for a CPU. Experiment 3 tests exactly that, and
+<strong>Week 4</strong> finds out where the limit for Pulse really is
+(memory per thread, thread count, the scheduler) by pushing hundreds of
+connections.</p>
+<p><strong>4. The tools to spot “too many busy threads” in Week
+4:</strong> <code>%wait</code> above 0 in <code>pidstat -u</code>,
+<code>nvcswch/s</code> climbing in <code>pidstat -w</code>, and the
+process’s <code>%CPU</code> stuck at about
+<code>nproc × 100%</code>.</p>
+<details>
+<summary>
+Raw output: Experiment 2, Part A (timing)
+</summary>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ for n in 1 2 4 8 16; do echo &quot;===== $n threads&quot;; time ./Month2/Week1/exp2_busy.out $n; done
+===== 1 threads
+PID 694: starting 1 thread(s), 1 round(s) each, on a machine with 12 CPUs
+thread  0 (TID 695) finished, sum = 1124999999250000000
+all 1 thread(s) done in 1.10 s
+
+real    0m1.155s
+user    0m1.111s
+sys     0m0.035s
+===== 2 threads
+PID 696: starting 2 thread(s), 1 round(s) each, on a machine with 12 CPUs
+thread  0 (TID 697) finished, sum = 1124999999250000000
+thread  1 (TID 698) finished, sum = 1124999999250000000
+all 2 thread(s) done in 1.17 s
+
+real    0m1.188s
+user    0m2.336s
+sys     0m0.009s
+===== 4 threads
+PID 699: starting 4 thread(s), 1 round(s) each, on a machine with 12 CPUs
+thread  0 (TID 700) finished, sum = 1124999999250000000
+thread  3 (TID 703) finished, sum = 1124999999250000000
+thread  2 (TID 702) finished, sum = 1124999999250000000
+thread  1 (TID 701) finished, sum = 1124999999250000000
+all 4 thread(s) done in 1.36 s
+
+real    0m1.377s
+user    0m5.291s
+sys     0m0.008s
+===== 8 threads
+PID 704: starting 8 thread(s), 1 round(s) each, on a machine with 12 CPUs
+thread  3 (TID 708) finished, sum = 1124999999250000000
+thread  7 (TID 712) finished, sum = 1124999999250000000
+thread  1 (TID 706) finished, sum = 1124999999250000000
+thread  4 (TID 709) finished, sum = 1124999999250000000
+thread  5 (TID 710) finished, sum = 1124999999250000000
+thread  6 (TID 711) finished, sum = 1124999999250000000
+thread  0 (TID 705) finished, sum = 1124999999250000000
+thread  2 (TID 707) finished, sum = 1124999999250000000
+all 8 thread(s) done in 1.82 s
+
+real    0m1.838s
+user    0m14.062s
+sys     0m0.013s
+===== 16 threads
+PID 713: starting 16 thread(s), 1 round(s) each, on a machine with 12 CPUs
+thread  7 (TID 721) finished, sum = 1124999999250000000
+thread  6 (TID 720) finished, sum = 1124999999250000000
+thread  1 (TID 715) finished, sum = 1124999999250000000
+thread  2 (TID 716) finished, sum = 1124999999250000000
+thread 15 (TID 729) finished, sum = 1124999999250000000
+thread  5 (TID 719) finished, sum = 1124999999250000000
+thread  8 (TID 722) finished, sum = 1124999999250000000
+thread  0 (TID 714) finished, sum = 1124999999250000000
+thread 10 (TID 724) finished, sum = 1124999999250000000
+thread 11 (TID 725) finished, sum = 1124999999250000000
+thread  9 (TID 723) finished, sum = 1124999999250000000
+thread  4 (TID 718) finished, sum = 1124999999250000000
+thread 14 (TID 728) finished, sum = 1124999999250000000
+thread 12 (TID 726) finished, sum = 1124999999250000000
+thread  3 (TID 717) finished, sum = 1124999999250000000
+thread 13 (TID 727) finished, sum = 1124999999250000000
+all 16 thread(s) done in 3.39 s
+
+real    0m3.410s
+user    0m38.162s
+sys     0m0.070s</code></pre>
+</details>
+<details>
+<summary>
+Raw output: Experiment 2, Part B (8 threads, 4 rounds)
+</summary>
+<p><strong>Terminal 1</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ./Month2/Week1/exp2_busy.out 8 4
+PID 826: starting 8 thread(s), 4 round(s) each, on a machine with 12 CPUs
+thread  4 (TID 831) finished, sum = 4499999997000000000
+thread  5 (TID 832) finished, sum = 4499999997000000000
+thread  6 (TID 833) finished, sum = 4499999997000000000
+thread  1 (TID 828) finished, sum = 4499999997000000000
+thread  3 (TID 830) finished, sum = 4499999997000000000
+thread  2 (TID 829) finished, sum = 4499999997000000000
+thread  7 (TID 834) finished, sum = 4499999997000000000
+thread  0 (TID 827) finished, sum = 4499999997000000000
+all 8 thread(s) done in 8.28 s</code></pre>
+<p><strong>Terminal 2</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ P=$(pgrep -n exp2_busy)
+grep Threads /proc/$P/status
+ps -L -o tid,psr,stat,pcpu,comm -p $P
+sleep 2; ps -L -o tid,psr,stat,pcpu,comm -p $P
+pidstat -u -t -p $P 1 1
+pidstat -w -t -p $P 1 1
+Threads:        9
+    TID PSR STAT %CPU COMMAND
+    826   4 Sl+   0.3 exp2_busy.out
+    827   7 Rl+   100 exp2_busy.out
+    828   9 Rl+   100 exp2_busy.out
+    829  11 Rl+   100 exp2_busy.out
+    830   1 Rl+   100 exp2_busy.out
+    831   4 Rl+   100 exp2_busy.out
+    832   3 Rl+   100 exp2_busy.out
+    833   6 Rl+   100 exp2_busy.out
+    834  10 Rl+   100 exp2_busy.out
+    TID PSR STAT %CPU COMMAND
+    826   4 Sl+   0.1 exp2_busy.out
+    827   7 Rl+   100 exp2_busy.out
+    828   8 Rl+   100 exp2_busy.out
+    829  11 Rl+   100 exp2_busy.out
+    830   1 Rl+   100 exp2_busy.out
+    831   4 Rl+   100 exp2_busy.out
+    832   3 Rl+   100 exp2_busy.out
+    833   6 Rl+   100 exp2_busy.out
+    834  10 Rl+   100 exp2_busy.out
+Linux 6.6.87.2-microsoft-standard-WSL2 (Galu-PC)        10/07/26        _x86_64_   (12 CPU)
+
+02:04:12      UID      TGID       TID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:04:13     1000       826         -  800.00    0.00    0.00    0.00  800.00     4  exp2_busy.out
+02:04:13     1000         -       826    0.00    0.00    0.00    0.00    0.00     4  |__exp2_busy.out
+02:04:13     1000         -       827  100.00    0.00    0.00    0.00  100.00     7  |__exp2_busy.out
+02:04:13     1000         -       828  100.00    0.00    0.00    0.00  100.00     8  |__exp2_busy.out
+02:04:13     1000         -       829  100.00    0.00    0.00    0.00  100.00    11  |__exp2_busy.out
+02:04:13     1000         -       830  100.00    0.00    0.00    0.00  100.00     1  |__exp2_busy.out
+02:04:13     1000         -       831  100.00    0.00    0.00    0.00  100.00     4  |__exp2_busy.out
+02:04:13     1000         -       832  100.00    0.00    0.00    0.00  100.00     3  |__exp2_busy.out
+02:04:13     1000         -       833  100.00    0.00    0.00    0.00  100.00     6  |__exp2_busy.out
+02:04:13     1000         -       834  101.00    0.00    0.00    0.00  101.00    10  |__exp2_busy.out
+Average:     1000       826         -  800.00    0.00    0.00    0.00  800.00     -  exp2_busy.out
+Average:     1000         -       826    0.00    0.00    0.00    0.00    0.00     -  |__exp2_busy.out
+Average:     1000         -       827  100.00    0.00    0.00    0.00  100.00     -  |__exp2_busy.out
+Average:     1000         -       828  100.00    0.00    0.00    0.00  100.00     -  |__exp2_busy.out
+Average:     1000         -       829  100.00    0.00    0.00    0.00  100.00     -  |__exp2_busy.out
+Average:     1000         -       830  100.00    0.00    0.00    0.00  100.00     -  |__exp2_busy.out
+Average:     1000         -       831  100.00    0.00    0.00    0.00  100.00     -  |__exp2_busy.out
+Average:     1000         -       832  100.00    0.00    0.00    0.00  100.00     -  |__exp2_busy.out
+Average:     1000         -       833  100.00    0.00    0.00    0.00  100.00     -  |__exp2_busy.out
+Average:     1000         -       834  101.00    0.00    0.00    0.00  101.00     -  |__exp2_busy.out
+Linux 6.6.87.2-microsoft-standard-WSL2 (Galu-PC)        10/07/26        _x86_64_   (12 CPU)
+
+02:04:13      UID      TGID       TID   cswch/s nvcswch/s  Command
+02:04:14     1000       826         -      0.00      0.00  exp2_busy.out
+02:04:14     1000         -       826      0.00      0.00  |__exp2_busy.out
+02:04:14     1000         -       827      0.00      0.00  |__exp2_busy.out
+02:04:14     1000         -       828      0.00      0.00  |__exp2_busy.out
+02:04:14     1000         -       829      0.00      0.00  |__exp2_busy.out
+02:04:14     1000         -       830      0.00      0.00  |__exp2_busy.out
+02:04:14     1000         -       831      0.00      0.00  |__exp2_busy.out
+02:04:14     1000         -       832      0.00      0.00  |__exp2_busy.out
+02:04:14     1000         -       833      0.00      1.00  |__exp2_busy.out
+02:04:14     1000         -       834      0.00      0.00  |__exp2_busy.out
+Average:     1000       826         -      0.00      0.00  exp2_busy.out
+Average:     1000         -       826      0.00      0.00  |__exp2_busy.out
+Average:     1000         -       827      0.00      0.00  |__exp2_busy.out
+Average:     1000         -       828      0.00      0.00  |__exp2_busy.out
+Average:     1000         -       829      0.00      0.00  |__exp2_busy.out
+Average:     1000         -       830      0.00      0.00  |__exp2_busy.out
+Average:     1000         -       831      0.00      0.00  |__exp2_busy.out
+Average:     1000         -       832      0.00      0.00  |__exp2_busy.out
+Average:     1000         -       833      0.00      1.00  |__exp2_busy.out
+Average:     1000         -       834      0.00      0.00  |__exp2_busy.out</code></pre>
+</details>
+<details>
+<summary>
+Raw output: Experiment 2, Part C (16 threads, 4 rounds)
+</summary>
+<p><strong>Terminal 1</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ./Month2/Week1/exp2_busy.out 16 4
+PID 984: starting 16 thread(s), 4 round(s) each, on a machine with 12 CPUs
+thread 10 (TID 995) finished, sum = 4499999997000000000
+thread 11 (TID 996) finished, sum = 4499999997000000000
+thread  1 (TID 986) finished, sum = 4499999997000000000
+thread  5 (TID 990) finished, sum = 4499999997000000000
+thread 12 (TID 997) finished, sum = 4499999997000000000
+thread  0 (TID 985) finished, sum = 4499999997000000000
+thread 14 (TID 999) finished, sum = 4499999997000000000
+thread  8 (TID 993) finished, sum = 4499999997000000000
+thread  2 (TID 987) finished, sum = 4499999997000000000
+thread  6 (TID 991) finished, sum = 4499999997000000000
+thread  7 (TID 992) finished, sum = 4499999997000000000
+thread  9 (TID 994) finished, sum = 4499999997000000000
+thread 15 (TID 1000) finished, sum = 4499999997000000000
+thread  3 (TID 988) finished, sum = 4499999997000000000
+thread 13 (TID 998) finished, sum = 4499999997000000000
+thread  4 (TID 989) finished, sum = 4499999997000000000
+all 16 thread(s) done in 13.70 s</code></pre>
+<p><strong>Terminal 2</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ P=$(pgrep -n exp2_busy)
+grep Threads /proc/$P/status
+ps -L -o tid,psr,stat,pcpu,comm -p $P
+sleep 2; ps -L -o tid,psr,stat,pcpu,comm -p $P
+pidstat -u -t -p $P 1 1
+pidstat -w -t -p $P 1 1
+Threads:        17
+    TID PSR STAT %CPU COMMAND
+    984   6 Sl+   0.0 exp2_busy.out
+    985   9 Rl+  73.2 exp2_busy.out
+    986   5 Rl+  82.8 exp2_busy.out
+    987  11 Rl+  76.7 exp2_busy.out
+    988  10 Rl+  83.0 exp2_busy.out
+    989   0 Rl+  79.8 exp2_busy.out
+    990   3 Rl+  76.1 exp2_busy.out
+    991  10 Rl+  78.8 exp2_busy.out
+    992   9 Rl+  72.2 exp2_busy.out
+    993   5 Rl+  75.3 exp2_busy.out
+    994   0 Rl+  87.8 exp2_busy.out
+    995   4 Rl+  73.8 exp2_busy.out
+    996   2 Rl+  81.4 exp2_busy.out
+    997   6 Rl+  65.3 exp2_busy.out
+    998   8 Rl+  61.9 exp2_busy.out
+    999   7 Rl+  69.4 exp2_busy.out
+   1000   7 Rl+  64.4 exp2_busy.out
+    TID PSR STAT %CPU COMMAND
+    984   6 Sl+   0.0 exp2_busy.out
+    985   9 Rl+  69.6 exp2_busy.out
+    986   5 Rl+  79.4 exp2_busy.out
+    987  10 Rl+  75.0 exp2_busy.out
+    988   4 Rl+  78.2 exp2_busy.out
+    989   0 Rl+  79.2 exp2_busy.out
+    990   3 Rl+  76.9 exp2_busy.out
+    991  11 Rl+  78.7 exp2_busy.out
+    992   8 Rl+  71.0 exp2_busy.out
+    993   6 Rl+  75.0 exp2_busy.out
+    994   1 Rl+  86.5 exp2_busy.out
+    995   5 Rl+  74.0 exp2_busy.out
+    996   3 Rl+  81.8 exp2_busy.out
+    997   7 Rl+  69.4 exp2_busy.out
+    998   0 Rl+  63.2 exp2_busy.out
+    999   2 Rl+  70.8 exp2_busy.out
+   1000  10 Rl+  66.3 exp2_busy.out
+Linux 6.6.87.2-microsoft-standard-WSL2 (Galu-PC)        10/07/26        _x86_64_   (12 CPU)
+
+02:05:26      UID      TGID       TID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:05:27     1000       984         - 1190.38    2.88    0.00    0.00 1193.27     6  exp2_busy.out
+02:05:27     1000         -       984    0.00    0.00    0.00    0.00    0.00     6  |__exp2_busy.out
+02:05:27     1000         -       985   85.58    0.00    0.00   15.38   85.58     8  |__exp2_busy.out
+02:05:27     1000         -       986   79.81    0.00    0.00   20.19   79.81     5  |__exp2_busy.out
+02:05:27     1000         -       987   84.62    0.00    0.00   14.42   84.62    10  |__exp2_busy.out
+02:05:27     1000         -       988   63.46    0.00    0.00   33.65   63.46    11  |__exp2_busy.out
+02:05:27     1000         -       989   63.46    0.00    0.00   34.62   63.46     0  |__exp2_busy.out
+02:05:27     1000         -       990   80.77    0.00    0.00   17.31   80.77     3  |__exp2_busy.out
+02:05:27     1000         -       991   71.15    0.00    0.00   25.96   71.15    10  |__exp2_busy.out
+02:05:27     1000         -       992   79.81    0.00    0.00   17.31   79.81     9  |__exp2_busy.out
+02:05:27     1000         -       993   75.00    0.00    0.00   22.12   75.00     6  |__exp2_busy.out
+02:05:27     1000         -       994   62.50    0.00    0.00   34.62   62.50     1  |__exp2_busy.out
+02:05:27     1000         -       995   71.15    0.00    0.00   24.04   71.15     4  |__exp2_busy.out
+02:05:27     1000         -       996   81.73    0.00    0.00   14.42   81.73     2  |__exp2_busy.out
+02:05:27     1000         -       997   77.88    0.96    0.00   18.27   78.85     7  |__exp2_busy.out
+02:05:27     1000         -       998   68.27    0.00    0.00   27.88   68.27     1  |__exp2_busy.out
+02:05:27     1000         -       999   63.46    0.00    0.00   32.69   63.46     8  |__exp2_busy.out
+02:05:27     1000         -      1000   61.54    0.00    0.00   35.58   61.54     7  |__exp2_busy.out
+Average:     1000       984         - 1190.38    2.88    0.00    0.00 1193.27     -  exp2_busy.out
+Average:     1000         -       984    0.00    0.00    0.00    0.00    0.00     -  |__exp2_busy.out
+Average:     1000         -       985   85.58    0.00    0.00   15.38   85.58     -  |__exp2_busy.out
+Average:     1000         -       986   79.81    0.00    0.00   20.19   79.81     -  |__exp2_busy.out
+Average:     1000         -       987   84.62    0.00    0.00   14.42   84.62     -  |__exp2_busy.out
+Average:     1000         -       988   63.46    0.00    0.00   33.65   63.46     -  |__exp2_busy.out
+Average:     1000         -       989   63.46    0.00    0.00   34.62   63.46     -  |__exp2_busy.out
+Average:     1000         -       990   80.77    0.00    0.00   17.31   80.77     -  |__exp2_busy.out
+Average:     1000         -       991   71.15    0.00    0.00   25.96   71.15     -  |__exp2_busy.out
+Average:     1000         -       992   79.81    0.00    0.00   17.31   79.81     -  |__exp2_busy.out
+Average:     1000         -       993   75.00    0.00    0.00   22.12   75.00     -  |__exp2_busy.out
+Average:     1000         -       994   62.50    0.00    0.00   34.62   62.50     -  |__exp2_busy.out
+Average:     1000         -       995   71.15    0.00    0.00   24.04   71.15     -  |__exp2_busy.out
+Average:     1000         -       996   81.73    0.00    0.00   14.42   81.73     -  |__exp2_busy.out
+Average:     1000         -       997   77.88    0.96    0.00   18.27   78.85     -  |__exp2_busy.out
+Average:     1000         -       998   68.27    0.00    0.00   27.88   68.27     -  |__exp2_busy.out
+Average:     1000         -       999   63.46    0.00    0.00   32.69   63.46     -  |__exp2_busy.out
+Average:     1000         -      1000   61.54    0.00    0.00   35.58   61.54     -  |__exp2_busy.out
+Linux 6.6.87.2-microsoft-standard-WSL2 (Galu-PC)        10/07/26        _x86_64_   (12 CPU)
+
+02:05:27      UID      TGID       TID   cswch/s nvcswch/s  Command
+02:05:28     1000       984         -      0.00      0.00  exp2_busy.out
+02:05:28     1000         -       984      0.00      0.00  |__exp2_busy.out
+02:05:28     1000         -       985      0.00     76.24  |__exp2_busy.out
+02:05:28     1000         -       986      0.00     51.49  |__exp2_busy.out
+02:05:28     1000         -       987      0.00     24.75  |__exp2_busy.out
+02:05:28     1000         -       988      0.00     34.65  |__exp2_busy.out
+02:05:28     1000         -       989      0.00     74.26  |__exp2_busy.out
+02:05:28     1000         -       990      0.00     74.26  |__exp2_busy.out
+02:05:28     1000         -       991      0.00     28.71  |__exp2_busy.out
+02:05:28     1000         -       992      0.00     94.06  |__exp2_busy.out
+02:05:28     1000         -       993      0.00     82.18  |__exp2_busy.out
+02:05:28     1000         -       994      0.00     55.45  |__exp2_busy.out
+02:05:28     1000         -       995      0.00     49.50  |__exp2_busy.out
+02:05:28     1000         -       996      0.00     25.74  |__exp2_busy.out
+02:05:28     1000         -       997      0.00     67.33  |__exp2_busy.out
+02:05:28     1000         -       998      0.00     31.68  |__exp2_busy.out
+02:05:28     1000         -       999      0.00     71.29  |__exp2_busy.out
+02:05:28     1000         -      1000      0.00     85.15  |__exp2_busy.out
+Average:     1000       984         -      0.00      0.00  exp2_busy.out
+Average:     1000         -       984      0.00      0.00  |__exp2_busy.out
+Average:     1000         -       985      0.00     76.24  |__exp2_busy.out
+Average:     1000         -       986      0.00     51.49  |__exp2_busy.out
+Average:     1000         -       987      0.00     24.75  |__exp2_busy.out
+Average:     1000         -       988      0.00     34.65  |__exp2_busy.out
+Average:     1000         -       989      0.00     74.26  |__exp2_busy.out
+Average:     1000         -       990      0.00     74.26  |__exp2_busy.out
+Average:     1000         -       991      0.00     28.71  |__exp2_busy.out
+Average:     1000         -       992      0.00     94.06  |__exp2_busy.out
+Average:     1000         -       993      0.00     82.18  |__exp2_busy.out
+Average:     1000         -       994      0.00     55.45  |__exp2_busy.out
+Average:     1000         -       995      0.00     49.50  |__exp2_busy.out
+Average:     1000         -       996      0.00     25.74  |__exp2_busy.out
+Average:     1000         -       997      0.00     67.33  |__exp2_busy.out
+Average:     1000         -       998      0.00     31.68  |__exp2_busy.out
+Average:     1000         -       999      0.00     71.29  |__exp2_busy.out
+Average:     1000         -      1000      0.00     85.15  |__exp2_busy.out</code></pre>
+</details>
+<hr />
+<h1 id="experiment-3-sleeping-threads">Experiment 3 — Sleeping
+threads</h1>
+<p><strong>File:</strong> <code>Month2/Week1/exp3_sleep.cpp</code>,
+written and fully commented (Concepts doc Parts 5, 6). Read the comments
+before running. <strong>Pulse question:</strong> a Pulse thread waiting
+in <code>read()</code> for a slow client is <strong>asleep</strong>
+(Experiment 0 showed Pulse’s thread as <code>S wait_woken</code>). What
+does a sleeping thread cost in CPU, time and memory? And can a process
+have <em>more</em> sleeping threads than CPUs, unlike Experiment 2’s
+busy ones?</p>
+<h2 id="what-the-program-does-1">What the program does</h2>
+<pre><code>./exp3_sleep.out &lt;threads&gt; [seconds]</code></pre>
+<ul>
+<li>Exactly Experiment 2’s structure (create all threads, then join
+all), with one change: each thread calls
+<code>std::this_thread::sleep_for(...)</code> instead of a busy loop.
+Default 10 seconds.</li>
+<li>A sleeping thread is in state <code>S</code>. The scheduler doesn’t
+consider it at all until a kernel timer wakes it up. In Pulse, the thing
+that wakes a thread up is data arriving from the network instead of a
+timer. Otherwise it’s the same situation.</li>
+<li>Allows up to 200 threads (Experiment 2 stopped at 64), because
+sleeping threads use no CPU.</li>
+<li>Prints <code>woke up and finished</code> only for the first 16
+threads, so 100 lines don’t bury the output that matters.</li>
+</ul>
+<h2 id="what-to-run-1">What to run</h2>
+<p>All from the Pulse folder in WSL
+(<code>cd /mnt/c/Users/aagam/OneDrive/Desktop/Pulse</code>).</p>
+<h3
+id="part-a-timing-1-8-16-100-threads-3-second-sleep-each-15-s-total">Part
+A: timing 1 / 8 / 16 / 100 threads (3-second sleep each, ~15 s
+total)</h3>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">g++</span> <span class="at">-std</span><span class="op">=</span>c++17 <span class="at">-Wall</span> <span class="at">-pthread</span> Month2/Week1/exp3_sleep.cpp <span class="at">-o</span> Month2/Week1/exp3_sleep.out</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> 1 8 16 100<span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="st">&quot;===== </span><span class="va">$n</span><span class="st"> threads&quot;</span><span class="kw">;</span> <span class="bu">time</span> ./Month2/Week1/exp3_sleep.out <span class="va">$n</span> 3<span class="kw">;</span> <span class="cf">done</span></span></code></pre></div>
+<h3
+id="part-b-watch-16-sleeping-threads-more-than-12-cpus-the-case-that-hurt-in-experiment-2">Part
+B: watch 16 sleeping threads (more than 12 CPUs, the case that hurt in
+Experiment 2)</h3>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminal 1 (sleeps 10 s, so there&#39;s time to look)</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./Month2/Week1/exp3_sleep.out</span> 16</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminal 2, straight away</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="va">P</span><span class="op">=</span><span class="va">$(</span><span class="ex">pgrep</span> <span class="at">-n</span> exp3_sleep<span class="va">)</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-E</span> <span class="st">&quot;Threads|VmSize|VmRSS&quot;</span> /proc/<span class="va">$P</span>/status</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-L</span> <span class="at">-o</span> tid,psr,stat,wchan:22,pcpu,comm <span class="at">-p</span> <span class="va">$P</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pidstat</span> <span class="at">-u</span> <span class="at">-t</span> <span class="at">-p</span> <span class="va">$P</span> 1 1</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="ex">pidstat</span> <span class="at">-w</span> <span class="at">-t</span> <span class="at">-p</span> <span class="va">$P</span> 1 1</span></code></pre></div>
+<h3 id="part-c-watch-100-sleeping-threads-8-more-threads-than-cpus">Part
+C: watch 100 sleeping threads (8× more threads than CPUs)</h3>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminal 1</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./Month2/Week1/exp3_sleep.out</span> 100</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminal 2, straight away</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="va">P</span><span class="op">=</span><span class="va">$(</span><span class="ex">pgrep</span> <span class="at">-n</span> exp3_sleep<span class="va">)</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-E</span> <span class="st">&quot;Threads|VmSize|VmRSS&quot;</span> /proc/<span class="va">$P</span>/status</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-L</span> <span class="at">-o</span> stat= <span class="at">-p</span> <span class="va">$P</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-L</span> <span class="at">-o</span> wchan:22= <span class="at">-p</span> <span class="va">$P</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="ex">pidstat</span> <span class="at">-u</span> <span class="at">-p</span> <span class="va">$P</span> 1 1</span></code></pre></div>
+<h3 id="new-commands-explained-2">New commands, explained</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grep -E “Threads|VmSize|VmRSS”</code></td>
+<td>Three lines from <code>/proc/&lt;PID&gt;/status</code>: thread
+count, <strong>VmSize</strong> = virtual memory <em>reserved</em>
+(address space), <strong>VmRSS</strong> = physical RAM <em>actually
+used</em> (Concepts doc Part 6)</td>
+</tr>
+<tr>
+<td><code>ps -L -o ...,wchan:22,...</code></td>
+<td><code>WCHAN</code> = the kernel function each thread is asleep in
+(seen in Experiment 0 as <code>wait_woken</code>)</td>
+</tr>
+<tr>
+<td><code>ps -L -o stat= -p $P</code></td>
+<td>Just the <code>STAT</code> column, one line per thread. The
+<code>=</code> after <code>stat</code> means “no header line”</td>
+</tr>
+<tr>
+<td><code>| sort | uniq -c</code></td>
+<td>Same trick as Experiment 1: sort the lines so identical ones are
+together, then count each kind. 101 rows become a couple of lines like
+<code>&lt;count&gt; Sl+</code></td>
+</tr>
+<tr>
+<td><code>pidstat -u -p $P 1 1</code></td>
+<td>CPU use for the <strong>whole process</strong> (no <code>-t</code>,
+so no per-thread rows, which would be 101 lines here)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-happened-in-plain-english-3">What happened, in plain
+English</h2>
+<div class="tldr">
+<p><b>What I did:</b> ran 1, 8, 16 and 100 threads that each just
+<b>sleep</b> for 3 seconds, timed it, then watched 16 sleeping threads
+with <code>ps</code> and <code>pidstat</code>. <br><br> <b>What
+happened:</b> every run took about <b>3 seconds</b>, whether 1 thread or
+100. They used essentially <b>zero CPU</b> (<code>user</code> ≈ 0.000
+s). With 16 threads on 12 CPUs there was <b>no waiting for a CPU and no
+context switching at all</b>, the exact opposite of Experiment 2’s 16
+busy threads. <br><br> <b>The key insight:</b> a sleeping thread isn’t
+waiting in line for a CPU. It isn’t in the line at all. So you can have
+far more sleeping threads than CPUs at almost no CPU cost. What each
+thread <i>does</i> cost is <b>memory reserved for its stack</b> (8 MiB
+of address space each) and a little kernel time to create and destroy
+it. Pulse’s threads, waiting in <code>read()</code> for clients, are
+this kind of thread.</p>
+</div>
+<h2 id="the-numbers-that-matter-2">The numbers that matter</h2>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+real time, 1 vs 100 threads
+</div>
+<div class="values">
+<span class="flat">3.05 s → 3.08 s</span>
+</div>
+<div class="note">
+100× the threads, basically the same time
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+CPU used (user), 100 threads
+</div>
+<div class="values">
+<span class="flat">0.000 s</span>
+</div>
+<div class="note">
+Exp 2’s 16 busy threads: 38.2 s
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+16 threads: reserved vs real memory
+</div>
+<div class="values">
+135 MB vs 3.9 MB
+</div>
+<div class="note">
+VmSize 138,040 kB vs VmRSS 3,968 kB
+</div>
+</div>
+</div>
+<div class="analogy">
+<p><b>Analogy:</b> back to the 12 supermarket checkout counters. In
+Experiment 2, every shopper had a full trolley, so they all needed a
+counter, and with 16 shoppers there was a queue. Here, every “shopper”
+is sitting in the café waiting for a phone call (the timer, or in Pulse,
+the client’s data). Someone sitting in the café doesn’t need a counter
+and isn’t in the queue. You could have 100 of them in the café and the
+counters would sit empty. What they <i>do</i> take is a seat each
+(memory for the stack). The café can run out of seats long before the
+counters get busy. That’s Week 4’s question.</p>
+</div>
+<h2 id="predictions-vs-reality-3">Predictions vs reality</h2>
+<p>No Experiment 3 predictions were written in <code>notes.txt</code>,
+so each question is answered from the output instead.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer from the output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. <code>real</code> for 1 / 8 / 16 / 100 threads (3 s sleep)</td>
+<td><strong>3.048 / 3.017 / 3.022 / 3.079 s</strong>: always about 3
+s</td>
+</tr>
+<tr>
+<td>2. <code>user</code> time</td>
+<td><strong>0.018 / 0.000 / 0.004 / 0.000 s</strong>: nothing.
+Experiment 2 was 1.1 to 38.2 s</td>
+</tr>
+<tr>
+<td>3. <code>Threads:</code></td>
+<td>16 workers: <strong>17</strong>. 100 workers: <strong>101</strong>
+(always workers + main)</td>
+</tr>
+<tr>
+<td>4. <code>STAT</code></td>
+<td>Workers <strong><code>Sl+</code></strong>, main
+<strong><code>Sl+</code></strong>: everyone asleep</td>
+</tr>
+<tr>
+<td>5. <code>WCHAN</code></td>
+<td>Workers <strong><code>hrtimer_nanosleep</code></strong>, main
+<strong><code>futex_wait_queue</code></strong>:
+<strong>different</strong>, explained below</td>
+</tr>
+<tr>
+<td>6. total <code>%CPU</code>, <code>%wait</code></td>
+<td><strong>0.00%</strong> CPU, <strong>0.00%</strong> wait, with 16
+threads <strong>and</strong> with 100</td>
+</tr>
+<tr>
+<td>7. <code>cswch/s</code> / <code>nvcswch/s</code> while sleeping</td>
+<td><strong>0 / 0</strong> for every thread</td>
+</tr>
+<tr>
+<td>8. <code>VmSize</code> / <code>VmRSS</code></td>
+<td>16 threads: 138,040 / 3,968 kB. 100 threads: <strong>826,504 / 4,352
+kB</strong>. VmSize grew by <strong>8,196 kB per extra thread</strong>,
+VmRSS by only <strong>~4.6 kB per extra thread</strong></td>
+</tr>
+<tr>
+<td>9. Could Pulse handle 100 slow clients?</td>
+<td>Answered at the end of this section</td>
+</tr>
+</tbody>
+</table>
+<h2 id="part-a-explained-the-timing-table-1">Part A, explained: the
+timing table</h2>
+<table>
+<thead>
+<tr>
+<th>Threads</th>
+<th><code>real</code></th>
+<th><code>user</code></th>
+<th><code>sys</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3.048 s</td>
+<td>0.018 s</td>
+<td>0.021 s</td>
+</tr>
+<tr>
+<td>8</td>
+<td>3.017 s</td>
+<td>0.000 s</td>
+<td>0.013 s</td>
+</tr>
+<tr>
+<td>16</td>
+<td>3.022 s</td>
+<td>0.004 s</td>
+<td>0.015 s</td>
+</tr>
+<tr>
+<td>100</td>
+<td>3.079 s</td>
+<td>0.000 s</td>
+<td><strong>0.098 s</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>real</code> ≈ 3 s every time.</strong> Every thread
+starts sleeping at almost the same moment and wakes 3 s later. The
+sleeps overlap completely. There’s no queue for CPUs because none of
+them needs one.</li>
+<li><strong><code>user</code> ≈ 0.</strong> Sleeping runs no program
+code, so it uses no CPU. Compare Experiment 2’s 16 threads:
+<code>user</code> 38.162 s.</li>
+<li><strong><code>sys</code> with 100 threads: 0.098 s</strong> (vs
+about 0.015 s for 8 or 16). This is the <strong>cost of creating and
+destroying threads</strong>. For each thread the kernel has to
+<code>clone()</code> it, map an 8 MiB stack, set up the guard page, and
+later tear it all down. Here that’s well under 1 ms per thread. It’s
+small, but in Week 2 Pulse pays it <strong>once per connection</strong>,
+every time a client connects. Remember that for Week 4.</li>
+<li><strong><code>real</code> 3.079 s for 100 vs 3.017 s for 8</strong>:
+the extra ~60 ms is the time spent creating 100 threads before the last
+one starts sleeping, plus joining them.</li>
+</ul>
+<p><strong>Finish order is almost in order this time</strong> (16
+threads: 0, 1, 2, <strong>4, 3</strong>, 5, 6, 7, <strong>9, 8</strong>,
+10…). In Experiment 2 it was scrambled. Why the difference? Each thread
+sleeps exactly 3 s <strong>from the moment it started</strong>, and they
+started in order (0 first), so their alarms go off in roughly that
+order, microseconds apart. When two alarms go off almost together,
+either can run first: <strong>4 before 3, 9 before 8</strong>. So the
+order is still not guaranteed. It just <em>looks</em> ordered because
+the timers were set in order. That’s the same lesson as Experiment 1’s
+98/2.</p>
+<h2 id="part-b-explained-16-sleeping-threads">Part B, explained: 16
+sleeping threads</h2>
+<pre><code>VmSize:   138040 kB
+VmRSS:      3968 kB
+Threads:        17</code></pre>
+<p><strong><code>Threads: 17</code></strong>: 16 workers + the main
+thread, as in Experiment 2.</p>
+<p><strong><code>VmSize</code> 138,040 kB: memory
+<em>reserved</em>.</strong> Do the arithmetic with the stack size from
+Concepts doc Part 4 (8 MiB + one 4 KiB guard page per thread):</p>
+<pre><code>16 threads × (8192 kB stack + 4 kB guard page) = 131,136 kB
+138,040 − 131,136                               =   6,904 kB   ← the program itself, libc/libstdc++, the main thread&#39;s stack</code></pre>
+<p>So <strong>95% of this process’s address space is thread
+stacks.</strong> Every extra thread should add about 8 MiB to
+<code>VmSize</code>. Part C (100 threads) tests that prediction
+directly, and it holds to the kilobyte.</p>
+<p><strong><code>VmRSS</code> 3,968 kB: memory <em>actually in
+RAM</em>.</strong> Only about 4 MB, nearly the same as <strong>Pulse’s
+Month 1 baseline RSS of 3,840 kB</strong>. 16 threads have reserved 128
+MiB of stack between them, but each one has only <em>touched</em> a few
+KiB (a sleeping thread barely uses its stack). The kernel only gives
+real RAM to pages that are actually touched (Concepts doc Part 6).
+<strong>Reserved is not used.</strong></p>
+<pre><code>    TID PSR STAT WCHAN                  %CPU COMMAND
+   1153   5 Sl+  futex_wait_queue        1.7 exp3_sleep.out     ← main thread
+   1154   8 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out     ← worker
+   ...</code></pre>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Column</th>
+<th>Main thread (1153)</th>
+<th>Workers (1154–1169)</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>STAT</code></td>
+<td><code>Sl+</code></td>
+<td><code>Sl+</code></td>
+<td><strong>Every</strong> thread is sleeping (<code>S</code>)</td>
+</tr>
+<tr>
+<td><code>WCHAN</code></td>
+<td><strong><code>futex_wait_queue</code></strong></td>
+<td><strong><code>hrtimer_nanosleep</code></strong></td>
+<td><strong>What</strong> each thread is asleep waiting for (below)</td>
+</tr>
+<tr>
+<td><code>%CPU</code></td>
+<td>1.7</td>
+<td>0.0</td>
+<td><code>ps</code> <code>%CPU</code> is the average since the thread
+started. Main’s 1.7% is from the start, when it was busy creating 16
+threads. Workers have done nothing</td>
+</tr>
+<tr>
+<td><code>PSR</code></td>
+<td>5</td>
+<td>only 3, 7, 8, 11</td>
+<td>All 16 workers last ran on just <strong>4 CPUs</strong> (below)</td>
+</tr>
+</tbody>
+</table>
+<h3
+id="s-tells-you-a-thread-is-asleep.-wchan-tells-you-what-its-waiting-for."><code>S</code>
+tells you a thread is asleep. <code>WCHAN</code> tells you what it’s
+waiting for.</h3>
+<p>You’ve now seen three different wait channels, all in state
+<code>S</code>:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>WCHAN</th>
+<th>Who</th>
+<th>Waiting for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hrtimer_nanosleep</code></td>
+<td>Workers here</td>
+<td>A <strong>timer</strong>. <code>sleep_for</code> → the
+<code>nanosleep</code> system call → “wake me when this high-resolution
+timer (<code>hrtimer</code>) goes off”</td>
+</tr>
+<tr>
+<td><code>futex_wait_queue</code></td>
+<td>Main thread here</td>
+<td><strong>Another thread</strong>. <code>join()</code> waits on a
+<strong>futex</strong> (“fast userspace mutex”), the kernel’s basic
+“sleep until another thread signals this spot in memory” mechanism. When
+a thread exits, the kernel signals its futex, which wakes whoever is in
+<code>join()</code> for it. Futexes are also how <code>std::mutex</code>
+sleeps (Week 3)</td>
+</tr>
+<tr>
+<td><code>wait_woken</code></td>
+<td>Month 1 Pulse, Experiment 0</td>
+<td><strong>The network</strong>: data arriving on a socket
+(<code>read()</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Same state, three different reasons. In Week 2, <code>ps -L</code> on
+Pulse will show the main thread waiting in <code>accept()</code> and
+each slow client’s thread in <code>read()</code>, so <code>WCHAN</code>
+will tell you exactly which thread is stuck on what.</p>
+<h3 id="psr-16-threads-on-4-cpus-and-it-doesnt-matter">PSR: 16 threads
+“on” 4 CPUs, and it doesn’t matter</h3>
+<p>All 16 workers show <code>PSR</code> 3, 7, 8 or 11, with <strong>four
+threads per CPU</strong>. In Experiment 2 Part C, two threads on one CPU
+meant <strong>taking turns</strong> (<code>%wait</code> 14–36%). Here it
+means nothing. <code>PSR</code> is only the CPU a thread
+<strong>last</strong> ran on, and these threads ran for a few
+microseconds (just long enough to start sleeping), then left. None of
+them is running or waiting to run. When they wake up, the scheduler will
+put each one on whichever CPU is free.</p>
+<h3 id="pidstat-all-zeros-and-that-is-the-result">pidstat: all zeros,
+and that <em>is</em> the result</h3>
+<ul>
+<li><strong><code>pidstat -u</code></strong>: <code>%CPU 0.00</code> and
+<strong><code>%wait 0.00</code></strong> for every thread and the whole
+process. 16 threads on 12 CPUs, and nobody is in line for a CPU.</li>
+<li><strong><code>pidstat -w</code></strong>: <code>cswch/s 0</code> and
+<code>nvcswch/s 0</code> for every thread. During that second,
+<strong>no thread was switched in or out at all</strong>. A sleeping
+thread does one voluntary switch when it goes to sleep and runs again
+once when it wakes up. In between, the scheduler doesn’t touch it.</li>
+</ul>
+<h2 id="part-c-explained-100-sleeping-threads">Part C, explained: 100
+sleeping threads</h2>
+<pre><code>VmSize:   826504 kB
+VmRSS:      4352 kB
+Threads:        101
+    101 Sl+
+      1 futex_wait_queue
+    100 hrtimer_nanosleep</code></pre>
+<p><strong><code>Threads: 101</code></strong>: 100 workers + main.</p>
+<p><strong><code>sort | uniq -c</code> turned 101 rows into three
+lines:</strong></p>
+<ul>
+<li><code>101 Sl+</code>: <strong>all 101 threads asleep</strong>. Not
+one is running or waiting for a CPU.</li>
+<li><code>1 futex_wait_queue</code>: the main thread, in
+<code>join()</code>.</li>
+<li><code>100 hrtimer_nanosleep</code>: the 100 workers, in
+<code>sleep_for</code>.</li>
+</ul>
+<p><strong><code>pidstat -u</code>: <code>%CPU 0.00</code>,
+<code>%wait 0.00</code></strong> for the whole process. 100 threads on
+12 CPUs, 8× more threads than CPUs, and the CPUs don’t notice. With busy
+threads (Experiment 2), even 16 filled every CPU.</p>
+<h3 id="the-memory-prediction-checked">The memory prediction,
+checked</h3>
+<p>From Part B’s numbers, the prediction was VmSize ≈ 6,904 + 100 ×
+8,196 ≈ <strong>826,500 kB</strong>. Actual: <strong>826,504
+kB</strong>, off by 4 kB.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>16 threads (Part B)</th>
+<th>100 threads (Part C)</th>
+<th>Difference ÷ 84 extra threads</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VmSize</code> (reserved)</td>
+<td>138,040 kB</td>
+<td>826,504 kB</td>
+<td><strong>8,196 kB per thread</strong> = 8,192 kB stack + 4 kB guard
+page, exactly</td>
+</tr>
+<tr>
+<td><code>VmRSS</code> (actually in RAM)</td>
+<td>3,968 kB</td>
+<td>4,352 kB</td>
+<td><strong>~4.6 kB per thread</strong></td>
+</tr>
+</tbody>
+</table>
+<p>So each extra thread <strong>reserves 8 MiB</strong> of address space
+but <strong>uses about 4.6 KiB</strong> of real RAM: roughly one page (4
+KiB) of stack that it actually touched, plus a little bookkeeping.
+<strong>100 threads cost about 0.4 MB of real memory</strong>, while
+<code>VmSize</code> makes it look like 800 MB.</p>
+<p>This is why the “8 MiB per thread” from the Concepts doc doesn’t mean
+100 threads eat 800 MB of RAM, and why Week 4 has to look at
+<strong>both</strong> numbers. <code>VmRSS</code> tells you real memory
+pressure. <code>VmSize</code> tells you how much address space is being
+reserved, which is what kernel limits and huge thread counts eventually
+run into.</p>
+<p><strong>Finish order with 100 threads</strong> was more scrambled at
+the start (1, 3, 4, 0, 5, 6, 2, …) than with 16. All their alarms go off
+at almost the same moment, and only microseconds separate the order they
+were created in. Again: not guaranteed. ## Same thread count, opposite
+behavior: Experiment 2 vs Experiment 3</p>
+<p>Both runs had <strong>16 worker threads on 12 CPUs</strong>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Exp 2, Part C (16 busy)</th>
+<th>Exp 3, Part B (16 sleeping)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Process <code>%CPU</code></td>
+<td>1193% (all 12 CPUs full)</td>
+<td><strong>0%</strong></td>
+</tr>
+<tr>
+<td><code>%wait</code> per thread</td>
+<td>14–36%</td>
+<td><strong>0%</strong></td>
+</tr>
+<tr>
+<td>Non-voluntary switches / s</td>
+<td>~927</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>Threads moving between CPUs</td>
+<td>12 of 16</td>
+<td>none (none are running)</td>
+</tr>
+<tr>
+<td>What limits it</td>
+<td>CPUs</td>
+<td><strong>memory per thread, creation cost</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>“How many threads is too many?” depends on what the threads
+do.</strong> Busy threads: about the number of CPUs (here really about 6
+cores). Sleeping threads: many more, limited by memory and kernel
+bookkeeping, not CPUs.</p>
+</blockquote>
+<h2 id="what-this-means-for-pulse-1">What this means for Pulse</h2>
+<p><strong>9. Could Week 2 Pulse handle 100 slow clients at once? What
+would it cost?</strong></p>
+<p>Yes, very likely. A Pulse thread stuck on a slow client is asleep in
+<code>read()</code> (<code>wait_woken</code>), exactly like these
+sleeping threads. Based on this experiment, 100 of them would cost:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Cost of 100 slow-client threads</th>
+<th>From</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU while they wait</td>
+<td>~0</td>
+<td><code>user</code> 0.000 s, <code>%CPU</code> 0</td>
+</tr>
+<tr>
+<td>Waiting for CPUs / context switches</td>
+<td>none while they sleep</td>
+<td><code>%wait</code> 0, <code>nvcswch/s</code> 0</td>
+</tr>
+<tr>
+<td>Reserved address space</td>
+<td>about <strong>800 MiB</strong> (100 × 8,196 kB)</td>
+<td>Part C: VmSize 826,504 kB</td>
+</tr>
+<tr>
+<td>Real RAM</td>
+<td>small: about 4.6 KiB per sleeping thread here. A Pulse thread also
+touches <code>handle_client</code>’s 4 KiB <code>chunk</code> buffer and
+<code>raw_request</code>, so a little more, but kilobytes, not
+megabytes</td>
+<td>Part C: +384 kB of VmRSS for 84 extra threads</td>
+</tr>
+<tr>
+<td>Kernel time</td>
+<td>creating and destroying 100 threads ≈ 0.1 s total
+<code>sys</code></td>
+<td>Part A, 100 threads</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The catch, for Week 4:</strong> that’s 100. At 1,000 or
+10,000 connections, reserved stacks reach 8–80 GiB of address space,
+kernel limits on threads per user start to matter, creating a thread
+<em>per connection</em> adds up, and if many of those threads wake up
+and need the CPU at once, Pulse turns into Experiment 2 Part C: CPUs
+full, <code>%wait</code> climbing, forced switches climbing. This
+experiment shows <em>why</em> thread-per-connection works well at
+moderate scale. Week 4 measures where it stops working.</p>
+<details>
+<summary>
+Raw output: Experiment 3, Part A (timing)
+</summary>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ cd /mnt/c/Users/aagam/OneDrive/Desktop/Pulse
+g++ -std=c++17 -Wall -pthread Month2/Week1/exp3_sleep.cpp -o Month2/Week1/exp3_sleep.out
+
+for n in 1 8 16 100; do echo &quot;===== $n threads&quot;; time ./Month2/Week1/exp3_sleep.out $n 3; done
+===== 1 threads
+PID 971: starting 1 sleeping thread(s), 3 s each, on a machine with 12 CPUs
+thread  0 (TID 972) woke up and finished
+all 1 thread(s) done in 3.00 s
+
+real    0m3.048s
+user    0m0.018s
+sys     0m0.021s
+===== 8 threads
+PID 973: starting 8 sleeping thread(s), 3 s each, on a machine with 12 CPUs
+thread  0 (TID 974) woke up and finished
+thread  1 (TID 975) woke up and finished
+thread  2 (TID 976) woke up and finished
+thread  3 (TID 977) woke up and finished
+thread  4 (TID 978) woke up and finished
+thread  5 (TID 979) woke up and finished
+thread  6 (TID 980) woke up and finished
+thread  7 (TID 981) woke up and finished
+all 8 thread(s) done in 3.00 s
+
+real    0m3.017s
+user    0m0.000s
+sys     0m0.013s
+===== 16 threads
+PID 986: starting 16 sleeping thread(s), 3 s each, on a machine with 12 CPUs
+thread  0 (TID 987) woke up and finished
+thread  1 (TID 988) woke up and finished
+thread  2 (TID 989) woke up and finished
+thread  4 (TID 991) woke up and finished
+thread  3 (TID 990) woke up and finished
+thread  5 (TID 992) woke up and finished
+thread  6 (TID 993) woke up and finished
+thread  7 (TID 994) woke up and finished
+thread  9 (TID 996) woke up and finished
+thread  8 (TID 995) woke up and finished
+thread 10 (TID 997) woke up and finished
+thread 11 (TID 998) woke up and finished
+thread 12 (TID 999) woke up and finished
+thread 13 (TID 1000) woke up and finished
+thread 14 (TID 1001) woke up and finished
+thread 15 (TID 1002) woke up and finished
+all 16 thread(s) done in 3.01 s
+
+real    0m3.022s
+user    0m0.004s
+sys     0m0.015s
+===== 100 threads
+PID 1003: starting 100 sleeping thread(s), 3 s each, on a machine with 12 CPUs
+thread  0 (TID 1004) woke up and finished
+thread  1 (TID 1005) woke up and finished
+thread  2 (TID 1006) woke up and finished
+thread  3 (TID 1007) woke up and finished
+thread  4 (TID 1008) woke up and finished
+thread  5 (TID 1009) woke up and finished
+thread  6 (TID 1010) woke up and finished
+thread  7 (TID 1011) woke up and finished
+thread  8 (TID 1012) woke up and finished
+thread  9 (TID 1013) woke up and finished
+thread 10 (TID 1014) woke up and finished
+thread 11 (TID 1015) woke up and finished
+thread 12 (TID 1016) woke up and finished
+thread 13 (TID 1017) woke up and finished
+thread 14 (TID 1018) woke up and finished
+thread 15 (TID 1019) woke up and finished
+all 100 thread(s) done in 3.07 s
+
+real    0m3.079s
+user    0m0.000s
+sys     0m0.098s</code></pre>
+</details>
+<details>
+<summary>
+Raw output: Experiment 3, Part B (16 sleeping threads)
+</summary>
+<p><strong>Terminal 1</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ./Month2/Week1/exp3_sleep.out 16
+PID 1153: starting 16 sleeping thread(s), 10 s each, on a machine with 12 CPUs
+thread  0 (TID 1154) woke up and finished
+thread  1 (TID 1155) woke up and finished
+thread  2 (TID 1156) woke up and finished
+thread  3 (TID 1157) woke up and finished
+thread  4 (TID 1158) woke up and finished
+thread  5 (TID 1159) woke up and finished
+thread  6 (TID 1160) woke up and finished
+thread  7 (TID 1161) woke up and finished
+thread  8 (TID 1162) woke up and finished
+thread  9 (TID 1163) woke up and finished
+thread 10 (TID 1164) woke up and finished
+thread 11 (TID 1165) woke up and finished
+thread 12 (TID 1166) woke up and finished
+thread 13 (TID 1167) woke up and finished
+thread 14 (TID 1168) woke up and finished
+thread 15 (TID 1169) woke up and finished
+all 16 thread(s) done in 10.01 s</code></pre>
+<p><strong>Terminal 2</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ P=$(pgrep -n exp3_sleep)
+grep -E &quot;Threads|VmSize|VmRSS&quot; /proc/$P/status
+ps -L -o tid,psr,stat,wchan:22,pcpu,comm -p $P
+pidstat -u -t -p $P 1 1
+pidstat -w -t -p $P 1 1
+VmSize:   138040 kB
+VmRSS:      3968 kB
+Threads:        17
+    TID PSR STAT WCHAN                  %CPU COMMAND
+   1153   5 Sl+  futex_wait_queue        1.7 exp3_sleep.out
+   1154   8 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1155   3 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1156   7 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1157  11 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1158   8 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1159   3 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1160   7 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1161  11 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1162   8 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1163   3 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1164  11 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1165   7 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1166   7 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1167   3 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1168   8 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+   1169   8 Sl+  hrtimer_nanosleep       0.0 exp3_sleep.out
+Linux 6.6.87.2-microsoft-standard-WSL2 (Galu-PC)        10/12/26        _x86_64_   (12 CPU)
+
+01:34:42      UID      TGID       TID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:34:43     1000      1153         -    0.00    0.00    0.00    0.00    0.00     5  exp3_sleep.out
+01:34:43     1000         -      1153    0.00    0.00    0.00    0.00    0.00     5  |__exp3_sleep.out
+01:34:43     1000         -      1154    0.00    0.00    0.00    0.00    0.00     8  |__exp3_sleep.out
+01:34:43     1000         -      1155    0.00    0.00    0.00    0.00    0.00     3  |__exp3_sleep.out
+01:34:43     1000         -      1156    0.00    0.00    0.00    0.00    0.00     7  |__exp3_sleep.out
+01:34:43     1000         -      1157    0.00    0.00    0.00    0.00    0.00    11  |__exp3_sleep.out
+01:34:43     1000         -      1158    0.00    0.00    0.00    0.00    0.00     8  |__exp3_sleep.out
+01:34:43     1000         -      1159    0.00    0.00    0.00    0.00    0.00     3  |__exp3_sleep.out
+01:34:43     1000         -      1160    0.00    0.00    0.00    0.00    0.00     7  |__exp3_sleep.out
+01:34:43     1000         -      1161    0.00    0.00    0.00    0.00    0.00    11  |__exp3_sleep.out
+01:34:43     1000         -      1162    0.00    0.00    0.00    0.00    0.00     8  |__exp3_sleep.out
+01:34:43     1000         -      1163    0.00    0.00    0.00    0.00    0.00     3  |__exp3_sleep.out
+01:34:43     1000         -      1164    0.00    0.00    0.00    0.00    0.00    11  |__exp3_sleep.out
+01:34:43     1000         -      1165    0.00    0.00    0.00    0.00    0.00     7  |__exp3_sleep.out
+01:34:43     1000         -      1166    0.00    0.00    0.00    0.00    0.00     7  |__exp3_sleep.out
+01:34:43     1000         -      1167    0.00    0.00    0.00    0.00    0.00     3  |__exp3_sleep.out
+01:34:43     1000         -      1168    0.00    0.00    0.00    0.00    0.00     8  |__exp3_sleep.out
+01:34:43     1000         -      1169    0.00    0.00    0.00    0.00    0.00     8  |__exp3_sleep.out
+Average:     1000      1153         -    0.00    0.00    0.00    0.00    0.00     -  exp3_sleep.out
+Average:     1000         -      1153    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1154    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1155    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1156    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1157    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1158    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1159    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1160    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1161    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1162    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1163    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1164    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1165    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1166    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1167    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1168    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Average:     1000         -      1169    0.00    0.00    0.00    0.00    0.00     -  |__exp3_sleep.out
+Linux 6.6.87.2-microsoft-standard-WSL2 (Galu-PC)        10/12/26        _x86_64_   (12 CPU)
+
+01:34:43      UID      TGID       TID   cswch/s nvcswch/s  Command
+01:34:44     1000      1153         -      0.00      0.00  exp3_sleep.out
+01:34:44     1000         -      1153      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1154      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1155      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1156      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1157      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1158      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1159      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1160      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1161      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1162      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1163      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1164      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1165      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1166      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1167      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1168      0.00      0.00  |__exp3_sleep.out
+01:34:44     1000         -      1169      0.00      0.00  |__exp3_sleep.out
+Average:     1000      1153         -      0.00      0.00  exp3_sleep.out
+Average:     1000         -      1153      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1154      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1155      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1156      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1157      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1158      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1159      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1160      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1161      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1162      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1163      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1164      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1165      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1166      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1167      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1168      0.00      0.00  |__exp3_sleep.out
+Average:     1000         -      1169      0.00      0.00  |__exp3_sleep.out</code></pre>
+</details>
+<details>
+<summary>
+Raw output: Experiment 3, Part C (100 sleeping threads)
+</summary>
+<p><strong>Terminal 1</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ./Month2/Week1/exp3_sleep.out 100
+PID 1546: starting 100 sleeping thread(s), 10 s each, on a machine with 12 CPUs
+thread  1 (TID 1548) woke up and finished
+thread  3 (TID 1550) woke up and finished
+thread  4 (TID 1551) woke up and finished
+thread  0 (TID 1547) woke up and finished
+thread  5 (TID 1552) woke up and finished
+thread  6 (TID 1553) woke up and finished
+thread  2 (TID 1549) woke up and finished
+thread  7 (TID 1554) woke up and finished
+thread  8 (TID 1555) woke up and finished
+thread  9 (TID 1556) woke up and finished
+thread 10 (TID 1557) woke up and finished
+thread 11 (TID 1558) woke up and finished
+thread 12 (TID 1559) woke up and finished
+thread 13 (TID 1560) woke up and finished
+thread 14 (TID 1561) woke up and finished
+thread 15 (TID 1562) woke up and finished
+all 100 thread(s) done in 10.08 s</code></pre>
+<p><strong>Terminal 2</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ P=$(pgrep -n exp3_sleep)
+grep -E &quot;Threads|VmSize|VmRSS&quot; /proc/$P/status
+ps -L -o stat= -p $P | sort | uniq -c
+ps -L -o wchan:22= -p $P | sort | uniq -c
+pidstat -u -p $P 1 1
+VmSize:   826504 kB
+VmRSS:      4352 kB
+Threads:        101
+    101 Sl+
+      1 futex_wait_queue
+    100 hrtimer_nanosleep
+Linux 6.6.87.2-microsoft-standard-WSL2 (Galu-PC)        10/12/26        _x86_64_   (12 CPU)
+
+01:38:50      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+01:38:51     1000      1546    0.00    0.00    0.00    0.00    0.00     8  exp3_sleep.out
+Average:     1000      1546    0.00    0.00    0.00    0.00    0.00     -  exp3_sleep.out</code></pre>
+</details>
+<hr />
+<h1 id="week-1-done-when">Week 1 done when</h1>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Experiment 0 recorded
+(the “before” for Week 2)</label></li>
+<li><label><input type="checkbox"
+checked="" /><code>exp1a_ab.cpp</code>, <code>exp1b_ab_many.cpp</code>,
+<code>exp2_busy.cpp</code>, <code>exp3_sleep.cpp</code> written and
+compiling with no warnings</label></li>
+<li><label><input type="checkbox" />Every prediction written
+<strong>before</strong> running: done for Experiments 0 and 1.
+Experiment 2 only had prediction 1, and Experiment 3 had none. Worth
+doing fully in Week 2: the wrong predictions (Exp 0’s
+<code>Recv-Q</code>, Exp 2’s “5 / 10 / 20 / 40”) taught the
+most</label></li>
+<li><label><input type="checkbox" checked="" />Every experiment’s
+results written up here</label></li>
+<li><label><input type="checkbox" />Can answer these without the docs
+(try first, then open the answers):</label>
+<ol type="1">
+<li>Why does Experiment 2’s total time stay roughly flat up to some
+thread count and then grow?</li>
+<li>Why does Experiment 3 use ~0% CPU no matter how many threads?</li>
+<li>Which of the two is Pulse more like, and why?</li>
+</ol></li>
+</ul>
+<details>
+<summary>
+Answers
+</summary>
+<ol type="1">
+<li>Busy threads each need a CPU the whole time. While there’s a free
+CPU for each one, they all run at the same time, so total time ≈ one
+thread’s time. On this laptop the per-thread cost already rises past
+about 6 threads, because the 12 “CPUs” are 6 real cores with 2
+hyperthreads each. Past 12 threads there are no CPUs left: threads wait
+in line (<code>%wait</code> 14–36%), the scheduler forcibly switches
+them (~930 non-voluntary switches/s), and total time grows with the
+amount of work.</li>
+<li>A sleeping thread is in state <code>S</code>. It isn’t running and
+isn’t in the queue for a CPU, so the scheduler ignores it until its
+timer fires. 100 sleeping threads = 0% CPU, 0 <code>%wait</code>, 0
+context switches. What they cost instead is memory reserved for stacks
+(8,196 kB of <code>VmSize</code> each, but only ~4.6 kB of real RAM) and
+a little kernel time to create and destroy them.</li>
+<li>Experiment 3. Pulse’s threads spend almost all their time asleep in
+<code>read()</code> (Experiment 0 showed <code>S wait_woken</code>)
+waiting on the network, and the Month 1 benchmark showed Pulse isn’t
+CPU-bound. So thread-per-connection can handle many slow clients
+cheaply. It would only start to look like Experiment 2 if many
+connections needed real CPU work at the same moment, and Week 4 measures
+where that happens.</li>
+</ol>
+</details>
+</body>
+</html>
