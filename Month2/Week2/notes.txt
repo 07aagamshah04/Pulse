@@ -1,0 +1,37 @@
+MONTH 2 / WEEK 2 — PREDICTIONS SCRATCHPAD
+
+The test plan, every command explained, and all results live in notes.html.
+This file is only for writing predictions BEFORE running each test.
+
+
+TEST 1 — Experiment 0 again (silent nc + /hello)
+  - curl /hello time: ____     http_code: ____
+  - Threads: ____
+  - ps -L rows: how many? STAT/WCHAN of each? ____
+  - LISTEN Recv-Q: ____    curl connection still in the established list? ____
+
+
+TEST 2 — /slow + /hello
+  - /slow time: ____     /hello time (started during /slow): ____
+  - ps -L: which WCHAN for the /slow worker? ____  main thread? ____
+
+
+TEST 3 — 5 x /slow in parallel
+  - total time for all 5: ____
+  - Threads BEFORE / DURING / AFTER: ____ / ____ / ____
+  - fds BEFORE / DURING / AFTER: ____ / ____ / ____
+  - the uniq -c lines DURING: ____
+
+
+TEST 4 — reset client
+  - what will Pulse's log say? ____
+  - still running afterwards? ____
+
+
+TEST 5 — regression
+  - anything different from Month 1? ____
+
+
+TEST 6 — ab -n 2000 -c 10
+  - Failed requests: ____
+  - Parsed count: ____    lines from 2+ threads: ____

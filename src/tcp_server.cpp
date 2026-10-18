@@ -7,7 +7,8 @@
 #include <netinet/in.h> // struct sockaddr_in
 #include <stdexcept>
 #include <sys/socket.h> // socket(), bind(), listen(), accept(), setsockopt()
-#include <unistd.h>     // read(), write()
+#include <thread>       // MONTH 2 / WEEK 2: std::thread — one per connection, see run()
+#include <unistd.h>     // read(), write(); MONTH 2 / WEEK 2: also gettid() — the Linux thread ID used in log lines
 #include <utility>      // std::move
 
 namespace
@@ -163,8 +164,119 @@ void TcpServer::run()
         std::cout << "Client connected: " << inet_ntoa(client_addr.sin_addr)
                   << ":" << ntohs(client_addr.sin_port) << "\n";
 
-        // Month 1 / Week 1: wrap the raw client_fd in a Socket immediately, then hand ownership into handle_client() — from here on we never have to remember to close this fd manually
-        handle_client(Socket(client_fd));
+        /* Month 1 / Week 1: wrap the raw client_fd in a Socket immediately —
+           from here on we never have to remember to close this fd manually.
+           (MONTH 2 / WEEK 2: now a named variable instead of a temporary,
+           because it has to be std::move'd into the thread below.) */
+        Socket client(client_fd);
+
+        /* ---------------------------------------------------------------
+         * MONTH 2 / WEEK 2 — thread-per-connection: THE change this week.
+         *
+         * Month 1 called handle_client() right here, on the main thread, so
+         * the main thread was stuck with this client until it was done —
+         * one silent client froze everyone (Experiment 0). Now the main
+         * thread hands the connection to a NEW thread and goes straight
+         * back to accept(). (Month 2 / Week 2 doc, Part 2.)
+         *
+         * Reading the line left to right:
+         *
+         *   std::thread( &TcpServer::serve_connection,   <- WHICH function: a pointer to a member
+         *                                                   function (doc Part 4). It belongs to the
+         *                                                   class, so it needs an object to run on...
+         *                this,                           <- ...this one: the TcpServer that lives in
+         *                                                   main(). Safe because run() never returns,
+         *                                                   so it's never destroyed (doc Part 5).
+         *                std::move(client) )             <- the connection itself, MOVED, not copied
+         *              .detach();                        <- don't wait for it; let it run on its own
+         *
+         * OWNERSHIP (doc Parts 3 & 4, the "Ticket" demo): std::move(client)
+         * makes std::thread MOVE the Socket into the new thread's storage
+         * (move #1, here on the main thread), and the new thread then moves
+         * it into serve_connection()'s parameter (move #2). After this line
+         * our `client` is EMPTY (fd -1), so when it goes out of scope at the
+         * end of this loop iteration its destructor closes nothing. The main
+         * thread cannot accidentally close the worker's connection — the
+         * type makes it impossible. Exactly one owner at every moment; the
+         * worker closes it when it's done.
+         *
+         * C++ note: without std::move this wouldn't compile — std::thread
+         * would try to COPY a Socket, and Socket's copy constructor is
+         * deleted (socket.hpp). Forgetting the hand-over is a compile error.
+         *
+         * Why .detach() and not .join(): join() would make the main thread
+         * wait for this connection to finish — Month 1 again with extra
+         * steps (Month 2 / Week 1 doc, Part 8). And it MUST be one or the
+         * other: this std::thread is a temporary, destroyed at the end of
+         * this line, and destroying a joinable std::thread calls
+         * std::terminate() — forgetting .detach() would crash Pulse on the
+         * very first connection.
+         *
+         * Why the try/catch: creating a thread can FAIL (e.g. the system
+         * has hit its limit on threads) — std::thread then throws
+         * std::system_error. Without a catch here that would escape run()
+         * and end the whole server. With it, we drop just this one
+         * connection: the Socket was already moved into std::thread's
+         * storage, and when construction fails that storage is destroyed,
+         * which closes the fd — so nothing leaks. (If the failure happens
+         * before the move, `client` still owns it and closes it at the end
+         * of this iteration instead. Either way, exactly one close.)
+         * --------------------------------------------------------------- */
+        try
+        {
+            std::thread(&TcpServer::serve_connection, this, std::move(client)).detach();
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << "could not start a thread for this connection: " << e.what() << " — dropping it\n";
+        }
+    }
+}
+
+/* =============================================================================
+ * MONTH 2 / WEEK 2 — the starting point of every worker thread
+ * -----------------------------------------------------------------------------
+ * Every connection's thread starts HERE — this is the bottom frame of that
+ * thread's stack. Its only job is to make sure nothing that goes wrong with
+ * one client can take down the rest of the server.
+ *
+ * Without this try/catch (Month 2 / Week 2 doc, Part 6):
+ *   - Month 1 already had a hidden bug: write_all() throws on a failed
+ *     write(), nothing caught it until main(), and the WHOLE server exited
+ *     with "Fatal error".
+ *   - With threads it's worse: an exception that escapes a thread's starting
+ *     function calls std::terminate() and aborts the process — every
+ *     connection, mid-request. main()'s try/catch can't catch it, because an
+ *     exception only unwinds the stack of the thread it was thrown on, and
+ *     main()'s try is on a DIFFERENT thread's stack.
+ *
+ * With it: the exception unwinds handle_client()'s frame (running ~Socket()
+ * on the way, so the fd is still closed — RAII works during unwinding too),
+ * lands here, gets logged, and only THIS connection ends.
+ *
+ * C++ note: `catch (const std::exception& e)` catches anything derived from
+ * std::exception — including the std::runtime_error from throw_errno().
+ * `catch (...)` — three literal dots — catches ANYTHING at all, even things
+ * that aren't std::exceptions; it's the final safety net, with no `e` to
+ * ask for a message.
+ *
+ * std::move(client): move #3 — from this function's parameter into
+ * handle_client()'s by-value parameter. Ownership keeps travelling forward;
+ * it's never shared.
+ * ============================================================================= */
+void TcpServer::serve_connection(Socket client) const
+{
+    try
+    {
+        handle_client(std::move(client));
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "[TID " << gettid() << "] connection error: " << e.what() << " — closing this connection, server keeps running\n";
+    }
+    catch (...)
+    {
+        std::cerr << "[TID " << gettid() << "] connection error: unknown exception — closing this connection, server keeps running\n";
     }
 }
 
@@ -173,7 +285,23 @@ void TcpServer::run()
    from run() above). When this function returns — however it returns —
    `client` goes out of scope right here, its destructor runs, and the
    connection is closed automatically. That's RAII in action; see Part 1
-   of the doc and socket.hpp/.cpp. */
+   of the doc and socket.hpp/.cpp.
+
+   MONTH 2 / WEEK 2: this whole function now runs on a WORKER thread, not
+   the main thread — called from serve_connection(). Its body is unchanged:
+   every local below (raw_request, chunk, response) lives on the worker's
+   own stack, so two connections running this at the same time never touch
+   each other's data (Month 2 / Week 1 doc, Part 4). It READS the shared
+   router_, which is safe because nothing writes to it. `client` is still
+   the one owner of the connection, so the close at the end now happens on
+   the worker thread.
+
+   MONTH 2 / WEEK 2: every log line below is prefixed with [TID n] — the
+   Linux thread ID of the worker (gettid(), same number as the SPID/TID
+   column in ps -T / ps -L) — so when several connections are handled at
+   once you can tell which thread printed what. (Expect lines from different
+   threads to interleave, even mid-line — Month 2 / Week 1, Experiment 1b.
+   The fix for that, a mutex, is Week 3.) */
 void TcpServer::handle_client(Socket client) const
 {
     /* Month 1 / Week 3: raw_request is now an ACCUMULATION buffer, not a
@@ -204,7 +332,7 @@ void TcpServer::handle_client(Socket client) const
 
         if (result.status == ParseStatus::Complete)
         {
-            std::cout << "Parsed (" << raw_request.size() << " bytes total): "
+            std::cout << "[TID " << gettid() << "] Parsed (" << raw_request.size() << " bytes total): "
                       << result.request.method << " " << result.request.path << " " << result.request.version << "\n";
             response = router_.route(result.request); // Month 1 / Week 2 (unchanged): 200 / 404 / 405 — see router.cpp
             break;
@@ -212,14 +340,14 @@ void TcpServer::handle_client(Socket client) const
 
         if (result.status == ParseStatus::Malformed)
         {
-            std::cout << "Malformed request (" << raw_request.size() << " bytes so far) — responding 400 Bad Request.\n";
+            std::cout << "[TID " << gettid() << "] Malformed request (" << raw_request.size() << " bytes so far) — responding 400 Bad Request.\n";
             break; // `response` is already the bad_request() default from above
         }
 
         // Month 1 / Week 3: ParseStatus::Incomplete — not done yet, but also not stuck forever (see kMaxRequestSize above)
         if (raw_request.size() > kMaxRequestSize)
         {
-            std::cout << "Request exceeded " << kMaxRequestSize << " bytes without completing — responding 400 Bad Request.\n";
+            std::cout << "[TID " << gettid() << "] Request exceeded " << kMaxRequestSize << " bytes without completing — responding 400 Bad Request.\n";
             break;
         }
 
@@ -233,7 +361,7 @@ void TcpServer::handle_client(Socket client) const
 
         if (n < 0)
         {
-            std::cerr << "read: " << std::strerror(errno) << "\n"; // n == -1 means an error — check errno
+            std::cerr << "[TID " << gettid() << "] read: " << std::strerror(errno) << "\n"; // n == -1 means an error — check errno
             return;                                                // `client` destructs here -> closes automatically, no response sent
         }
         if (n == 0)
@@ -243,7 +371,7 @@ void TcpServer::handle_client(Socket client) const
                but now it can happen PARTWAY through an otherwise-valid
                request, not only "before sending anything." Either way,
                there's no complete request to respond to, so we just close. */
-            std::cout << "Client disconnected before completing a request (" << raw_request.size() << " bytes received so far).\n";
+            std::cout << "[TID " << gettid() << "] Client disconnected before completing a request (" << raw_request.size() << " bytes received so far).\n";
             return;
         }
 

@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Pulse Month 2 Week 2 Notes</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+      @page { margin: 1in; }
+      body {
+        font-family: -apple-system, "Segoe UI", Calibri, Arial, sans-serif;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2em 1em;
+        line-height: 1.55;
+        color: #1a1a1a;
+        font-size: 15px;
+      }
+      h1 { font-size: 1.7em; border-bottom: 2px solid #333; padding-bottom: 0.2em; margin-top: 1.6em; }
+      h2 { font-size: 1.3em; border-bottom: 1px solid #ccc; padding-bottom: 0.15em; margin-top: 1.4em; }
+      h3 { font-size: 1.08em; margin-top: 1.2em; }
+      pre {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.8em 1em;
+        overflow-x: auto;
+        font-size: 0.85em;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      pre code { background: none; padding: 0; }
+      table { border-collapse: collapse; margin: 1em 0; }
+      th, td { border: 1px solid #ccc; padding: 0.4em 0.8em; }
+      blockquote { border-left: 3px solid #999; margin-left: 0; padding-left: 1em; color: #444; }
+      #TOC { background: #f9f9f9; border: 1px solid #ddd; padding: 1em 1.5em; border-radius: 4px; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+      .analogy {
+        background: #eef6ff;
+        border-left: 4px solid #3b82f6;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .example {
+        background: #f6fff0;
+        border-left: 4px solid #4caf50;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .analogy p:first-child, .example p:first-child { margin-top: 0; }
+      .analogy p:last-child, .example p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Pulse — Month 2, Week 2: Test Log</h1>
+<p class="subtitle">Thread-per-connection Pulse: what changed, how to
+test it, what happened</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#how-this-file-works" id="toc-how-this-file-works">How this
+file works</a></li>
+<li><a href="#what-changed-in-the-code"
+id="toc-what-changed-in-the-code">What changed in the code</a></li>
+<li><a href="#test-1-experiment-0-again-silent-client-hello"
+id="toc-test-1-experiment-0-again-silent-client-hello">Test 1 —
+Experiment 0 again: silent client + <code>/hello</code></a>
+<ul>
+<li><a href="#result-one-silent-client-no-longer-freezes-pulse"
+id="toc-result-one-silent-client-no-longer-freezes-pulse">Result: one
+silent client no longer freezes Pulse</a>
+<ul>
+<li><a href="#week-1-vs-week-2-field-by-field"
+id="toc-week-1-vs-week-2-field-by-field">Week 1 vs Week 2, field by
+field</a></li>
+<li><a href="#reading-each-output" id="toc-reading-each-output">Reading
+each output</a></li>
+<li><a href="#what-this-proves" id="toc-what-this-proves">What this
+proves</a></li>
+<li><a href="#t1-pulses-own-log-matched-to-the-threads"
+id="toc-t1-pulses-own-log-matched-to-the-threads">T1: Pulse’s own log,
+matched to the threads</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#test-2-slow-hello-at-the-same-time"
+id="toc-test-2-slow-hello-at-the-same-time">Test 2 — <code>/slow</code>
++ <code>/hello</code> at the same time</a>
+<ul>
+<li><a href="#result-hello-finishes-while-slow-is-still-sleeping"
+id="toc-result-hello-finishes-while-slow-is-still-sleeping">Result:
+<code>/hello</code> finishes while <code>/slow</code> is still
+sleeping</a>
+<ul>
+<li><a href="#predicted-vs-actual"
+id="toc-predicted-vs-actual">Predicted vs actual</a></li>
+<li><a href="#reading-each-output-1"
+id="toc-reading-each-output-1">Reading each output</a></li>
+<li><a href="#silent-client-test-1-vs-slow-handler-test-2"
+id="toc-silent-client-test-1-vs-slow-handler-test-2">Silent client (Test
+1) vs slow handler (Test 2)</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#test-3-5-slow-in-parallel-threads-and-file-descriptors"
+id="toc-test-3-5-slow-in-parallel-threads-and-file-descriptors">Test 3 —
+5 × <code>/slow</code> in parallel: threads and file descriptors</a>
+<ul>
+<li><a
+href="#result-one-thread-per-connection-and-every-thread-and-fd-cleaned-up-afterwards"
+id="toc-result-one-thread-per-connection-and-every-thread-and-fd-cleaned-up-afterwards">Result:
+one thread per connection, and every thread and fd cleaned up
+afterwards</a>
+<ul>
+<li><a href="#predicted-vs-actual-1"
+id="toc-predicted-vs-actual-1">Predicted vs actual</a></li>
+<li><a href="#reading-each-output-2"
+id="toc-reading-each-output-2">Reading each output</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#test-4-a-client-that-resets-mid-request-error-handling"
+id="toc-test-4-a-client-that-resets-mid-request-error-handling">Test 4 —
+A client that resets mid-request (error handling)</a>
+<ul>
+<li><a
+href="#result-a-client-that-vanishes-only-ends-its-own-connection"
+id="toc-result-a-client-that-vanishes-only-ends-its-own-connection">Result:
+a client that vanishes only ends its own connection</a>
+<ul>
+<li><a href="#predicted-vs-actual-2"
+id="toc-predicted-vs-actual-2">Predicted vs actual</a></li>
+<li><a href="#what-happened-step-by-step"
+id="toc-what-happened-step-by-step">What happened, step by step</a></li>
+<li><a href="#the-same-error-in-three-versions-of-pulse"
+id="toc-the-same-error-in-three-versions-of-pulse">The same error in
+three versions of Pulse</a></li>
+<li><a href="#honest-note-which-safety-net-this-run-actually-tested"
+id="toc-honest-note-which-safety-net-this-run-actually-tested">Honest
+note: which safety net this run actually tested</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#test-5-nothing-broke-every-month-1-behavior"
+id="toc-test-5-nothing-broke-every-month-1-behavior">Test 5 — Nothing
+broke: every Month 1 behavior</a>
+<ul>
+<li><a href="#result-verified-during-implementation-not-re-run-by-hand"
+id="toc-result-verified-during-implementation-not-re-run-by-hand">Result:
+verified during implementation (not re-run by hand)</a></li>
+</ul></li>
+<li><a href="#test-6-ab--c-10-and-scrambled-logs"
+id="toc-test-6-ab--c-10-and-scrambled-logs">Test 6 —
+<code>ab -c 10</code>, and scrambled logs</a>
+<ul>
+<li><a
+href="#result-2000-2000-correct-but-slow-and-the-reason-was-the-log-file-not-the-threads"
+id="toc-result-2000-2000-correct-but-slow-and-the-reason-was-the-log-file-not-the-threads">Result:
+2000 / 2000 correct, but slow, and the reason was the log file, not the
+threads</a>
+<ul>
+<li><a href="#predicted-vs-actual-3"
+id="toc-predicted-vs-actual-3">Predicted vs actual</a></li>
+<li><a href="#every-ab-field-explained"
+id="toc-every-ab-field-explained">Every <code>ab</code> field,
+explained</a></li>
+<li><a href="#finding-the-bottleneck-measured-not-guessed"
+id="toc-finding-the-bottleneck-measured-not-guessed">Finding the
+bottleneck: measured, not guessed</a></li>
+<li><a href="#why-0-scrambled-lines-this-time"
+id="toc-why-0-scrambled-lines-this-time">Why 0 scrambled lines this
+time</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#week-2-done-when" id="toc-week-2-done-when">Week 2 done
+when</a></li>
+</ul>
+</nav>
+<style>
+.tldr { background:#fff8e1; border:2px solid #f0c040; border-radius:8px; padding:1.2em 1.5em; margin:1.5em 0; font-size:1.05em; line-height:1.6; }
+.stat-row { display:flex; gap:1em; flex-wrap:wrap; margin:1.5em 0; }
+.stat-card { flex:1; min-width:180px; background:#f5f5f5; border:1px solid #ddd; border-radius:8px; padding:1em 1.2em; text-align:center; }
+.stat-card .label { font-size:0.82em; color:#555; text-transform:uppercase; letter-spacing:0.03em; }
+.stat-card .values { font-size:1.6em; font-weight:bold; margin:0.3em 0; }
+.stat-card .up { color:#c0392b; }
+.stat-card .flat { color:#2e7d32; }
+.stat-card .note { font-size:0.8em; color:#777; }
+.verdict-right { color:#2e7d32; font-weight:bold; }
+.verdict-wrong { color:#c0392b; font-weight:bold; }
+.pending { background:#f3f3f3; border:1px dashed #aaa; border-radius:6px; padding:0.6em 1em; color:#555; }
+details { background:#fafafa; border:1px solid #ddd; border-radius:6px; padding:0.3em 1.2em 1em; margin:1.5em 0; }
+details[open] { padding-bottom:1.2em; }
+summary { cursor:pointer; font-weight:600; padding:0.8em 0; }
+</style>
+<h1 id="how-this-file-works">How this file works</h1>
+<p>Same as Week 1’s <code>notes.html</code>: for each test, write
+predictions in <code>notes.txt</code> first, run the commands, paste the
+full raw output into the chat, and the results get written up here.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Test</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Experiment 0 again: silent client + <code>/hello</code></td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>/slow</code> + <code>/hello</code> at the same time</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>5 × <code>/slow</code> in parallel: threads and fds</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>A client that resets mid-request (error handling)</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Nothing broke: every Month 1 behavior</td>
+<td><strong>Done</strong> (automated run)</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>ab -c 10</code> + scrambled logs</td>
+<td><strong>Done</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="what-changed-in-the-code">What changed in the code</h1>
+<p>Every change is commented in the code with
+<code>MONTH 2 / WEEK 2</code>. Read those comments alongside this
+table.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>File</th>
+<th>Change</th>
+<th>Why (Week 2 doc)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CMakeLists.txt</code></td>
+<td><code>find_package(Threads REQUIRED)</code> +
+<code>target_link_libraries(pulse PRIVATE Threads::Threads)</code></td>
+<td><code>std::thread</code> needs the pthreads library (Part 8)</td>
+</tr>
+<tr>
+<td><code>src/tcp_server.cpp</code>, <code>run()</code></td>
+<td><code>handle_client(Socket(client_fd));</code> became
+<code>Socket client(client_fd);</code> +
+<code>std::thread(&amp;TcpServer::serve_connection, this, std::move(client)).detach();</code>,
+inside a <code>try/catch</code></td>
+<td>The main thread only accepts and hands over. The <code>Socket</code>
+is <strong>moved</strong> into the thread, so the main thread can’t
+close it (Parts 2–4). The <code>try/catch</code> drops just that
+connection if a thread can’t be created</td>
+</tr>
+<tr>
+<td><code>src/tcp_server.cpp</code>, new
+<code>serve_connection()</code></td>
+<td>The function every worker starts in: calls
+<code>handle_client()</code> inside
+<code>try { } catch (const std::exception&amp;) { } catch (...) { }</code></td>
+<td>An exception escaping a thread would <code>std::terminate()</code>
+the whole server, and <code>main</code>’s <code>catch</code> can’t see
+it (Part 6)</td>
+</tr>
+<tr>
+<td><code>src/tcp_server.cpp</code>, <code>handle_client()</code></td>
+<td>Body unchanged. Log lines now start with <code>[TID n]</code></td>
+<td>Its locals already live on whichever thread runs it. The TID tells
+you which worker printed what</td>
+</tr>
+<tr>
+<td><code>include/tcp_server.hpp</code></td>
+<td>Declares <code>serve_connection()</code>. Class comment updated</td>
+<td></td>
+</tr>
+<tr>
+<td><code>src/main.cpp</code></td>
+<td><code>std::signal(SIGPIPE, SIG_IGN);</code> at the start of
+<code>main()</code></td>
+<td>So a client disconnecting at the wrong moment can’t kill the whole
+process (Part 6)</td>
+</tr>
+<tr>
+<td><code>src/main.cpp</code></td>
+<td>New route <code>GET /slow</code>: sleeps 5 s, then responds</td>
+<td>The spec’s test: a slow handler must not block other requests (Part
+7)</td>
+</tr>
+<tr>
+<td><code>Month2/Week2/reset_client.py</code></td>
+<td>New test client: sends <code>/slow</code>, then resets the
+connection</td>
+<td>Exercises the error path (Test 4)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Build</strong> (in WSL, from the Pulse folder).
+<code>make</code> notices <code>CMakeLists.txt</code> changed and
+re-runs CMake by itself:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/c/Users/aagam/OneDrive/Desktop/Pulse/build <span class="kw">&amp;&amp;</span> <span class="fu">cmake</span> .. <span class="kw">&amp;&amp;</span> <span class="fu">make</span></span></code></pre></div>
+<p>You should see <code>[100%] Built target pulse</code> with <strong>no
+warnings</strong>.</p>
+<hr />
+<h1 id="test-1-experiment-0-again-silent-client-hello">Test 1 —
+Experiment 0 again: silent client + <code>/hello</code></h1>
+<p><strong>Question:</strong> Week 1 / Experiment 0’s exact steps. Does
+one silent client still freeze everyone?</p>
+<p><strong>Week 1’s result, for comparison:</strong> <code>/hello</code>
+timed out after 30.04 s, <code>Threads: 1</code>,
+<code>S wait_woken</code>, LISTEN <code>Recv-Q 1</code>, curl’s
+<code>Recv-Q 83</code>.</p>
+<p>Four terminals, all in WSL in the Pulse folder:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># T1: run Pulse</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> build <span class="kw">&amp;&amp;</span> <span class="ex">./pulse</span> 8080</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># T2: the silent client: connect, send nothing, leave it open</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> localhost 8080</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># T3: normal request, 30 s limit</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">time</span> curl <span class="at">-s</span> <span class="at">-m</span> 30 <span class="at">-w</span> <span class="st">&quot;\nhttp_code=%{http_code}\n&quot;</span> localhost:8080/hello<span class="kw">;</span> <span class="bu">echo</span> <span class="st">&quot;curl exit code: </span><span class="va">$?</span><span class="st">&quot;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># T4: look inside, while nc is still connected</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="va">P</span><span class="op">=</span><span class="va">$(</span><span class="ex">pgrep</span> <span class="at">-x</span> pulse<span class="va">)</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> Threads /proc/<span class="va">$P</span>/status</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-L</span> <span class="at">-o</span> tid,stat,wchan:22,comm <span class="at">-p</span> <span class="va">$P</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="ex">ss</span> <span class="at">-ltn</span> <span class="st">&quot;sport = :8080&quot;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ex">ss</span> <span class="at">-tn</span> state established <span class="st">&quot;sport = :8080&quot;</span></span></code></pre></div>
+<p>Then <code>Ctrl+C</code> the <code>nc</code> in T2 and look at T1’s
+log.</p>
+<p><strong>Paste back:</strong> T1, T3, T4.</p>
+<h2 id="result-one-silent-client-no-longer-freezes-pulse">Result: one
+silent client no longer freezes Pulse</h2>
+<div class="tldr">
+<p><b>What I did:</b> exactly Week 1’s Experiment 0: a silent
+<code>nc</code> client connected and sending nothing, then a normal
+<code>curl /hello</code>. <br><br> <b>What happened:</b>
+<code>/hello</code> answered in <b>0.018 s</b> with <code>200</code>. In
+Week 1 the same request waited <b>30.04 s</b> and got nothing. Pulse now
+has <b>2 threads</b>: the main thread back in <code>accept()</code>, and
+one worker stuck in <code>read()</code> on the silent client, stuck
+<b>alone</b>.</p>
+</div>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+curl /hello with nc connected
+</div>
+<div class="values">
+30.04 s <span class="flat">→ 0.018 s</span>
+</div>
+<div class="note">
+Week 1 (timed out, no reply) vs Week 2 (200 OK)
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+Threads
+</div>
+<div class="values">
+1 → 2
+</div>
+<div class="note">
+main + one worker for the silent client
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+LISTEN Recv-Q
+</div>
+<div class="values">
+1 <span class="flat">→ 0</span>
+</div>
+<div class="note">
+nobody stuck waiting to be accepted
+</div>
+</div>
+</div>
+<h3 id="week-1-vs-week-2-field-by-field">Week 1 vs Week 2, field by
+field</h3>
+<p>Week 1’s <code>notes.html</code> has a table, <em>“What Week 2 should
+show instead”</em>, written <strong>before</strong> any Week 2 code
+existed. Here it is next to what actually happened:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Week 1 (measured)</th>
+<th>Week 2: expected (written in Week 1)</th>
+<th>Week 2: actual</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>curl /hello</code> with <code>nc</code> connected</td>
+<td>30.044 s, <code>http_code=000</code>, exit code <code>28</code></td>
+<td>≈ 0.02 s, <code>200</code></td>
+<td><strong>0.018 s, <code>200</code>, exit code
+<code>0</code></strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td><code>Threads:</code></td>
+<td>1</td>
+<td>at least 2</td>
+<td><strong>2</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td><code>ps -L</code></td>
+<td>one row: <code>S wait_woken</code></td>
+<td>main in <code>accept()</code>, nc’s thread in
+<code>read()</code></td>
+<td><strong><code>837 Sl+ inet_csk_accept</code></strong> and
+<strong><code>857 Sl+ wait_woken</code></strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td>LISTEN <code>Recv-Q</code></td>
+<td>1 (curl stuck in the accept queue)</td>
+<td>0</td>
+<td><strong>0</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td>curl’s connection <code>Recv-Q</code></td>
+<td>83 (request never read)</td>
+<td>0 (read immediately)</td>
+<td><strong>not in the list at all</strong>: already answered and
+closed</td>
+<td><span class="verdict-right">Better than expected</span> (below)</td>
+</tr>
+</tbody>
+</table>
+<p>(No Test 1 predictions were written in <code>notes.txt</code>, so the
+“expected” column from Week 1 is the prediction being tested here.)</p>
+<h3 id="reading-each-output">Reading each output</h3>
+<p><strong><code>time curl ...</code></strong></p>
+<pre><code>Hello from Pulse!
+http_code=200
+real    0m0.018s
+curl exit code: 0</code></pre>
+<p>A normal, instant answer: 18 ms, status <code>200</code>, exit code
+<code>0</code> (success). Week 1’s run of this exact command, with the
+same silent client connected, sat for 30 s and got exit code
+<code>28</code> (timeout).</p>
+<p><strong><code>grep Threads</code> →
+<code>Threads: 2</code></strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Thread</th>
+<th>Why it exists</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. main thread</td>
+<td>Every process starts with one. Pulse’s runs <code>run()</code>’s
+accept loop</td>
+</tr>
+<tr>
+<td>2. the silent client’s worker</td>
+<td>Created when <code>nc</code> connected. It’s still alive because
+<code>nc</code> hasn’t sent anything, so <code>handle_client</code> is
+still waiting in <code>read()</code></td>
+</tr>
+</tbody>
+</table>
+<p>curl’s worker isn’t counted. It was created, answered
+<code>/hello</code>, closed the connection and <strong>ended</strong>,
+all within those 18 ms, before you ran T4. In Week 2, the thread count
+is “1 + the number of connections being handled <em>right now</em>”, and
+finished connections leave no thread behind.</p>
+<p><strong><code>ps -L -o tid,stat,wchan:22,comm</code></strong></p>
+<pre><code>    TID STAT WCHAN                  COMMAND
+    837 Sl+  inet_csk_accept        pulse      ← main thread: waiting in accept() for the NEXT client
+    857 Sl+  wait_woken             pulse      ← nc&#39;s worker: waiting in read() for bytes that never come</code></pre>
+<ul>
+<li><strong>TID 837 = the PID</strong>, so it’s the main thread (Month 2
+/ Week 1 doc, Part 6). It’s in <code>inet_csk_accept</code>, the kernel
+side of <code>accept()</code>, the same as idle Month 1 Pulse in Week 2
+doc Part 1. <strong>It’s back in <code>accept()</code> even though a
+client is stuck.</strong> That’s the whole fix in one row.</li>
+<li><strong>TID 857, the worker, is in <code>wait_woken</code>.</strong>
+That’s exactly the wait channel Month 1 Pulse’s <em>only</em> thread was
+stuck in during Week 1’s Experiment 0. Same wait, same place in
+<code>handle_client</code> (the <code>::read()</code> call). The
+difference is that this time it’s a worker stuck there, not the whole
+server.</li>
+<li><strong><code>STAT</code> is now <code>Sl+</code>, not
+<code>S+</code>.</strong> Compare Week 1’s Experiment 0:
+<code>773 S+ wait_woken</code>. The new <strong><code>l</code></strong>
+means “this process is multi-threaded”. It appeared because Pulse now
+has more than one thread. It’s the same <code>l</code> you saw on every
+thread in Week 1’s Experiments 2 and 3.</li>
+<li><strong>The gap between 837 and 857:</strong> TIDs come from
+<strong>one counter shared by the whole system</strong>. Every new
+process <em>and</em> every new thread takes the next number. Between
+Pulse starting (837) and <code>nc</code> connecting (857), other things
+on the machine took the numbers in between. Opening a terminal, starting
+<code>nc</code>, each one gets a PID from the same counter. (curl’s
+worker is <em>not</em> in that gap. T1’s log below shows it was TID 866,
+created after nc’s.)</li>
+</ul>
+<p><strong><code>ss -ltn "sport = :8080"</code></strong></p>
+<pre><code>LISTEN    0          128        0.0.0.0:8080      0.0.0.0:*</code></pre>
+<p><code>Recv-Q 0</code>: <strong>no finished connections waiting to be
+<code>accept()</code>ed</strong>. In Week 1 this was <code>1</code>:
+curl’s connection, completed by the kernel but never picked up, because
+Pulse’s only thread was stuck in <code>read()</code>. Now the main
+thread <code>accept()</code>s each connection immediately and hands it
+off, so nothing piles up in the queue.</p>
+<p><strong><code>ss -tn state established "sport = :8080"</code></strong></p>
+<pre><code>Recv-Q      Send-Q     Local Address:Port      Peer Address:Port
+0           0          127.0.0.1:8080          127.0.0.1:40140      ← nc, still connected, still silent</code></pre>
+<p><strong>Only one row now.</strong> Week 1 had two: <code>nc</code>
+(<code>Recv-Q 0</code>) and curl
+(<strong><code>Recv-Q 83</code></strong>, its whole request sitting
+unread). This time curl’s connection had already been accepted, read,
+answered and closed before you ran this command, so it’s not in the list
+at all. That’s why the last row of the comparison table says “better
+than expected”: the Week 1 table predicted curl’s <code>Recv-Q</code>
+would show <code>0</code>, but in fact the connection was completely
+gone.</p>
+<p><code>nc</code>’s row is unchanged from Week 1: connected,
+<code>Recv-Q 0</code> (it sent nothing). Its worker (TID 857) is waiting
+in <code>read()</code> for it.</p>
+<h3 id="what-this-proves">What this proves</h3>
+<blockquote>
+<p><strong>A slow client now blocks only its own thread.</strong> The
+kernel side is unchanged: connections still complete the handshake on
+their own, and data still waits in <code>Recv-Q</code>. What changed is
+that Pulse always has a thread free to <code>accept()</code> and a
+thread per client to <code>read()</code>. Experiment 0’s 30-second
+freeze is gone.</p>
+</blockquote>
+<h3 id="t1-pulses-own-log-matched-to-the-threads">T1: Pulse’s own log,
+matched to the threads</h3>
+<pre><code>Pulse listening on port 8080...
+Client connected: 127.0.0.1:40140
+Client connected: 127.0.0.1:50454
+[TID 866] Parsed (83 bytes total): GET /hello HTTP/1.1
+Client connected: 127.0.0.1:58778
+[TID 933] Parsed (83 bytes total): GET /hello HTTP/1.1
+[TID 857] Client disconnected before completing a request (0 bytes received so far).</code></pre>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Client port</th>
+<th>Who</th>
+<th>Worker TID</th>
+<th>What happened</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>40140</code></td>
+<td><code>nc</code> (the silent client)</td>
+<td><strong>857</strong></td>
+<td>Connected first. Its worker went into <code>read()</code> and stayed
+there. The same TID 857 shows up as <code>wait_woken</code> in T4’s
+<code>ps -L</code></td>
+</tr>
+<tr>
+<td><code>50454</code></td>
+<td>the <code>time curl ... /hello</code> from T3</td>
+<td><strong>866</strong></td>
+<td>Connected <strong>while nc’s worker was stuck</strong>, got its own
+thread, parsed its 83-byte request and was answered at once: the 0.018
+s</td>
+</tr>
+<tr>
+<td><code>58778</code></td>
+<td>a second <code>curl /hello</code></td>
+<td><strong>933</strong></td>
+<td>Also answered while nc was still connected. More proof the server
+stays open to everyone</td>
+</tr>
+<tr>
+<td><code>40140</code> again</td>
+<td><code>nc</code>, after <code>Ctrl+C</code></td>
+<td><strong>857</strong></td>
+<td><code>read()</code> finally returned 0 (“client closed”), so worker
+857 logged the disconnect, closed the socket and ended</td>
+</tr>
+</tbody>
+</table>
+<p>What this log shows that Week 1’s couldn’t:</p>
+<ol type="1">
+<li><strong>Clients are answered while another is stuck.</strong> In
+Week 1 the log order was: nc connected → <em>30 s of nothing</em> → nc
+disconnected → only then curl got <code>Client connected</code>. Here,
+<code>Client connected: 50454</code> and its <code>Parsed</code> line
+come <strong>right after</strong> nc connects, while nc’s worker is
+still waiting.</li>
+<li><strong>Each line says which thread wrote it.</strong>
+<code>Client connected</code> lines have no TID: they’re printed by the
+<strong>main</strong> thread, in <code>run()</code>, right after
+<code>accept()</code>. <code>Parsed</code> /
+<code>Client disconnected</code> lines carry the
+<strong>worker’s</strong> TID, because they’re printed inside
+<code>handle_client()</code> on that worker.</li>
+<li><strong>The nc worker’s lifetime is visible from start to
+end.</strong> It was created when <code>nc</code> connected (port
+40140), showed up as TID 857 <code>wait_woken</code> in
+<code>ps -L</code>, and its <em>last</em> line is the disconnect. After
+that, the thread ended. It’s the only worker that lived longer than a
+few milliseconds.</li>
+<li><strong>TIDs jump (866 → 933)</strong> for the same reason as the
+837 → 857 gap above: the commands you ran in T4 (<code>pgrep</code>,
+<code>grep</code>, <code>ps</code>, <code>ss</code>) are each new
+processes, and each took numbers from the same shared counter in
+between.</li>
+<li><strong>“83 bytes total”</strong> is the same 83 bytes Week 1 saw
+sitting unread in curl’s <code>Recv-Q</code>. This time they were read
+immediately.</li>
+</ol>
+<details>
+<summary>
+Raw output: Test 1
+</summary>
+<p><strong>T1 (Pulse)</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse/build$ ./pulse 8080
+Pulse listening on port 8080...
+Client connected: 127.0.0.1:40140
+Client connected: 127.0.0.1:50454
+[TID 866] Parsed (83 bytes total): GET /hello HTTP/1.1
+Client connected: 127.0.0.1:58778
+[TID 933] Parsed (83 bytes total): GET /hello HTTP/1.1
+[TID 857] Client disconnected before completing a request (0 bytes received so far).</code></pre>
+<p><strong>T3</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ time curl -s -m 30 -w &quot;\nhttp_code=%{http_code}\n&quot; localhost:8080/hello; echo &quot;curl exit code: $?&quot;
+Hello from Pulse!
+http_code=200
+
+real    0m0.018s
+user    0m0.000s
+sys     0m0.014s
+curl exit code: 0</code></pre>
+<p><strong>T4</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ P=$(pgrep -x pulse)
+grep Threads /proc/$P/status
+ps -L -o tid,stat,wchan:22,comm -p $P
+ss -ltn &quot;sport = :8080&quot;
+ss -tn state established &quot;sport = :8080&quot;
+Threads:        2
+    TID STAT WCHAN                  COMMAND
+    837 Sl+  inet_csk_accept        pulse
+    857 Sl+  wait_woken             pulse
+State     Recv-Q     Send-Q         Local Address:Port         Peer Address:Port
+LISTEN    0          128                  0.0.0.0:8080              0.0.0.0:*
+Recv-Q      Send-Q           Local Address:Port             Peer Address:Port
+0           0                    127.0.0.1:8080                127.0.0.1:40140</code></pre>
+</details>
+<hr />
+<h1 id="test-2-slow-hello-at-the-same-time">Test 2 — <code>/slow</code>
++ <code>/hello</code> at the same time</h1>
+<p><strong>Question:</strong> the spec’s key experiment. Can
+<code>/hello</code> finish while <code>/slow</code> is still
+running?</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># T2: start a slow request (takes 5 s)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">time</span> curl <span class="at">-s</span> localhost:8080/slow<span class="kw">;</span> <span class="bu">echo</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># T3: within those 5 seconds:</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">time</span> curl <span class="at">-s</span> localhost:8080/hello<span class="kw">;</span> <span class="bu">echo</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-L</span> <span class="at">-o</span> tid,stat,wchan:22,comm <span class="at">-p</span> <span class="va">$(</span><span class="ex">pgrep</span> <span class="at">-x</span> pulse<span class="va">)</span></span></code></pre></div>
+<p><strong>Paste back:</strong> T1, T2, T3.</p>
+<h2 id="result-hello-finishes-while-slow-is-still-sleeping">Result:
+<code>/hello</code> finishes while <code>/slow</code> is still
+sleeping</h2>
+<div class="tldr">
+<p><b>What I did:</b> started <code>curl /slow</code> (the handler
+sleeps 5 s), and while it was still waiting, ran <code>curl
+/hello</code> and <code>ps -L</code>. <br><br> <b>What happened:</b>
+<code>/hello</code> answered in <b>0.030 s</b> while <code>/slow</code>
+was still asleep. <code>/slow</code> took its full <b>5.08 s</b>, but
+only for itself. <code>ps -L</code> caught the <code>/slow</code> worker
+asleep in <b><code>hrtimer_nanosleep</code></b>, the same wait as Week
+1’s Experiment 3 sleeping threads, now inside Pulse. This is the spec’s
+“one of the most important experiments of Month 2”, and it passed.</p>
+</div>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+/slow
+</div>
+<div class="values">
+5.08 s
+</div>
+<div class="note">
+its own 5 s sleep + ~0.08 s
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+/hello, started during /slow
+</div>
+<div class="values">
+<span class="flat">0.030 s</span>
+</div>
+<div class="note">
+didn’t wait for /slow at all
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+/slow worker’s WCHAN
+</div>
+<div class="values" style="font-size:1.1em">
+hrtimer_nanosleep
+</div>
+<div class="note">
+= Experiment 3’s sleeping threads
+</div>
+</div>
+</div>
+<h3 id="predicted-vs-actual">Predicted vs actual</h3>
+<p>No Test 2 predictions were written in <code>notes.txt</code>. The
+predictions being tested are the Week 2 concepts doc’s (Part 7), written
+before the code:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Predicted (Week 2 doc, Part 7)</th>
+<th>Actual</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/slow</code> time</td>
+<td>~5 s</td>
+<td><strong>5.077 s</strong></td>
+<td><span class="verdict-right">As predicted</span></td>
+</tr>
+<tr>
+<td><code>/hello</code> during <code>/slow</code></td>
+<td>~0.02 s, not waiting behind <code>/slow</code></td>
+<td><strong>0.030 s</strong></td>
+<td><span class="verdict-right">As predicted</span></td>
+</tr>
+<tr>
+<td><code>/slow</code> worker’s <code>WCHAN</code></td>
+<td><code>hrtimer_nanosleep</code></td>
+<td><strong><code>hrtimer_nanosleep</code></strong> (TID 1106)</td>
+<td><span class="verdict-right">As predicted</span></td>
+</tr>
+<tr>
+<td>main thread’s <code>WCHAN</code></td>
+<td><code>inet_csk_accept</code></td>
+<td><strong><code>inet_csk_accept</code></strong> (TID 837)</td>
+<td><span class="verdict-right">As predicted</span></td>
+</tr>
+</tbody>
+</table>
+<p>The doc’s predicted <em>Month 1</em> behavior (<code>/hello</code>
+waiting ~5 s behind <code>/slow</code>) wasn’t measured, because Month 1
+Pulse has no <code>/slow</code> route. The measured Month 1 equivalent
+is Week 1’s Experiment 0: one thread stuck on one client froze every
+other request for 30 s.</p>
+<h3 id="reading-each-output-1">Reading each output</h3>
+<p><strong>T2:
+<code>time curl -s localhost:8080/slow</code></strong></p>
+<pre><code>Slow response from Pulse (slept 5 s)
+real    0m5.077s
+user    0m0.012s
+sys     0m0.029s</code></pre>
+<ul>
+<li><strong><code>real 5.077 s</code></strong>: the handler’s
+<code>sleep_for(5 s)</code> plus ~77 ms for everything else (connect,
+send, the worker’s parse and write, and starting <code>curl</code>
+itself).</li>
+<li><strong><code>user</code> + <code>sys</code> ≈ 0.04 s</strong>: curl
+was asleep for almost the whole 5 seconds, waiting for the response. The
+same “waiting, not working” pattern as Week 1’s Experiment 0, but this
+time it’s curl waiting on a deliberately slow handler, not a blocked
+server.</li>
+</ul>
+<p><strong>T3:
+<code>time curl -s localhost:8080/hello</code></strong></p>
+<pre><code>Hello from Pulse!
+real    0m0.030s</code></pre>
+<p><strong>30 ms</strong> while <code>/slow</code>’s worker was asleep.
+A little slower than Test 1’s 18 ms. At this size, a few milliseconds is
+normal run-to-run variation (starting a new <code>curl</code> process is
+most of it), not a sign of waiting on <code>/slow</code>. If
+<code>/hello</code> had been waiting behind <code>/slow</code>, this
+would read about 5 seconds.</p>
+<p><strong>T3: <code>ps -L -o tid,stat,wchan:22,comm</code></strong>,
+taken while <code>/slow</code> was still sleeping:</p>
+<pre><code>    TID STAT WCHAN                  COMMAND
+    837 Sl+  inet_csk_accept        pulse      ← main thread: back in accept()
+   1106 Sl+  hrtimer_nanosleep      pulse      ← /slow&#39;s worker: asleep inside the handler</code></pre>
+<ul>
+<li><strong>TID 837</strong> is the same main thread as in Test 1. It’s
+the same Pulse process, still running. Still in
+<code>accept()</code>.</li>
+<li><strong>TID 1106</strong> is <code>/slow</code>’s worker. The log
+line <code>[TID 1106] Parsed (82 bytes total): GET /slow</code> confirms
+it. Its <code>WCHAN</code> is
+<strong><code>hrtimer_nanosleep</code></strong>: the kernel’s
+high-resolution timer sleep, which is what
+<code>std::this_thread::sleep_for</code> uses. That’s exactly the wait
+channel of the 100 threads in Week 1 / Experiment 3 Part C
+(<code>100 hrtimer_nanosleep</code>). <strong>The <code>/slow</code>
+worker is an Experiment 3 thread living inside Pulse:</strong> state
+<code>S</code>, using no CPU, waiting for a timer.</li>
+<li><strong><code>/hello</code>’s worker (TID 1113) isn’t in the
+list.</strong> It had already answered and ended in those 30 ms, before
+<code>ps</code> ran. (Same as curl’s worker in Test 1.)</li>
+</ul>
+<p><strong>T1: Pulse’s log</strong></p>
+<pre><code>Client connected: 127.0.0.1:47152
+[TID 1106] Parsed (82 bytes total): GET /slow HTTP/1.1
+Client connected: 127.0.0.1:47156
+[TID 1113] Parsed (83 bytes total): GET /hello HTTP/1.1</code></pre>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Line</th>
+<th>Thread</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Client connected: …:47152</code></td>
+<td>main</td>
+<td><code>/slow</code>’s connection accepted and handed to a new
+worker</td>
+</tr>
+<tr>
+<td><code>[TID 1106] Parsed (82 bytes total): GET /slow</code></td>
+<td>worker 1106</td>
+<td>The request was <strong>fully read and parsed straight
+away</strong>. Only <em>then</em> does the handler sleep. 82 bytes, not
+83, because <code>/slow</code> is one character shorter than
+<code>/hello</code></td>
+</tr>
+<tr>
+<td><code>Client connected: …:47156</code></td>
+<td>main</td>
+<td><code>/hello</code> accepted <strong>while worker 1106 is
+asleep</strong>. The main thread was free, because it never runs
+handlers</td>
+</tr>
+<tr>
+<td><code>[TID 1113] Parsed (83 bytes total): GET /hello</code></td>
+<td>worker 1113</td>
+<td>Its own thread, its own parse, answered immediately</td>
+</tr>
+</tbody>
+</table>
+<p>There’s no “finished” line for <code>/slow</code>, because
+<code>handle_client</code> doesn’t log when a response is sent, only
+when a request is parsed. The 5.077 s in T2 is the evidence that it
+completed.</p>
+<h3 id="silent-client-test-1-vs-slow-handler-test-2">Silent client (Test
+1) vs slow handler (Test 2)</h3>
+<p>The Week 2 doc (Part 7) said these were two different <em>kinds</em>
+of slow, and <code>ps -L</code> and the log show exactly where each one
+waits:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Test 1: silent client</th>
+<th>Test 2: <code>/slow</code> handler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Log before the wait</td>
+<td><code>Client connected</code> only, <strong>no</strong>
+<code>Parsed</code> line (nothing arrived to parse)</td>
+<td><code>Client connected</code> <strong>and</strong>
+<code>Parsed … GET /slow</code> (request complete)</td>
+</tr>
+<tr>
+<td>Where the worker waits</td>
+<td>in <code>read()</code>, inside <code>handle_client</code>’s read
+loop</td>
+<td>in the handler, inside <code>router_.route()</code></td>
+</tr>
+<tr>
+<td><code>WCHAN</code></td>
+<td><code>wait_woken</code>: waiting for the
+<strong>network</strong></td>
+<td><code>hrtimer_nanosleep</code>: waiting for a
+<strong>timer</strong></td>
+</tr>
+<tr>
+<td>Whose “fault”</td>
+<td>the client’s</td>
+<td>the server’s (stands in for a slow database query or slow
+computation)</td>
+</tr>
+<tr>
+<td>Effect on other requests in Week 2</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Both kinds of slow now block only their own thread.</strong>
+This was the spec’s central Week 2 deliverable: <em>“slow handlers
+without blocking every other connection.”</em></p>
+</blockquote>
+<details>
+<summary>
+Raw output: Test 2
+</summary>
+<p><strong>T1 (Pulse log)</strong></p>
+<pre><code>Client connected: 127.0.0.1:47152
+[TID 1106] Parsed (82 bytes total): GET /slow HTTP/1.1
+Client connected: 127.0.0.1:47156
+[TID 1113] Parsed (83 bytes total): GET /hello HTTP/1.1</code></pre>
+<p><strong>T2</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ time curl -s localhost:8080/slow; echo
+Slow response from Pulse (slept 5 s)
+real    0m5.077s
+user    0m0.012s
+sys     0m0.029s</code></pre>
+<p><strong>T3</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ time curl -s localhost:8080/hello; echo
+ps -L -o tid,stat,wchan:22,comm -p $(pgrep -x pulse)
+Hello from Pulse!
+real    0m0.030s
+user    0m0.011s
+sys     0m0.008s
+
+    TID STAT WCHAN                  COMMAND
+    837 Sl+  inet_csk_accept        pulse
+   1106 Sl+  hrtimer_nanosleep      pulse</code></pre>
+</details>
+<hr />
+<h1 id="test-3-5-slow-in-parallel-threads-and-file-descriptors">Test 3 —
+5 × <code>/slow</code> in parallel: threads and file descriptors</h1>
+<p><strong>Question:</strong> does Pulse really make one thread per
+connection, and do those threads and fds go away when the connections
+finish?</p>
+<p>All in one terminal (T2), with Pulse still running in T1:</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="va">P</span><span class="op">=</span><span class="va">$(</span><span class="ex">pgrep</span> <span class="at">-x</span> pulse<span class="va">)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;BEFORE:&quot;</span><span class="kw">;</span> <span class="fu">grep</span> Threads /proc/<span class="va">$P</span>/status<span class="kw">;</span> <span class="fu">ls</span> /proc/<span class="va">$P</span>/fd</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> 1 2 3 4 5<span class="kw">;</span> <span class="cf">do</span> <span class="ex">curl</span> <span class="at">-s</span> <span class="at">-o</span> /dev/null <span class="at">-w</span> <span class="st">&quot;slow #</span><span class="va">$i</span><span class="st"> done in %{time_total} s\n&quot;</span> localhost:8080/slow <span class="kw">&amp;</span> <span class="cf">done</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sleep</span> 1</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;DURING:&quot;</span><span class="kw">;</span> <span class="fu">grep</span> Threads /proc/<span class="va">$P</span>/status<span class="kw">;</span> <span class="fu">ls</span> /proc/<span class="va">$P</span>/fd</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-L</span> <span class="at">-o</span> stat=,wchan:22= <span class="at">-p</span> <span class="va">$P</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="bu">wait</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="fu">sleep</span> 0.5</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;AFTER:&quot;</span><span class="kw">;</span> <span class="fu">grep</span> Threads /proc/<span class="va">$P</span>/status<span class="kw">;</span> <span class="fu">ls</span> /proc/<span class="va">$P</span>/fd</span></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>New piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>curl ... &amp;</code> inside the <code>for</code> loop</td>
+<td><code>&amp;</code> starts each curl <strong>in the
+background</strong> and immediately moves on, so all 5 run at the same
+time</td>
+</tr>
+<tr>
+<td><code>-w "... %{time_total} s"</code></td>
+<td>curl prints how long <em>that</em> request took</td>
+</tr>
+<tr>
+<td><code>ls /proc/$P/fd</code></td>
+<td>The process’s open file descriptors: 0/1/2 = stdin/out/err, 3 =
+listening socket, 4+ = client connections</td>
+</tr>
+<tr>
+<td><code>wait</code></td>
+<td>Wait for this shell’s background jobs (the 5 curls) to finish. Pulse
+is in a different terminal, so it’s not one of them</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Paste back:</strong> all of T2, plus T1’s log lines from this
+test.</p>
+<h2
+id="result-one-thread-per-connection-and-every-thread-and-fd-cleaned-up-afterwards">Result:
+one thread per connection, and every thread and fd cleaned up
+afterwards</h2>
+<div class="tldr">
+<p><b>What I did:</b> fired 5 <code>/slow</code> requests at the same
+time, and looked at Pulse’s threads and open file descriptors before,
+during and after. <br><br> <b>What happened:</b> all 5 finished in
+<b>~5.00 s each, about 5 s total</b>, not 25 s. During the requests
+Pulse had <b>6 threads</b> (main + one per connection) and <b>5 extra
+fds</b> (4–8, one socket per client). Afterwards it was back to
+<b>exactly 1 thread and fds 0–3</b>, so nothing leaked. Every connection
+was closed exactly once, by its own worker.</p>
+</div>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+Threads: before / during / after
+</div>
+<div class="values">
+1 → 6 <span class="flat">→ 1</span>
+</div>
+<div class="note">
+main + 5 workers, then back to main only
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+Open fds: before / during / after
+</div>
+<div class="values">
+0–3 → 0–8 <span class="flat">→ 0–3</span>
+</div>
+<div class="note">
+5 client sockets opened, all 5 closed
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+5 × /slow
+</div>
+<div class="values">
+<span class="flat">5.00 s each</span>
+</div>
+<div class="note">
+side by side, not 5 × 5 = 25 s
+</div>
+</div>
+</div>
+<h3 id="predicted-vs-actual-1">Predicted vs actual</h3>
+<p>No Test 3 predictions were written in <code>notes.txt</code>. The
+expectations being tested come from the Week 2 concepts doc (Parts 2, 3
+and 8):</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Expected (Week 2 doc)</th>
+<th>Actual</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time for 5 × <code>/slow</code></td>
+<td>~5 s total: they sleep side by side</td>
+<td>each <strong>5.002–5.005 s</strong>, all done ~5 s after
+starting</td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td><code>Threads:</code> during</td>
+<td>1 + one per connection = 6</td>
+<td><strong>6</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td><code>Threads:</code> after</td>
+<td>back to 1: finished workers end</td>
+<td><strong>1</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td>fds during</td>
+<td>3 + five client sockets (4, 5, 6, 7, 8)</td>
+<td><strong>0 1 2 3 4 5 6 7 8</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td>fds after</td>
+<td>back to 0–3. If not, ownership is broken (Part 8)</td>
+<td><strong>0 1 2 3</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td>Thread states during</td>
+<td>5 asleep in the handler, main in <code>accept()</code></td>
+<td><strong><code>5 Sl+ hrtimer_nanosleep</code></strong>,
+<strong><code>1 Sl+ inet_csk_accept</code></strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="reading-each-output-2">Reading each output</h3>
+<p><strong>BEFORE</strong></p>
+<pre><code>Threads:        1
+0  1  2  3</code></pre>
+<p>Only the main thread (Test 1’s <code>nc</code> worker ended when
+<code>nc</code> disconnected). The fds are 0, 1, 2 (stdin, stdout,
+stderr: every process starts with these) and <strong>3, the listening
+socket</strong> (<code>listen_socket_</code>, created in
+<code>TcpServer</code>’s constructor). This is Pulse’s resting
+state.</p>
+<p><strong>The <code>[1] 1408</code> … <code>[5] 1412</code>
+lines</strong> aren’t Pulse. They’re <strong>bash’s job
+control</strong>: when you start a command with <code>&amp;</code>, bash
+prints its job number in brackets and its PID. Five curls, five jobs,
+PIDs 1408–1412. (The <code>Done</code> lines later are bash saying those
+jobs finished. Bash only prints them at certain moments, which is why
+not all five appear.)</p>
+<p><strong>DURING</strong> (1 second in, all 5 workers asleep in the
+handler)</p>
+<pre><code>Threads:        6
+0  1  2  3  4  5  6  7  8
+      5 Sl+  hrtimer_nanosleep
+      1 Sl+  inet_csk_accept</code></pre>
+<ul>
+<li><strong><code>Threads: 6</code></strong> = 1 main + <strong>5
+workers, one per connection</strong>: thread-per-connection, counted
+directly.</li>
+<li><strong>fds 4–8</strong>: one socket per connection.
+<code>accept()</code> always hands out the <strong>lowest free
+number</strong>, so five connections got 4, 5, 6, 7, 8. In Month 1,
+Pulse could never have more than one client fd open (always 4), because
+it closed each client before accepting the next. <strong>Five client fds
+open at once is new in Month 2.</strong></li>
+<li><strong><code>5 Sl+ hrtimer_nanosleep</code></strong>: all 5 workers
+asleep in <code>/slow</code>’s <code>sleep_for</code>, using no CPU.
+This is Week 1’s Experiment 3 again, with 5 sleeping threads, except
+these are real Pulse connections.</li>
+<li><strong><code>1 Sl+ inet_csk_accept</code></strong>: the main
+thread, in <code>accept()</code>, ready for a 6th client. It never waits
+on any of them.</li>
+</ul>
+<p><strong>The five curls</strong></p>
+<pre><code>slow #3 done in 5.003427 s
+slow #1 done in 5.001812 s
+slow #2 done in 5.003572 s
+slow #4 done in 5.004575 s
+slow #5 done in 5.003864 s</code></pre>
+<ul>
+<li><strong>Each took 5.00 s</strong>: just its own 5-second sleep, plus
+2–5 ms. None waited behind another. <strong>Total ≈ 5 s.</strong> Month
+1 Pulse would have handled them one after another, ~5, 10, 15, 20, 25
+s.</li>
+<li><strong>Finish order 3, 1, 2, 4, 5</strong>, not 1, 2, 3, 4, 5. The
+five sleeps all ended within ~3 ms of each other, so which one gets its
+response first is up to the scheduler. The same lesson as Week 1’s
+Experiments 1 and 3: start order doesn’t decide finish order.</li>
+</ul>
+<p><strong>AFTER</strong></p>
+<pre><code>Threads:        1
+0  1  2  3</code></pre>
+<p><strong>Back to exactly the resting state.</strong> This is the most
+important line of the test:</p>
+<ul>
+<li><strong>Threads back to 1</strong>: each worker’s thread
+<strong>ended</strong> when <code>serve_connection()</code> returned.
+Detached threads clean themselves up. Nobody had to <code>join()</code>
+them (Week 1 doc, Part 8).</li>
+<li><strong>fds back to 0–3</strong>: each of the 5 client sockets was
+<strong>closed exactly once</strong>. This is the ownership rule from
+the Week 2 doc (Part 3), checked in practice:
+<ul>
+<li>if the main thread had <em>also</em> closed them (two owners),
+workers’ reads would have failed and responses would be missing, but all
+5 curls got answers;</li>
+<li>if nobody had closed them (no owner), fds 4–8 would still be in this
+list, the leak that ends in <code>EMFILE</code>. The <code>Socket</code>
+was moved into each worker, and its destructor closed the fd when
+<code>handle_client</code> returned, <strong>on the worker
+thread</strong>: the “Ticket” demo from Week 2 doc Part 4, now in
+Pulse.</li>
+</ul></li>
+</ul>
+<p><strong>T1: Pulse’s log</strong></p>
+<pre><code>Client connected: 127.0.0.1:41524
+[TID 1418] Parsed (82 bytes total): GET /slow HTTP/1.1
+Client connected: 127.0.0.1:41522
+Client connected: 127.0.0.1:41534
+[TID 1419] Parsed (82 bytes total): GET /slow HTTP/1.1
+[TID 1420] Parsed (82 bytes total): GET /slow HTTP/1.1
+Client connected: 127.0.0.1:41546
+[TID 1421] Parsed (82 bytes total): GET /slow HTTP/1.1
+Client connected: 127.0.0.1:41550
+[TID 1422] Parsed (82 bytes total): GET /slow HTTP/1.1</code></pre>
+<ul>
+<li><strong>Five workers, TIDs 1418–1422, consecutive.</strong> They
+were created one right after another by the main thread’s accept loop,
+with nothing else on the system grabbing numbers in between (unlike Test
+1’s gaps).</li>
+<li><strong>Two threads’ lines are interleaved.</strong>
+<code>Client connected</code> lines come from the <strong>main</strong>
+thread and <code>Parsed</code> lines from the <strong>workers</strong>,
+so they mix: two <code>Client connected</code> lines in a row, then two
+<code>Parsed</code> lines in a row. The main thread was accepting the
+next client while workers were still parsing. Each line is intact this
+time. Mid-line scrambling needs more traffic, which is Test 6.</li>
+<li><strong><code>41524</code> was logged before
+<code>41522</code></strong>, even though its port number is higher. All
+five curls started at almost the same instant. Each curl’s port was
+picked when it <em>started</em> connecting, but <code>accept()</code>
+returns connections in the order their <strong>handshakes
+finished</strong>, and that order isn’t the same. One more case of
+“order is not guaranteed”.</li>
+<li><strong>You can’t tell from this log which TID served which
+port.</strong> <code>Client connected</code> (with the port) and
+<code>Parsed</code> (with the TID) are printed by different threads, and
+nothing links them. If that ever matters for debugging, the fix is to
+log the port inside the worker too. Not needed now, but worth knowing
+why it’s ambiguous.</li>
+</ul>
+<details>
+<summary>
+Raw output: Test 3
+</summary>
+<p><strong>T1 (Pulse log)</strong></p>
+<pre><code>Client connected: 127.0.0.1:41524
+[TID 1418] Parsed (82 bytes total): GET /slow HTTP/1.1
+Client connected: 127.0.0.1:41522
+Client connected: 127.0.0.1:41534
+[TID 1419] Parsed (82 bytes total): GET /slow HTTP/1.1
+[TID 1420] Parsed (82 bytes total): GET /slow HTTP/1.1
+Client connected: 127.0.0.1:41546
+[TID 1421] Parsed (82 bytes total): GET /slow HTTP/1.1
+Client connected: 127.0.0.1:41550
+[TID 1422] Parsed (82 bytes total): GET /slow HTTP/1.1</code></pre>
+<p><strong>T2</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ P=$(pgrep -x pulse)
+echo &quot;BEFORE:&quot;; grep Threads /proc/$P/status; ls /proc/$P/fd
+
+for i in 1 2 3 4 5; do curl -s -o /dev/null -w &quot;slow #$i done in %{time_total} s\n&quot; localhost:8080/slow &amp; done
+sleep 1
+echo &quot;DURING:&quot;; grep Threads /proc/$P/status; ls /proc/$P/fd
+ps -L -o stat=,wchan:22= -p $P | sort | uniq -c
+wait
+
+sleep 0.5
+echo &quot;AFTER:&quot;; grep Threads /proc/$P/status; ls /proc/$P/fd
+BEFORE:
+Threads:        1
+0  1  2  3
+[1] 1408
+[2] 1409
+[3] 1410
+[4] 1411
+[5] 1412
+DURING:
+Threads:        6
+0  1  2  3  4  5  6  7  8
+      5 Sl+  hrtimer_nanosleep
+      1 Sl+  inet_csk_accept
+slow #3 done in 5.003427 s
+slow #1 done in 5.001812 s
+slow #2 done in 5.003572 s
+slow #4 done in 5.004575 s
+[1]   Done                       curl -s -o /dev/null -w &quot;slow #$i done in %{time_total} s\n&quot; localhost:8080/slow
+slow #5 done in 5.003864 s
+[4]-  Done                       curl -s -o /dev/null -w &quot;slow #$i done in %{time_total} s\n&quot; localhost:8080/slow
+[5]+  Done                       curl -s -o /dev/null -w &quot;slow #$i done in %{time_total} s\n&quot; localhost:8080/slow
+AFTER:
+Threads:        1
+0  1  2  3</code></pre>
+</details>
+<hr />
+<h1 id="test-4-a-client-that-resets-mid-request-error-handling">Test 4 —
+A client that resets mid-request (error handling)</h1>
+<p><strong>Question:</strong> Week 2 doc Part 6. When a client vanishes
+before Pulse writes its response, is only that connection affected?</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># T2</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> Month2/Week2/reset_client.py 8080</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># wait ~6 seconds, then:</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pgrep</span> <span class="at">-x</span> pulse <span class="kw">&amp;&amp;</span> <span class="bu">echo</span> <span class="st">&quot;Pulse is still running&quot;</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> localhost:8080/hello<span class="kw">;</span> <span class="bu">echo</span></span></code></pre></div>
+<p>Read the comments in <code>reset_client.py</code> first. They explain
+how it forces a TCP reset.</p>
+<p><strong>Paste back:</strong> T2, and T1’s log lines from this
+test.</p>
+<h2
+id="result-a-client-that-vanishes-only-ends-its-own-connection">Result:
+a client that vanishes only ends its own connection</h2>
+<div class="tldr">
+<p><b>What I did:</b> sent <code>GET /slow</code>, then reset the
+connection while Pulse’s worker was asleep in the handler. Five seconds
+later the worker tried to write its response to a client that no longer
+existed. <br><br> <b>What happened:</b> the <code>write()</code> failed
+with <b>“Connection reset by peer”</b>. The exception was caught in
+<code>serve_connection()</code>, which logged one line, and <b>only that
+connection ended</b>. Pulse kept running (same main PID, <b>837</b>, as
+in Tests 1–3) and answered the next <code>/hello</code> normally.
+<br><br> <b>Why it matters:</b> in Month 1, this exact error would have
+gone all the way up to <code>main()</code> and shut the whole server
+down. Without Week 2’s <code>try/catch</code>, it would have hit
+<code>std::terminate()</code> and killed every connection. One bad
+client can now only hurt itself.</p>
+</div>
+<h3 id="predicted-vs-actual-2">Predicted vs actual</h3>
+<p>No Test 4 predictions were written in <code>notes.txt</code>.
+Expectations from the Week 2 concepts doc (Part 6) and the comments in
+<code>reset_client.py</code>:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Expected</th>
+<th>Actual</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pulse’s log</td>
+<td><code>[TID n] connection error: write: ...</code></td>
+<td><code>[TID 1621] connection error: write: Connection reset by peer — closing this connection, server keeps running</code></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td>Pulse still running?</td>
+<td>yes</td>
+<td><code>pgrep</code> printed <strong>837</strong>: the same main
+thread/PID as in Tests 1, 2, 3</td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td>Next request works?</td>
+<td>yes</td>
+<td><code>Hello from Pulse!</code> (worker TID 1651)</td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-happened-step-by-step">What happened, step by step</h3>
+<p>Pulse’s log:</p>
+<pre><code>Client connected: 127.0.0.1:34472
+[TID 1621] Parsed (39 bytes total): GET /slow HTTP/1.1
+[TID 1621] connection error: write: Connection reset by peer — closing this connection, server keeps running
+Client connected: 127.0.0.1:35694
+[TID 1651] Parsed (83 bytes total): GET /hello HTTP/1.1</code></pre>
+<ol type="1">
+<li><strong><code>Client connected: …:34472</code></strong>:
+<code>reset_client.py</code> connected. The main thread accepted it and
+<strong>moved</strong> its <code>Socket</code> into a new worker, TID
+1621.</li>
+<li><strong><code>[TID 1621] Parsed (39 bytes total): GET /slow</code></strong>:
+the worker read and parsed the request, then went to sleep in
+<code>/slow</code>’s handler (<code>hrtimer_nanosleep</code>, as in Test
+2).
+<ul>
+<li>Why <strong>39</strong> bytes, not 82 like Tests 2 and 3? The Python
+script sends the bare minimum: <code>GET /slow HTTP/1.1</code> (18) +
+<code>\r\n</code> (2) + <code>Host: localhost</code> (15) +
+<code>\r\n</code> (2) + the blank line <code>\r\n</code> (2) =
+<strong>39</strong>. <code>curl</code> adds <code>User-Agent:</code> and
+<code>Accept:</code> headers, hence 82.</li>
+</ul></li>
+<li><strong>0.5 s later, the script reset the connection.</strong>
+<code>SO_LINGER</code> with timeout 0, then <code>close()</code>:
+instead of the normal polite FIN, the client’s kernel sent a TCP
+<strong>RST</strong> (“reset”), meaning “this connection is gone, forget
+it”. Pulse’s kernel received it and marked the socket as reset. Worker
+1621 didn’t notice, because it was asleep in the handler, not
+reading.</li>
+<li><strong>~5 s later the handler woke up</strong> and returned its
+response. <code>handle_client</code> called <code>write_all()</code> →
+<code>::write()</code> → the kernel said no: <strong><code>-1</code>,
+<code>errno = ECONNRESET</code></strong>, which <code>strerror</code>
+turns into “Connection reset by peer”.</li>
+<li><strong><code>write_all()</code> called
+<code>throw_errno("write")</code></strong>, which threw
+<code>std::runtime_error("write: Connection reset by peer")</code>.</li>
+<li><strong>The exception unwound <code>handle_client</code>’s stack
+frame.</strong> On the way out, C++ ran <code>~Socket()</code> on its
+<code>client</code> parameter, which called <code>::close()</code>.
+<strong>The fd was still closed exactly once.</strong> RAII works even
+when a function is left by an exception (Month 1 / Week 1).</li>
+<li><strong>It landed in <code>serve_connection()</code>’s
+<code>catch (const std::exception&amp; e)</code></strong>, which printed
+the <code>connection error</code> line. Then
+<code>serve_connection()</code> returned normally and <strong>thread
+1621 ended</strong>. Nothing reached <code>std::terminate()</code>.</li>
+<li><strong><code>Client connected: …:35694</code> /
+<code>[TID 1651] Parsed … /hello</code></strong>: your follow-up
+<code>curl /hello</code>, served by a brand-new worker, as normal.</li>
+</ol>
+<h3 id="the-same-error-in-three-versions-of-pulse">The same error in
+three versions of Pulse</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Version</th>
+<th>What <code>write()</code> failing for one client does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Month 1</strong></td>
+<td>The exception escapes <code>handle_client</code> →
+<code>run()</code> → reaches <code>main()</code>’s <code>catch</code> →
+<code>Fatal error: write: Connection reset by peer</code> → <strong>the
+whole server exits.</strong> (Worked out by following the code. Month 1
+has no <code>/slow</code> route, so this test can’t be run on it
+directly.)</td>
+</tr>
+<tr>
+<td><strong>Week 2 code without <code>serve_connection()</code>’s
+<code>catch</code></strong></td>
+<td>The exception escapes the worker’s starting function →
+<strong><code>std::terminate()</code></strong> → the process aborts
+(exit code 134), killing every connection in progress. That’s exactly
+the <code>throw_in_thread</code> demo in Week 2 doc Part 6, which even
+used the same kind of error message</td>
+</tr>
+<tr>
+<td><strong>Week 2 as written</strong></td>
+<td>Caught in <code>serve_connection()</code>, one log line,
+<strong>only this connection ends</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="honest-note-which-safety-net-this-run-actually-tested">Honest
+note: which safety net this run actually tested</h3>
+<p>Week 2 added <strong>two</strong> protections (Week 2 doc, Part 6),
+and this run exercised one of them:</p>
+<ul>
+<li><strong><code>serve_connection()</code>’s <code>catch</code>:
+tested, it worked.</strong> The error came back from
+<code>write()</code> as a normal <code>-1</code> + <code>errno</code>,
+became an exception, and was caught.</li>
+<li><strong>Ignoring <code>SIGPIPE</code>: not the thing tested
+here.</strong> The error this time was
+<strong><code>ECONNRESET</code></strong> (“Connection reset by peer”),
+the kernel reporting the reset it had already received.
+<code>SIGPIPE</code> comes with a different error,
+<strong><code>EPIPE</code></strong> (“Broken pipe”), when writing to a
+connection that has <em>already</em> failed, for example a
+<strong>second</strong> <code>write()</code> after the first one hit the
+reset. Pulse’s small responses go out in a single <code>write()</code>,
+so this run never got that far. <code>SIG_IGN</code> is the safety net
+for the case where it does (a large response sent in several
+<code>write()</code> calls, or a client that disconnects at a slightly
+different moment). It doesn’t show up in this test, but without it that
+case would kill the whole process with no error message at all.</li>
+</ul>
+<details>
+<summary>
+Raw output: Test 4
+</summary>
+<p><strong>T1 (Pulse log)</strong></p>
+<pre><code>Client connected: 127.0.0.1:34472
+[TID 1621] Parsed (39 bytes total): GET /slow HTTP/1.1
+[TID 1621] connection error: write: Connection reset by peer — closing this connection, server keeps running
+Client connected: 127.0.0.1:35694
+[TID 1651] Parsed (83 bytes total): GET /hello HTTP/1.1</code></pre>
+<p><strong>T2</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ python3 Month2/Week2/reset_client.py 8080
+Sent GET /slow. Waiting 0.5 s so Pulse&#39;s worker is inside the slow handler...
+Connection RESET. In ~5 s, Pulse&#39;s worker will try to write its response to a client that&#39;s gone.
+Watch Pulse&#39;s terminal for &#39;[TID n] connection error: ...&#39; — and check the server is still alive.
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ pgrep -x pulse &amp;&amp; echo &quot;Pulse is still running&quot;
+curl -s localhost:8080/hello; echo
+837
+Pulse is still running
+Hello from Pulse!</code></pre>
+</details>
+<hr />
+<h1 id="test-5-nothing-broke-every-month-1-behavior">Test 5 — Nothing
+broke: every Month 1 behavior</h1>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-i</span> localhost:8080/</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-i</span> localhost:8080/hello</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-i</span> localhost:8080/health</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-i</span> <span class="at">-X</span> POST localhost:8080/echo <span class="at">-d</span> <span class="st">&quot;hello&quot;</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-i</span> localhost:8080/does-not-exist          <span class="co"># 404</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-i</span> <span class="at">-X</span> POST localhost:8080/hello           <span class="co"># 405</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="bu">printf</span> <span class="st">&#39;GARBAGE\r\n\r\n&#39;</span> <span class="kw">|</span> <span class="ex">nc</span> <span class="at">-q1</span> localhost 8080   <span class="co"># 400</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> Month1/Week3/slow_client.py 8080        <span class="co"># partial reads (Month 1 / Week 3)</span></span></code></pre></div>
+<p><strong>Paste back:</strong> all of it.</p>
+<h2
+id="result-verified-during-implementation-not-re-run-by-hand">Result:
+verified during implementation (not re-run by hand)</h2>
+<p>This test was skipped as a hands-on run, because the same checks were
+already run by the automated build-and-test script when the Week 2 code
+was written. That run, in WSL against the Week 2 build:</p>
+<pre><code>/        200
+Hello from Pulse!  200        ← /hello
+OK  200                       ← /health
+hello  200                    ← POST /echo -d hello
+404 test 404                  ← /nope
+405 test 405                  ← POST /hello
+HTTP/1.1 400 Bad Request      ← printf &#39;GARBAGE\r\n\r\n&#39; | nc
+HTTP/1.1 200 OK               ← Month1/Week3/slow_client.py (request split across two read()s)
+Hello from Pulse!</code></pre>
+<p>Every Month 1 behavior is unchanged: the three GET routes,
+<code>POST /echo</code>, 404, 405, 400 for malformed input, and Month 1
+/ Week 3’s partial-read handling. That’s expected, since
+<code>handle_client</code>’s body, the parser, the router and the
+handlers didn’t change. Only <em>which thread</em> runs them did.</p>
+<p>Honest caveat: these are the automated results, not a run done by
+hand. The commands above are still here for re-checking any time.</p>
+<hr />
+<h1 id="test-6-ab--c-10-and-scrambled-logs">Test 6 —
+<code>ab -c 10</code>, and scrambled logs</h1>
+<p><strong>Question:</strong> does Pulse handle many concurrent requests
+without failures? And does the log mix, as Week 1 / Experiment 1b
+predicted?</p>
+<p>This test sends 2000 requests, so instead of scrolling Terminal 1,
+the log goes to a file. That needs one extra piece, explained below.</p>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># T1: stop Pulse (Ctrl+C), then restart it with its output going to a file</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/c/Users/aagam/OneDrive/Desktop/Pulse</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">stdbuf</span> <span class="at">-oL</span> ./build/pulse 8080 <span class="op">&gt;</span> pulse_ab.log <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># T2</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="ex">ab</span> <span class="at">-n</span> 2000 <span class="at">-c</span> 10 http://localhost:8080/hello</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Parsed lines:            </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-o</span> Parsed pulse_ab.log <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;lines from 2+ threads:   </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-c</span> <span class="st">&#39;TID.*TID&#39;</span> pulse_ab.log<span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-m</span> 3 <span class="st">&#39;TID.*TID&#39;</span> pulse_ab.log</span></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>New piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt; pulse_ab.log 2&gt;&amp;1</code></td>
+<td>Send stdout to a file, and stderr (<code>2</code>) to the same place
+as stdout (<code>&amp;1</code>)</td>
+</tr>
+<tr>
+<td><code>stdbuf -oL</code></td>
+<td>Make the program’s stdout <strong>line-buffered</strong>. When
+stdout is a file, the C library saves output up in a ~4 KB buffer and
+writes it in chunks. If Pulse is then killed with Ctrl+C, whatever was
+still in the buffer is <strong>lost</strong>. I measured this while
+testing: without <code>stdbuf</code>, only 960 of 1000 log lines made it
+into the file. With it, all 1000 did. (In a terminal, output is already
+line-buffered, which is why you’ve never seen this.)</td>
+</tr>
+<tr>
+<td><code>ab -n 2000 -c 10</code></td>
+<td>2000 requests, 10 at a time (the same tool as Month 1 / Week 4)</td>
+</tr>
+<tr>
+<td><code>grep -o Parsed | wc -l</code></td>
+<td>Count every occurrence of “Parsed”, even two on one scrambled
+line</td>
+</tr>
+<tr>
+<td><code>grep -c 'TID.*TID'</code></td>
+<td>Count lines with <strong>two or more</strong> <code>TID</code> tags:
+pieces from different threads mixed into one line</td>
+</tr>
+</tbody>
+</table>
+<p>When done: <code>Ctrl+C</code> Pulse in T1, and
+<code>rm pulse_ab.log</code>.</p>
+<p><strong>Paste back:</strong> all of <code>ab</code>’s output, and the
+three lines after it.</p>
+<p>This is <strong>not</strong> the Month 1 vs Month 2 benchmark. That’s
+Week 4, done carefully. Here we only check correctness:
+<code>Failed requests: 0</code>.</p>
+<h2
+id="result-2000-2000-correct-but-slow-and-the-reason-was-the-log-file-not-the-threads">Result:
+2000 / 2000 correct, but slow, and the reason was the log file, not the
+threads</h2>
+<div class="tldr">
+<p><b>What I did:</b> 2000 requests to <code>/hello</code>, 10 at a
+time, with Pulse’s log going to a file in the Pulse folder. <br><br>
+<b>What happened:</b> <b>correctness was perfect</b>: 2000 complete,
+<b>0 failed</b>, exactly <b>2000</b> <code>Parsed</code> lines in the
+log. But throughput was only <b>1,032 requests/s</b>, with nearly every
+request taking ~10 ms. That was much lower than expected. <br><br>
+<b>Why:</b> the log file was on <code>/mnt/c</code>, the Windows
+(OneDrive) drive as seen from WSL, where every write is slow. The
+<b>main thread</b> writes a log line for every connection before it can
+go back to <code>accept()</code>, so slow log writes slowed down
+accepting. Measured: the same test with the log on Linux’s own
+<code>/tmp</code> gave <b>~4,000–4,300 req/s</b>. <b>The bottleneck was
+the log destination, not thread-per-connection.</b></p>
+</div>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+Failed requests
+</div>
+<div class="values">
+<span class="flat">0 / 2000</span>
+</div>
+<div class="note">
+every request answered correctly
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+Req/s: log on /mnt/c vs /tmp
+</div>
+<div class="values">
+~1,180 → ~4,150
+</div>
+<div class="note">
+same code, only the log file location changed
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+Scrambled log lines
+</div>
+<div class="values">
+0
+</div>
+<div class="note">
+this run. An earlier run had 11, so it’s timing-dependent
+</div>
+</div>
+</div>
+<h3 id="predicted-vs-actual-3">Predicted vs actual</h3>
+<p>No Test 6 predictions were written in <code>notes.txt</code>.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Expected</th>
+<th>Actual</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Failed requests</code></td>
+<td>0</td>
+<td><strong>0</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td><code>Parsed</code> count</td>
+<td>2000. <code>stdbuf -oL</code> should stop the log losing lines</td>
+<td><strong>2000</strong> exactly</td>
+<td><span class="verdict-right">As expected</span>. Compare 960 / 1000
+without <code>stdbuf</code> (measured during implementation)</td>
+</tr>
+<tr>
+<td>Scrambled lines (2+ TIDs)</td>
+<td>some, as in Week 1 / Experiment 1b</td>
+<td><strong>0</strong></td>
+<td><span class="verdict-wrong">Not this time</span>. Timing-dependent
+(below)</td>
+</tr>
+<tr>
+<td>Throughput</td>
+<td>roughly Month 1’s range. Not a benchmark, just a sanity check</td>
+<td><strong>1,032 req/s</strong>, well below Month 1’s ~5,380</td>
+<td><span class="verdict-wrong">Surprise</span>, explained and measured
+below</td>
+</tr>
+</tbody>
+</table>
+<h3 id="every-ab-field-explained">Every <code>ab</code> field,
+explained</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Document Length</code></td>
+<td>17 bytes</td>
+<td><code>Hello from Pulse!</code> is 17 characters</td>
+</tr>
+<tr>
+<td><code>Concurrency Level</code></td>
+<td>10</td>
+<td><code>-c 10</code>: ab keeps 10 requests in flight at once. In Week
+2 Pulse, that means up to 10 workers alive at once</td>
+</tr>
+<tr>
+<td><code>Time taken for tests</code></td>
+<td>1.937 s</td>
+<td>Wall-clock time for all 2000</td>
+</tr>
+<tr>
+<td><code>Complete requests</code> / <code>Failed requests</code></td>
+<td>2000 / <strong>0</strong></td>
+<td><strong>The correctness result.</strong> Every response was a valid,
+complete HTTP response of the expected length</td>
+</tr>
+<tr>
+<td><code>Total transferred</code> / <code>HTML transferred</code></td>
+<td>202,000 / 34,000 bytes</td>
+<td>Per request: 101 bytes total = 17 bytes of body + 84 bytes of status
+line and headers</td>
+</tr>
+<tr>
+<td><code>Requests per second</code></td>
+<td><strong>1,032.31</strong></td>
+<td>2000 ÷ 1.937 s. <strong>The surprise</strong>, explained below</td>
+</tr>
+<tr>
+<td><code>Time per request</code> (mean)</td>
+<td>9.687 ms</td>
+<td>How long one request took, from the client’s view</td>
+</tr>
+<tr>
+<td><code>Time per request</code> (across all concurrent)</td>
+<td>0.969 ms</td>
+<td>1.937 s ÷ 2000: on average, a request <em>finished</em> every ~1
+ms</td>
+</tr>
+<tr>
+<td><code>Transfer rate</code></td>
+<td>101.82 KB/s</td>
+<td>Bytes received ÷ time</td>
+</tr>
+<tr>
+<td><code>Connect</code></td>
+<td>~0 ms</td>
+<td>The TCP handshake is instant. The kernel does it, even when Pulse is
+slow (Week 1 / Experiment 0’s lesson)</td>
+</tr>
+<tr>
+<td><code>Processing</code> / <code>Waiting</code></td>
+<td>mean 9, median 10, max 15 ms</td>
+<td>From “request sent” to “response received”. <strong>Almost every
+request took ~10 ms</strong>, very consistent (sd 0.9 ms)</td>
+</tr>
+<tr>
+<td><code>Total</code></td>
+<td>mean 10 ms</td>
+<td>Connect + processing</td>
+</tr>
+<tr>
+<td>Percentiles</td>
+<td>50%–99%: 10–11 ms, max 15 ms</td>
+<td>Very tight: no request was much slower than the rest</td>
+</tr>
+<tr>
+<td><code>WARNING: The median and mean … not within a normal deviation</code></td>
+<td></td>
+<td>ab’s own consistency check: mean (9) and median (10) differ by more
+than the standard deviation (0.9). With values this tight it’s a quirk
+of rounding to whole ms. Harmless here</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why 10 concurrent requests × ~10 ms each ≈ 1,000
+req/s:</strong> with 10 requests always in flight and each taking ~10
+ms, about 10 finish every 10 ms, so ~1,000 per second. (In general:
+<em>requests in flight = throughput × time per request</em>. Here 10 ≈
+1,032 × 0.0097.) So the real question is <strong>why each request took
+~10 ms</strong> when a single <code>/hello</code> takes well under 1 ms
+of actual work.</p>
+<h3 id="finding-the-bottleneck-measured-not-guessed">Finding the
+bottleneck: measured, not guessed</h3>
+<p>The log went to <code>pulse_ab.log</code> in the Pulse folder, which
+in WSL is <code>/mnt/c/...</code>: <strong>the Windows drive (and
+OneDrive), reached through WSL’s file-sharing layer.</strong> Every
+write there has to cross from Linux to Windows, and with
+<code>stdbuf -oL</code> there’s <strong>one write per log
+line</strong>.</p>
+<p>The key detail: the <strong>main thread</strong> prints
+<code>Client connected: …</code> for every connection
+<strong>before</strong> handing it off and returning to
+<code>accept()</code> (see <code>run()</code>). So every slow log write
+is time the main thread can’t spend accepting. The whole server’s accept
+rate is capped by how fast the main thread can write to that file.</p>
+<p>To check this rather than guess, the same
+<code>ab -n 2000 -c 10</code> was run with the log sent to three
+different places (same Week 2 build, same <code>stdbuf -oL</code>, two
+rounds each):</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Pulse’s log goes to</th>
+<th>Requests/s</th>
+<th>Failed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/mnt/c/…/Pulse</code> (Windows / OneDrive drive)</td>
+<td><strong>1,176</strong> / <strong>1,191</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>/tmp</code> (Linux’s own filesystem)</td>
+<td><strong>4,286</strong> / <strong>4,007</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>/dev/null</code> (thrown away)</td>
+<td><strong>4,332</strong> / <strong>4,305</strong></td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Logging to the Windows drive alone cut throughput by about
+3.5×.</strong> With the log on Linux’s filesystem, Pulse is almost as
+fast as with no log at all. Your 1,032 matches the <code>/mnt/c</code>
+row. Lesson for every benchmark from now on: <strong>keep the log off
+<code>/mnt/c</code></strong> (use <code>/tmp</code>, or
+<code>/dev/null</code> when the log isn’t needed). Otherwise you’re
+measuring Windows file sharing, not Pulse.</p>
+<p><strong>Still open for Week 4:</strong> even the best row (~4,300
+req/s) is below Month 1’s ~5,380 at <code>-c 10</code>, on a different
+day with different conditions. The obvious candidate is Week 2’s new
+cost: <strong>creating and destroying a thread for every single
+connection</strong> (Week 1 / Experiment 3 measured roughly 1 ms of
+kernel time per 100 threads), plus the main thread’s extra hand-off
+work. That’s exactly the kind of question Week 4’s Month 1 vs Month 2
+benchmark answers properly, under the same conditions, measured rather
+than guessed.</p>
+<h3 id="why-0-scrambled-lines-this-time">Why 0 scrambled lines this
+time</h3>
+<p>During implementation, an identical <code>ab -n 2000 -c 10</code> run
+produced <strong>11</strong> scrambled lines, like
+<code>[TID [TID 549548] Parsed (] Parsed (87 bytes total)…</code>. This
+run produced <strong>0</strong>. That’s not a contradiction. Mixing only
+happens when two threads hit <code>std::cout</code> at the same
+microsecond, and that depends entirely on timing. In this run every log
+line ended with a slow write to <code>/mnt/c</code>, so the whole server
+was paced by those writes and threads rarely reached
+<code>std::cout</code> at the same moment. (That’s the likely
+explanation, not a measured one.)</p>
+<p><strong>0 in one run does not mean “safe”.</strong> Experiment 1 (98
+AB / 2 BA) taught the same thing. The log is still unprotected shared
+state, and Week 3 fixes it properly.</p>
+<details>
+<summary>
+Raw output: Test 6
+</summary>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ab -n 2000 -c 10 http://localhost:8080/hello
+echo &quot;Parsed lines:            $(grep -o Parsed pulse_ab.log | wc -l)&quot;
+echo &quot;lines from 2+ threads:   $(grep -c &#39;TID.*TID&#39; pulse_ab.log)&quot;
+grep -m 3 &#39;TID.*TID&#39; pulse_ab.log
+This is ApacheBench, Version 2.3 &lt;$Revision: 1923142 $&gt;
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 200 requests
+Completed 400 requests
+Completed 600 requests
+Completed 800 requests
+Completed 1000 requests
+Completed 1200 requests
+Completed 1400 requests
+Completed 1600 requests
+Completed 1800 requests
+Completed 2000 requests
+Finished 2000 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /hello
+Document Length:        17 bytes
+
+Concurrency Level:      10
+Time taken for tests:   1.937 seconds
+Complete requests:      2000
+Failed requests:        0
+Total transferred:      202000 bytes
+HTML transferred:       34000 bytes
+Requests per second:    1032.31 [#/sec] (mean)
+Time per request:       9.687 [ms] (mean)
+Time per request:       0.969 [ms] (mean, across all concurrent requests)
+Transfer rate:          101.82 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       1
+Processing:     1    9   0.9     10      15
+Waiting:        1    9   0.9     10      15
+Total:          2   10   0.9     10      15
+WARNING: The median and mean for the processing time are not within a normal deviation
+        These results are probably not that reliable.
+WARNING: The median and mean for the waiting time are not within a normal deviation
+        These results are probably not that reliable.
+
+Percentage of the requests served within a certain time (ms)
+  50%     10
+  66%     10
+  75%     10
+  80%     10
+  90%     10
+  95%     11
+  98%     11
+  99%     11
+ 100%     15 (longest request)
+Parsed lines:            2000
+lines from 2+ threads:   0</code></pre>
+<p><strong>Log-destination comparison (run during this write-up, same
+build):</strong></p>
+<pre><code>log -&gt; /mnt/c (OneDrive, Windows fs) line-buffered: Failed requests: 0 Requests per second: 1176.29 [#/sec] (mean)
+log -&gt; /tmp (Linux fs)            line-buffered: Failed requests: 0 Requests per second: 4286.26 [#/sec] (mean)
+log -&gt; /dev/null                  line-buffered: Failed requests: 0 Requests per second: 4331.58 [#/sec] (mean)
+log -&gt; /mnt/c (OneDrive, Windows fs) line-buffered: Failed requests: 0 Requests per second: 1191.35 [#/sec] (mean)
+log -&gt; /tmp (Linux fs)            line-buffered: Failed requests: 0 Requests per second: 4007.44 [#/sec] (mean)
+log -&gt; /dev/null                  line-buffered: Failed requests: 0 Requests per second: 4305.18 [#/sec] (mean)</code></pre>
+</details>
+<hr />
+<h1 id="week-2-done-when">Week 2 done when</h1>
+<ul>
+<li><label><input type="checkbox" checked="" />Pulse hands every
+connection to its own thread (<code>run()</code> +
+<code>serve_connection()</code>), building with no warnings</label></li>
+<li><label><input type="checkbox" checked="" />Silent client no longer
+freezes everyone (Test 1: 30.04 s → 0.018 s)</label></li>
+<li><label><input type="checkbox" checked="" /><code>/slow</code>
+doesn’t block <code>/hello</code> (Test 2: 0.030 s during a 5 s
+<code>/slow</code>)</label></li>
+<li><label><input type="checkbox" checked="" />One thread and one fd per
+connection, all cleaned up afterwards (Test 3: threads 1 → 6 → 1, fds
+0–3 → 0–8 → 0–3)</label></li>
+<li><label><input type="checkbox" checked="" />One bad client can’t kill
+the server (Test 4)</label></li>
+<li><label><input type="checkbox" checked="" />Every Month 1 behavior
+still works (Test 5, automated run)</label></li>
+<li><label><input type="checkbox" checked="" />2000 concurrent requests,
+0 failures (Test 6)</label></li>
+<li><label><input type="checkbox" />Predictions written before running.
+All Week 2 boxes were left blank. Worth doing in Week 3, where the whole
+point is predicting a <em>wrong</em> answer (a counter that loses
+updates)</label></li>
+<li>Carried forward:
+<ul>
+<li><strong>Week 3:</strong> scrambled logs (shared
+<code>std::cout</code>), plus the shared request counter</li>
+<li><strong>Week 4:</strong> throughput below Month 1 (~4,300 vs ~5,380
+req/s), probably the per-connection thread cost; to be measured
+properly</li>
+<li><strong>Later:</strong> <code>server</code> lifetime if shutdown is
+ever added (doc Part 5)</li>
+</ul></li>
+</ul>
+</body>
+</html>

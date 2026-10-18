@@ -25,6 +25,15 @@
  * it now calls read() in a LOOP, accumulating bytes, and only stops once
  * HttpParser::parse() reports the request is actually Complete (or
  * definitely Malformed) — see tcp_server.cpp.
+ *
+ * MONTH 2 / WEEK 2 UPDATE — thread-per-connection. "One client at a time,
+ * no threads" (top of this comment) is no longer true. run() now only
+ * accepts: each accepted connection is MOVED into its own new, detached
+ * thread, which runs serve_connection() -> handle_client() for that one
+ * client, and run() goes straight back to accept(). A slow client or a slow
+ * handler now blocks only its own thread. handle_client()'s read/parse/
+ * route/write logic is unchanged — only WHICH thread runs it changed. See
+ * the Month 2 / Week 2 doc, Parts 2–6.
  * ============================================================================= */
 class TcpServer
 {
@@ -45,7 +54,11 @@ public:
 
    /* Month 1 / Week 1: blocks forever, repeatedly doing
       accept -> handle one client -> close -> accept the next.
-      Stop the process with Ctrl+C. */
+      Stop the process with Ctrl+C.
+
+      MONTH 2 / WEEK 2: still blocks forever, but now does only
+      accept -> hand the connection to a new thread -> accept the next.
+      It never waits for a client to finish. */
    void run();
 
 private:
@@ -71,7 +84,24 @@ private:
       and Part 3 of the Week 3 doc for why this is necessary at all. */
    void handle_client(Socket client) const;
 
+   /* MONTH 2 / WEEK 2: the function every worker thread starts in — the
+      top of each worker thread's stack. It just calls handle_client(), but
+      inside a try/catch that catches EVERYTHING.
+
+      Why it has to exist (Month 2 / Week 2 doc, Part 6): an exception that
+      escapes a thread's starting function calls std::terminate() and aborts
+      the WHOLE process — every connection, not just this one — and the
+      try/catch in main() can't help, because an exception only unwinds its
+      OWN thread's stack. So this is the "last line of defence" for one
+      connection: whatever goes wrong with this client is logged here, and
+      the server keeps running.
+
+      Takes the Socket BY VALUE for the same ownership reason as
+      handle_client(): whoever holds this parameter owns the connection. */
+   void serve_connection(Socket client) const;
+
    Socket listen_socket_; // Month 1 / Week 1: the ONE listening socket — see Part 5 of the doc ("why there are two file descriptors") for why this is separate from each client's socket
    uint16_t port_;        // just remembered for the log message in the constructor
    Router router_;        // Month 1 / Week 2: what handle_client() consults to turn a parsed HttpRequest into an HttpResponse
+                          // MONTH 2 / WEEK 2: now READ by many worker threads at once (through `this`). Safe because nobody WRITES to it after run() starts — see Part 5 of the Month 2 / Week 2 doc
 };

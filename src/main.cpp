@@ -1,8 +1,11 @@
 #include "router.hpp"
 #include "tcp_server.hpp"
 
+#include <chrono>   // MONTH 2 / WEEK 2: std::chrono::seconds — for GET /slow
+#include <csignal>  // MONTH 2 / WEEK 2: std::signal, SIGPIPE, SIG_IGN — see main()
 #include <cstdlib>
 #include <iostream>
+#include <thread>   // MONTH 2 / WEEK 2: std::this_thread::sleep_for — for GET /slow
 
 /* =============================================================================
  * MONTH 1 / WEEK 2 — registering routes
@@ -71,6 +74,38 @@ namespace
             return HttpResponse::ok(request.body);
         });
 
+        /* MONTH 2 / WEEK 2 — GET /slow: a deliberately slow handler, the
+           spec's test scenario (Month 2 / Week 2 doc, Part 7).
+
+           It sleeps 5 seconds before answering — standing in for a slow
+           database query or slow computation in a real server. The request
+           has already been fully read and parsed by the time this runs; the
+           slowness is in the SERVER, not the client (compare Experiment 0's
+           silent client, where the thread waited in read() instead).
+
+           The proof this week: start `curl /slow`, then `curl /hello`.
+             Month 1: /hello waits ~5 s behind /slow — one thread, stuck here.
+             Week 2:  /hello answers immediately — /slow sleeps on ITS OWN
+                      worker thread, and only that thread waits.
+
+           While it sleeps, `ps -L` should show that worker in state S with
+           WCHAN hrtimer_nanosleep — exactly Experiment 3's sleeping thread,
+           now inside Pulse.
+
+           C++ note: std::this_thread::sleep_for puts only the CALLING thread
+           to sleep — the worker running this request. Every other thread
+           (main in accept(), other workers) keeps going. Same call as
+           exp3_sleep.cpp. std::chrono::seconds(5) is the typed duration — C++
+           makes you say the unit.
+
+           Thread-safety note (doc Part 5): many threads may be inside this
+           lambda at the same time (several /slow requests at once). That's
+           fine — it touches nothing shared, only its own locals. */
+        router.add_route("GET", "/slow", [](const HttpRequest&) {
+            std::this_thread::sleep_for(std::chrono::seconds(5));
+            return HttpResponse::ok("Slow response from Pulse (slept 5 s)");
+        });
+
         /* Month 1 / Week 2 — C++ note, ties back to the &/&& discussion in
            socket.hpp: `router` has a name, so on its own it's an lvalue.
            But C++ has a special rule specifically for `return local_var;`
@@ -108,6 +143,29 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    /* MONTH 2 / WEEK 2 — ignore SIGPIPE (Month 2 / Week 2 doc, Part 6).
+
+       Writing to a socket whose other end has already gone away (the client
+       disconnected and its kernel answered with a TCP reset) makes the
+       kernel send this process the SIGPIPE signal — and the DEFAULT action
+       for SIGPIPE is to kill the whole process. It's a signal, not a C++
+       exception, so no try/catch can stop it, and a signal's default action
+       ends the process — every thread in it. With thread-per-connection
+       that means ONE client disconnecting at the wrong moment could kill
+       every other client's in-flight request too. (First spotted in Month 2
+       / Week 1, Experiment 0's "Noticed for later".)
+
+       SIG_IGN = "ignore this signal". With it ignored, the same failed
+       write() just returns -1 with errno == EPIPE ("Broken pipe") instead —
+       which write_all() already turns into an exception via throw_errno(),
+       which serve_connection() now catches for that one connection only.
+       Net effect: a bad client can only ever end its OWN connection.
+
+       Done FIRST, before the server starts, so it's in place before any
+       worker thread exists. (Signal dispositions are per-process, so
+       setting it once here covers every thread.) */
+    std::signal(SIGPIPE, SIG_IGN);
+
     try
     {
         /* Month 1 / Week 1: TcpServer's constructor does socket+setsockopt+
@@ -122,9 +180,21 @@ int main(int argc, char *argv[])
            comment block in socket.hpp: a temporary binding directly into a
            by-value parameter, no std::move needed because it's already an
            rvalue on its own. */
+        /* MONTH 2 / WEEK 2 — lifetime note (doc Part 5): `server` lives in
+           THIS stack frame, on the main thread's stack. Every detached
+           worker thread reaches router_ through a pointer to it (`this`).
+           That's only safe because run() below never returns, so `server`
+           is never destroyed while workers exist. If Pulse ever gets a clean
+           shutdown path, this has to be revisited. */
         TcpServer server(static_cast<uint16_t>(port), build_router());
         server.run(); // blocks forever — see tcp_server.cpp
     }
+    /* MONTH 2 / WEEK 2: this catch now only sees errors thrown on the MAIN
+       thread — the constructor's socket/bind/listen failures. Errors from a
+       client's connection happen on that client's worker thread and are
+       caught in TcpServer::serve_connection() instead; this catch can't see
+       them (an exception only unwinds its own thread's stack). In Month 1 a
+       failed write() for one client landed HERE and ended the whole server. */
     catch (const std::exception &e)
     {
         std::cerr << "Fatal error: " << e.what() << "\n";

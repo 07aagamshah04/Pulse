@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Pulse Month 2 Week 2</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+      @page { margin: 1in; }
+      body {
+        font-family: -apple-system, "Segoe UI", Calibri, Arial, sans-serif;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2em 1em;
+        line-height: 1.55;
+        color: #1a1a1a;
+        font-size: 15px;
+      }
+      h1 { font-size: 1.7em; border-bottom: 2px solid #333; padding-bottom: 0.2em; margin-top: 1.6em; }
+      h2 { font-size: 1.3em; border-bottom: 1px solid #ccc; padding-bottom: 0.15em; margin-top: 1.4em; }
+      h3 { font-size: 1.08em; margin-top: 1.2em; }
+      pre {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.8em 1em;
+        overflow-x: auto;
+        font-size: 0.85em;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      pre code { background: none; padding: 0; }
+      table { border-collapse: collapse; margin: 1em 0; }
+      th, td { border: 1px solid #ccc; padding: 0.4em 0.8em; }
+      blockquote { border-left: 3px solid #999; margin-left: 0; padding-left: 1em; color: #444; }
+      #TOC { background: #f9f9f9; border: 1px solid #ddd; padding: 1em 1.5em; border-radius: 4px; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+      .analogy {
+        background: #eef6ff;
+        border-left: 4px solid #3b82f6;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .example {
+        background: #f6fff0;
+        border-left: 4px solid #4caf50;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .analogy p:first-child, .example p:first-child { margin-top: 0; }
+      .analogy p:last-child, .example p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Pulse — Month 2, Week 2: Concepts</h1>
+<p class="subtitle">Thread-per-Connection: handing each client to its
+own thread</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#how-to-use-this-document"
+id="toc-how-to-use-this-document">How to use this document</a></li>
+<li><a href="#part-1-where-were-starting-from"
+id="toc-part-1-where-were-starting-from">Part 1 — Where we’re starting
+from</a></li>
+<li><a href="#part-2-what-changes-in-run-as-a-picture"
+id="toc-part-2-what-changes-in-run-as-a-picture">Part 2 — What changes
+in <code>run()</code>, as a picture</a></li>
+<li><a href="#part-3-who-owns-client_fd"
+id="toc-part-3-who-owns-client_fd">Part 3 — Who owns
+<code>client_fd</code>?</a>
+<ul>
+<li><a href="#today-ownership-is-already-handed-over-by-a-move"
+id="toc-today-ownership-is-already-handed-over-by-a-move">Today:
+ownership is already handed over, by a move</a></li>
+<li><a href="#week-2-the-same-rule-across-a-thread-boundary"
+id="toc-week-2-the-same-rule-across-a-thread-boundary">Week 2: the same
+rule, across a thread boundary</a></li>
+<li><a href="#the-three-ways-to-get-it-wrong"
+id="toc-the-three-ways-to-get-it-wrong">The three ways to get it
+wrong</a></li>
+</ul></li>
+<li><a href="#part-4-handing-a-move-only-socket-to-a-thread"
+id="toc-part-4-handing-a-move-only-socket-to-a-thread">Part 4 — Handing
+a move-only <code>Socket</code> to a thread</a>
+<ul>
+<li><a href="#the-c-pieces-in-that-hand-over-line"
+id="toc-the-c-pieces-in-that-hand-over-line">The C++ pieces in that
+hand-over line</a></li>
+<li><a href="#other-ways-to-write-the-hand-over"
+id="toc-other-ways-to-write-the-hand-over">Other ways to write the
+hand-over</a></li>
+<li><a href="#detach-on-the-end"
+id="toc-detach-on-the-end"><code>.detach()</code> on the end</a></li>
+</ul></li>
+<li><a href="#part-5-this-router_-and-how-long-things-live"
+id="toc-part-5-this-router_-and-how-long-things-live">Part 5 —
+<code>this</code>, <code>router_</code>, and how long things
+live</a></li>
+<li><a href="#part-6-errors-on-a-worker-thread"
+id="toc-part-6-errors-on-a-worker-thread">Part 6 — Errors on a worker
+thread</a>
+<ul>
+<li><a
+href="#month-1-already-has-a-hidden-one-client-kills-the-server-bug"
+id="toc-month-1-already-has-a-hidden-one-client-kills-the-server-bug">Month
+1 already has a hidden “one client kills the server” bug</a></li>
+<li><a href="#with-threads-it-gets-worse-mains-catch-cant-even-see-it"
+id="toc-with-threads-it-gets-worse-mains-catch-cant-even-see-it">With
+threads it gets worse: <code>main</code>’s <code>catch</code> can’t even
+see it</a></li>
+<li><a href="#one-more-process-wide-killer-sigpipe"
+id="toc-one-more-process-wide-killer-sigpipe">One more process-wide
+killer: <code>SIGPIPE</code></a></li>
+</ul></li>
+<li><a href="#part-7-the-slow-endpoint-proving-it-works"
+id="toc-part-7-the-slow-endpoint-proving-it-works">Part 7 — The
+<code>/slow</code> endpoint: proving it works</a></li>
+<li><a href="#part-8-what-else-changes-and-what-deliberately-doesnt"
+id="toc-part-8-what-else-changes-and-what-deliberately-doesnt">Part 8 —
+What else changes, and what deliberately doesn’t</a>
+<ul>
+<li><a href="#cmake-link-the-threads-library"
+id="toc-cmake-link-the-threads-library">CMake: link the threads
+library</a></li>
+<li><a href="#logs-will-interleave-expected-not-fixed-this-week"
+id="toc-logs-will-interleave-expected-not-fixed-this-week">Logs will
+interleave (expected, not fixed this week)</a></li>
+<li><a href="#several-client-fds-open-at-once-new"
+id="toc-several-client-fds-open-at-once-new">Several client fds open at
+once (new)</a></li>
+<li><a href="#what-deliberately-does-not-change"
+id="toc-what-deliberately-does-not-change">What deliberately does NOT
+change</a></li>
+</ul></li>
+<li><a href="#part-9-how-week-2-will-be-tested"
+id="toc-part-9-how-week-2-will-be-tested">Part 9 — How Week 2 will be
+tested</a></li>
+<li><a href="#part-10-concept-check" id="toc-part-10-concept-check">Part
+10 — Concept check</a></li>
+</ul>
+</nav>
+<h1 id="how-to-use-this-document">How to use this document</h1>
+<p>Week 1 was threads in isolation: small programs, no Pulse changes.
+<strong>This week, Pulse itself changes.</strong> The spec’s version of
+the change, in <code>TcpServer::run()</code>:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>client_fd <span class="op">=</span> accept<span class="op">();</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>thread<span class="op">(</span>handle_client<span class="op">,</span> client_fd<span class="op">).</span>detach<span class="op">();</span></span></code></pre></div>
+<p>It looks like one line. This doc is about everything that line drags
+in with it: who owns the connection once it’s handed over, how a
+move-only <code>Socket</code> gets into a thread, what happens to errors
+on a thread, and how to prove it all works with a deliberately slow
+endpoint.</p>
+<p>Same format as before: every part starts from Pulse’s code or a real
+run, and every output shown is real (Month 1 Pulse or a small demo,
+built and run in your WSL). No final Pulse code here. That comes after
+you’ve read this, as usual.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Part</th>
+<th>The Pulse question it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Where are we starting from?</td>
+</tr>
+<tr>
+<td>2</td>
+<td>What exactly changes in <code>run()</code>, and what will Pulse look
+like afterwards?</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Who owns <code>client_fd</code>, today and after the change?</td>
+</tr>
+<tr>
+<td>4</td>
+<td>How do you hand a move-only <code>Socket</code> to a thread, and
+which thread closes it?</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The thread calls <code>handle_client</code>, a member function. How,
+and is <code>this</code> safe?</td>
+</tr>
+<tr>
+<td>6</td>
+<td>What happens to an error on a worker thread? (Today, one bad write
+can kill the whole server.)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>The <code>/slow</code> endpoint: how do we prove one slow request no
+longer blocks others?</td>
+</tr>
+<tr>
+<td>8</td>
+<td>What else changes: CMake, logs, open fds, and what deliberately
+doesn’t</td>
+</tr>
+<tr>
+<td>9</td>
+<td>How Week 2 will be tested</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Concept check</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="part-1-where-were-starting-from">Part 1 — Where we’re starting
+from</h1>
+<p><strong>Month 1 Pulse, idle, waiting for a client:</strong></p>
+<div class="example">
+<p><b>Real run: Month 1 Pulse with no clients connected.</b></p>
+<pre><code>$ grep Threads /proc/$P/status
+Threads:    1
+
+$ ps -L -o tid,stat,wchan:22,comm -p $P
+    TID STAT WCHAN                  COMMAND
+    584 S+   inet_csk_accept        pulse</code></pre>
+<p>One thread, asleep (<code>S</code>) in <code>inet_csk_accept</code>:
+the kernel side of <code>accept()</code> (“<b>inet c</b>onnection
+<b>s</b>oc<b>k</b>et accept”). It’s the fourth wait channel you’ve seen.
+The other three were <code>wait_woken</code> (Pulse stuck in
+<code>read()</code>, Experiment 0), <code>hrtimer_nanosleep</code>
+(<code>sleep_for</code>) and <code>futex_wait_queue</code>
+(<code>join()</code>), from Experiment 3.</p>
+</div>
+<p><strong>What Week 1 established, in Pulse terms:</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Week 1 finding</th>
+<th>What it means for Week 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Experiment 0:</strong> a silent client froze Pulse. curl’s
+83-byte request sat unread for 30 s, <code>Threads: 1</code></td>
+<td>The “before” picture. Week 2 must make the same commands show
+<code>/hello</code> answering in ~0.02 s</td>
+</tr>
+<tr>
+<td><strong>Experiment 1:</strong> creation order ≠ execution order.
+Output from two threads mixes</td>
+<td>Connections may be handled in any order. Log lines from different
+connections will interleave</td>
+</tr>
+<tr>
+<td><strong>Experiment 2:</strong> busy threads beyond the CPU count
+wait in line and get force-switched</td>
+<td>Pulse threads must not be busy for long. They aren’t: Pulse isn’t
+CPU-bound</td>
+</tr>
+<tr>
+<td><strong>Experiment 3:</strong> sleeping threads cost ~0 CPU. Each
+reserves 8 MiB but uses ~4.6 KiB of real RAM</td>
+<td>A thread per slow client is cheap at moderate scale. Week 4 finds
+where it stops being cheap</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="part-2-what-changes-in-run-as-a-picture">Part 2 — What changes
+in <code>run()</code>, as a picture</h1>
+<p>Today’s loop (the real code, comments removed):</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(;;)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> client_fd <span class="op">=</span> <span class="op">::</span>accept<span class="op">(</span><span class="va">listen_socket_</span><span class="op">.</span>fd<span class="op">(),</span> <span class="op">...);</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    handle_client<span class="op">(</span>Socket<span class="op">(</span>client_fd<span class="op">));</span>    <span class="co">// ← the main thread does ALL the work, then loops</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>The main thread does everything: accept, read, parse, route, write,
+close. Only then does it go back to <code>accept()</code>.</p>
+<p>After Week 2, the main thread does one job: <strong>accept, hand
+over, go straight back to <code>accept()</code>.</strong> Everything
+else happens on a worker thread, one per connection.</p>
+<pre><code>                       Month 1                                     Week 2
+
+main thread:  accept ─► read ─► parse ─► route ─►       main thread:  accept ─► hand over ─► accept ─► hand over ─► ...
+              write ─► close ─► accept ─► ...                                      │                    │
+                                                                                   ▼                    ▼
+                                                                        worker A:  read ─► parse    worker B: read ─► ...
+                                                                                   ─► route ─►
+                                                                                   write ─► close ─► thread ends</code></pre>
+<p><strong>Experiment 0 again, after the change.</strong> Same steps:
+silent <code>nc</code> connects, then <code>curl /hello</code>.</p>
+<pre><code>main:      [accept nc][hand to A][accept curl][hand to B][accept ... waiting for next client]
+worker A:             [read() ... asleep, nc never sends .......................................]
+worker B:                                    [read][parse][route][write][close] done in ~0.02 s</code></pre>
+<p>Worker A is stuck exactly where Month 1 Pulse was stuck. But it’s
+stuck <strong>alone</strong>. The main thread and worker B never wait
+for it.</p>
+<p><strong>What <code>ps -L</code> should show during that run</strong>
+(predict these now, check them in testing):</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Thread</th>
+<th><code>STAT</code></th>
+<th><code>WCHAN</code></th>
+<th>Doing what</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>main</td>
+<td><code>S</code></td>
+<td><code>inet_csk_accept</code></td>
+<td>Waiting for the next client</td>
+</tr>
+<tr>
+<td>worker for <code>nc</code></td>
+<td><code>S</code></td>
+<td><code>wait_woken</code></td>
+<td>Waiting in <code>read()</code> for bytes that never come</td>
+</tr>
+<tr>
+<td>worker for <code>/slow</code> (Part 7)</td>
+<td><code>S</code></td>
+<td><code>hrtimer_nanosleep</code></td>
+<td>The handler is sleeping</td>
+</tr>
+<tr>
+<td>worker for <code>/hello</code></td>
+<td>(gone)</td>
+<td></td>
+<td>Finished in milliseconds. Its thread ended</td>
+</tr>
+</tbody>
+</table>
+<p>The thread count goes <strong>up and down</strong> as clients connect
+and finish: 1 + one per connection currently being handled.</p>
+<hr />
+<h1 id="part-3-who-owns-client_fd">Part 3 — Who owns
+<code>client_fd</code>?</h1>
+<p>The spec’s most important question before writing code. Start with
+how ownership works <strong>today</strong>, because Week 2 keeps exactly
+the same rule.</p>
+<h3 id="today-ownership-is-already-handed-over-by-a-move">Today:
+ownership is already handed over, by a move</h3>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> client_fd <span class="op">=</span> <span class="op">::</span>accept<span class="op">(...);</span>          <span class="co">// 1. the kernel creates the connection, gives us the number 4</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>handle_client<span class="op">(</span>Socket<span class="op">(</span>client_fd<span class="op">));</span>       <span class="co">// 2. Socket(4) takes ownership of fd 4 (it will close() it)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="co">//    and is MOVED into handle_client&#39;s by-value parameter</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> TcpServer<span class="op">::</span>handle_client<span class="op">(</span>Socket client<span class="op">)</span> <span class="at">const</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>                                 <span class="co">// 3. `client` is now the one and only owner of fd 4</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>                                       <span class="co">// 4. `client` goes out of scope → ~Socket() → close(4)</span></span></code></pre></div>
+<p>At every moment there is <strong>exactly one owner</strong> of fd 4:
+first the bare <code>int</code> for a single line, then the temporary
+<code>Socket</code>, then the parameter <code>client</code>. It ends
+with exactly one <code>close()</code>, when <code>handle_client</code>
+returns, however it returns (RAII, Month 1 / Week 1).</p>
+<h3 id="week-2-the-same-rule-across-a-thread-boundary">Week 2: the same
+rule, across a thread boundary</h3>
+<p>The connection still needs exactly one owner at every moment. The
+only difference is that the final owner, <code>handle_client</code>’s
+<code>client</code> parameter, now lives <strong>on the worker thread’s
+stack</strong> (Week 1 doc, Part 4: each thread has its own notebook).
+So <code>close()</code> happens on the worker thread, when it finishes
+the request.</p>
+<h3 id="the-three-ways-to-get-it-wrong">The three ways to get it
+wrong</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Mistake</th>
+<th>What happens</th>
+<th>Why it’s bad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Two owners</strong>: the main thread <em>also</em> closes fd
+4 (say, a <code>Socket</code> left behind in the accept loop goes out of
+scope)</td>
+<td>The worker’s <code>read(4)</code> fails, because its connection was
+closed under it. Worse: the next <code>accept()</code> reuses the lowest
+free number, <strong>4</strong>, so the worker may read or write
+<strong>a different client’s</strong> connection</td>
+<td>The fd table is shared by all threads (Week 1 doc, Part 4). “4”
+means the same thing everywhere</td>
+</tr>
+<tr>
+<td><strong>No owner</strong>: nobody closes fd 4</td>
+<td>Every connection leaks an fd. <code>ls /proc/&lt;PID&gt;/fd</code>
+keeps growing. At about 1024 (<code>ulimit -n</code>),
+<code>accept()</code> starts failing with <code>EMFILE</code> (“too many
+open files”) and Pulse stops accepting anyone</td>
+<td>fds are a limited resource, per process</td>
+</tr>
+<tr>
+<td><strong>Owner by reference</strong>: the worker refers to the
+<em>main thread’s</em> <code>client_fd</code> variable instead of its
+own copy</td>
+<td>The main thread’s variable changes on the next
+<code>accept()</code>, or dies at the end of the loop iteration. The
+worker ends up using the wrong fd</td>
+<td>Shown for real below</td>
+</tr>
+</tbody>
+</table>
+<div class="example">
+<p><b>Real run: the “owner by reference” mistake.</b> A fake accept loop
+that hands out fds 4, 5, 6, 7, 8. Each worker captures
+<code>client_fd</code> with <code>[&amp;]</code>, by reference:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> client_fd <span class="op">=</span> fake_accept<span class="op">();</span>                       <span class="co">// 4, 5, 6, 7, 8</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>thread<span class="op">([&amp;]</span> <span class="op">{</span>                                    <span class="co">// [&amp;] = capture client_fd BY REFERENCE</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">std::</span>this_thread::sleep_for<span class="op">(</span><span class="bu">std::</span>chrono::milliseconds<span class="op">(</span><span class="dv">50</span><span class="op">));</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">std::</span>printf<span class="op">(</span><span class="st">&quot;worker meant for one client is serving fd </span><span class="sc">%d\n</span><span class="st">&quot;</span><span class="op">,</span> client_fd<span class="op">);</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}).</span>detach<span class="op">();</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Actual output, the same in all 3 runs:</p>
+<pre><code>worker meant for one client is serving fd 8
+worker meant for one client is serving fd 8
+worker meant for one client is serving fd 8
+worker meant for one client is serving fd 8
+worker meant for one client is serving fd 8</code></pre>
+<p><b>Five clients, and every worker served the last one.</b> Each
+worker held a <i>reference</i> to the main thread’s
+<code>client_fd</code>. By the time they woke up 50 ms later, the loop
+had finished and that stack slot last held 8. (Strictly, it’s worse than
+“wrong value”: each iteration’s <code>client_fd</code> is <i>dead</i>
+once its iteration ends, so the workers are reading a dead variable.
+That’s undefined behavior, and it could print anything, or crash.)</p>
+<p>The fix is one character, <code>[client_fd]</code> (capture by
+copy):</p>
+<pre><code>worker is serving fd 4
+worker is serving fd 5
+worker is serving fd 6
+worker is serving fd 7
+worker is serving fd 8</code></pre>
+<p>In real Pulse, the <code>[&amp;]</code> version would pass every test
+with one <code>curl</code> at a time, and send responses to the wrong
+clients under load.</p>
+</div>
+<blockquote>
+<p><strong>The rule for Week 2:</strong> at every moment, exactly one
+thing owns the connection, and ownership moves from the main thread to
+the worker. It is never shared, and never borrowed by reference.</p>
+</blockquote>
+<div class="analogy">
+<p><b>Analogy:</b> a coat check. The attendant (main thread) takes your
+coat (the connection) and hands it, with its numbered tag, to a runner
+(worker thread). From then on the runner is responsible for that coat:
+only the runner returns it (close). If the attendant <i>also</i> thinks
+they still have it, two people may hand out tag 4, and someone gets the
+wrong coat. If nobody returns it, the rack fills up and the coat check
+stops taking coats. If the runner just writes down “whatever coat is on
+the counter right now” instead of taking <i>this</i> coat, they end up
+with whoever came last.</p>
+</div>
+<hr />
+<h1 id="part-4-handing-a-move-only-socket-to-a-thread">Part 4 — Handing
+a move-only <code>Socket</code> to a thread</h1>
+<p><code>Socket</code> can’t be copied
+(<code>Socket(const Socket&amp;) = delete</code>), only moved. Week 1
+showed that <code>std::thread</code> <strong>copies</strong> its
+arguments into the new thread (Week 1 doc, Part 7). So how does a
+move-only object get in?</p>
+<p><strong>Answer:</strong> <code>std::thread</code> doesn’t strictly
+copy. It <em>copies or moves</em>, depending on what you give it. Give
+it an <strong>rvalue</strong> (a temporary, or something wrapped in
+<code>std::move</code>, Month 1’s <code>&amp;&amp;</code> discussion)
+and it <strong>moves</strong> it. That’s exactly what a move-only type
+needs.</p>
+<p>To see it happen, here’s a tiny class that behaves like
+<code>Socket</code>: move-only, holds a number, and “closes” it in its
+destructor. Every line prints which thread (TID) it runs on.</p>
+<div class="example">
+<p><b>Real run: a <code>Socket</code>-like object handed to a
+thread.</b></p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Ticket <span class="op">{</span>                         <span class="co">// move-only, like Socket</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span><span class="op">:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">explicit</span> Ticket<span class="op">(</span><span class="dt">int</span> n<span class="op">)</span> <span class="op">:</span> <span class="va">n_</span><span class="op">(</span>n<span class="op">)</span> <span class="op">{</span> <span class="co">/* print &quot;created&quot; */</span> <span class="op">}</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    Ticket<span class="op">(</span>Ticket<span class="op">&amp;&amp;</span> other<span class="op">)</span> <span class="kw">noexcept</span> <span class="op">:</span> <span class="va">n_</span><span class="op">(</span><span class="bu">std::</span>exchange<span class="op">(</span>other<span class="op">.</span><span class="va">n_</span><span class="op">,</span> <span class="op">-</span><span class="dv">1</span><span class="op">))</span> <span class="op">{</span> <span class="co">/* print &quot;moved&quot; */</span> <span class="op">}</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    Ticket<span class="op">(</span><span class="at">const</span> Ticket<span class="op">&amp;)</span> <span class="op">=</span> <span class="kw">delete</span><span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">~</span>Ticket<span class="op">()</span> <span class="op">{</span> <span class="co">/* print &quot;CLOSING n&quot; if n_ != -1, else &quot;empty, nothing to close&quot; */</span> <span class="op">}</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Server <span class="op">{</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span><span class="op">:</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> handle<span class="op">(</span>Ticket t<span class="op">)</span> <span class="at">const</span> <span class="op">{</span> <span class="co">/* print &quot;working on ticket&quot; */</span> <span class="op">}</span>   <span class="co">// like handle_client(Socket client)</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> start_one<span class="op">(</span><span class="dt">int</span> n<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        Ticket t<span class="op">(</span>n<span class="op">);</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">std::</span>thread worker<span class="op">(&amp;</span>Server<span class="op">::</span>handle<span class="op">,</span> <span class="kw">this</span><span class="op">,</span> <span class="bu">std::</span>move<span class="op">(</span>t<span class="op">));</span>     <span class="co">// ← the hand-over</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">/* print what t holds now */</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        worker<span class="op">.</span>join<span class="op">();</span>                                                <span class="co">// (join only so the demo can exit cleanly)</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
+<p>(The move constructor uses <code>std::exchange</code>, exactly like
+<code>Socket</code>’s in <code>socket.cpp</code>.)</p>
+<p>Actual output:</p>
+<pre><code>[TID 477] main thread starting
+[TID 477] Ticket(7) created
+[TID 477] main thread hands ticket 7 to a new thread
+[TID 477] Ticket moved: new owner holds 7, old object now holds -1      ← move #1
+[TID 477] main thread: after the hand-off, my t holds -1
+[TID 478] Ticket moved: new owner holds 7, old object now holds -1      ← move #2
+[TID 478] handle() working on ticket 7
+[TID 478] ~Ticket: CLOSING 7                                            ← the real close
+[TID 478] ~Ticket: empty, nothing to close
+[TID 477] ~Ticket: empty, nothing to close</code></pre>
+</div>
+<p>Line by line:</p>
+<ol type="1">
+<li><strong><code>Ticket(7) created</code> on TID 477, the main
+thread.</strong> Like <code>Socket(client_fd)</code> after
+<code>accept()</code>.</li>
+<li><strong>Move #1 on TID 477, the main thread.</strong> Inside
+<code>std::thread</code>’s constructor, <em>before</em> the new thread
+exists. <code>std::thread</code> moves the argument into its own private
+storage, which the new thread will own. That’s why it has to happen on
+the main thread: it’s the hand-over itself.</li>
+<li><strong><code>after the hand-off, my t holds -1</code>.</strong> The
+main thread’s <code>t</code> is now <strong>empty</strong>. When it’s
+destroyed later it closes nothing. <strong>This is what stops the main
+thread from accidentally closing the connection</strong> (the spec’s
+warning): after the move, it simply doesn’t have it anymore.</li>
+<li><strong>Move #2 on TID 478, the new thread.</strong> The new thread
+moves the ticket out of that storage into <code>handle()</code>’s
+by-value parameter <code>t</code>, just as
+<code>Socket(client_fd)</code> is moved into
+<code>handle_client(Socket client)</code> today.</li>
+<li><strong><code>~Ticket: CLOSING 7</code> on TID 478.</strong>
+<code>handle()</code> returned, its parameter was destroyed, and the
+“close” ran <strong>on the worker thread</strong>. In Pulse, this is
+<code>~Socket()</code> → <code>::close(fd)</code>, run by the worker
+when it’s done with its client.</li>
+<li><strong>Two <code>empty, nothing to close</code> lines.</strong> The
+two moved-from shells (<code>std::thread</code>’s storage and the main
+thread’s <code>t</code>) are destroyed, holding -1, so they do
+nothing.</li>
+</ol>
+<p><strong>Exactly one <code>CLOSING 7</code>, on the thread that
+finished the work.</strong> That’s the Part 3 rule, enforced by the type
+system instead of by being careful.</p>
+<h3 id="the-c-pieces-in-that-hand-over-line">The C++ pieces in that
+hand-over line</h3>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>thread worker<span class="op">(&amp;</span>Server<span class="op">::</span>handle<span class="op">,</span> <span class="kw">this</span><span class="op">,</span> <span class="bu">std::</span>move<span class="op">(</span>t<span class="op">));</span></span></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;Server::handle</code></td>
+<td>A <strong>pointer to a member function</strong>. <code>handle</code>
+isn’t a free-standing function like <code>busy_work</code> in Experiment
+2. It belongs to the class, so it must be called <em>on an object</em>.
+<code>&amp;Server::handle</code> names “the <code>handle</code> function
+of class <code>Server</code>”, without saying which <code>Server</code>
+yet</td>
+</tr>
+<tr>
+<td><code>this</code></td>
+<td><strong>Which object</strong> to call it on. Inside a member
+function, <code>this</code> is a pointer to the current object.
+<code>std::thread</code> calls <code>this-&gt;handle(...)</code> on the
+new thread. Part 5 asks whether that’s safe</td>
+</tr>
+<tr>
+<td><code>std::move(t)</code></td>
+<td>Marks <code>t</code> as “OK to move from” (it’s a cast to an rvalue,
+nothing more, Month 1). This is what makes <code>std::thread</code>
+choose move #1 instead of a copy, which wouldn’t compile for a move-only
+type</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What if you forget the <code>std::move</code>?</strong>
+<code>std::thread worker(&amp;Server::handle, this, t);</code> tries to
+<em>copy</em> <code>t</code>, the copy constructor is deleted, and
+<strong>it doesn’t compile</strong>. Annoying, but good: forgetting the
+hand-over is a compile error, not a runtime bug.</p>
+<h3 id="other-ways-to-write-the-hand-over">Other ways to write the
+hand-over</h3>
+<p>You’ll see these in real code. They give the same ownership
+result.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Way</th>
+<th>Looks like</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Member function + <code>this</code> + move</strong>
+(above)</td>
+<td><code>std::thread(&amp;C::f, this, std::move(s))</code></td>
+<td>Most direct. Ownership is visible in the call</td>
+</tr>
+<tr>
+<td><strong>Lambda with a move-capture</strong> (C++14 “init
+capture”)</td>
+<td><code>std::thread([this, s = std::move(s)]() mutable { f(std::move(s)); })</code></td>
+<td><code>s = std::move(s)</code> creates a new variable <em>inside</em>
+the lambda, moved from the outer one. <code>mutable</code> is needed
+because a lambda’s captured variables are <code>const</code> by default,
+and you can’t move out of a <code>const</code></td>
+</tr>
+<tr>
+<td><strong>Pass the raw <code>int</code>, wrap it in the
+thread</strong></td>
+<td><code>std::thread(&amp;C::f_int, this, client_fd)</code> and
+<code>Socket</code> created inside</td>
+<td>Works, but for a moment the fd is a bare <code>int</code> that
+nobody owns. If creating the thread fails (Part 6), it leaks. With the
+move version, a failed thread creation destroys the moved-in
+<code>Socket</code>, which closes the fd</td>
+</tr>
+</tbody>
+</table>
+<h3 id="detach-on-the-end"><code>.detach()</code> on the end</h3>
+<p>Pulse won’t <code>join()</code> its workers. The accept loop must
+never wait for a connection to finish (Week 1 doc, Part 8). So the
+thread is detached right after it’s created. And it <strong>has</strong>
+to be detached (or joined) before the <code>std::thread</code> object is
+destroyed, otherwise <code>std::terminate()</code> (Week 1 doc, Part 8).
+In the accept loop the <code>std::thread</code> is a temporary,
+destroyed at the end of that same line, so forgetting
+<code>.detach()</code> crashes Pulse on the very first connection.</p>
+<hr />
+<h1 id="part-5-this-router_-and-how-long-things-live">Part 5 —
+<code>this</code>, <code>router_</code>, and how long things live</h1>
+<p>The worker thread runs <code>handle_client</code>, which uses
+<code>router_</code>
+(<code>response = router_.route(result.request);</code>). It reaches
+<code>router_</code> through <code>this</code>, a pointer to the
+<code>TcpServer</code> object. So the question every detached thread
+raises (Week 1 doc, Part 8): <strong>is the thing it points to
+guaranteed to outlive the thread?</strong></p>
+<p>Where does the <code>TcpServer</code> object live?</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(...)</span> <span class="op">{</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    TcpServer server<span class="op">(</span><span class="kw">static_cast</span><span class="op">&lt;</span><span class="dt">uint16_t</span><span class="op">&gt;(</span>port<span class="op">),</span> build_router<span class="op">());</span>   <span class="co">// lives in main()&#39;s stack frame</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    server<span class="op">.</span>run<span class="op">();</span>                                                     <span class="co">// never returns</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><code>server</code> lives in <code>main()</code>’s stack frame, on
+the <strong>main thread’s</strong> stack. Detached workers read it
+through <code>this</code>, a pointer into another thread’s stack (Week 1
+doc, Part 4: stacks are private by convention, not by enforcement).
+That’s safe <strong>only because <code>run()</code> never
+returns</strong>, so <code>server</code> is never destroyed while
+workers exist.</p>
+<p>If Pulse ever gets a way to stop <code>run()</code> cleanly (a
+“shutdown” flag, which the spec lists under server-global state), this
+becomes a real bug: <code>main()</code> would return and destroy
+<code>server</code> while detached workers might still be using
+<code>router_</code>. Worth writing down now. It’s a deliberate Month 2
+simplification, not something to solve this week.</p>
+<p><strong>Sharing <code>router_</code> between threads is fine, for
+now.</strong> Every worker reads the same <code>router_</code> at the
+same time. Reading shared data from many threads is safe <strong>as long
+as nobody writes to it</strong>. <code>route()</code> is
+<code>const</code> and the routes are all registered in
+<code>build_router()</code> <em>before</em> <code>run()</code> starts.
+Week 3 adds a request counter that every thread <em>writes</em>, and
+that’s where it stops being safe.</p>
+<p><strong>The handlers themselves are now called concurrently.</strong>
+Two <code>/echo</code> requests mean two threads inside the same lambda
+at once. That’s safe because each call only uses its own
+<code>request</code> parameter and local variables (each on its own
+stack). A handler that touched a global would not be safe. That’s Week
+3.</p>
+<p><strong>Ctrl+C now cuts off requests in progress.</strong> Detached
+threads are killed instantly when the process exits (Week 1 doc, Part
+8). Month 1 had at most one request in flight. Week 2 can have many.
+Acceptable for now. It’s the same “graceful shutdown” problem as
+above.</p>
+<hr />
+<h1 id="part-6-errors-on-a-worker-thread">Part 6 — Errors on a worker
+thread</h1>
+<h3
+id="month-1-already-has-a-hidden-one-client-kills-the-server-bug">Month
+1 already has a hidden “one client kills the server” bug</h3>
+<p>Follow an error through today’s code:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">// tcp_server.cpp — inside write_all(), called at the end of handle_client</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dt">ssize_t</span> n <span class="op">=</span> <span class="op">::</span>write<span class="op">(</span>fd<span class="op">,</span> data <span class="op">+</span> sent<span class="op">,</span> len <span class="op">-</span> sent<span class="op">);</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>n <span class="op">&lt;</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span> throw_errno<span class="op">(</span><span class="st">&quot;write&quot;</span><span class="op">);</span> <span class="op">}</span>          <span class="co">// throws std::runtime_error</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">// handle_client doesn&#39;t catch it → run() doesn&#39;t catch it → it reaches main():</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="cf">catch</span> <span class="op">(</span><span class="at">const</span> <span class="bu">std::</span>exception <span class="op">&amp;</span>e<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>cerr <span class="op">&lt;&lt;</span> <span class="st">&quot;Fatal error: &quot;</span> <span class="op">&lt;&lt;</span> e<span class="op">.</span>what<span class="op">()</span> <span class="op">&lt;&lt;</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span><span class="op">;</span>                                  <span class="co">// ← the WHOLE SERVER exits</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>So today, <strong>one client causing a <code>write()</code>
+error</strong> (for example, by disconnecting at the wrong moment)
+<strong>shuts down Pulse for everyone</strong>. It has never shown up
+because the tests never triggered a write error.</p>
+<h3 id="with-threads-it-gets-worse-mains-catch-cant-even-see-it">With
+threads it gets worse: <code>main</code>’s <code>catch</code> can’t even
+see it</h3>
+<p>An exception unwinds <strong>its own thread’s stack</strong> looking
+for a <code>catch</code>. The <code>try/catch</code> in
+<code>main()</code> is on the <strong>main thread’s</strong> stack. A
+worker thread’s stack starts at the worker’s own function. There’s
+nothing above that, and nowhere further to look.</p>
+<div class="example">
+<p><b>Real run: an exception on a worker thread, with a
+<code>try/catch</code> in <code>main</code>.</b></p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> work<span class="op">()</span> <span class="op">{</span> <span class="cf">throw</span> <span class="bu">std::</span>runtime_error<span class="op">(</span><span class="st">&quot;write: Broken pipe&quot;</span><span class="op">);</span> <span class="op">}</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">std::</span>thread t<span class="op">(</span>work<span class="op">);</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        t<span class="op">.</span>join<span class="op">();</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span><span class="at">const</span> <span class="bu">std::</span>exception<span class="op">&amp;</span> e<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">std::</span>printf<span class="op">(</span><span class="st">&quot;caught in main: </span><span class="sc">%s\n</span><span class="st">&quot;</span><span class="op">,</span> e<span class="op">.</span>what<span class="op">());</span>   <span class="co">// never reached</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>printf<span class="op">(</span><span class="st">&quot;main finished normally</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span>            <span class="co">// never reached</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Actual output:</p>
+<pre><code>terminate called after throwing an instance of &#39;std::runtime_error&#39;
+  what():  write: Broken pipe
+Aborted
+exit code: 134</code></pre>
+<p>The <code>catch</code> in <code>main</code> never ran. <b>An
+exception that escapes a thread’s function calls
+<code>std::terminate()</code></b>, which aborts the whole process (exit
+code 134 = SIGABRT, the same as Week 1’s missing-<code>join()</code>
+crash). In Week 2 Pulse, that means one client’s write error kills every
+connection being served at that moment, not just Pulse’s ability to
+accept new ones.</p>
+</div>
+<p><strong>The fix is a rule, not a trick:</strong> the function a
+worker thread runs must not let any exception escape. Catch at the top
+of the worker, log it, and let that one connection end (its
+<code>Socket</code> destructor still closes the fd, because unwinding
+runs destructors):</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">// the SHAPE of it, not Pulse&#39;s code:</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> worker_entry<span class="op">(...)</span> <span class="op">{</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">// all the real work</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span><span class="at">const</span> <span class="bu">std::</span>exception<span class="op">&amp;</span> e<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        <span class="co">// log e.what(); this connection is over, the server carries on</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><code>catch (const std::exception&amp; e)</code> catches anything
+derived from <code>std::exception</code>, which includes
+<code>std::runtime_error</code> from <code>throw_errno</code>.
+<code>catch (...)</code> (three literal dots) catches <em>anything at
+all</em>. Some code adds it as a last resort after the
+<code>std::exception</code> one.</p>
+<h3 id="one-more-process-wide-killer-sigpipe">One more process-wide
+killer: <code>SIGPIPE</code></h3>
+<p>Experiment 0’s “Noticed for later” note: writing to a socket whose
+other end has fully closed (sent a TCP reset) raises the
+<strong><code>SIGPIPE</code></strong> signal, and the default action for
+<code>SIGPIPE</code> is to <strong>kill the process</strong>. It’s not
+an exception, so no <code>catch</code> stops it. Signals are delivered
+to the <em>process</em>, and the default action ends the whole process,
+all threads included.</p>
+<p>With one thread, that’s one crashed server. With
+thread-per-connection, Pulse is serving many clients at once, and any
+one of them disconnecting at the wrong moment could take all the others
+down. Two standard fixes, either one is enough:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Fix</th>
+<th>How</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ignore <code>SIGPIPE</code> for the whole process</td>
+<td><code>signal(SIGPIPE, SIG_IGN);</code> once at the start of
+<code>main()</code> (<code>#include &lt;csignal&gt;</code>)</td>
+<td><code>write()</code> returns <code>-1</code> with
+<code>errno == EPIPE</code> instead of killing the process, so Pulse’s
+existing <code>throw_errno("write")</code> path handles it, now caught
+per worker</td>
+</tr>
+<tr>
+<td>Ask for no signal on each send</td>
+<td><code>send(fd, data, len, MSG_NOSIGNAL)</code> instead of
+<code>write()</code></td>
+<td>Same effect, per call. Linux-specific flag</td>
+</tr>
+</tbody>
+</table>
+<p>So Week 2’s error handling has two layers: <strong>no exception
+escapes a worker</strong>, and <strong>no <code>SIGPIPE</code> kills the
+process</strong>. Together, a bad client can only ever end its own
+connection.</p>
+<hr />
+<h1 id="part-7-the-slow-endpoint-proving-it-works">Part 7 — The
+<code>/slow</code> endpoint: proving it works</h1>
+<p>Experiment 0 used a <em>silent client</em> to block Pulse. The spec
+adds a second, more controllable way: a <strong>slow handler</strong>,
+an endpoint that deliberately takes several seconds.</p>
+<pre><code>GET /slow   → the handler sleeps ~5 s, then responds
+GET /hello  → responds immediately</code></pre>
+<p>In <code>main.cpp</code>’s <code>build_router()</code>, a handler is
+a lambda (Month 1 / Week 2). A slow one just calls
+<code>std::this_thread::sleep_for(std::chrono::seconds(5))</code> before
+returning its response, the same call as Experiment 3.</p>
+<p><strong>Predicted behavior:</strong></p>
+<pre><code>Month 1 (one thread):
+  curl /slow   [======== handler sleeping 5 s ========][response]
+  curl /hello                                            [waits in the backlog ......][response]   ← ~5 s
+
+Week 2 (thread per connection):
+  curl /slow   [======== worker A sleeping 5 s ========][response]
+  curl /hello  [worker B: response]                                                                ← ~0.02 s</code></pre>
+<p><strong>Why the two ways of being slow are worth
+comparing:</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Silent client (Experiment 0)</th>
+<th><code>/slow</code> handler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Where the thread waits</td>
+<td>Inside <code>read()</code>, waiting for the
+<strong>client</strong></td>
+<td>Inside the <strong>handler</strong>, after the request was fully
+read</td>
+</tr>
+<tr>
+<td><code>WCHAN</code> you’ll see</td>
+<td><code>wait_woken</code></td>
+<td><code>hrtimer_nanosleep</code>, exactly Experiment 3’s sleeping
+thread, now inside Pulse</td>
+</tr>
+<tr>
+<td>Who’s “at fault”</td>
+<td>The client (slow network, slow sender)</td>
+<td>The server (slow database query, slow computation, in a real
+system)</td>
+</tr>
+<tr>
+<td>Month 1 effect</td>
+<td>Blocks everyone</td>
+<td>Blocks everyone</td>
+</tr>
+<tr>
+<td>Week 2 effect</td>
+<td>Blocks only its own thread</td>
+<td>Blocks only its own thread</td>
+</tr>
+</tbody>
+</table>
+<p>A real server sees both kinds. Thread-per-connection handles both the
+same way: whoever is slow only blocks their own thread.</p>
+<p><strong>One thing <code>/slow</code> does NOT test:</strong>
+CPU-heavy handlers. A handler that <em>computes</em> for 5 seconds
+(Experiment 2’s busy loop) instead of sleeping would still not block
+other connections, but many of them at once would fill the CPUs, exactly
+like Experiment 2 Part C. Sleeping is the realistic case for Pulse. Busy
+is Week 4’s stress question.</p>
+<hr />
+<h1 id="part-8-what-else-changes-and-what-deliberately-doesnt">Part 8 —
+What else changes, and what deliberately doesn’t</h1>
+<h3 id="cmake-link-the-threads-library">CMake: link the threads
+library</h3>
+<p><code>std::thread</code> needs the POSIX threads library (Week 1 doc,
+Part 7). With raw <code>g++</code> that was the <code>-pthread</code>
+flag. In CMake it’s two lines in <code>CMakeLists.txt</code>:</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">find_package</span>(<span class="im">Threads</span> <span class="ot">REQUIRED</span>)                         <span class="co"># &quot;find the platform&#39;s threads library&quot;</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">target_link_libraries</span>(<span class="bn">pulse</span> <span class="ot">PRIVATE</span> <span class="bn">Threads::Threads</span>)  <span class="co"># &quot;link pulse against it&quot;</span></span></code></pre></div>
+<p><code>find_package</code> locates it (on Linux, pthreads).
+<code>Threads::Threads</code> is the name CMake gives it.
+<code>PRIVATE</code> means “pulse uses it internally”, which is the same
+keyword as
+<code>target_include_directories(pulse PRIVATE include)</code> already
+in the file.</p>
+<h3 id="logs-will-interleave-expected-not-fixed-this-week">Logs will
+interleave (expected, not fixed this week)</h3>
+<p><code>handle_client</code> prints
+<code>"Client connected: ..."</code> and <code>"Parsed (...)"</code>
+with several <code>&lt;&lt;</code> pieces each. Experiment 1b showed
+pieces from different threads mixing. Under load, Pulse’s log will get
+scrambled lines. The fix (a mutex) is Week 3. This week, scrambled logs
+are expected and harmless, and they’re evidence that connections really
+are being handled at the same time.</p>
+<h3 id="several-client-fds-open-at-once-new">Several client fds open at
+once (new)</h3>
+<p>Month 1 Pulse only ever had fd 3 (the listening socket) and
+<strong>one</strong> client fd (always 4), because it closed each client
+before accepting the next. Week 2 Pulse will have several client fds
+open at once. You’ll see them in <code>ls -l /proc/&lt;PID&gt;/fd</code>
+during the slow tests: 4, 5, 6… one per connection in progress. When a
+worker finishes, its fd closes and the number becomes free again. If the
+list ever only grows, ownership is broken somewhere (Part 3’s “no owner”
+mistake).</p>
+<h3 id="what-deliberately-does-not-change">What deliberately does NOT
+change</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Stays the same</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HttpParser</code>, <code>Router</code>,
+<code>HttpResponse</code>, the route handlers</td>
+<td>They only work on their parameters and locals, so they’re already
+safe to run on many threads at once (Part 5)</td>
+</tr>
+<tr>
+<td><code>handle_client</code>’s body: read loop, parse, route,
+write</td>
+<td>Its locals already live on whichever thread runs it (Week 1 doc,
+Part 4). Only <em>which thread runs it</em> changes. (Part 6’s error
+handling wraps around it)</td>
+</tr>
+<tr>
+<td><code>Connection: close</code>, one request per connection</td>
+<td>Keep-alive is a separate topic</td>
+</tr>
+<tr>
+<td><code>TcpServer</code>’s constructor (socket/bind/listen)</td>
+<td>Still runs once, on the main thread, before any worker exists</td>
+</tr>
+<tr>
+<td>No limit on the number of threads</td>
+<td>Deliberate. Week 4 measures what happens without one, and a
+controlled worker pool is Month 5</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="part-9-how-week-2-will-be-tested">Part 9 — How Week 2 will be
+tested</h1>
+<p>The detailed plan, every command explained, and predictions go in
+<code>Week2/notes.html</code> once the code is written, same as Week 1.
+The tests will be:</p>
+<ol type="1">
+<li><strong>Experiment 0, again.</strong> The exact same commands as
+Week 1: silent <code>nc</code>, then <code>curl /hello</code>. Expected:
+<code>/hello</code> in ~0.02 s, <code>Threads:</code> ≥ 2, main thread
+in <code>inet_csk_accept</code>, nc’s worker in <code>wait_woken</code>,
+LISTEN <code>Recv-Q 0</code>. Compared side by side with Week 1’s
+numbers.</li>
+<li><strong><code>/slow</code> vs <code>/hello</code>.</strong> Start
+<code>curl /slow</code>, then immediately <code>curl /hello</code>.
+Expected: <code>/hello</code> answers while <code>/slow</code> is still
+sleeping. <code>ps -L</code> shows a worker in
+<code>hrtimer_nanosleep</code>.</li>
+<li><strong>Many slow requests at once.</strong> Several
+<code>/slow</code> requests in parallel. Watch <code>Threads:</code>
+rise and fall, and <code>ls /proc/&lt;PID&gt;/fd</code> grow and
+shrink.</li>
+<li><strong>Nothing broke.</strong> Every Month 1 behavior still works:
+<code>/</code>, <code>/hello</code>, <code>/health</code>,
+<code>POST /echo</code>, 404, 405, 400 for malformed input, the
+slow-client partial-read test.</li>
+<li><strong>A quick look with <code>ab -c 10</code>.</strong> Just to
+see it still works under concurrency. The full Month 1 vs Month 2
+benchmark is Week 4.</li>
+</ol>
+<hr />
+<h1 id="part-10-concept-check">Part 10 — Concept check</h1>
+<p><strong>In Month 1 Pulse, which line makes the main thread do all the
+work, and what does it become in Week 2?</strong>
+<code>handle_client(Socket(client_fd));</code> in <code>run()</code>. In
+Week 2, the main thread instead creates a detached thread that runs
+<code>handle_client</code> with the connection, and loops straight back
+to <code>accept()</code>.</p>
+<p><strong>What should <code>ps -L</code> show for the main thread in
+Week 2, whatever clients are doing?</strong> <code>S</code> in
+<code>inet_csk_accept</code>: asleep in <code>accept()</code>, waiting
+for the next client. It never waits on a client’s <code>read()</code> or
+a slow handler again.</p>
+<p><strong>Who owns <code>client_fd</code> today, and who owns it after
+the Week 2 change?</strong> Today: the <code>Socket</code> moved into
+<code>handle_client</code>’s parameter, so the closing happens when
+<code>handle_client</code> returns, on the main thread. Week 2: the same
+<code>Socket</code> parameter, but on the worker thread’s stack, so the
+worker closes it when it’s done. The main thread owns nothing after the
+hand-over.</p>
+<p><strong>Name the three ownership mistakes and their
+symptoms.</strong> Two owners (the main thread also closes it): the
+worker’s fd closes under it, and fd reuse can send data to the wrong
+client. No owner (nobody closes): an fd leak, ending in
+<code>EMFILE</code> and <code>accept()</code> failing. Owner by
+reference (<code>[&amp;]</code> capture): the worker uses whatever the
+main thread’s variable holds later, the wrong client, or a dead
+variable.</p>
+<p><strong>In the Ticket demo, why were there two moves, on two
+different threads?</strong> Move #1 happened on the main thread inside
+<code>std::thread</code>’s constructor, into the thread’s private
+storage (the hand-over). Move #2 happened on the new thread, from that
+storage into <code>handle()</code>’s by-value parameter.</p>
+<p><strong>Why does the main thread’s <code>Socket</code> not close the
+connection after the hand-over?</strong> It was moved from. Its fd is
+now -1, so its destructor does nothing. The type makes “the main thread
+accidentally closes it” impossible.</p>
+<p><strong>What happens if you write
+<code>std::thread(&amp;TcpServer::handle_client, this, sock)</code>
+without <code>std::move</code>?</strong> It doesn’t compile:
+<code>std::thread</code> would need to copy a move-only
+<code>Socket</code>, and the copy constructor is deleted.</p>
+<p><strong>What are <code>&amp;TcpServer::handle_client</code> and
+<code>this</code> doing in that call?</strong>
+<code>&amp;TcpServer::handle_client</code> is a pointer to a member
+function: which function. <code>this</code> is the object to call it on.
+The new thread runs <code>this-&gt;handle_client(...)</code>.</p>
+<p><strong>Why is it safe for detached workers to use
+<code>router_</code> through <code>this</code>?</strong> The
+<code>TcpServer</code> lives in <code>main()</code>’s stack frame, and
+<code>run()</code> never returns, so it’s never destroyed while workers
+exist. And <code>router_</code> is only read, never modified, after
+<code>run()</code> starts.</p>
+<p><strong>In Month 1, what happens if <code>write()</code> fails for
+one client? And in Week 2 without changes?</strong> Month 1:
+<code>throw_errno</code> throws, nothing catches it until
+<code>main()</code>, and the whole server exits with “Fatal error”. Week
+2: the exception escapes the worker thread’s function,
+<code>std::terminate()</code> runs, and the whole process aborts,
+killing every connection.</p>
+<p><strong>Why can’t the <code>try/catch</code> in <code>main()</code>
+catch an exception from a worker thread?</strong> An exception only
+unwinds its own thread’s stack. <code>main()</code>’s <code>try</code>
+is on the main thread’s stack, and the worker’s stack doesn’t contain
+it.</p>
+<p><strong>Why is <code>SIGPIPE</code> more dangerous with
+thread-per-connection, and what are the fixes?</strong> Its default
+action kills the whole process, and with many clients served at once,
+any one of them disconnecting at the wrong moment can take down all the
+others. Fix with <code>signal(SIGPIPE, SIG_IGN)</code> at startup, or
+<code>send(..., MSG_NOSIGNAL)</code>, so <code>write</code> returns
+<code>EPIPE</code> instead.</p>
+<p><strong>How do the silent client and <code>/slow</code> differ in
+where the thread waits, and what does <code>WCHAN</code> show?</strong>
+Silent client: in <code>read()</code>, waiting for the client’s bytes
+(<code>wait_woken</code>). <code>/slow</code>: in the handler, after
+reading the full request, sleeping (<code>hrtimer_nanosleep</code>).
+Both block only their own thread in Week 2.</p>
+<p><strong>Is it safe for many threads to run the route handlers at the
+same time? When would it stop being safe?</strong> Yes, today: each
+handler only touches its own parameter and locals. It stops being safe
+when a handler (or <code>handle_client</code>) writes to shared state,
+like Week 3’s request counter.</p>
+<p><strong>What in <code>/proc/&lt;PID&gt;/fd</code> would tell you
+ownership is broken?</strong> The list of client fds only ever growing,
+never shrinking after connections finish: a leak, because nobody is
+closing.</p>
+</body>
+</html>

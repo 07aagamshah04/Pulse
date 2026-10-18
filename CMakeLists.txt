@@ -56,3 +56,15 @@ add_executable(pulse
 # #include "socket.hpp" — otherwise it would only look in the same folder
 # as the .cpp file doing the including.
 target_include_directories(pulse PRIVATE include)
+
+# MONTH 2 / WEEK 2 — link the threads library.
+# std::thread is built on the POSIX threads library ("pthreads") — compiling
+# by hand that's the -pthread flag (Month 2 / Week 1 doc, Part 7). In CMake:
+#   find_package(Threads REQUIRED)  -> find this platform's threads library
+#                                      (REQUIRED = stop with an error if missing)
+#   Threads::Threads                -> the name CMake gives that library
+#   PRIVATE                         -> pulse uses it internally (same keyword
+#                                      as target_include_directories above)
+# See Part 8 of the Month 2 / Week 2 doc.
+find_package(Threads REQUIRED)
+target_link_libraries(pulse PRIVATE Threads::Threads)
