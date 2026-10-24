@@ -1,0 +1,38 @@
+MONTH 2 / WEEK 3 — PREDICTIONS SCRATCHPAD
+
+The test plan, every command explained, and all results live in notes.html.
+Write predictions here BEFORE running each test. This week they matter most
+for Test 3 — the whole point is predicting whether a number will be WRONG.
+
+
+TEST 1 — new routes + counters
+  - /fail http code: ____
+  - second /stats: total_requests ____  2xx ____  4xx ____  5xx ____  active ____
+
+
+TEST 2 — 5 x /slow
+  - active_connections DURING: ____     AFTER: ____
+
+
+TEST 3 — UNSAFE build, ab -n 20000 -c 50, three rounds
+  - will total_requests go up by exactly 20,001 each round? ____
+  - will active_connections be exactly 1 afterwards? ____
+  - if something is wrong: which counter, and too high or too low? ____
+  - why? ____
+
+
+TEST 4 — mutex and atomic builds, same load
+  - exact every round? ____   any difference between mutex and atomic? ____
+
+
+TEST 5 — ThreadSanitizer
+  - number of data race warnings:  unsafe ____   mutex ____   atomic ____
+  - which function/line will the first unsafe report point at? ____
+
+
+TEST 6 — log lines from 2+ threads (mutex build, 5000 requests): ____
+
+
+TEST 7 — requests per second
+  - unsafe ____   mutex ____   atomic ____
+  - will atomic be ~3x faster than mutex like in the doc's microbenchmark? why/why not? ____

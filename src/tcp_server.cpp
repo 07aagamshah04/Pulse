@@ -1,10 +1,11 @@
 #include "tcp_server.hpp"
 
 #include "http_parser.hpp" // Month 1 / Week 2: HttpParser::parse — see handle_client() below
+#include "logger.hpp"      // MONTH 2 / WEEK 3: log_line()/log_error() — whole lines, written under a mutex
+#include <sstream>         // MONTH 2 / WEEK 3: std::ostringstream — build each log line privately first
 #include <arpa/inet.h>     // htons, ntohs, inet_ntoa — byte-order + address-printing helpers
 #include <cstring>         // strerror — turns an errno number into a human-readable message
-#include <iostream>
-#include <netinet/in.h> // struct sockaddr_in
+#include <netinet/in.h>    // struct sockaddr_in
 #include <stdexcept>
 #include <sys/socket.h> // socket(), bind(), listen(), accept(), setsockopt()
 #include <thread>       // MONTH 2 / WEEK 2: std::thread — one per connection, see run()
@@ -64,7 +65,8 @@ namespace
 }
 
 // Month 1 / Week 2: `router` taken by value and moved into router_ below — TcpServer becomes the sole owner, main.cpp doesn't need its copy anymore after this call
-TcpServer::TcpServer(uint16_t port, Router router, int backlog) : port_(port), router_(std::move(router))
+// MONTH 2 / WEEK 3: stats_ is a reference member, so it MUST be bound here, in the initializer list — a reference can't exist unbound, even for a moment
+TcpServer::TcpServer(uint16_t port, Router router, ServerStats &stats, int backlog) : port_(port), router_(std::move(router)), stats_(stats)
 {
     /* -------------------------------------------------------------------
      * MONTH 1 / WEEK 1 — socket()
@@ -129,7 +131,13 @@ TcpServer::TcpServer(uint16_t port, Router router, int backlog) : port_(port), r
         throw_errno("listen");
     }
 
-    std::cout << "Pulse listening on port " << port_ << "...\n";
+    /* MONTH 2 / WEEK 3: every log line is now built in a local
+       std::ostringstream, then written in one go by log_line() under the
+       log mutex (logger.hpp). The stats mode is printed so every test run's
+       output says which build produced it. */
+    std::ostringstream line;
+    line << "Pulse listening on port " << port_ << "... (stats mode: " << ServerStats::mode_name() << ")";
+    log_line(line.str());
 }
 
 void TcpServer::run()
@@ -156,13 +164,22 @@ void TcpServer::run()
         if (client_fd == -1)
         {
             // Month 1 / Week 1: one failed accept() shouldn't kill the whole server — log it and go back to waiting for the next client
-            std::cerr << "accept: " << std::strerror(errno) << "\n";
+            std::ostringstream err;
+            err << "accept: " << std::strerror(errno);
+            log_error(err.str());
             continue;
         }
 
-        // Month 1 / Week 1: client_addr is now filled in with the CLIENT's real IP/port — proof each connection is independently tracked by the kernel (see Part 4 of the doc's accept() example)
-        std::cout << "Client connected: " << inet_ntoa(client_addr.sin_addr)
-                  << ":" << ntohs(client_addr.sin_port) << "\n";
+        /* Month 1 / Week 1: client_addr is now filled in with the CLIENT's real IP/port — proof each connection is independently tracked by the kernel (see Part 4 of the doc's accept() example)
+           MONTH 2 / WEEK 3: built privately, then logged as one unit.
+           C++ note: inet_ntoa() returns a pointer to ONE static buffer
+           inside the C library, overwritten by the next call — it's not
+           thread-safe in general. It's fine here because only the main
+           thread ever calls it. (The thread-safe version is inet_ntop(),
+           which writes into a buffer you supply.) */
+        std::ostringstream connected;
+        connected << "Client connected: " << inet_ntoa(client_addr.sin_addr) << ":" << ntohs(client_addr.sin_port);
+        log_line(connected.str());
 
         /* Month 1 / Week 1: wrap the raw client_fd in a Socket immediately —
            from here on we never have to remember to close this fd manually.
@@ -228,7 +245,9 @@ void TcpServer::run()
         }
         catch (const std::exception &e)
         {
-            std::cerr << "could not start a thread for this connection: " << e.what() << " — dropping it\n";
+            std::ostringstream err;
+            err << "could not start a thread for this connection: " << e.what() << " — dropping it";
+            log_error(err.str());
         }
     }
 }
@@ -266,17 +285,31 @@ void TcpServer::run()
  * ============================================================================= */
 void TcpServer::serve_connection(Socket client) const
 {
+    /* MONTH 2 / WEEK 3 — ActiveConnectionGuard (server_stats.hpp).
+       Constructor: total_connections +1, active_connections +1.
+       Destructor:  active_connections -1 — when this function ends, however
+       it ends: normal return, or after one of the catch blocks below. It's
+       declared BEFORE the try, so it outlives everything inside the try and
+       is destroyed last. Without RAII, every early `return` in
+       handle_client and every exception path would need its own "-1", and
+       missing one would leave active_connections wrong forever. */
+    ActiveConnectionGuard active(stats_);
+
     try
     {
         handle_client(std::move(client));
     }
     catch (const std::exception &e)
     {
-        std::cerr << "[TID " << gettid() << "] connection error: " << e.what() << " — closing this connection, server keeps running\n";
+        std::ostringstream err;
+        err << "[TID " << gettid() << "] connection error: " << e.what() << " — closing this connection, server keeps running";
+        log_error(err.str());
     }
     catch (...)
     {
-        std::cerr << "[TID " << gettid() << "] connection error: unknown exception — closing this connection, server keeps running\n";
+        std::ostringstream err;
+        err << "[TID " << gettid() << "] connection error: unknown exception — closing this connection, server keeps running";
+        log_error(err.str());
     }
 }
 
@@ -301,7 +334,13 @@ void TcpServer::serve_connection(Socket client) const
    column in ps -T / ps -L) — so when several connections are handled at
    once you can tell which thread printed what. (Expect lines from different
    threads to interleave, even mid-line — Month 2 / Week 1, Experiment 1b.
-   The fix for that, a mutex, is Week 3.) */
+   The fix for that, a mutex, is Week 3.)
+
+   MONTH 2 / WEEK 3: that fix is now in — every line goes through
+   log_line()/log_error() (logger.hpp), so whole lines may still come out
+   in any ORDER, but a line can no longer be split by another thread's. This
+   function also updates the shared ServerStats (just before writing the
+   response), and turns a throwing route handler into a 500. */
 void TcpServer::handle_client(Socket client) const
 {
     /* Month 1 / Week 3: raw_request is now an ACCUMULATION buffer, not a
@@ -332,22 +371,51 @@ void TcpServer::handle_client(Socket client) const
 
         if (result.status == ParseStatus::Complete)
         {
-            std::cout << "[TID " << gettid() << "] Parsed (" << raw_request.size() << " bytes total): "
-                      << result.request.method << " " << result.request.path << " " << result.request.version << "\n";
-            response = router_.route(result.request); // Month 1 / Week 2 (unchanged): 200 / 404 / 405 — see router.cpp
+            // MONTH 2 / WEEK 3: every log line is built in a local ostringstream (this thread's own stack — nothing shared), then written whole by log_line() under the log mutex
+            std::ostringstream line;
+            line << "[TID " << gettid() << "] Parsed (" << raw_request.size() << " bytes total): "
+                 << result.request.method << " " << result.request.path << " " << result.request.version;
+            log_line(line.str());
+
+            /* MONTH 2 / WEEK 3 — a handler that throws now gets a 500.
+               Before Week 3 the exception went straight up to
+               serve_connection(), which logged it and dropped the
+               connection: the client got NO response at all. Catching it
+               here means the client gets a proper "500 Internal Server
+               Error" (it's the server's fault, not the request's), and the
+               5xx counter has something real to count (Week 3 doc, Part 8).
+               Only the ROUTING is inside this try: if the problem is in
+               reading or writing the socket itself, there's no point
+               trying to send a response, so those errors still go to
+               serve_connection(). Test it with GET /fail (main.cpp). */
+            try
+            {
+                response = router_.route(result.request); // Month 1 / Week 2 (unchanged): 200 / 404 / 405 — see router.cpp
+            }
+            catch (const std::exception &e)
+            {
+                std::ostringstream err;
+                err << "[TID " << gettid() << "] handler threw: " << e.what() << " — responding 500 Internal Server Error";
+                log_error(err.str());
+                response = HttpResponse::internal_server_error();
+            }
             break;
         }
 
         if (result.status == ParseStatus::Malformed)
         {
-            std::cout << "[TID " << gettid() << "] Malformed request (" << raw_request.size() << " bytes so far) — responding 400 Bad Request.\n";
+            std::ostringstream line;
+            line << "[TID " << gettid() << "] Malformed request (" << raw_request.size() << " bytes so far) — responding 400 Bad Request.";
+            log_line(line.str());
             break; // `response` is already the bad_request() default from above
         }
 
         // Month 1 / Week 3: ParseStatus::Incomplete — not done yet, but also not stuck forever (see kMaxRequestSize above)
         if (raw_request.size() > kMaxRequestSize)
         {
-            std::cout << "[TID " << gettid() << "] Request exceeded " << kMaxRequestSize << " bytes without completing — responding 400 Bad Request.\n";
+            std::ostringstream line;
+            line << "[TID " << gettid() << "] Request exceeded " << kMaxRequestSize << " bytes without completing — responding 400 Bad Request.";
+            log_line(line.str());
             break;
         }
 
@@ -361,8 +429,10 @@ void TcpServer::handle_client(Socket client) const
 
         if (n < 0)
         {
-            std::cerr << "[TID " << gettid() << "] read: " << std::strerror(errno) << "\n"; // n == -1 means an error — check errno
-            return;                                                // `client` destructs here -> closes automatically, no response sent
+            std::ostringstream err; // n == -1 means an error — check errno
+            err << "[TID " << gettid() << "] read: " << std::strerror(errno);
+            log_error(err.str());
+            return; // `client` destructs here -> closes automatically, no response sent (MONTH 2 / WEEK 3: so not counted as a request — see ServerStats::on_response)
         }
         if (n == 0)
         {
@@ -371,8 +441,10 @@ void TcpServer::handle_client(Socket client) const
                but now it can happen PARTWAY through an otherwise-valid
                request, not only "before sending anything." Either way,
                there's no complete request to respond to, so we just close. */
-            std::cout << "[TID " << gettid() << "] Client disconnected before completing a request (" << raw_request.size() << " bytes received so far).\n";
-            return;
+            std::ostringstream line;
+            line << "[TID " << gettid() << "] Client disconnected before completing a request (" << raw_request.size() << " bytes received so far).";
+            log_line(line.str());
+            return; // MONTH 2 / WEEK 3: no response sent -> not counted as a request (it IS still counted as a connection)
         }
 
         raw_request.append(chunk, static_cast<size_t>(n)); // Month 1 / Week 3: append, don't overwrite — this is the actual "accumulate" step
@@ -383,6 +455,18 @@ void TcpServer::handle_client(Socket client) const
      * Still loops until every byte is actually sent. Still sends a real
      * serialized HTTP response (Part 5 of the Week 2 doc).
      * ------------------------------------------------------------------- */
+    /* MONTH 2 / WEEK 3 — count the response: total_requests +1 and the
+       matching 2xx/4xx/5xx +1 (ServerStats::on_response). THIS is the line
+       every worker thread runs on the shared counters — the line Week 3 is
+       about. Whether two workers here at the same moment can lose an update
+       depends entirely on the build's PULSE_STATS_MODE (server_stats.hpp).
+
+       Counted just BEFORE writing: by now the response is decided, and
+       that's what's being counted. If write_all() then fails (client gone,
+       Week 2 Test 4), the response was still produced — it just couldn't be
+       delivered; that shows up as a "connection error" in the log. */
+    stats_.on_response(response.status_code());
+
     std::string response_bytes = response.to_string();
     write_all(client.fd(), response_bytes.data(), response_bytes.size());
 

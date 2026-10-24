@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Pulse Month 2 Week 3</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+      @page { margin: 1in; }
+      body {
+        font-family: -apple-system, "Segoe UI", Calibri, Arial, sans-serif;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2em 1em;
+        line-height: 1.55;
+        color: #1a1a1a;
+        font-size: 15px;
+      }
+      h1 { font-size: 1.7em; border-bottom: 2px solid #333; padding-bottom: 0.2em; margin-top: 1.6em; }
+      h2 { font-size: 1.3em; border-bottom: 1px solid #ccc; padding-bottom: 0.15em; margin-top: 1.4em; }
+      h3 { font-size: 1.08em; margin-top: 1.2em; }
+      pre {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.8em 1em;
+        overflow-x: auto;
+        font-size: 0.85em;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      pre code { background: none; padding: 0; }
+      table { border-collapse: collapse; margin: 1em 0; }
+      th, td { border: 1px solid #ccc; padding: 0.4em 0.8em; }
+      blockquote { border-left: 3px solid #999; margin-left: 0; padding-left: 1em; color: #444; }
+      #TOC { background: #f9f9f9; border: 1px solid #ddd; padding: 1em 1.5em; border-radius: 4px; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+      .analogy {
+        background: #eef6ff;
+        border-left: 4px solid #3b82f6;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .example {
+        background: #f6fff0;
+        border-left: 4px solid #4caf50;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .analogy p:first-child, .example p:first-child { margin-top: 0; }
+      .analogy p:last-child, .example p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Pulse — Month 2, Week 3: Concepts</h1>
+<p class="subtitle">Thread Safety &amp; Shared State: when many threads
+write the same thing</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#how-to-use-this-document"
+id="toc-how-to-use-this-document">How to use this document</a></li>
+<li><a href="#part-1-pulses-shared-state-today-and-after-week-3"
+id="toc-part-1-pulses-shared-state-today-and-after-week-3">Part 1 —
+Pulse’s shared state, today and after Week 3</a></li>
+<li><a href="#part-2-why-total_requests-isnt-one-step"
+id="toc-part-2-why-total_requests-isnt-one-step">Part 2 — Why
+<code>total_requests++</code> isn’t one step</a>
+<ul>
+<li><a href="#the-lost-update-with-two-pulse-workers"
+id="toc-the-lost-update-with-two-pulse-workers">The lost update, with
+two Pulse workers</a></li>
+<li><a href="#but-with-optimization-its-one-instruction"
+id="toc-but-with-optimization-its-one-instruction">“But with
+optimization it’s one instruction”</a></li>
+</ul></li>
+<li><a href="#part-3-how-wrong-does-it-get-and-why-might-pulse-hide-it"
+id="toc-part-3-how-wrong-does-it-get-and-why-might-pulse-hide-it">Part 3
+— How wrong does it get? And why might Pulse hide it?</a>
+<ul>
+<li><a href="#why-pulse-will-probably-hide-this-bug"
+id="toc-why-pulse-will-probably-hide-this-bug">Why Pulse will probably
+<em>hide</em> this bug</a></li>
+</ul></li>
+<li><a href="#part-4-race-condition-vs-data-race"
+id="toc-part-4-race-condition-vs-data-race">Part 4 — “Race condition” vs
+“data race”</a></li>
+<li><a href="#part-5-finding-a-data-race-threadsanitizer"
+id="toc-part-5-finding-a-data-race-threadsanitizer">Part 5 — Finding a
+data race: ThreadSanitizer</a></li>
+<li><a href="#part-6-stdmutex-one-thread-at-a-time"
+id="toc-part-6-stdmutex-one-thread-at-a-time">Part 6 —
+<code>std::mutex</code>: one thread at a time</a>
+<ul>
+<li><a href="#what-a-waiting-thread-looks-like"
+id="toc-what-a-waiting-thread-looks-like">What a waiting thread looks
+like</a></li>
+<li><a href="#stdlock_guard-raii-for-locks"
+id="toc-stdlock_guard-raii-for-locks"><code>std::lock_guard</code>: RAII
+for locks</a></li>
+<li><a href="#stdunique_lock-a-more-flexible-lock_guard"
+id="toc-stdunique_lock-a-more-flexible-lock_guard"><code>std::unique_lock</code>:
+a more flexible lock_guard</a></li>
+<li><a href="#c-detail-pulse-will-hit-mutable"
+id="toc-c-detail-pulse-will-hit-mutable">C++ detail Pulse will hit:
+<code>mutable</code></a></li>
+</ul></li>
+<li><a href="#part-7-stdatomic-one-indivisible-operation"
+id="toc-part-7-stdatomic-one-indivisible-operation">Part 7 —
+<code>std::atomic</code>: one indivisible operation</a>
+<ul>
+<li><a href="#the-atomics-are-faster-trap"
+id="toc-the-atomics-are-faster-trap">The “atomics are faster”
+trap</a></li>
+<li><a href="#atomic-pitfall-x-x-1-is-not-atomic"
+id="toc-atomic-pitfall-x-x-1-is-not-atomic">Atomic pitfall:
+<code>x = x + 1</code> is NOT atomic</a></li>
+</ul></li>
+<li><a href="#part-8-designing-pulses-statistics"
+id="toc-part-8-designing-pulses-statistics">Part 8 — Designing Pulse’s
+statistics</a>
+<ul>
+<li><a
+href="#connection-local-vs-server-global-the-specs-fundamental-distinction"
+id="toc-connection-local-vs-server-global-the-specs-fundamental-distinction">Connection-local
+vs server-global (the spec’s “fundamental distinction”)</a></li>
+<li><a href="#the-counters-one-by-one"
+id="toc-the-counters-one-by-one">The counters, one by one</a></li>
+<li><a href="#where-the-stats-live-and-how-stats-reads-them"
+id="toc-where-the-stats-live-and-how-stats-reads-them">Where the stats
+live, and how <code>/stats</code> reads them</a></li>
+</ul></li>
+<li><a href="#part-9-fixing-week-2s-scrambled-log"
+id="toc-part-9-fixing-week-2s-scrambled-log">Part 9 — Fixing Week 2’s
+scrambled log</a></li>
+<li><a href="#part-10-two-more-things-that-come-with-locks"
+id="toc-part-10-two-more-things-that-come-with-locks">Part 10 — Two more
+things that come with locks</a>
+<ul>
+<li><a href="#deadlock" id="toc-deadlock">Deadlock</a></li>
+<li><a
+href="#condition_variable-in-the-month-2-learning-goals-not-built-this-week"
+id="toc-condition_variable-in-the-month-2-learning-goals-not-built-this-week"><code>condition_variable</code>
+(in the Month 2 learning goals, not built this week)</a></li>
+</ul></li>
+<li><a href="#part-11-how-week-3-will-be-tested"
+id="toc-part-11-how-week-3-will-be-tested">Part 11 — How Week 3 will be
+tested</a></li>
+<li><a href="#part-12-concept-check" id="toc-part-12-concept-check">Part
+12 — Concept check</a></li>
+</ul>
+</nav>
+<h1 id="how-to-use-this-document">How to use this document</h1>
+<p>Week 2 gave every connection its own thread. Everything those threads
+did was either <strong>private</strong> (locals on their own stack) or
+<strong>shared but read-only</strong> (<code>router_</code>). That’s why
+it just worked.</p>
+<p>Week 3 adds the first thing every thread <strong>writes</strong>:
+server statistics (total requests, active connections, 2xx/4xx/5xx
+counts). The spec’s plan:</p>
+<ol type="1">
+<li>Add a request counter <strong>with no protection</strong>.</li>
+<li>Run concurrent requests and <strong>try to catch it counting
+wrong</strong>.</li>
+<li>Fix it, with a <strong>mutex</strong> and then an
+<strong>atomic</strong>, and compare.</li>
+</ol>
+<p>This doc explains why step 2 goes wrong, how to <em>see</em> it go
+wrong, and the two tools that fix it. Same format as always: every part
+starts from Pulse, and every output shown is real, built and run in your
+WSL. No Pulse code here. That comes after reading.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Part</th>
+<th>The Pulse question it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>What shared state does Pulse have today, and what does Week 3
+add?</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Why can’t two threads both just do
+<code>total_requests++</code>?</td>
+</tr>
+<tr>
+<td>3</td>
+<td>How badly does an unprotected counter go wrong, and why might Pulse
+<em>hide</em> it?</td>
+</tr>
+<tr>
+<td>4</td>
+<td>“Race condition” vs “data race”: what’s the actual bug?</td>
+</tr>
+<tr>
+<td>5</td>
+<td>How do you <em>find</em> a data race instead of hoping to notice
+one?</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>std::mutex</code>, <code>lock_guard</code>,
+<code>unique_lock</code>: how to protect shared data</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>std::atomic</code>: protection for a single variable, and the
+“faster” trap</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Designing Pulse’s statistics: what’s per-connection and what’s
+per-server</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Fixing Week 2’s scrambled log</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Two more things that come with locks: deadlock and
+<code>condition_variable</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td>How Week 3 will be tested</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Concept check</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="part-1-pulses-shared-state-today-and-after-week-3">Part 1 —
+Pulse’s shared state, today and after Week 3</h1>
+<p>Week 1’s rule (Week 1 doc, Part 4): <strong>declared inside the
+function a thread runs → private; everything else → shared.</strong>
+Apply it to Week 2 Pulse, and add one more question: <strong>does any
+thread <em>write</em> it?</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>In Pulse today</th>
+<th>Shared?</th>
+<th>Written by worker threads?</th>
+<th>Safe?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>raw_request</code>, <code>chunk</code>, <code>response</code>
+(locals in <code>handle_client</code>)</td>
+<td>no, one per worker’s stack</td>
+<td>yes, but each its own</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>the client’s <code>Socket</code></td>
+<td>no, moved into one worker (Week 2)</td>
+<td>yes, but only by its owner</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>router_</code></td>
+<td>yes, every worker uses it</td>
+<td><strong>no</strong>, read only</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>listen_socket_</code>, <code>port_</code></td>
+<td>yes</td>
+<td>no, only the main thread touches them</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>std::cout</code></td>
+<td>yes</td>
+<td><strong>yes</strong>, every worker prints</td>
+<td>⚠️ scrambled lines (Week 2, Test 6)</td>
+</tr>
+</tbody>
+</table>
+<p>So far, <strong>nothing shared is being written</strong> except the
+log. Week 2 worked because of that, not because it was designed to cope
+with shared writes.</p>
+<p><strong>What Week 3 adds</strong> (from the spec):</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Statistic</th>
+<th>Changed when</th>
+<th>Changed by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total connections</td>
+<td>a client connects</td>
+<td>main thread or a worker</td>
+</tr>
+<tr>
+<td><strong>active connections</strong></td>
+<td>+1 when a worker starts, −1 when it ends</td>
+<td>every worker, <strong>twice</strong></td>
+</tr>
+<tr>
+<td><strong>total requests</strong></td>
+<td>a request is parsed</td>
+<td>every worker</td>
+</tr>
+<tr>
+<td>2xx / 4xx / 5xx responses</td>
+<td>a response is sent</td>
+<td>every worker</td>
+</tr>
+</tbody>
+</table>
+<p>Every row is <strong>one variable, written by many threads at
+once.</strong> That’s the new problem.</p>
+<hr />
+<h1 id="part-2-why-total_requests-isnt-one-step">Part 2 — Why
+<code>total_requests++</code> isn’t one step</h1>
+<p><code>total_requests++</code> looks like one action. To the CPU, it
+isn’t.</p>
+<div class="example">
+<p><b>Real run: what the compiler actually turns <code>counter++</code>
+into.</b></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">long</span> counter <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> increment<span class="op">()</span> <span class="op">{</span> counter<span class="op">++;</span> <span class="op">}</span></span></code></pre></div>
+<p>Compiled with <code>g++ -S</code> (output assembly instead of a
+program), at Pulse’s optimization level (<code>-O0</code>, CMake’s
+default here):</p>
+<pre><code>mov  rax, QWORD PTR counter[rip]     ; 1. READ   counter from memory into register rax
+add  rax, 1                          ; 2. MODIFY rax = rax + 1  (only in the CPU, memory unchanged)
+mov  QWORD PTR counter[rip], rax     ; 3. WRITE  rax back to counter in memory</code></pre>
+<p><b>Three separate instructions: read, modify, write</b>, exactly the
+spec’s “READ / MODIFY / WRITE”. (<code>rax</code> is one of the CPU
+registers from Week 1 doc Part 3. <code>QWORD PTR counter[rip]</code>
+means “the 8 bytes in memory where <code>counter</code> lives”.)</p>
+</div>
+<p>Between step 1 and step 3, the value lives <strong>only in that
+thread’s CPU register</strong>. If another thread on another CPU reads
+<code>counter</code> during that gap, it reads the <strong>old</strong>
+value.</p>
+<h3 id="the-lost-update-with-two-pulse-workers">The lost update, with
+two Pulse workers</h3>
+<p>Two requests finish at the same moment, on two CPUs.
+<code>total_requests</code> is 41:</p>
+<pre><code>time   worker A (CPU 3)               worker B (CPU 7)              total_requests in memory
+ 1     READ  → rax = 41                                             41
+ 2                                    READ  → rax = 41              41
+ 3     ADD   → rax = 42                                             41
+ 4                                    ADD   → rax = 42              41
+ 5     WRITE → memory = 42                                          42
+ 6                                    WRITE → memory = 42           42   ← should be 43</code></pre>
+<p>Two requests were served, and the counter went up by
+<strong>one</strong>. A’s update was overwritten by B’s. Nothing crashed
+and nothing printed an error. The number is just wrong. This is a
+<strong>lost update</strong>.</p>
+<div class="analogy">
+<p><b>Analogy:</b> a whiteboard tally (shared memory, Week 1’s
+whiteboard). To add one, you <i>read</i> the number, <i>work out</i> the
+next number in your head, then <i>rub it out and write</i> the new one.
+Two people do it at the same moment: both read 41, both work out 42,
+both write 42. Two tally marks’ worth of work, one mark’s worth of
+result. Each person did their job correctly. The problem is that “read,
+work out, write” can be interrupted halfway.</p>
+</div>
+<h3 id="but-with-optimization-its-one-instruction">“But with
+optimization it’s one instruction”</h3>
+<p>At <code>-O2</code> the compiler produces this instead (real
+output):</p>
+<pre><code>add  QWORD PTR counter[rip], 1        ; one instruction</code></pre>
+<p>It <em>looks</em> indivisible. <strong>It isn’t, across
+CPUs.</strong> Inside the CPU, that single instruction still does read →
+add → write on memory, and without a special prefix, another core can
+slip in between. The thing that makes it truly indivisible is the
+<strong><code>lock</code></strong> prefix you’ll see in Part 7. “One
+line of C++” or even “one instruction” is not the same as “atomic”.</p>
+<hr />
+<h1 id="part-3-how-wrong-does-it-get-and-why-might-pulse-hide-it">Part 3
+— How wrong does it get? And why might Pulse hide it?</h1>
+<div class="example">
+<p><b>Real run: an unprotected shared counter.</b> N threads each run
+<code>plain_counter++</code> a given number of times. The “expected”
+total is threads × increments.</p>
+<pre><code>$ ./counter unsafe 4 1000000          (4 threads × 1,000,000 increments, run 5 times)
+unsafe threads=4  expected=4000000  got=1314678  lost=2685322  time=0.043 s
+unsafe threads=4  expected=4000000  got=1400609  lost=2599391  time=0.045 s
+unsafe threads=4  expected=4000000  got=1336052  lost=2663948  time=0.043 s
+unsafe threads=4  expected=4000000  got=1312367  lost=2687633  time=0.045 s
+unsafe threads=4  expected=4000000  got=1284850  lost=2715150  time=0.045 s
+
+$ ./counter unsafe 1 4000000          (1 thread, same total)
+unsafe threads=1  expected=4000000  got=4000000  lost=0  time=0.015 s
+
+$ ./counter unsafe 2 1000             (2 threads × only 1,000 each, run 5 times)
+unsafe threads=2  expected=2000  got=2000  lost=0  time=0.000 s     ← (all 5 runs identical: no loss)</code></pre>
+</div>
+<p>Read those three blocks together:</p>
+<ol type="1">
+<li><strong>4 threads hammering one counter lost about two-thirds of all
+increments</strong>, and a <em>different</em> amount every run
+(2.60–2.72 million lost). Wrong, and not even consistently wrong.</li>
+<li><strong>1 thread: perfect.</strong> The code isn’t “buggy” in the
+normal sense. It’s only wrong <strong>when threads
+overlap</strong>.</li>
+<li><strong>2 threads × 1,000: perfect, five times out of five.</strong>
+Each thread finished its 1,000 increments in microseconds, often before
+the other thread had even started (Week 1 / Experiment 1a’s head start).
+The threads barely overlapped, so nothing was lost. <strong>The bug was
+there, and the test didn’t show it.</strong></li>
+</ol>
+<h3 id="why-pulse-will-probably-hide-this-bug">Why Pulse will probably
+<em>hide</em> this bug</h3>
+<p>Block 3 is Pulse’s situation. In the demo, threads do <em>nothing
+but</em> increment, so they collide constantly. In Pulse, one
+<code>total_requests++</code> is a few nanoseconds inside a request that
+takes ~0.2 ms or more of other work (reading, parsing, routing,
+writing). Two workers have to hit the same three instructions <strong>at
+the same nanosecond</strong>. It will happen, but rarely.</p>
+<p>So the spec’s step “try to observe incorrect results” may well show
+the <strong>right</strong> number most of the time, even with 10,000
+requests. If that happens, it is <strong>not</strong> evidence the code
+is safe. It’s the same lesson as Experiment 1’s 98/2 and Month 1 / Week
+3’s single <code>read()</code>: <em>“works in testing” is not
+“correct”</em>. A counter that’s right 99.99% of the time on a test
+laptop is wrong on a busy server. Part 5 shows how to prove the bug is
+there without needing to get lucky.</p>
+<hr />
+<h1 id="part-4-race-condition-vs-data-race">Part 4 — “Race condition” vs
+“data race”</h1>
+<p>The spec uses both terms. They’re related but not the same.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th><strong>Data race</strong></th>
+<th><strong>Race condition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definition</td>
+<td>Two threads access <strong>the same memory</strong> at the same
+time, <strong>at least one writes</strong>, and <strong>nothing
+synchronizes them</strong> (no mutex, no atomic)</td>
+<td>The program’s result <strong>depends on the timing</strong> of
+threads</td>
+</tr>
+<tr>
+<td>In C++</td>
+<td><strong>Undefined behavior.</strong> The language promises nothing
+about what happens</td>
+<td>A logic bug. The program is valid C++, it just does the wrong thing
+sometimes</td>
+</tr>
+<tr>
+<td>Example</td>
+<td><code>plain_counter++</code> from 4 threads (Part 3)</td>
+<td>Lost updates (Part 2). Or, with no data race at all:
+<code>if (active &lt; 100) active++;</code> using an atomic, where two
+threads can both see 99 and both increment, ending at 101</td>
+</tr>
+<tr>
+<td>Fixed by</td>
+<td>Synchronization: a mutex or an atomic</td>
+<td>Making the <em>whole</em> check-and-act one indivisible step</td>
+</tr>
+</tbody>
+</table>
+<p>The unprotected counter is <strong>both</strong>: a data race
+(unsynchronized write to shared memory), whose visible result is a race
+condition (lost updates).</p>
+<p><strong>Why “undefined behavior” matters beyond the wrong
+number:</strong> the compiler is allowed to assume no other thread
+changes a plain variable that isn’t synchronized. So at <code>-O2</code>
+it may keep <code>counter</code> in a register for a whole loop and
+write it back once at the end, or skip re-reading it. The program’s
+behavior can then change with the optimization level, the compiler
+version, or an unrelated edit. With a data race, “it printed the right
+number” doesn’t even promise the same code will print it next time.</p>
+<p><strong>The second row is worth remembering for later.</strong> Week
+4’s thread limits and Month 5’s worker pool will need checks like “only
+if fewer than N connections”. Making <code>active</code> atomic stops
+the <em>data race</em>, but the check followed by the increment is still
+two steps, and still a <em>race condition</em>. A mutex around both, or
+a single atomic operation that does both, fixes it.</p>
+<hr />
+<h1 id="part-5-finding-a-data-race-threadsanitizer">Part 5 — Finding a
+data race: ThreadSanitizer</h1>
+<p>Part 3 showed that testing can easily miss a race.
+<strong>ThreadSanitizer (TSan)</strong> finds races by watching memory
+accesses, not results. It’s built into <code>g++</code>: compile with
+<code>-fsanitize=thread</code>, and it adds checks around every memory
+access. It reports any two unsynchronized accesses from different
+threads, <strong>even if they didn’t collide on this particular
+run</strong>.</p>
+<div class="example">
+<p><b>Real run: TSan on the 2 × 1,000 case, the one that gave the
+correct answer every time in Part 3.</b></p>
+<pre><code>$ g++ -std=c++17 -g -fsanitize=thread -pthread counter.cpp -o counter_tsan
+$ ./counter_tsan unsafe 2 1000
+==================
+WARNING: ThreadSanitizer: data race (pid=542)
+  Read of size 8 at 0x56aac632b040 by thread T2:
+    #0 operator() .../counter.cpp:26 (counter_tsan+0x2566)
+    ...
+  Previous write of size 8 at 0x56aac632b040 by thread T1:
+    #0 operator() .../counter.cpp:26 (counter_tsan+0x2580)
+    ...
+  Location is global &#39;plain_counter&#39; of size 8 at 0x56aac632b040 (counter_tsan+0x9040)
+
+  Thread T2 (tid=546, running) created by main thread at:
+    #0 pthread_create ...
+    ...
+    #6 main .../counter.cpp:23</code></pre>
+<p>How to read it:</p>
+<ul>
+<li>
+<b><code>WARNING: ThreadSanitizer: data race</code></b>: found one. This
+is the case that gave the right answer five times in Part 3. TSan
+doesn’t need the collision to actually happen. It notices that two
+threads touch the same memory with nothing ordering them.
+</li>
+<li>
+<b><code>Read of size 8 … by thread T2</code> / <code>Previous write of
+size 8 … by thread T1</code></b>: the two accesses that conflict. Size 8
+= a <code>long</code>, 8 bytes. Both at
+<b><code>counter.cpp:26</code></b>, the <code>plain_counter++</code>
+line.
+</li>
+<li>
+<b><code>Location is global ‘plain_counter’</code></b>: <i>which</i>
+variable. Exactly the one we’d suspect.
+</li>
+<li>
+<b><code>Thread T2 … created by main thread at …
+counter.cpp:23</code></b>: where the thread came from (the
+<code>emplace_back</code> line).
+</li>
+</ul>
+<p>The same program in <code>mutex</code> mode under TSan prints just
+its normal result line, with <b>no warnings</b>.</p>
+</div>
+<p><strong>Using TSan on Pulse</strong> (this will be part of Week 3’s
+testing): build a <em>separate</em> copy of Pulse with TSan turned on,
+so the normal <code>build/</code> stays untouched.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">-S</span> . <span class="at">-B</span> build-tsan <span class="at">-DCMAKE_CXX_FLAGS</span><span class="op">=</span><span class="st">&quot;-fsanitize=thread -g&quot;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">--build</span> build-tsan</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./build-tsan/pulse</span> 8080        <span class="co"># then send it concurrent requests</span></span></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-S . -B build-tsan</code></td>
+<td><strong>S</strong>ource is here (<code>.</code>),
+<strong>b</strong>uild into a new folder <code>build-tsan</code></td>
+</tr>
+<tr>
+<td><code>-DCMAKE_CXX_FLAGS="..."</code></td>
+<td>Add these flags to every compile. <code>-fsanitize=thread</code>
+turns TSan on. <code>-g</code> keeps line numbers so reports say
+<code>tcp_server.cpp:NNN</code></td>
+</tr>
+<tr>
+<td><code>cmake --build build-tsan</code></td>
+<td>Same as <code>cd build-tsan &amp;&amp; make</code></td>
+</tr>
+</tbody>
+</table>
+<p>A TSan build runs several times slower and uses much more memory, so
+it’s for <strong>finding</strong> races, never for benchmarking. And it
+only checks code that actually <em>runs</em>: send it enough concurrent
+traffic to exercise every counter.</p>
+<hr />
+<h1 id="part-6-stdmutex-one-thread-at-a-time">Part 6 —
+<code>std::mutex</code>: one thread at a time</h1>
+<p>A <strong>mutex</strong> (“<strong>mut</strong>ual
+<strong>ex</strong>clusion”) is a lock that only one thread can hold at
+a time. Code between locking and unlocking is the <strong>critical
+section</strong>. If thread A holds the lock, any other thread that
+tries to lock it <strong>waits</strong> until A unlocks.</p>
+<pre><code>lock          ← if someone else holds it, wait here
+  read  total_requests
+  add 1
+  write total_requests        ← the whole read-modify-write, with no one else allowed in
+unlock</code></pre>
+<p>The three-step increment from Part 2 can no longer be interrupted
+<em>by another thread that also uses the mutex</em>. That last part
+matters: <strong>a mutex only protects data if every thread that touches
+the data locks it.</strong> One code path that skips the lock brings the
+data race back.</p>
+<div class="example">
+<p><b>Real run: the same counter, with a mutex.</b></p>
+<pre><code>$ ./counter mutex 4 1000000           (3 runs)
+mutex  threads=4  expected=4000000  got=4000000  lost=0  time=0.170 s
+mutex  threads=4  expected=4000000  got=4000000  lost=0  time=0.175 s
+mutex  threads=4  expected=4000000  got=4000000  lost=0  time=0.174 s</code></pre>
+<p>Exactly right, every run. And about <b>4× slower</b> than the broken
+version (0.17 s vs 0.044 s). Part 7 comes back to that.</p>
+</div>
+<h3 id="what-a-waiting-thread-looks-like">What a waiting thread looks
+like</h3>
+<div class="example">
+<p><b>Real run: one thread holds a mutex for 10 s (asleep while holding
+it). Three others try to lock it.</b></p>
+<pre><code>    TID STAT WCHAN                  COMMAND
+    559 Sl+  futex_wait_queue       holdlock     ← main thread, in join()
+    560 Sl+  hrtimer_nanosleep      holdlock     ← the holder: asleep WHILE holding the lock
+    561 Sl+  futex_wait_queue       holdlock     ← waiting for the mutex
+    562 Sl+  futex_wait_queue       holdlock     ← waiting for the mutex
+    563 Sl+  futex_wait_queue       holdlock     ← waiting for the mutex</code></pre>
+<ul>
+<li>
+A thread waiting for a <code>std::mutex</code> sleeps in
+<b><code>futex_wait_queue</code></b>, the <b>same wait channel as
+<code>join()</code></b> in Week 1 / Experiment 3. Both are built on the
+kernel’s <b>futex</b>: “sleep until another thread signals this spot in
+memory”. Unlocking the mutex is that signal.
+</li>
+<li>
+Waiting threads use no CPU (state <code>S</code>), but they also <b>do
+no work</b>. Three threads stuck for 10 seconds because one thread held
+a lock while sleeping.
+</li>
+</ul>
+</div>
+<p><strong>That last point is the most important rule for
+Pulse.</strong> If a worker held the stats mutex while doing something
+slow, like writing to a slow socket or (imagine) sleeping in
+<code>/slow</code>, <strong>every other worker</strong> that wants to
+update a counter would queue up behind it. That’s Month 1’s “one slow
+client blocks everyone” all over again, just moved from
+<code>accept()</code> to a mutex. <strong>Hold a lock for as short a
+time as possible: just the few instructions that touch the shared data.
+Never do I/O or sleep while holding it.</strong></p>
+<h3 id="stdlock_guard-raii-for-locks"><code>std::lock_guard</code>: RAII
+for locks</h3>
+<p>You <em>can</em> write:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>stats_mutex<span class="op">.</span>lock<span class="op">();</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>total_requests<span class="op">++;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>stats_mutex<span class="op">.</span>unlock<span class="op">();</span></span></code></pre></div>
+<p>The spec says to avoid this, and here’s the problem: anything that
+leaves the function between <code>lock()</code> and
+<code>unlock()</code>, an early <code>return</code> or an
+<strong>exception</strong>, skips the <code>unlock()</code>. The mutex
+stays locked forever, and <strong>every</strong> thread that tries to
+lock it later waits forever. The server hangs with no error, every
+worker asleep in <code>futex_wait_queue</code>.</p>
+<p>The fix is the same idea as <code>Socket</code> closing its fd (Month
+1 / Week 1): <strong>RAII</strong>. Tie the unlock to an object’s
+destructor, which C++ guarantees to run however the scope is left.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>lock_guard<span class="op">&lt;</span><span class="bu">std::</span>mutex<span class="op">&gt;</span> lock<span class="op">(</span>stats_mutex<span class="op">);</span>   <span class="co">// constructor: stats_mutex.lock()</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    total_requests<span class="op">++;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span>                                                     <span class="co">// destructor:  stats_mutex.unlock()</span></span></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>std::lock_guard&lt;std::mutex&gt;</code></td>
+<td>A class template (<code>&lt;std::mutex&gt;</code> says <em>what
+kind</em> of lock it manages). <code>#include &lt;mutex&gt;</code></td>
+</tr>
+<tr>
+<td><code>lock</code></td>
+<td>The variable’s name. <strong>It must have a name.</strong>
+<code>std::lock_guard&lt;std::mutex&gt;{stats_mutex};</code> with no
+name creates a temporary that’s destroyed at the end of that same line,
+so it locks and <strong>immediately unlocks</strong>, and protects
+nothing. It compiles without complaint</td>
+</tr>
+<tr>
+<td><code>(stats_mutex)</code></td>
+<td>The mutex it locks in its constructor and unlocks in its
+destructor</td>
+</tr>
+<tr>
+<td>the extra <code>{ }</code></td>
+<td>A scope just for the lock, so it’s released right after the
+increment instead of at the end of the whole function. This is how you
+keep the critical section short</td>
+</tr>
+</tbody>
+</table>
+<p><code>lock_guard</code> is the <strong><code>Socket</code> of
+mutexes</strong>: you can’t forget to unlock, and you can’t copy it.</p>
+<h3
+id="stdunique_lock-a-more-flexible-lock_guard"><code>std::unique_lock</code>:
+a more flexible lock_guard</h3>
+<p>Same RAII idea, more control. You can <code>unlock()</code> it early
+and <code>lock()</code> it again, and it can be moved. You need it for
+<code>condition_variable</code> (Part 10). For a simple “lock, change a
+counter, unlock”, <code>lock_guard</code> is the right tool. Use
+<code>unique_lock</code> when you need its extras.</p>
+<h3 id="c-detail-pulse-will-hit-mutable">C++ detail Pulse will hit:
+<code>mutable</code></h3>
+<p><code>handle_client</code> is a <strong><code>const</code></strong>
+member function: it promises not to modify <code>TcpServer</code>’s
+members (Month 1 / Week 1). Locking a mutex <em>modifies</em> the mutex.
+So if the stats mutex is a member of <code>TcpServer</code>, this won’t
+compile inside <code>handle_client</code>:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>mutex <span class="va">stats_mutex_</span><span class="op">;</span>           <span class="co">// locking it in a const method → compile error</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="at">mutable</span> <span class="bu">std::</span>mutex <span class="va">stats_mutex_</span><span class="op">;</span>   <span class="co">// OK</span></span></code></pre></div>
+<p><strong><code>mutable</code></strong> means “this member may change
+even inside <code>const</code> methods”. It’s the standard thing to do
+for a mutex: locking is bookkeeping, not a change to the object’s real,
+visible state. (The counters themselves have the same issue, if they
+live inside <code>TcpServer</code>. Part 8 discusses where they should
+live.)</p>
+<hr />
+<h1 id="part-7-stdatomic-one-indivisible-operation">Part 7 —
+<code>std::atomic</code>: one indivisible operation</h1>
+<p>For a <strong>single</strong> counter, there’s a lighter tool: make
+the variable itself atomic.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;atomic&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>atomic<span class="op">&lt;</span><span class="dt">long</span><span class="op">&gt;</span> total_requests<span class="op">{</span><span class="dv">0</span><span class="op">};</span>   <span class="co">// spec: std::atomic&lt;uint64_t&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>total_requests<span class="op">++;</span>                      <span class="co">// ONE indivisible read-modify-write</span></span></code></pre></div>
+<div class="example">
+<p><b>Real run: what <code>atomic++</code> compiles to</b>
+(<code>-O2</code>):</p>
+<pre><code>lock add  QWORD PTR counter[rip], 1</code></pre>
+<p>Compare the plain <code>-O2</code> version from Part 2: <code>add
+QWORD PTR counter[rip], 1</code>. Same instruction, plus the
+<b><code>lock</code></b> prefix, which tells the CPU to make the whole
+read-modify-write <b>indivisible across all cores</b>. No other core can
+touch that memory in the middle. That one word is the difference between
+Part 3’s lost updates and a correct count.</p>
+<p><b>Real run: the counter, atomic.</b></p>
+<pre><code>$ ./counter atomic 4 1000000          (3 runs)
+atomic threads=4  expected=4000000  got=4000000  lost=0  time=0.054 s
+atomic threads=4  expected=4000000  got=4000000  lost=0  time=0.054 s
+atomic threads=4  expected=4000000  got=4000000  lost=0  time=0.053 s</code></pre>
+<p>Correct every run, and about 3× faster than the mutex (0.054 s vs
+0.17 s) in this test.</p>
+</div>
+<h3 id="the-atomics-are-faster-trap">The “atomics are faster” trap</h3>
+<p>The spec warns: <em>do NOT conclude atomics are always faster than
+mutexes.</em> Here’s all the timing data together, and what it actually
+measures:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>1 thread (no contention)</th>
+<th>4 threads (heavy contention)</th>
+<th>Correct?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unprotected</td>
+<td>0.015–0.019 s</td>
+<td>0.044 s</td>
+<td>4 threads: <strong>no</strong>, lost ~2/3</td>
+</tr>
+<tr>
+<td><code>std::atomic</code></td>
+<td>0.032 s</td>
+<td>0.054 s</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>std::mutex</code></td>
+<td>0.087 s</td>
+<td>0.17 s</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<p>(4 million increments in total in every case.)</p>
+<ul>
+<li><strong>This is a microbenchmark.</strong> Each thread does
+<em>nothing</em> except increment the same counter: the worst possible
+contention, and the best case for showing differences. A Pulse request
+does ~0.2 ms of other work per increment. Whether the increment takes 10
+ns or 40 ns will be invisible next to that. <strong>Measure in Pulse,
+under Pulse’s load,</strong> before concluding anything (Week 4).</li>
+<li><strong>Even uncontended, protection costs something</strong>
+(1-thread column): the <code>lock</code> prefix and the mutex’s internal
+atomic operations aren’t free. Correct code is slower than broken code.
+The broken version’s speed doesn’t count, because its answer is
+wrong.</li>
+<li><strong>An atomic only protects one operation on one
+variable.</strong> It can’t keep <em>several</em> variables consistent
+with each other (Part 8). A mutex can protect any amount of code and
+data. They’re different tools, not a faster and slower version of the
+same one.</li>
+</ul>
+<h3 id="atomic-pitfall-x-x-1-is-not-atomic">Atomic pitfall:
+<code>x = x + 1</code> is NOT atomic</h3>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">std::</span>atomic<span class="op">&lt;</span><span class="dt">long</span><span class="op">&gt;</span> n<span class="op">{</span><span class="dv">0</span><span class="op">};</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>n<span class="op">++;</span>            <span class="co">// ✅ one atomic read-modify-write   (same as n.fetch_add(1))</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">+=</span> <span class="dv">1</span><span class="op">;</span>         <span class="co">// ✅ also one atomic operation</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> n <span class="op">+</span> <span class="dv">1</span><span class="op">;</span>      <span class="co">// ❌ an atomic READ, then a separate atomic WRITE. Another thread can get in between</span></span></code></pre></div>
+<p><code>n = n + 1</code> reads <code>n</code> atomically, adds 1 in a
+register, then stores atomically. That’s two atomic steps with a gap
+between them, which is Part 2’s lost update again. <strong>Only the
+operators that are one operation (<code>++</code>, <code>--</code>,
+<code>+=</code>, <code>-=</code>, <code>fetch_add</code>, …) are atomic
+as a whole.</strong></p>
+<p>The other basic operations: <code>n.load()</code> reads the current
+value, <code>n.store(v)</code> writes one, and
+<code>n.fetch_add(k)</code> adds <code>k</code> and returns the value
+from <em>before</em> the add. Atomics also take a “memory order”
+argument. The default (<code>std::memory_order_seq_cst</code>) is the
+strictest and the right choice here, so nothing else needs
+specifying.</p>
+<hr />
+<h1 id="part-8-designing-pulses-statistics">Part 8 — Designing Pulse’s
+statistics</h1>
+<h3
+id="connection-local-vs-server-global-the-specs-fundamental-distinction">Connection-local
+vs server-global (the spec’s “fundamental distinction”)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Belongs to <strong>one connection</strong> → lives on that worker’s
+stack, needs no protection</th>
+<th>Belongs to <strong>the whole server</strong> → shared by all
+threads</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>the client’s <code>Socket</code> (fd)</td>
+<td><code>router_</code> (read-only, so safe as is)</td>
+</tr>
+<tr>
+<td><code>raw_request</code> (request buffer)</td>
+<td>the statistics counters (<strong>written</strong>, so need
+protection)</td>
+</tr>
+<tr>
+<td><code>response</code> (response buffer)</td>
+<td>configuration (port, limits). Set once before threads start, then
+read-only</td>
+</tr>
+<tr>
+<td>parser state (<code>ParseResult</code>)</td>
+<td>shutdown state (not in Pulse yet. Week 2 doc, Part 5)</td>
+</tr>
+<tr>
+<td></td>
+<td>the log (<code>std::cout</code>, written. Part 9)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The design rule:</strong> keep as much as possible in the
+left column. Every item in the right column that’s <em>written</em>
+needs a deliberate protection decision, and the spec’s Week 3
+deliverable is to <strong>document that decision</strong> for each
+one.</p>
+<h3 id="the-counters-one-by-one">The counters, one by one</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Statistic</th>
+<th>Where in Pulse’s code it changes</th>
+<th>Something to work out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>total connections</strong></td>
+<td>after <code>accept()</code> (main thread) or at the start of a
+worker</td>
+<td>If only the main thread ever changes it, is it still shared? (Who
+<em>reads</em> it?)</td>
+</tr>
+<tr>
+<td><strong>active connections</strong></td>
+<td>+1 when a worker starts, −1 when it ends</td>
+<td>The −1 must happen on <strong>every</strong> way a worker can end: a
+normal response, client disconnect, 400, an exception caught in
+<code>serve_connection</code>. Sound familiar? It’s the same “must
+happen on every exit path” problem <code>Socket</code> solves with RAII.
+A tiny guard object whose constructor does +1 and destructor does −1
+makes it impossible to miss</td>
+</tr>
+<tr>
+<td><strong>total requests</strong></td>
+<td>when a request is parsed as Complete</td>
+<td>Does a Malformed request (400) count as a request? Decide, and write
+the decision down</td>
+</tr>
+<tr>
+<td><strong>2xx / 4xx / 5xx</strong></td>
+<td>once the response is decided, before writing it</td>
+<td><code>HttpResponse</code> currently has <strong>no way to read its
+status code back</strong> (<code>status_code_</code> is private, with no
+getter). It needs one</td>
+</tr>
+</tbody>
+</table>
+<p><strong>About 5xx:</strong> Pulse <strong>never sends a 5xx
+today</strong>. If a route handler throws, the exception goes up to
+<code>serve_connection</code>, which logs it and drops the connection
+without sending anything. A real server would answer
+<strong><code>500 Internal Server Error</code></strong> (“the server
+broke, not your request”). Catching a handler’s exception in
+<code>handle_client</code> and turning it into a 500 response would make
+the 5xx counter mean something, and give the client a real answer
+instead of a dropped connection.</p>
+<h3 id="where-the-stats-live-and-how-stats-reads-them">Where the stats
+live, and how <code>/stats</code> reads them</h3>
+<p>To see the numbers, a <code>GET /stats</code> route is the natural
+fit: it returns the counters as text. That raises two design
+questions:</p>
+<ol type="1">
+<li><strong>Lifetime and access.</strong> Route handlers are lambdas
+built in <code>main.cpp</code>’s <code>build_router()</code>,
+<em>before</em> the server exists. A <code>/stats</code> handler needs
+to reach the stats object. The same lifetime argument as
+<code>server</code> in Week 2 (doc Part 5) applies: whatever holds the
+stats must outlive every worker thread. An object created in
+<code>main()</code> and captured by reference,
+<code>[&amp;stats]</code>, is safe for the same reason
+<code>server</code> is: <code>main()</code> never returns while workers
+exist.</li>
+<li><strong>A consistent snapshot.</strong> <code>/stats</code> reads
+several counters. With six separate atomics, it reads them one at a
+time, and other workers keep updating them in between. So a reader can
+see, for a moment, <code>total requests = 10</code> but
+<code>2xx + 4xx = 9</code>, because one request was counted in one
+variable and not yet in the other. Each number is correct on its own,
+but they don’t add up <em>to each other</em>.</li>
+</ol>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Six <code>std::atomic</code> counters</th>
+<th>One <code>std::mutex</code> around a stats struct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Each increment</td>
+<td>one <code>lock add</code>, no waiting</td>
+<td>lock → increment → unlock</td>
+</tr>
+<tr>
+<td><code>/stats</code> snapshot</td>
+<td>each value correct, <strong>but they may not add up to each
+other</strong></td>
+<td>consistent: copy everything under the lock</td>
+</tr>
+<tr>
+<td>Counters that must change together (e.g. total + 2xx)</td>
+<td>can’t be made to change “at the same time”</td>
+<td>updated together under one lock</td>
+</tr>
+</tbody>
+</table>
+<p>Neither is wrong. <strong>Atomics are right for independent counters.
+A mutex is right when several values must agree.</strong> The spec asks
+for both, compared, and correctness comes first: unsafe → mutex →
+atomic, <em>then</em> measure.</p>
+<hr />
+<h1 id="part-9-fixing-week-2s-scrambled-log">Part 9 — Fixing Week 2’s
+scrambled log</h1>
+<p>Week 2 / Test 6 caught a real scrambled line:</p>
+<pre><code>[TID [TID 549548] Parsed (] Parsed (87 bytes total): 87 bytes total): GET /helloGET /hello HTTP/1.0</code></pre>
+<p>It’s the same shape of problem as the counter: one log line is about
+ten separate <code>std::cout &lt;&lt;</code> operations, and other
+threads can slip in between them. (Technically <code>std::cout</code>
+itself isn’t a <em>data race</em>. The standard makes each
+<code>&lt;&lt;</code> safe on its own, so nothing is corrupted and only
+the <em>order</em> mixes. It’s a race condition, Part 4.)</p>
+<p>The fix has two parts:</p>
+<ol type="1">
+<li><strong>Build the whole line first, privately.</strong>
+<code>std::ostringstream</code> (from <code>&lt;sstream&gt;</code>) is a
+string you can <code>&lt;&lt;</code> into, exactly like
+<code>std::cout</code>. Build the line in a <em>local</em>
+<code>ostringstream</code>, on the worker’s own stack, so there’s no
+sharing and no lock needed. Then <code>.str()</code> gives the finished
+line.</li>
+<li><strong>Write the finished line under a mutex</strong>, a log mutex,
+in <strong>one</strong> <code>&lt;&lt;</code>. The lock is held only for
+that single write, not while building the line.</li>
+</ol>
+<p>Building first keeps the critical section tiny (Part 6’s rule). Every
+log call in <code>run()</code> and <code>handle_client()</code> would go
+through one small helper that does exactly this.</p>
+<hr />
+<h1 id="part-10-two-more-things-that-come-with-locks">Part 10 — Two more
+things that come with locks</h1>
+<h3 id="deadlock">Deadlock</h3>
+<p>If thread A holds mutex 1 and waits for mutex 2, while thread B holds
+mutex 2 and waits for mutex 1, <strong>both wait forever</strong>.
+That’s a <strong>deadlock</strong>. In <code>ps -L</code> it looks like
+threads asleep in <code>futex_wait_queue</code> that never wake up, with
+zero CPU and zero progress.</p>
+<p>For Pulse this week there will be at most two mutexes (stats and
+log). The simple rule that makes deadlock impossible: <strong>never hold
+one while locking the other</strong>. Lock stats, update, unlock,
+<em>then</em> log. Never “lock stats, then log while still holding it”.
+(When code genuinely needs two locks at once, it must always take them
+in the same order. <code>std::scoped_lock</code> can lock several
+mutexes at once safely. Pulse doesn’t need it.)</p>
+<h3
+id="condition_variable-in-the-month-2-learning-goals-not-built-this-week"><code>condition_variable</code>
+(in the Month 2 learning goals, not built this week)</h3>
+<p>A mutex answers “only one thread <em>at a time</em>”. A
+<strong><code>std::condition_variable</code></strong> answers a
+different question: <strong>“sleep until something becomes
+true”</strong>. For example, a thread waiting until a queue has work in
+it, without checking in a busy loop and burning CPU (Week 1 / Experiment
+2).</p>
+<pre><code>consumer: lock → while (queue empty) cv.wait(lock) → take item → unlock
+producer: lock → push item → unlock → cv.notify_one()</code></pre>
+<ul>
+<li><code>cv.wait(lock)</code> needs a
+<strong><code>unique_lock</code></strong> (that’s one reason
+<code>unique_lock</code> exists). It unlocks the mutex <em>while</em>
+sleeping, so the producer can get in, and re-locks it before
+returning.</li>
+<li>The <code>while</code>, not an <code>if</code>: a thread can wake up
+without the condition being true, so it re-checks every time.</li>
+</ul>
+<p>Pulse doesn’t need it yet: every connection gets a brand-new thread,
+so nobody waits for work. <strong>Month 5’s controlled worker
+pool</strong> is built on exactly this: a fixed set of threads sleeping
+on a condition variable until the accept loop puts a connection in a
+queue. You’ll also recognize it in <code>ps</code>: a thread in
+<code>cv.wait</code> sleeps on a futex too.</p>
+<hr />
+<h1 id="part-11-how-week-3-will-be-tested">Part 11 — How Week 3 will be
+tested</h1>
+<p>Detailed commands, predictions and results go in
+<code>Week3/notes.html</code> once the code exists, as before. The
+plan:</p>
+<ol type="1">
+<li><strong>Unsafe counter first.</strong> Add
+<code>total_requests++</code> with no protection. Hit Pulse with many
+concurrent requests (<code>ab -n 10000 -c 50</code>) and compare the
+counter (via <code>/stats</code>) to the number of requests sent.
+<strong>Predict first.</strong> Part 3 says it may show the right
+number. Either result is informative.</li>
+<li><strong>TSan on the unsafe version.</strong> It should report the
+data race even if step 1 counted correctly.</li>
+<li><strong>Mutex version.</strong> Exact count, and TSan clean.</li>
+<li><strong>Atomic version.</strong> Exact count, and TSan clean.</li>
+<li><strong>The full statistics.</strong> Total and active connections,
+total requests, 2xx/4xx/5xx, checked against known traffic.
+<code>active</code> should return to 0 when everything finishes. Check
+it during and after a batch of <code>/slow</code> requests.</li>
+<li><strong>The log.</strong> <code>ab -c 10</code> with the log on
+<code>/tmp</code> (Week 2’s lesson): zero scrambled lines.</li>
+<li><strong>Mutex vs atomic, measured in Pulse.</strong> <code>ab</code>
+throughput for each version, log on <code>/tmp</code>, same conditions.
+Only <em>after</em> both are proven correct.</li>
+</ol>
+<hr />
+<h1 id="part-12-concept-check">Part 12 — Concept check</h1>
+<p><strong>Why isn’t <code>total_requests++</code> safe from two
+threads, when it’s one line of C++?</strong> It compiles to three steps,
+read → add → write (<code>mov</code>/<code>add</code>/<code>mov</code>).
+Between the read and the write, another thread can read the same old
+value, and one update overwrites the other.</p>
+<p><strong>At <code>-O2</code>, <code>counter++</code> is one
+<code>add</code> instruction. Why is that still not safe?</strong>
+Without the <code>lock</code> prefix, the CPU still does
+read-modify-write internally, and another core can access the memory in
+between. Only <code>lock add</code> (what <code>std::atomic</code>
+produces) is indivisible across cores.</p>
+<p><strong>In Part 3, 2 threads × 1,000 increments counted correctly
+five times. Why doesn’t that prove anything?</strong> The threads barely
+overlapped: each finished in microseconds, often before the other
+started. The race needs an overlap at the exact moment of the increment.
+A bug that didn’t happen in a test is still a bug. TSan proved the race
+was there.</p>
+<p><strong>Why might Pulse’s unprotected counter look correct even under
+<code>ab</code>?</strong> Each increment is a few nanoseconds inside
+~0.2 ms of other work per request, so two workers rarely hit it at the
+same instant. Rare is not never.</p>
+<p><strong>What’s the difference between a data race and a race
+condition?</strong> Data race: unsynchronized concurrent access to the
+same memory with at least one write. That’s undefined behavior. Race
+condition: the result depends on timing. It can happen even without a
+data race, like an atomic “check, then increment”.</p>
+<p><strong>Why is a data race undefined behavior and not just “maybe the
+wrong number”?</strong> The compiler may assume no other thread changes
+unsynchronized data, so it can cache values in registers or merge and
+reorder accesses. The behavior can change with optimization level or
+unrelated edits.</p>
+<p><strong>What does a mutex protect, exactly?</strong> The critical
+section between lock and unlock, and only against other threads that
+lock the <em>same</em> mutex. Any access that skips the lock is
+unprotected.</p>
+<p><strong>Why use <code>std::lock_guard</code> instead of
+<code>lock()</code> / <code>unlock()</code>?</strong> RAII: the
+destructor unlocks on every exit path, including early returns and
+exceptions. A missed <code>unlock()</code> leaves the mutex locked
+forever and hangs every thread that wants it.</p>
+<p><strong>What’s wrong with
+<code>std::lock_guard&lt;std::mutex&gt;{m};</code>?</strong> It has no
+name, so it’s a temporary destroyed at the end of that line. It locks
+and immediately unlocks, protecting nothing.</p>
+<p><strong>Why must you never sleep or do socket I/O while holding the
+stats mutex in Pulse?</strong> Every other worker that needs the mutex
+waits in <code>futex_wait_queue</code> until it’s released, so one slow
+worker would block all the others. That’s Month 1’s problem moved into a
+lock.</p>
+<p><strong>Why does a mutex member of <code>TcpServer</code> need
+<code>mutable</code>?</strong> <code>handle_client</code> is a
+<code>const</code> member function, and locking modifies the mutex.
+<code>mutable</code> allows that member to change inside
+<code>const</code> methods.</p>
+<p><strong>What makes <code>std::atomic&lt;long&gt;::operator++</code>
+indivisible?</strong> It compiles to <code>lock add</code>. The
+<code>lock</code> prefix makes the read-modify-write atomic across all
+cores.</p>
+<p><strong>Is <code>n = n + 1</code> atomic if <code>n</code> is a
+<code>std::atomic&lt;long&gt;</code>?</strong> No. It’s an atomic load
+followed by a separate atomic store, with a gap where another thread can
+get in. Use <code>n++</code>, <code>n += 1</code> or
+<code>n.fetch_add(1)</code>.</p>
+<p><strong>The atomic was ~3× faster than the mutex in Part 7. Why not
+conclude atomics are faster?</strong> It was a microbenchmark of pure
+contention. In Pulse, the increment is tiny next to each request’s real
+work. Atomics also only cover single operations on single variables.
+Measure in the real program, under real load.</p>
+<p><strong>When is a mutex the better choice than atomics for Pulse’s
+stats?</strong> When several counters must be consistent with each
+other: updated together, and read as a matching snapshot by
+<code>/stats</code>.</p>
+<p><strong>How do you make sure <code>active_connections</code> is
+decremented on every way a worker can end?</strong> RAII: a small guard
+object that increments in its constructor and decrements in its
+destructor, created at the start of the worker. The destructor runs on
+normal return and during exception unwinding.</p>
+<p><strong>Why build a log line in an <code>ostringstream</code> before
+taking the log mutex?</strong> Building happens on the worker’s own
+stack with no sharing, so the lock is held only for one short write.
+That keeps the critical section tiny.</p>
+<p><strong>How do you avoid deadlock with a stats mutex and a log
+mutex?</strong> Never hold one while taking the other: finish and unlock
+stats, then log. If two locks are ever needed together, always take them
+in the same order.</p>
+<p><strong>What does a <code>condition_variable</code> do that a mutex
+doesn’t, and when will Pulse need one?</strong> It lets a thread sleep
+until a condition becomes true, without busy-waiting. Pulse needs one
+for Month 5’s worker pool, where threads wait for connections in a
+queue.</p>
+</body>
+</html>

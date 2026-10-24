@@ -1,0 +1,2954 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Pulse Month 2 Week 3 Notes</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+      @page { margin: 1in; }
+      body {
+        font-family: -apple-system, "Segoe UI", Calibri, Arial, sans-serif;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2em 1em;
+        line-height: 1.55;
+        color: #1a1a1a;
+        font-size: 15px;
+      }
+      h1 { font-size: 1.7em; border-bottom: 2px solid #333; padding-bottom: 0.2em; margin-top: 1.6em; }
+      h2 { font-size: 1.3em; border-bottom: 1px solid #ccc; padding-bottom: 0.15em; margin-top: 1.4em; }
+      h3 { font-size: 1.08em; margin-top: 1.2em; }
+      pre {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.8em 1em;
+        overflow-x: auto;
+        font-size: 0.85em;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      pre code { background: none; padding: 0; }
+      table { border-collapse: collapse; margin: 1em 0; }
+      th, td { border: 1px solid #ccc; padding: 0.4em 0.8em; }
+      blockquote { border-left: 3px solid #999; margin-left: 0; padding-left: 1em; color: #444; }
+      #TOC { background: #f9f9f9; border: 1px solid #ddd; padding: 1em 1.5em; border-radius: 4px; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+      .analogy {
+        background: #eef6ff;
+        border-left: 4px solid #3b82f6;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .example {
+        background: #f6fff0;
+        border-left: 4px solid #4caf50;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .analogy p:first-child, .example p:first-child { margin-top: 0; }
+      .analogy p:last-child, .example p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Pulse — Month 2, Week 3: Test Log</h1>
+<p class="subtitle">Thread-safe statistics and logging: what changed,
+how to test it, what happened</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#how-this-file-works" id="toc-how-this-file-works">How this
+file works</a></li>
+<li><a href="#what-changed-in-the-code"
+id="toc-what-changed-in-the-code">What changed in the code</a>
+<ul>
+<li><a href="#where-the-statistics-are-used-the-complete-map"
+id="toc-where-the-statistics-are-used-the-complete-map">Where the
+statistics are used: the complete map</a></li>
+</ul></li>
+<li><a href="#setup-build-the-three-versions"
+id="toc-setup-build-the-three-versions">Setup: build the three
+versions</a></li>
+<li><a href="#test-1-new-routes-and-the-counters-for-known-traffic"
+id="toc-test-1-new-routes-and-the-counters-for-known-traffic">Test 1 —
+New routes, and the counters for known traffic</a>
+<ul>
+<li><a href="#result-every-counter-matches-the-traffic-exactly"
+id="toc-result-every-counter-matches-the-traffic-exactly">Result: every
+counter matches the traffic exactly</a>
+<ul>
+<li><a href="#predicted-vs-actual"
+id="toc-predicted-vs-actual">Predicted vs actual</a></li>
+<li><a href="#working-out-every-number"
+id="toc-working-out-every-number">Working out every number</a></li>
+<li><a href="#fail-the-new-500-path"
+id="toc-fail-the-new-500-path"><code>/fail</code>: the new 500
+path</a></li>
+<li><a href="#pulses-log" id="toc-pulses-log">Pulse’s log</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#test-2-active_connections-during-and-after-5-slow"
+id="toc-test-2-active_connections-during-and-after-5-slow">Test 2 —
+<code>active_connections</code> during and after 5 ×
+<code>/slow</code></a>
+<ul>
+<li><a href="#result-active-rose-to-6-then-came-back-to-exactly-1"
+id="toc-result-active-rose-to-6-then-came-back-to-exactly-1">Result:
+active rose to 6, then came back to exactly 1</a>
+<ul>
+<li><a href="#predicted-vs-actual-1"
+id="toc-predicted-vs-actual-1">Predicted vs actual</a></li>
+<li><a href="#working-out-every-number-1"
+id="toc-working-out-every-number-1">Working out every number</a></li>
+<li><a href="#the-bash-lines" id="toc-the-bash-lines">The bash
+lines</a></li>
+<li><a href="#what-this-proves" id="toc-what-this-proves">What this
+proves</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#test-3-the-unsafe-counter-under-load"
+id="toc-test-3-the-unsafe-counter-under-load">Test 3 — The unsafe
+counter under load</a>
+<ul>
+<li><a
+href="#result-the-unsafe-build-lost-updates-but-youd-only-notice-if-you-checked-the-right-counter"
+id="toc-result-the-unsafe-build-lost-updates-but-youd-only-notice-if-you-checked-the-right-counter">Result:
+the unsafe build lost updates, but you’d only notice if you checked the
+right counter</a>
+<ul>
+<li><a href="#predicted-vs-actual-2"
+id="toc-predicted-vs-actual-2">Predicted vs actual</a></li>
+<li><a href="#working-out-the-numbers"
+id="toc-working-out-the-numbers">Working out the numbers</a></li>
+<li><a href="#what-this-means" id="toc-what-this-means">What this
+means</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#test-4-the-same-load-on-the-mutex-and-atomic-builds"
+id="toc-test-4-the-same-load-on-the-mutex-and-atomic-builds">Test 4 —
+The same load on the mutex and atomic builds</a>
+<ul>
+<li><a href="#result-mutex-and-atomic-both-count-exactly"
+id="toc-result-mutex-and-atomic-both-count-exactly">Result: mutex and
+atomic both count exactly</a>
+<ul>
+<li><a href="#unsafe-vs-mutex-vs-atomic-side-by-side"
+id="toc-unsafe-vs-mutex-vs-atomic-side-by-side">Unsafe vs mutex vs
+atomic, side by side</a></li>
+<li><a href="#predicted-vs-actual-3"
+id="toc-predicted-vs-actual-3">Predicted vs actual</a></li>
+</ul></li>
+<li><a href="#why-total_connections-is-more-than-20001"
+id="toc-why-total_connections-is-more-than-20001">Why
+<code>total_connections</code> is more than 20,001</a></li>
+</ul></li>
+<li><a href="#test-5-threadsanitizer-on-all-three-builds"
+id="toc-test-5-threadsanitizer-on-all-three-builds">Test 5 —
+ThreadSanitizer on all three builds</a>
+<ul>
+<li><a
+href="#result-run-by-claude-not-by-hand-tsan-names-every-racing-line-in-unsafe-and-finds-nothing-in-mutex-or-atomic"
+id="toc-result-run-by-claude-not-by-hand-tsan-names-every-racing-line-in-unsafe-and-finds-nothing-in-mutex-or-atomic">Result
+(run by Claude, not by hand): TSan names every racing line in unsafe,
+and finds nothing in mutex or atomic</a>
+<ul>
+<li><a href="#every-report-by-line" id="toc-every-report-by-line">Every
+report, by line</a></li>
+<li><a href="#reading-the-first-full-report"
+id="toc-reading-the-first-full-report">Reading the first full
+report</a></li>
+<li><a href="#the-unsafe-tsan-builds-own-numbers-were-wrong-too"
+id="toc-the-unsafe-tsan-builds-own-numbers-were-wrong-too">The unsafe
+TSan build’s own numbers were wrong too</a></li>
+<li><a href="#why-this-test-matters-even-if-its-just-a-check"
+id="toc-why-this-test-matters-even-if-its-just-a-check">Why this test
+matters, even if it’s just a check</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#test-6-scrambled-log-lines-gone"
+id="toc-test-6-scrambled-log-lines-gone">Test 6 — Scrambled log lines:
+gone?</a>
+<ul>
+<li><a href="#where-the-log-went" id="toc-where-the-log-went">Where the
+log went</a></li>
+<li><a href="#result-zero-scrambled-lines-in-5000-requests"
+id="toc-result-zero-scrambled-lines-in-5000-requests">Result: zero
+scrambled lines in 5,000 requests</a>
+<ul>
+<li><a href="#predicted-vs-actual-4"
+id="toc-predicted-vs-actual-4">Predicted vs actual</a></li>
+<li><a href="#why-0-means-more-here-than-week-2s-0"
+id="toc-why-0-means-more-here-than-week-2s-0">Why “0” means more here
+than Week 2’s “0”</a></li>
+<li><a href="#what-the-last-lines-show"
+id="toc-what-the-last-lines-show">What the last lines show</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#test-7-mutex-vs-atomic-vs-unsafe-throughput"
+id="toc-test-7-mutex-vs-atomic-vs-unsafe-throughput">Test 7 — Mutex vs
+atomic vs unsafe: throughput</a>
+<ul>
+<li><a
+href="#result-all-three-builds-run-at-the-same-speed-and-thats-the-point"
+id="toc-result-all-three-builds-run-at-the-same-speed-and-thats-the-point">Result:
+all three builds run at the same speed, and that’s the point</a>
+<ul>
+<li><a href="#the-results" id="toc-the-results">The results</a></li>
+<li><a href="#predicted-vs-actual-5"
+id="toc-predicted-vs-actual-5">Predicted vs actual</a></li>
+<li><a href="#why-the-counter-method-doesnt-show-up-the-arithmetic"
+id="toc-why-the-counter-method-doesnt-show-up-the-arithmetic">Why the
+counter method doesn’t show up: the arithmetic</a></li>
+<li><a
+href="#a-side-observation-todays-numbers-are-much-higher-than-earlier-ones"
+id="toc-a-side-observation-todays-numbers-are-much-higher-than-earlier-ones">A
+side observation: today’s numbers are much higher than earlier
+ones</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#week-3-done-when" id="toc-week-3-done-when">Week 3 done
+when</a></li>
+</ul>
+</nav>
+<style>
+.tldr { background:#fff8e1; border:2px solid #f0c040; border-radius:8px; padding:1.2em 1.5em; margin:1.5em 0; font-size:1.05em; line-height:1.6; }
+.stat-row { display:flex; gap:1em; flex-wrap:wrap; margin:1.5em 0; }
+.stat-card { flex:1; min-width:180px; background:#f5f5f5; border:1px solid #ddd; border-radius:8px; padding:1em 1.2em; text-align:center; }
+.stat-card .label { font-size:0.82em; color:#555; text-transform:uppercase; letter-spacing:0.03em; }
+.stat-card .values { font-size:1.6em; font-weight:bold; margin:0.3em 0; }
+.stat-card .up { color:#c0392b; }
+.stat-card .flat { color:#2e7d32; }
+.stat-card .note { font-size:0.8em; color:#777; }
+.verdict-right { color:#2e7d32; font-weight:bold; }
+.verdict-wrong { color:#c0392b; font-weight:bold; }
+.pending { background:#f3f3f3; border:1px dashed #aaa; border-radius:6px; padding:0.6em 1em; color:#555; }
+details { background:#fafafa; border:1px solid #ddd; border-radius:6px; padding:0.3em 1.2em 1em; margin:1.5em 0; }
+details[open] { padding-bottom:1.2em; }
+summary { cursor:pointer; font-weight:600; padding:0.8em 0; }
+</style>
+<h1 id="how-this-file-works">How this file works</h1>
+<p>Same as Weeks 1 and 2: for each test, <strong>write predictions in
+<code>notes.txt</code> first</strong> (this week especially: Test 3 is
+about predicting a number that might be <em>wrong</em>), run the
+commands, paste the full raw output into the chat, and the results get
+written up here.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Test</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>New routes: <code>/stats</code>, <code>/fail</code> (500), and the
+counters for known traffic</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>active_connections</code> during and after 5 ×
+<code>/slow</code></td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>The unsafe counter under load:</strong> does it lose
+updates?</td>
+<td><strong>Done</strong>: yes</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The same load on the mutex and atomic builds</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td>ThreadSanitizer on all three builds</td>
+<td><strong>Done</strong> (run by Claude)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Scrambled log lines: gone?</td>
+<td><strong>Done</strong></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Mutex vs atomic vs unsafe: throughput</td>
+<td><strong>Done</strong>: no difference</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="what-changed-in-the-code">What changed in the code</h1>
+<p>Every change is commented with <code>MONTH 2 / WEEK 3</code>. Read
+those comments alongside this table.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>File</th>
+<th>Change</th>
+<th>Why (Week 3 doc)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>include/server_stats.hpp</code></strong>,
+<strong><code>src/server_stats.cpp</code></strong> (new)</td>
+<td><code>ServerStats</code>: six counters (total/active connections,
+total requests, 2xx/4xx/5xx), in <strong>three versions</strong>:
+<code>unsafe</code> (plain <code>uint64_t</code>), <code>mutex</code>
+(plain + <code>std::mutex</code> + <code>lock_guard</code>),
+<code>atomic</code> (<code>std::atomic&lt;uint64_t&gt;</code>). The
+preprocessor keeps exactly one. Plus <code>ActiveConnectionGuard</code>:
+RAII for active connections</td>
+<td>Parts 2–8</td>
+</tr>
+<tr>
+<td><code>CMakeLists.txt</code></td>
+<td>New option <strong><code>PULSE_STATS_MODE</code></strong> =
+<code>unsafe</code> / <code>mutex</code> / <code>atomic</code> (default
+<code>mutex</code>), and the two new <code>.cpp</code> files</td>
+<td>So the three versions can be built side by side and compared without
+editing code</td>
+</tr>
+<tr>
+<td><strong><code>include/logger.hpp</code></strong>,
+<strong><code>src/logger.cpp</code></strong> (new)</td>
+<td><code>log_line()</code> / <code>log_error()</code>: write one
+finished line under a log mutex</td>
+<td>Part 9: scrambled log lines</td>
+</tr>
+<tr>
+<td><code>src/tcp_server.cpp</code>,
+<code>serve_connection()</code></td>
+<td><code>ActiveConnectionGuard active(stats_);</code> as the first
+line</td>
+<td>Connections +1 at start, active −1 on <strong>every</strong> way a
+worker ends</td>
+</tr>
+<tr>
+<td><code>src/tcp_server.cpp</code>, <code>handle_client()</code></td>
+<td><code>stats_.on_response(status)</code> just before writing. A
+throwing handler now gets <strong>500</strong> instead of a dropped
+connection. Every log line built in an <code>ostringstream</code>, then
+<code>log_line()</code></td>
+<td>Parts 8, 9</td>
+</tr>
+<tr>
+<td><code>include/http_response.hpp</code></td>
+<td><code>status_code()</code> getter,
+<code>internal_server_error()</code> factory</td>
+<td>To count 2xx/4xx/5xx, and to send a 500</td>
+</tr>
+<tr>
+<td><code>include/tcp_server.hpp</code></td>
+<td>Constructor takes <code>ServerStats&amp;</code>, stored as reference
+member <code>stats_</code>. <strong>Shared-state inventory</strong>
+written in the class comment</td>
+<td>The spec’s “documented shared state” deliverable</td>
+</tr>
+<tr>
+<td><code>src/main.cpp</code></td>
+<td><code>ServerStats stats;</code> created in <code>main()</code>
+before the server. New routes <strong><code>GET /stats</code></strong>
+(captures <code>[&amp;stats]</code>) and
+<strong><code>GET /fail</code></strong> (always throws)</td>
+<td>Part 8</td>
+</tr>
+</tbody>
+</table>
+<h2 id="where-the-statistics-are-used-the-complete-map">Where the
+statistics are used: the complete map</h2>
+<p><code>ServerStats</code> is created in <strong>one</strong> place,
+changed in <strong>three</strong>, and read in <strong>one</strong>. In
+the order things happen:</p>
+<pre><code>main.cpp:252          ServerStats stats;                         ← the ONE stats object, created once
+main.cpp:253          TcpServer server(..., build_router(stats), stats);
+                         │                         │
+                         │                         └─► main.cpp:135  /stats lambda captures [&amp;stats]   (READS)
+                         └─► tcp_server.cpp:69  stats_(stats)  → stored as reference member stats_ (tcp_server.hpp:145)
+
+── for EVERY connection, on its worker thread ──────────────────────────────────────────────
+tcp_server.cpp:296    ActiveConnectionGuard active(stats_);       ← worker starts
+                        └─ server_stats.hpp:159  constructor → on_connection_opened()
+                                                   total_connections +1, active_connections +1
+
+tcp_server.cpp:468    stats_.on_response(response.status_code()); ← response decided, about to write
+                                                   total_requests +1, and ONE of 2xx / 4xx / 5xx +1
+
+(serve_connection ends: normal return OR after catching an exception)
+                        └─ server_stats.hpp:160  destructor → on_connection_closed()
+                                                   active_connections −1
+
+── only when someone requests GET /stats ───────────────────────────────────────────────────
+main.cpp:136          StatsSnapshot s = stats.snapshot();         ← copies all six numbers, prints them</code></pre>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Counter</th>
+<th>Increased (+1)</th>
+<th>Decreased (−1)</th>
+<th>Read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>total_connections</code></td>
+<td>guard constructor (<code>server_stats.hpp:159</code>), called from
+<code>tcp_server.cpp:296</code></td>
+<td>never</td>
+<td><code>/stats</code> (<code>main.cpp:136</code>)</td>
+</tr>
+<tr>
+<td><code>active_connections</code></td>
+<td>the same guard constructor</td>
+<td>guard <strong>destructor</strong>
+(<code>server_stats.hpp:160</code>), which runs automatically when
+<code>serve_connection()</code> ends</td>
+<td><code>/stats</code></td>
+</tr>
+<tr>
+<td><code>total_requests</code></td>
+<td><code>on_response()</code> at <code>tcp_server.cpp:468</code></td>
+<td>never</td>
+<td><code>/stats</code></td>
+</tr>
+<tr>
+<td><code>responses_2xx</code> / <code>4xx</code> /
+<code>5xx</code></td>
+<td><code>on_response()</code> (same line). The status code picks which
+one</td>
+<td>never</td>
+<td><code>/stats</code></td>
+</tr>
+</tbody>
+</table>
+<p>What the map shows:</p>
+<ul>
+<li><strong>Only worker threads change the stats.</strong> The main
+thread creates the object and never touches it again. The
+<code>/stats</code> handler also runs on a worker, the one serving that
+request.</li>
+<li><strong>There’s no visible <code>on_connection_closed()</code> call
+in <code>tcp_server.cpp</code>.</strong> The decrease is in the guard’s
+destructor, so it happens on every way <code>serve_connection()</code>
+can end (normal return, early <code>return</code> inside
+<code>handle_client</code>, exception) and can’t be forgotten.</li>
+<li><strong>Some connections never reach line 468</strong>, so they
+count as a <em>connection</em> but not a <em>request</em>: a client that
+disconnects before sending a complete request (<code>n == 0</code> early
+return), and a <code>read()</code> error (<code>n &lt; 0</code> early
+return). A failed <em>write</em> is still counted, because line 468 runs
+before the write.</li>
+<li><strong>Every one of these calls goes through
+<code>ServerStats</code></strong>, so the build’s mode
+(<code>unsafe</code> / <code>mutex</code> / <code>atomic</code>, in
+<code>server_stats.cpp</code>) decides how safe <em>all</em> of them are
+at once.</li>
+</ul>
+<p>(Line numbers are from the Week 3 version of the code.)</p>
+<p><strong>Decisions made, and written down in
+<code>server_stats.hpp</code>:</strong></p>
+<ul>
+<li><strong>“total_requests” = requests Pulse sent a response
+to</strong>, including 400s for malformed input. A client that
+disconnects before sending a complete request is a <em>connection</em>
+but not a <em>request</em>. That way
+<strong><code>total_requests == responses_2xx + responses_4xx + responses_5xx</code></strong>
+always holds once traffic stops.</li>
+<li><strong><code>/stats</code> sees itself as active but not yet as a
+request.</strong> While it runs, its own connection is active, so
+<code>active_connections</code> is ≥ 1. It’s counted as a request only
+<em>after</em> it responds. So an idle server’s <code>/stats</code>
+shows <code>active_connections: 1</code>.</li>
+<li><strong>Default mode is <code>mutex</code></strong>:
+<code>on_response</code> updates <code>total_requests</code> and the
+bucket under one lock, and <code>/stats</code> copies all six under one
+lock, so a snapshot always adds up.</li>
+</ul>
+<hr />
+<h1 id="setup-build-the-three-versions">Setup: build the three
+versions</h1>
+<p>From the Pulse folder in WSL. Each version goes in its own build
+folder, so you can switch between them without rebuilding:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /mnt/c/Users/aagam/OneDrive/Desktop/Pulse</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">-S</span> . <span class="at">-B</span> build-unsafe <span class="at">-DPULSE_STATS_MODE</span><span class="op">=</span>unsafe <span class="kw">&amp;&amp;</span> <span class="fu">cmake</span> <span class="at">--build</span> build-unsafe</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">-S</span> . <span class="at">-B</span> build-mutex  <span class="at">-DPULSE_STATS_MODE</span><span class="op">=</span>mutex  <span class="kw">&amp;&amp;</span> <span class="fu">cmake</span> <span class="at">--build</span> build-mutex</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">-S</span> . <span class="at">-B</span> build-atomic <span class="at">-DPULSE_STATS_MODE</span><span class="op">=</span>atomic <span class="kw">&amp;&amp;</span> <span class="fu">cmake</span> <span class="at">--build</span> build-atomic</span></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-S . -B build-unsafe</code></td>
+<td><strong>S</strong>ource is this folder, <strong>b</strong>uild into
+<code>build-unsafe/</code> (created if missing)</td>
+</tr>
+<tr>
+<td><code>-DPULSE_STATS_MODE=unsafe</code></td>
+<td>Set the CMake option. You’ll see
+<code>-- Pulse stats mode: unsafe</code> in CMake’s output</td>
+</tr>
+<tr>
+<td><code>cmake --build build-unsafe</code></td>
+<td>Compile. Same as <code>cd build-unsafe &amp;&amp; make</code></td>
+</tr>
+</tbody>
+</table>
+<p>Each one should end with <code>[100%] Built target pulse</code> and
+<strong>no warnings</strong>. Every Pulse prints its mode at startup:
+<code>Pulse listening on port 8080... (stats mode: unsafe)</code>.
+Always check that line, so you know which build you’re testing.</p>
+<p>(The old <code>build/</code> folder still works too:
+<code>cd build &amp;&amp; cmake .. &amp;&amp; make</code> gives the
+default, <code>mutex</code>.)</p>
+<p><strong><code>.gitignore</code>:</strong> these folders are build
+output. <code>.gitignore</code> had only <code>build/</code> (which
+matches only the folder named exactly <code>build</code>), so
+<code>build-*/</code> was added to cover them.</p>
+<hr />
+<h1 id="test-1-new-routes-and-the-counters-for-known-traffic">Test 1 —
+New routes, and the counters for known traffic</h1>
+<p><strong>Question:</strong> do <code>/stats</code> and
+<code>/fail</code> work, and do the counters match exactly what was
+sent?</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># T1</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./build-mutex/pulse</span> 8080</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># T2, one line at a time, top to bottom</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> localhost:8080/stats<span class="kw">;</span> <span class="bu">echo</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> <span class="at">-o</span> /dev/null <span class="at">-w</span> <span class="st">&quot;/hello -&gt; %{http_code}\n&quot;</span> localhost:8080/hello</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> <span class="at">-o</span> /dev/null <span class="at">-w</span> <span class="st">&quot;/nope  -&gt; %{http_code}\n&quot;</span> localhost:8080/nope</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> <span class="at">-w</span> <span class="st">&quot;\n/fail  -&gt; %{http_code}\n&quot;</span> localhost:8080/fail</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">printf</span> <span class="st">&#39;GARBAGE\r\n\r\n&#39;</span> <span class="kw">|</span> <span class="ex">nc</span> <span class="at">-q1</span> localhost 8080 <span class="kw">|</span> <span class="fu">head</span> <span class="at">-1</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> localhost:8080/stats<span class="kw">;</span> <span class="bu">echo</span></span></code></pre></div>
+<p>Keep Pulse running in T1 for Test 2.</p>
+<p><strong>Paste back:</strong> T1 and T2.</p>
+<h2 id="result-every-counter-matches-the-traffic-exactly">Result: every
+counter matches the traffic exactly</h2>
+<div class="tldr">
+<p><b>What I did:</b> on the mutex build, read <code>/stats</code>, sent
+four known requests (<code>/hello</code>, <code>/nope</code>,
+<code>/fail</code>, garbage), then read <code>/stats</code> again.
+<br><br> <b>What happened:</b> <code>/fail</code> answered <b>500</b>
+and the server kept going. The second <code>/stats</code> showed <b>5
+requests = 2 × 2xx + 2 × 4xx + 1 × 5xx</b>, which is exactly the traffic
+sent, once you account for one rule: <b><code>/stats</code> counts
+itself as a connection straight away, but as a request only after it has
+answered.</b></p>
+</div>
+<h3 id="predicted-vs-actual">Predicted vs actual</h3>
+<p>No Test 1 predictions were written in <code>notes.txt</code>. Here is
+what the design (<code>server_stats.hpp</code>) says should happen,
+against what did:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Expected from the design</th>
+<th>Actual</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/fail</code></td>
+<td><code>500</code>, server keeps running</td>
+<td><strong><code>500</code></strong>, and the next request (garbage)
+was served normally</td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td>first <code>/stats</code></td>
+<td>connections 1, active 1, requests 0</td>
+<td><strong>1 / 1 / 0</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td>second <code>/stats</code>, requests</td>
+<td>5</td>
+<td><strong>5</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td>second <code>/stats</code>, 2xx / 4xx / 5xx</td>
+<td>2 / 2 / 1</td>
+<td><strong>2 / 2 / 1</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td>second <code>/stats</code>, active</td>
+<td>1 (only itself)</td>
+<td><strong>1</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td><code>total_requests == 2xx + 4xx + 5xx</code></td>
+<td>must hold</td>
+<td>5 = 2 + 2 + 1</td>
+<td><span class="verdict-right">Holds</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="working-out-every-number">Working out every number</h3>
+<p>Six connections were made, in this order:</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Request</th>
+<th>Status</th>
+<th>Bucket</th>
+<th>Counted as a request by the second <code>/stats</code>?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>GET /stats</code> (first)</td>
+<td>200</td>
+<td>2xx</td>
+<td><strong>yes</strong>: it was counted when it finished, before #6
+started</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>GET /hello</code></td>
+<td>200</td>
+<td>2xx</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>GET /nope</code></td>
+<td>404</td>
+<td>4xx</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>GET /fail</code></td>
+<td><strong>500</strong></td>
+<td><strong>5xx</strong></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>GARBAGE</code></td>
+<td>400</td>
+<td>4xx</td>
+<td>yes: Malformed requests count, because Pulse sent them a
+response</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>GET /stats</code> (second, the one reading the numbers)</td>
+<td>200</td>
+<td>(2xx, later)</td>
+<td><strong>not yet</strong>: <code>on_response()</code> runs only
+<em>after</em> its handler has built the text you’re reading</td>
+</tr>
+</tbody>
+</table>
+<p><strong>First <code>/stats</code>:</strong></p>
+<pre><code>total_connections: 1     ← itself: ActiveConnectionGuard&#39;s constructor ran when its worker started
+active_connections: 1    ← itself: still running (it&#39;s the one reading the numbers)
+total_requests: 0        ← itself NOT yet: on_response() runs after the handler returns
+responses_2xx/4xx/5xx: 0</code></pre>
+<p>This is the “/stats sees itself as active but not yet as a request”
+rule from the design decisions, visible on the very first call.</p>
+<p><strong>Second <code>/stats</code>:</strong></p>
+<pre><code>total_connections: 6     ← all six rows above, including itself
+active_connections: 1    ← only itself. #1–#5 have all finished, and each guard&#39;s destructor did −1
+total_requests: 5        ← rows #1–#5. Row #6 (itself) not yet
+responses_2xx: 2         ← #1 (first /stats) and #2 (/hello)
+responses_4xx: 2         ← #3 (404) and #5 (400)
+responses_5xx: 1         ← #4 (/fail)</code></pre>
+<p><code>active_connections: 1</code> after five completed connections
+confirms the <code>ActiveConnectionGuard</code> destructor did its −1 on
+every one, <strong>including the two that weren’t 200s</strong>:
+<code>/fail</code> (the handler threw, was caught in
+<code>handle_client</code>, and the worker still ended normally) and the
+malformed request (<code>handle_client</code> left its loop early).</p>
+<h3 id="fail-the-new-500-path"><code>/fail</code>: the new 500 path</h3>
+<pre><code>$ curl -s -w &quot;\n/fail  -&gt; %{http_code}\n&quot; localhost:8080/fail
+
+/fail  -&gt; 500</code></pre>
+<p>The blank line is the (empty) body:
+<code>internal_server_error()</code> has no body text, only the status
+line. Pulse’s log shows what happened inside:</p>
+<pre><code>[TID 957] Parsed (82 bytes total): GET /fail HTTP/1.1
+[TID 957] handler threw: GET /fail always fails (deliberate, for testing 5xx) — responding 500 Internal Server Error</code></pre>
+<ol type="1">
+<li>Worker 957 parsed the request normally.</li>
+<li><code>router_.route()</code> called the <code>/fail</code> handler,
+which threw <code>std::runtime_error</code>.</li>
+<li>The new <code>try/catch</code> around <code>route()</code> in
+<code>handle_client</code> caught it, logged <code>handler threw</code>,
+and set
+<code>response = HttpResponse::internal_server_error()</code>.</li>
+<li><code>on_response(500)</code> counted it as <strong>5xx</strong>,
+and the 500 was written to the client.</li>
+</ol>
+<p><strong>Before Week 3</strong> the same exception went up to
+<code>serve_connection()</code>, which logged a “connection error” and
+closed the connection <strong>without sending anything</strong>. curl
+would have reported an empty reply, and there was nothing to count as a
+5xx.</p>
+<h3 id="pulses-log">Pulse’s log</h3>
+<pre><code>Pulse listening on port 8080... (stats mode: mutex)
+Client connected: 127.0.0.1:49474
+[TID 906] Parsed (83 bytes total): GET /stats HTTP/1.1
+Client connected: 127.0.0.1:49740
+[TID 917] Parsed (83 bytes total): GET /hello HTTP/1.1
+Client connected: 127.0.0.1:51642
+[TID 928] Parsed (82 bytes total): GET /nope HTTP/1.1
+Client connected: 127.0.0.1:43508
+[TID 957] Parsed (82 bytes total): GET /fail HTTP/1.1
+[TID 957] handler threw: GET /fail always fails (deliberate, for testing 5xx) — responding 500 Internal Server Error
+Client connected: 127.0.0.1:47658
+[TID 970] Malformed request (11 bytes so far) — responding 400 Bad Request.
+Client connected: 127.0.0.1:47674
+[TID 1007] Parsed (83 bytes total): GET /stats HTTP/1.1</code></pre>
+<ul>
+<li><strong><code>(stats mode: mutex)</code></strong> on the first line
+confirms which build ran. Always check it.</li>
+<li><strong>Six <code>Client connected</code> lines =
+<code>total_connections: 6</code>.</strong></li>
+<li><strong><code>Malformed request (11 bytes so far)</code></strong>:
+<code>GARBAGE\r\n\r\n</code> is 7 + 2 + 2 = 11 bytes. The parser found
+the blank line that ends the headers, but <code>GARBAGE</code> isn’t a
+valid request line → 400.</li>
+<li><strong>The <code>handler threw</code> line goes to stderr</strong>
+(<code>log_error</code>), every other line to stdout
+(<code>log_line</code>). Both use the same log mutex, so they can’t
+split each other.</li>
+<li><strong>Every line is whole.</strong> With one request at a time
+that’s expected anyway. Test 6 checks it under load.</li>
+</ul>
+<details>
+<summary>
+Raw output: Test 1
+</summary>
+<p><strong>T1 (Pulse)</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ./build-mutex/pulse 8080
+Pulse listening on port 8080... (stats mode: mutex)
+Client connected: 127.0.0.1:49474
+[TID 906] Parsed (83 bytes total): GET /stats HTTP/1.1
+Client connected: 127.0.0.1:49740
+[TID 917] Parsed (83 bytes total): GET /hello HTTP/1.1
+Client connected: 127.0.0.1:51642
+[TID 928] Parsed (82 bytes total): GET /nope HTTP/1.1
+Client connected: 127.0.0.1:43508
+[TID 957] Parsed (82 bytes total): GET /fail HTTP/1.1
+[TID 957] handler threw: GET /fail always fails (deliberate, for testing 5xx) — responding 500 Internal Server Error
+Client connected: 127.0.0.1:47658
+[TID 970] Malformed request (11 bytes so far) — responding 400 Bad Request.
+Client connected: 127.0.0.1:47674
+[TID 1007] Parsed (83 bytes total): GET /stats HTTP/1.1</code></pre>
+<p><strong>T2</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ curl -s localhost:8080/stats; echo
+stats_mode: mutex
+total_connections: 1
+active_connections: 1
+total_requests: 0
+responses_2xx: 0
+responses_4xx: 0
+responses_5xx: 0
+
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ curl -s -o /dev/null -w &quot;/hello -&gt; %{http_code}\n&quot; localhost:8080/hello
+/hello -&gt; 200
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ curl -s -o /dev/null -w &quot;/nope  -&gt; %{http_code}\n&quot; localhost:8080/nope
+/nope  -&gt; 404
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ curl -s -w &quot;\n/fail  -&gt; %{http_code}\n&quot; localhost:8080/fail
+
+/fail  -&gt; 500
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ printf &#39;GARBAGE\r\n\r\n&#39; | nc -q1 localhost 8080 | head -1
+HTTP/1.1 400 Bad Request
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ curl -s localhost:8080/stats; echo
+stats_mode: mutex
+total_connections: 6
+active_connections: 1
+total_requests: 5
+responses_2xx: 2
+responses_4xx: 2
+responses_5xx: 1</code></pre>
+</details>
+<hr />
+<h1 id="test-2-active_connections-during-and-after-5-slow">Test 2 —
+<code>active_connections</code> during and after 5 ×
+<code>/slow</code></h1>
+<p><strong>Question:</strong> does <code>active_connections</code> go up
+while connections are open, and come back down to exactly 1 (the
+<code>/stats</code> request itself) afterwards?</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># T2 (same Pulse as Test 1)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> 1 2 3 4 5<span class="kw">;</span> <span class="cf">do</span> <span class="ex">curl</span> <span class="at">-s</span> <span class="at">-o</span> /dev/null localhost:8080/slow <span class="kw">&amp;</span> <span class="cf">done</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sleep</span> 1<span class="kw">;</span> <span class="bu">echo</span> <span class="st">&quot;DURING:&quot;</span><span class="kw">;</span> <span class="ex">curl</span> <span class="at">-s</span> localhost:8080/stats</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">wait</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;AFTER:&quot;</span><span class="kw">;</span>  <span class="ex">curl</span> <span class="at">-s</span> localhost:8080/stats</span></code></pre></div>
+<p><strong>Paste back:</strong> T2. Then <code>Ctrl+C</code> Pulse in
+T1.</p>
+<h2 id="result-active-rose-to-6-then-came-back-to-exactly-1">Result:
+active rose to 6, then came back to exactly 1</h2>
+<div class="tldr">
+<p><b>What I did:</b> 5 × <code>/slow</code> at once (each worker sleeps
+5 s), read <code>/stats</code> one second in, waited for all five, and
+read it again. <br><br> <b>What happened:</b> <b>during</b>,
+<code>active_connections</code> was <b>6</b> (the 5 sleeping
+<code>/slow</code> workers + the <code>/stats</code> request itself) and
+the five <code>/slow</code>s were <b>not yet</b> counted as requests.
+<b>After</b>, active was back to exactly <b>1</b>, and requests had gone
+up by exactly the 6 that finished in between. Every number is accounted
+for.</p>
+</div>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+active_connections: during → after
+</div>
+<div class="values">
+6 <span class="flat">→ 1</span>
+</div>
+<div class="note">
+5 /slow + itself, then only itself
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+total_requests: during → after
+</div>
+<div class="values">
+6 → 12
+</div>
+<div class="note">
++5 /slow, +1 the “during” /stats
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+2xx + 4xx + 5xx = total_requests
+</div>
+<div class="values">
+<span class="flat">9+2+1 = 12</span>
+</div>
+<div class="note">
+the invariant holds
+</div>
+</div>
+</div>
+<h3 id="predicted-vs-actual-1">Predicted vs actual</h3>
+<p>No Test 2 predictions were written in <code>notes.txt</code>. From
+the design:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Expected</th>
+<th>Actual</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active_connections</code> during</td>
+<td>6: 5 <code>/slow</code> + this <code>/stats</code></td>
+<td><strong>6</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td><code>active_connections</code> after</td>
+<td>1: only this <code>/stats</code></td>
+<td><strong>1</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+<tr>
+<td><code>/slow</code>s counted as requests <em>during</em>?</td>
+<td>no: <code>on_response()</code> runs only after the handler’s 5 s
+sleep</td>
+<td><strong>no</strong> (requests 6, see below)</td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="working-out-every-number-1">Working out every number</h3>
+<p>Starting point: the end of Test 1, <strong>same Pulse
+process</strong>. Test 1’s second <code>/stats</code> showed 6
+connections and 5 requests, and then it finished, so it was counted as
+one more request (a 2xx). Going into Test 2: <strong>6 connections, 6
+requests (3 × 2xx, 2 × 4xx, 1 × 5xx), 0 active.</strong></p>
+<p><strong>DURING</strong> (1 s in: all five <code>/slow</code> workers
+asleep in the handler):</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Counter</th>
+<th>Value</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>total_connections</code></td>
+<td><strong>12</strong></td>
+<td>6 before + 5 <code>/slow</code> + this <code>/stats</code></td>
+</tr>
+<tr>
+<td><code>active_connections</code></td>
+<td><strong>6</strong></td>
+<td>5 <code>/slow</code> workers (asleep, not finished) + this
+<code>/stats</code></td>
+</tr>
+<tr>
+<td><code>total_requests</code></td>
+<td><strong>6</strong></td>
+<td>Unchanged from the start of Test 2. The five <code>/slow</code>s are
+still sleeping, so none has reached <code>on_response()</code> yet. This
+<code>/stats</code> isn’t counted yet either</td>
+</tr>
+<tr>
+<td><code>responses_2xx</code></td>
+<td><strong>3</strong></td>
+<td>Test 1’s two 2xx + Test 1’s second <code>/stats</code></td>
+</tr>
+<tr>
+<td><code>4xx</code> / <code>5xx</code></td>
+<td>2 / 1</td>
+<td>Unchanged from Test 1</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>active 6</code> while <code>requests</code> didn’t
+move</strong> is the clearest picture of what the two counters mean.
+“Active” = connections being worked on <em>right now</em>, counted from
+the moment the worker starts. “Requests” = responses <em>produced</em>,
+counted at the very end. During those 5 seconds there are five
+connections in the first state and not yet in the second.</p>
+<p><strong>AFTER</strong> (all five finished):</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Counter</th>
+<th>Value</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>total_connections</code></td>
+<td><strong>13</strong></td>
+<td>+ this new <code>/stats</code></td>
+</tr>
+<tr>
+<td><code>active_connections</code></td>
+<td><strong>1</strong></td>
+<td>Only this <code>/stats</code>. All five <code>/slow</code> workers
+ended, and each guard’s destructor did its −1, as did the “during”
+<code>/stats</code></td>
+</tr>
+<tr>
+<td><code>total_requests</code></td>
+<td><strong>12</strong></td>
+<td>6 + the 5 <code>/slow</code>s + the “during”
+<code>/stats</code></td>
+</tr>
+<tr>
+<td><code>responses_2xx</code></td>
+<td><strong>9</strong></td>
+<td>3 + 5 <code>/slow</code> + 1 “during” <code>/stats</code></td>
+</tr>
+<tr>
+<td><code>4xx</code> / <code>5xx</code></td>
+<td>2 / 1</td>
+<td>Unchanged: no errors in Test 2</td>
+</tr>
+</tbody>
+</table>
+<p>Check: <strong>9 + 2 + 1 = 12 = <code>total_requests</code>.</strong>
+The invariant from the design decisions holds.</p>
+<h3 id="the-bash-lines">The bash lines</h3>
+<p><code>[1] 1150</code> … <code>[5] 1154</code> are bash’s job numbers
+and PIDs for the five background <code>curl</code>s, and
+<code>[1] Done …</code> is bash reporting that job 1 finished (Week 2 /
+Test 3 has the same lines). bash only prints <code>Done</code> lines at
+certain moments, which is why only one appears. <code>wait</code> waited
+for all five, which is why “AFTER” ran only once they’d all
+finished.</p>
+<h3 id="what-this-proves">What this proves</h3>
+<ul>
+<li><strong><code>ActiveConnectionGuard</code> works in both
+directions.</strong> +1 at the start of each worker (active reached 6),
+−1 at the end (back to exactly 1), with no manual
+<code>on_connection_closed()</code> call anywhere.</li>
+<li><strong>The counters distinguish “in progress” from “done”</strong>
+exactly as designed.</li>
+<li><strong>The mutex build’s snapshot adds up</strong>, both during and
+after, even while five other workers were alive.</li>
+</ul>
+<p>This was all at low concurrency (6 threads). Whether these numbers
+stay exact under <strong>20,000 requests from 50 clients at
+once</strong>, without any protection, is Test 3.</p>
+<details>
+<summary>
+Raw output: Test 2
+</summary>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ for i in 1 2 3 4 5; do curl -s -o /dev/null localhost:8080/slow &amp; done
+sleep 1; echo &quot;DURING:&quot;; curl -s localhost:8080/stats
+wait
+echo &quot;AFTER:&quot;;  curl -s localhost:8080/stats
+[1] 1150
+[2] 1151
+[3] 1152
+[4] 1153
+[5] 1154
+DURING:
+stats_mode: mutex
+total_connections: 12
+active_connections: 6
+total_requests: 6
+responses_2xx: 3
+responses_4xx: 2
+responses_5xx: 1
+[1]   Done                       curl -s -o /dev/null localhost:8080/slow
+AFTER:
+stats_mode: mutex
+total_connections: 13
+active_connections: 1
+total_requests: 12
+responses_2xx: 9
+responses_4xx: 2
+responses_5xx: 1</code></pre>
+</details>
+<hr />
+<h1 id="test-3-the-unsafe-counter-under-load">Test 3 — The unsafe
+counter under load</h1>
+<p><strong>Question:</strong> the spec’s Week 3 experiment. With no
+protection, under 20,000 requests from 50 clients at once, does Pulse
+count wrong? The Week 3 doc (Part 3) gave reasons it might <em>look</em>
+right anyway. Write your prediction before running.</p>
+<p>The method: read <code>/stats</code>, send exactly 20,000 requests,
+read <code>/stats</code> again, and check the differences.</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># T1: the UNSAFE build, log thrown away (Week 2 lesson: don&#39;t log to /mnt/c under load)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./build-unsafe/pulse</span> 8080 <span class="op">&gt;</span> /dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># T2</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> localhost:8080/stats<span class="kw">;</span> <span class="bu">echo</span> <span class="st">&quot;-----&quot;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="ex">ab</span> <span class="at">-n</span> 20000 <span class="at">-c</span> 50 http://localhost:8080/hello <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-E</span> <span class="st">&quot;Complete requests|Failed requests&quot;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sleep</span> 0.5<span class="kw">;</span> <span class="bu">echo</span> <span class="st">&quot;-----&quot;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> localhost:8080/stats</span></code></pre></div>
+<p>Then repeat the <code>ab</code> + <code>/stats</code> part
+<strong>two more times</strong> (same Pulse, don’t restart it) and paste
+all three rounds.</p>
+<p><strong>How to check the numbers</strong> (work these out from your
+output):</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Check</th>
+<th>Correct if…</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>total_requests</code> after − before</td>
+<td><strong>20,001</strong></td>
+<td>20,000 from <code>ab</code> + the first <code>/stats</code> call
+(counted only <em>after</em> it responded, so it shows up in the second
+reading)</td>
+</tr>
+<tr>
+<td><code>responses_2xx</code> after − before</td>
+<td><strong>20,001</strong></td>
+<td>Same, since all are 200s</td>
+</tr>
+<tr>
+<td><code>total_requests</code> vs <code>2xx + 4xx + 5xx</code></td>
+<td><strong>equal</strong></td>
+<td>Every counted response lands in exactly one bucket</td>
+</tr>
+<tr>
+<td><code>active_connections</code> after</td>
+<td><strong>exactly 1</strong></td>
+<td>Nothing is running except the <code>/stats</code> request reading
+it</td>
+</tr>
+<tr>
+<td><code>total_connections</code></td>
+<td>≥ the request count. <strong>Not exact</strong></td>
+<td><code>ab</code> with <code>-c 50</code> can open a few extra
+connections at the end that it closes without sending anything. They’re
+real connections, but not requests</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Paste back:</strong> all of T2.</p>
+<h2
+id="result-the-unsafe-build-lost-updates-but-youd-only-notice-if-you-checked-the-right-counter">Result:
+the unsafe build lost updates, but you’d only notice if you checked the
+right counter</h2>
+<div class="tldr">
+<p><b>What I did:</b> unsafe build, three rounds of 20,000 requests from
+50 clients at once, reading <code>/stats</code> before and after each
+round. <br><br> <b>What happened:</b> <code>ab</code> reported 20,000
+complete and <b>0 failed</b> every round. Every client got the right
+answer. But the counters were wrong: <br>• <code>total_requests</code>
+was exactly right in rounds 1 and 3, and <b>off by one</b> in round 2:
+<b>1 lost update in 60,000</b>. <br>• <code>active_connections</code>
+should be <b>1</b> after each round, and was <b>7</b>, then <b>9</b>,
+then <b>15</b>. It climbs further away from the truth every round and
+never recovers. <br><br> <b>The key insight:</b> the Week 3 doc (Part 3)
+predicted the unsafe counter might <i>look</i> right, and for
+<code>total_requests</code> it nearly did (2 of 3 rounds perfect,
+99.998% accurate overall). If that were the only counter checked, the
+bug would have passed the test. <code>active_connections</code> exposed
+it because it gets <b>two</b> updates per connection, from <b>every</b>
+worker, at the busiest moments.</p>
+</div>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+total_requests: lost updates
+</div>
+<div class="values">
+1 <span style="font-size:0.6em">in 60,000</span>
+</div>
+<div class="note">
+rounds 1 and 3 exact, round 2 off by one
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+active_connections after each round
+</div>
+<div class="values">
+<span class="up">7 → 9 → 15</span>
+</div>
+<div class="note">
+should be 1 every time: never recovers
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+ab: failed requests
+</div>
+<div class="values">
+<span class="flat">0</span>
+</div>
+<div class="note">
+clients never noticed anything
+</div>
+</div>
+</div>
+<h3 id="predicted-vs-actual-2">Predicted vs actual</h3>
+<p>The <code>notes.txt</code> lines were left blank. The prediction
+given in chat was that the unsafe counter <strong>would be
+wrong</strong>. The Week 3 doc (Part 3) predicted the opposite risk:
+that it might <em>look</em> right.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Prediction</th>
+<th>Actual</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“It would be wrong” (chat)</td>
+<td>Wrong: 1 lost request count, and <code>active_connections</code> off
+by up to 14</td>
+<td><span class="verdict-right">Right</span></td>
+</tr>
+<tr>
+<td>Doc Part 3: “may well show the right number most of the time”</td>
+<td><code>total_requests</code> <strong>was</strong> right in 2 of 3
+rounds, and off by only 1 in the third</td>
+<td><span class="verdict-right">Right too</span>, for that counter</td>
+</tr>
+<tr>
+<td><code>total_requests</code> +20,001 each round?</td>
+<td>+20,001 / <strong>+20,000</strong> / +20,001</td>
+<td><span class="verdict-wrong">Not every round</span></td>
+</tr>
+<tr>
+<td><code>active_connections</code> exactly 1 afterwards?</td>
+<td>7 / 9 / 15</td>
+<td><span class="verdict-wrong">Never</span></td>
+</tr>
+</tbody>
+</table>
+<p>Both predictions were right: the bug is real, <em>and</em> the most
+obvious counter almost hides it.</p>
+<h3 id="working-out-the-numbers">Working out the numbers</h3>
+<p><strong>Why +20,001 is the right answer for
+<code>total_requests</code>.</strong> Each round reads
+<code>/stats</code>, sends 20,000 requests, then reads
+<code>/stats</code> again. The first <code>/stats</code> is counted as a
+request only <em>after</em> it answers (Test 1’s rule), so it appears in
+the second reading: 20,000 + 1 = <strong>20,001</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Round</th>
+<th><code>total_requests</code> before → after</th>
+<th>Change</th>
+<th>Expected</th>
+<th>Lost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0 → 20,001</td>
+<td>+20,001</td>
+<td>+20,001</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20,002 → 40,002</td>
+<td><strong>+20,000</strong></td>
+<td>+20,001</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>40,003 → 60,004</td>
+<td>+20,001</td>
+<td>+20,001</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>(Between rounds the number also goes up by exactly 1, e.g. 20,001 →
+20,002, because the “after” <code>/stats</code> of one round is counted
+before the “before” <code>/stats</code> of the next.)</p>
+<p><strong>Overall:</strong> 60,000 from <code>ab</code> + 5
+<code>/stats</code> that had finished = 60,005 should have been counted,
+and <strong>60,004</strong> were. One update lost, in round 2.
+<code>responses_2xx</code> lost the same one: it equals
+<code>total_requests</code> in every reading, because
+<code>on_response()</code> increments both, one after the other, and
+both lost an update at the same collision.</p>
+<p><strong>Why 1 is the right answer for
+<code>active_connections</code>.</strong> After <code>ab</code>
+finishes, nothing is connected except the <code>/stats</code> request
+doing the reading. Every connection ever made did exactly one +1 (guard
+constructor) and one −1 (guard destructor), so they should cancel
+out.</p>
+<table>
+<thead>
+<tr>
+<th>Reading</th>
+<th><code>active_connections</code></th>
+<th>Should be</th>
+<th>Off by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>before round 1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>after round 1</td>
+<td><strong>7</strong></td>
+<td>1</td>
+<td>+6</td>
+</tr>
+<tr>
+<td>after round 2</td>
+<td><strong>9</strong></td>
+<td>1</td>
+<td>+8</td>
+</tr>
+<tr>
+<td>after round 3</td>
+<td><strong>15</strong></td>
+<td>1</td>
+<td>+14</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Too high</strong> means more −1s were lost than +1s. In each
+lost update, two workers read the same value, and one write overwrote
+the other. When the overwritten update was a −1, the count is stuck one
+too high, <strong>forever</strong>: nothing ever corrects it. That’s why
+it only ratchets upward from round to round (6, then 2 more, then 6
+more). (Lost +1s happen too, and they’d push it the other way. The
+visible number is the <em>net</em> result.)</p>
+<p><strong>Why <code>active_connections</code> broke much more than
+<code>total_requests</code>:</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th><code>total_requests</code></th>
+<th><code>active_connections</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Updates per connection</td>
+<td>1 (in <code>on_response</code>)</td>
+<td><strong>2</strong> (+1 at start, −1 at end)</td>
+</tr>
+<tr>
+<td>Where</td>
+<td>once, near the end of the request</td>
+<td>at the <strong>first</strong> and <strong>last</strong> moment of
+every worker. With 50 clients and thread-per-connection, those are
+exactly the moments when many threads are starting and ending at
+once</td>
+</tr>
+<tr>
+<td>Lost in 60,000 connections</td>
+<td>1</td>
+<td>at least 14 (net)</td>
+</tr>
+</tbody>
+</table>
+<p>More updates on the same variable, packed into the same moments,
+means more chances for two threads to land in the same three
+instructions (Week 3 doc, Part 2: <code>mov</code> / <code>add</code> /
+<code>mov</code>).</p>
+<p><strong><code>total_connections</code> can’t be checked
+exactly</strong> (as the test plan said): <code>ab -c 50</code> opens a
+few extra connections that it closes without sending a request. Readings
+of 20,027 / 40,037 / 60,083 are a little above the request count, as
+expected. That’s <code>ab</code>’s doing, not a counting error, and Test
+4 will show a similar excess on the safe builds.</p>
+<h3 id="what-this-means">What this means</h3>
+<ol type="1">
+<li><strong>The data race is real in Pulse, under realistic
+load.</strong> Not just in a microbenchmark.</li>
+<li><strong>It was almost invisible.</strong> <code>ab</code>: 0 failed.
+<code>total_requests</code>: 99.998% right, and exactly right in two of
+three runs. A quick “does the count match?” test could easily pass. The
+Week 3 doc (Part 3) warned about exactly this: <em>“works in testing” is
+not “correct”</em>.</li>
+<li><strong>Wrong counters stay wrong.</strong>
+<code>active_connections</code> drifts and never comes back. A server
+using it to decide “am I overloaded?” (Week 4’s question) would believe
+it had 14 extra connections that don’t exist, and the error keeps
+growing the longer it runs.</li>
+<li><strong>Clients never noticed.</strong> The race corrupted only
+Pulse’s own bookkeeping. Every response was correct. That’s what makes
+this class of bug dangerous: nothing fails visibly.</li>
+</ol>
+<p>Test 4 runs the same load on the mutex and atomic builds, where the
+expectation is +20,001 every round and active exactly 1. Test 5 asks
+ThreadSanitizer to find the race directly, instead of hoping it shows up
+in the numbers.</p>
+<details>
+<summary>
+Raw output: Test 3 (unsafe build)
+</summary>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ curl -s localhost:8080/stats; echo &quot;-----&quot;
+ab -n 20000 -c 50 http://localhost:8080/hello 2&gt;&amp;1 | grep -E &quot;Complete requests|Failed requests&quot;
+sleep 0.5; echo &quot;-----&quot;
+curl -s localhost:8080/stats
+stats_mode: unsafe
+total_connections: 1
+active_connections: 1
+total_requests: 0
+responses_2xx: 0
+responses_4xx: 0
+responses_5xx: 0
+-----
+Complete requests:      20000
+Failed requests:        0
+-----
+stats_mode: unsafe
+total_connections: 20027
+active_connections: 7
+total_requests: 20001
+responses_2xx: 20001
+responses_4xx: 0
+responses_5xx: 0
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ curl -s localhost:8080/stats; echo &quot;-----&quot;
+ab -n 20000 -c 50 http://localhost:8080/hello 2&gt;&amp;1 | grep -E &quot;Complete requests|Failed requests&quot;
+sleep 0.5; echo &quot;-----&quot;
+curl -s localhost:8080/stats
+stats_mode: unsafe
+total_connections: 20028
+active_connections: 7
+total_requests: 20002
+responses_2xx: 20002
+responses_4xx: 0
+responses_5xx: 0
+-----
+Complete requests:      20000
+Failed requests:        0
+-----
+stats_mode: unsafe
+total_connections: 40037
+active_connections: 9
+total_requests: 40002
+responses_2xx: 40002
+responses_4xx: 0
+responses_5xx: 0
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ curl -s localhost:8080/stats; echo &quot;-----&quot;
+ab -n 20000 -c 50 http://localhost:8080/hello 2&gt;&amp;1 | grep -E &quot;Complete requests|Failed requests&quot;
+sleep 0.5; echo &quot;-----&quot;
+curl -s localhost:8080/stats
+stats_mode: unsafe
+total_connections: 40038
+active_connections: 9
+total_requests: 40003
+responses_2xx: 40003
+responses_4xx: 0
+responses_5xx: 0
+-----
+Complete requests:      20000
+Failed requests:        0
+-----
+stats_mode: unsafe
+total_connections: 60083
+active_connections: 15
+total_requests: 60004
+responses_2xx: 60004
+responses_4xx: 0
+responses_5xx: 0</code></pre>
+</details>
+<hr />
+<h1 id="test-4-the-same-load-on-the-mutex-and-atomic-builds">Test 4 —
+The same load on the mutex and atomic builds</h1>
+<p>Exactly Test 3’s commands, once with
+<code>./build-mutex/pulse 8080 &gt; /dev/null 2&gt;&amp;1</code> in T1
+and once with
+<code>./build-atomic/pulse 8080 &gt; /dev/null 2&gt;&amp;1</code>. Run
+three <code>ab</code> rounds each, and apply the same checks.</p>
+<p><strong>Paste back:</strong> T2 for both builds.</p>
+<h2 id="result-mutex-and-atomic-both-count-exactly">Result: mutex and
+atomic both count exactly</h2>
+<div class="tldr">
+<p><b>What I did:</b> one round of Test 3’s load (20,000 requests, 50 at
+a time) on each safe build. <br><br> <b>What happened:</b> both builds
+showed <code>total_requests</code> <b>+20,001 exactly</b> and
+<code>active_connections</code> back to <b>exactly 1</b>. The two
+counters the unsafe build got wrong are now right.
+<code>total_connections</code> was a little above 20,001 (20,005 and
+20,024). That isn’t a counting error: it’s <code>ab</code> opening a few
+connections it never uses, measured and explained below.</p>
+</div>
+<h3 id="unsafe-vs-mutex-vs-atomic-side-by-side">Unsafe vs mutex vs
+atomic, side by side</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Unsafe (Test 3, round 1)</th>
+<th><strong>Mutex</strong></th>
+<th><strong>Atomic</strong></th>
+<th>Correct value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>total_requests</code> change</td>
+<td>+20,001 (round 2: <strong>+20,000</strong>)</td>
+<td><strong>+20,001</strong></td>
+<td><strong>+20,001</strong></td>
+<td>+20,001</td>
+</tr>
+<tr>
+<td><code>responses_2xx</code></td>
+<td>20,001 (round 2: lost 1)</td>
+<td><strong>20,001</strong></td>
+<td><strong>20,001</strong></td>
+<td>20,001</td>
+</tr>
+<tr>
+<td><code>active_connections</code> after</td>
+<td><strong>7</strong> (then 9, then 15)</td>
+<td><strong>1</strong></td>
+<td><strong>1</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>ab</code> failed</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>total_connections</code></td>
+<td>20,027</td>
+<td>20,005</td>
+<td>20,024</td>
+<td>≥ 20,001 (not exact, below)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="predicted-vs-actual-3">Predicted vs actual</h3>
+<p>No Test 4 predictions were written in <code>notes.txt</code>.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Expected</th>
+<th>Actual</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exact every round?</td>
+<td>yes, for both</td>
+<td>+20,001 and active = 1 on both</td>
+<td><span class="verdict-right">As expected</span> (one round each
+instead of the planned three. With the unsafe build, round 1 already
+showed active off by 6, so one round was enough to see the
+difference)</td>
+</tr>
+<tr>
+<td>Any difference between mutex and atomic?</td>
+<td>not in correctness</td>
+<td>none in the counts. The <code>total_connections</code> difference
+(20,005 vs 20,024) is from <code>ab</code>, not the build (below)</td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why both are right:</strong> in the mutex build, the
+read-add-write of each counter happens while holding the stats mutex, so
+no other worker can be inside it at the same time. In the atomic build,
+each <code>++</code> / <code>--</code> is one <code>lock add</code> /
+<code>lock sub</code> instruction that no other core can interrupt (Week
+3 doc, Parts 6 and 7). Either way, Part 2’s lost update is impossible:
+no two workers can both read 41 and both write 42.</p>
+<h2 id="why-total_connections-is-more-than-20001">Why
+<code>total_connections</code> is more than 20,001</h2>
+<p><code>total_requests</code> is exact, so where do the extra
+connections come from? (20,005 − 20,001 = <strong>4</strong> extra on
+the mutex run, 20,024 − 20,001 = <strong>23</strong> on the atomic run,
+and 26 on Test 3’s first unsafe round.)</p>
+<p><strong>Measured, not guessed.</strong> The same
+<code>ab -n 20000</code> was run against the mutex build at three
+different concurrency levels, with Pulse’s log saved to
+<code>/tmp</code>. Pulse logs every accepted connection
+(<code>Client connected</code>), every parsed request
+(<code>Parsed</code>), and every connection that closes before sending a
+complete request
+(<code>Client disconnected before completing a request (N bytes …)</code>):</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th><code>ab -c</code></th>
+<th><code>Client connected</code></th>
+<th><code>Parsed</code></th>
+<th><code>disconnected before completing</code></th>
+<th>bytes those sent</th>
+<th><code>/stats</code> total_connections</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>20,001</td>
+<td>20,001</td>
+<td><strong>0</strong></td>
+<td></td>
+<td>20,001</td>
+</tr>
+<tr>
+<td>10</td>
+<td>20,007</td>
+<td>20,001</td>
+<td><strong>6</strong></td>
+<td><strong>0</strong> each</td>
+<td>20,007</td>
+</tr>
+<tr>
+<td>50</td>
+<td>20,024</td>
+<td>20,001</td>
+<td><strong>23</strong></td>
+<td><strong>0</strong> each</td>
+<td>20,024</td>
+</tr>
+</tbody>
+</table>
+<p>(<code>Parsed</code> = 20,000 from <code>ab</code> + 1
+<code>/stats</code>.)</p>
+<p>So:</p>
+<ol type="1">
+<li><strong>Every extra connection is one that connected, sent 0 bytes,
+and closed.</strong> Connected + extra exactly accounts for every
+connection. Nothing is miscounted.</li>
+<li><strong>They come from <code>ab</code>, and grow with
+concurrency:</strong> none at <code>-c 1</code>, 6 at
+<code>-c 10</code>, 23 at <code>-c 50</code>. <code>ab</code> keeps
+<code>-c</code> connections busy at all times. Towards the end of the
+run, it has already opened connections for requests it will turn out not
+to need: once the last of the 20,000 responses arrives, it stops and
+closes the connections it opened but never sent anything on. With
+<code>-c 1</code> there’s never a spare connection, so there’s no
+excess. The exact count varies from run to run (4 one time, 23 another
+at the same <code>-c 50</code>), because it depends on timing at the
+very end.</li>
+<li><strong>Pulse handled them correctly, by design.</strong> Each one
+got a worker, whose <code>read()</code> returned 0 (client closed) → log
+<code>Client disconnected before completing a request (0 bytes received so far)</code>
+→ <code>return</code> without a response. So each one is counted as a
+<strong>connection</strong> (the guard ran) but <strong>not a
+request</strong> (<code>on_response()</code> never ran). That’s exactly
+the rule from the design decisions: <em>“a client that disconnects
+before sending a complete request is a connection but not a
+request.”</em> <code>active_connections</code> still returned to 1,
+because their guards’ destructors ran too.</li>
+</ol>
+<p><strong>Takeaway:</strong> <code>total_connections</code> counts
+<em>TCP connections</em>, <code>total_requests</code> counts <em>HTTP
+requests answered</em>. Under a load-testing tool, the first can
+legitimately be a bit higher than the second. That’s why Test 3 checks
+<code>total_requests</code> and <code>active_connections</code> exactly,
+and treats <code>total_connections</code> only as “≥”.</p>
+<details>
+<summary>
+Raw output: Test 4 (mutex and atomic builds)
+</summary>
+<p><strong>Mutex build</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ curl -s localhost:8080/stats; echo &quot;-----&quot;
+ab -n 20000 -c 50 http://localhost:8080/hello 2&gt;&amp;1 | grep -E &quot;Complete requests|Failed requests&quot;
+sleep 0.5; echo &quot;-----&quot;
+curl -s localhost:8080/stats
+stats_mode: mutex
+total_connections: 1
+active_connections: 1
+total_requests: 0
+responses_2xx: 0
+responses_4xx: 0
+responses_5xx: 0
+-----
+Complete requests:      20000
+Failed requests:        0
+-----
+stats_mode: mutex
+total_connections: 20005
+active_connections: 1
+total_requests: 20001
+responses_2xx: 20001
+responses_4xx: 0
+responses_5xx: 0</code></pre>
+<p><strong>Atomic build</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ curl -s localhost:8080/stats; echo &quot;-----&quot;
+ab -n 20000 -c 50 http://localhost:8080/hello 2&gt;&amp;1 | grep -E &quot;Complete requests|Failed requests&quot;
+sleep 0.5; echo &quot;-----&quot;
+curl -s localhost:8080/stats
+stats_mode: atomic
+total_connections: 1
+active_connections: 1
+total_requests: 0
+responses_2xx: 0
+responses_4xx: 0
+responses_5xx: 0
+-----
+Complete requests:      20000
+Failed requests:        0
+-----
+stats_mode: atomic
+total_connections: 20024
+active_connections: 1
+total_requests: 20001
+responses_2xx: 20001
+responses_4xx: 0
+responses_5xx: 0</code></pre>
+<p><strong>The extra-connections measurement</strong> (run during this
+write-up: mutex build, <code>stdbuf -oL</code> log to <code>/tmp</code>,
+<code>ab -n 20000</code> at each concurrency):</p>
+<pre><code>Complete requests: 20000 Failed requests: 0
+  -c 1: connected=20001  parsed=20001  disconnected_before_request=0
+  stats_mode: mutex total_connections: 20001 active_connections: 1 total_requests: 20000 responses_2xx: 20000 responses_4xx: 0 responses_5xx: 0
+Complete requests: 20000 Failed requests: 0
+  -c 10: connected=20007  parsed=20001  disconnected_before_request=6
+  bytes received by those:       6 (0
+  stats_mode: mutex total_connections: 20007 active_connections: 1 total_requests: 20000 responses_2xx: 20000 responses_4xx: 0 responses_5xx: 0
+Complete requests: 20000 Failed requests: 0
+  -c 50: connected=20024  parsed=20001  disconnected_before_request=23
+  bytes received by those:      23 (0
+  stats_mode: mutex total_connections: 20024 active_connections: 1 total_requests: 20000 responses_2xx: 20000 responses_4xx: 0 responses_5xx: 0</code></pre>
+<p>(Here <code>/stats</code> was read <em>once</em>, after the run, so
+it isn’t counted in its own reading: <code>total_requests</code> =
+20,000, while <code>parsed</code> = 20,001 includes that
+<code>/stats</code> request.)</p>
+</details>
+<hr />
+<h1 id="test-5-threadsanitizer-on-all-three-builds">Test 5 —
+ThreadSanitizer on all three builds</h1>
+<p><strong>Question:</strong> Week 3 doc Part 5. Does TSan find the race
+in the unsafe build, and stay silent on the other two?</p>
+<p>Build three TSan versions (slower to build and run, used only for
+finding races):</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">-S</span> . <span class="at">-B</span> build-tsan-unsafe <span class="at">-DPULSE_STATS_MODE</span><span class="op">=</span>unsafe <span class="at">-DCMAKE_CXX_FLAGS</span><span class="op">=</span><span class="st">&quot;-fsanitize=thread -g&quot;</span> <span class="kw">&amp;&amp;</span> <span class="fu">cmake</span> <span class="at">--build</span> build-tsan-unsafe</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">-S</span> . <span class="at">-B</span> build-tsan-mutex  <span class="at">-DPULSE_STATS_MODE</span><span class="op">=</span>mutex  <span class="at">-DCMAKE_CXX_FLAGS</span><span class="op">=</span><span class="st">&quot;-fsanitize=thread -g&quot;</span> <span class="kw">&amp;&amp;</span> <span class="fu">cmake</span> <span class="at">--build</span> build-tsan-mutex</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cmake</span> <span class="at">-S</span> . <span class="at">-B</span> build-tsan-atomic <span class="at">-DPULSE_STATS_MODE</span><span class="op">=</span>atomic <span class="at">-DCMAKE_CXX_FLAGS</span><span class="op">=</span><span class="st">&quot;-fsanitize=thread -g&quot;</span> <span class="kw">&amp;&amp;</span> <span class="fu">cmake</span> <span class="at">--build</span> build-tsan-atomic</span></code></pre></div>
+<p>For <strong>each</strong> of the three (shown for unsafe; swap the
+folder name for the other two):</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># T1: TSan writes its reports to stderr, so send stderr to a file. Use /tmp, not /mnt/c</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./build-tsan-unsafe/pulse</span> 8080 <span class="dv">2</span><span class="op">&gt;</span> /tmp/tsan-unsafe.log</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># T2</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ab</span> <span class="at">-n</span> 300 <span class="at">-c</span> 10 http://localhost:8080/hello <span class="op">&gt;</span> /dev/null</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> localhost:8080/stats<span class="kw">;</span> <span class="bu">echo</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># then Ctrl+C Pulse in T1, and:</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">&quot;WARNING: ThreadSanitizer: data race&quot;</span> /tmp/tsan-unsafe.log</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-m1</span> <span class="at">-A12</span> <span class="st">&quot;WARNING: ThreadSanitizer&quot;</span> /tmp/tsan-unsafe.log</span></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>New piece</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2&gt; /tmp/tsan-unsafe.log</code></td>
+<td>Send <strong>stderr</strong> (stream 2) to a file. stdout still goes
+to the terminal</td>
+</tr>
+<tr>
+<td><code>grep -c</code></td>
+<td><strong>c</strong>ount matching lines: here, how many separate race
+reports</td>
+</tr>
+<tr>
+<td><code>grep -m1 -A12</code></td>
+<td>Show the <strong>first</strong> match (<code>-m1</code>) plus the 12
+lines <strong>a</strong>fter it: the first full report</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Paste back:</strong> for each build, the count and the first
+report (if any).</p>
+<h2
+id="result-run-by-claude-not-by-hand-tsan-names-every-racing-line-in-unsafe-and-finds-nothing-in-mutex-or-atomic">Result
+(run by Claude, not by hand): TSan names every racing line in unsafe,
+and finds nothing in mutex or atomic</h2>
+<p>This test was run by Claude using the commands above
+(<code>ab -n 300 -c 10</code>), as a check rather than a hands-on
+exercise. Raw output is at the bottom.</p>
+<div class="tldr">
+<p><b>What happened:</b> the unsafe build got <b>10 data-race
+reports</b>, pointing at <b>exactly the five lines</b> in
+<code>server_stats.cpp</code> that write the counters without
+protection. The mutex and atomic builds got <b>0</b>. <br><br>
+<b>Bonus:</b> even with only 300 requests, the unsafe TSan build’s own
+<code>/stats</code> came out wrong on both runs, including one where
+<code>active_connections</code> read <b>18,446,744,073,709,551,615</b>:
+the counter went below zero.</p>
+</div>
+<div class="stat-row">
+<div class="stat-card">
+<div class="label">
+Data race reports
+</div>
+<div class="values">
+<span class="up">10</span> / <span class="flat">0</span> / <span
+class="flat">0</span>
+</div>
+<div class="note">
+unsafe / mutex / atomic
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+Racing lines found (unsafe)
+</div>
+<div class="values">
+5 of 5
+</div>
+<div class="note">
+every counter write in server_stats.cpp
+</div>
+</div>
+<div class="stat-card">
+<div class="label">
+Requests needed
+</div>
+<div class="values">
+300
+</div>
+<div class="note">
+vs 60,000 to see 1 lost update in Test 3
+</div>
+</div>
+</div>
+<h3 id="every-report-by-line">Every report, by line</h3>
+<p>TSan prints a one-line <code>SUMMARY</code> at the end of each
+report. All 10:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Reports</th>
+<th><code>server_stats.cpp</code> line</th>
+<th>The code</th>
+<th>Called from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td><strong>34</strong></td>
+<td><code>total_connections_++;</code></td>
+<td><code>on_connection_opened()</code>, i.e. the guard’s
+constructor</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>35</strong></td>
+<td><code>active_connections_++;</code></td>
+<td><code>on_connection_opened()</code>, i.e. the guard’s
+constructor</td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>40</strong></td>
+<td><code>active_connections_--;</code></td>
+<td><code>on_connection_closed()</code>, i.e. the guard’s
+destructor</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>45</strong></td>
+<td><code>total_requests_++;</code></td>
+<td><code>on_response()</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>46</strong></td>
+<td><code>... responses_2xx_++;</code></td>
+<td><code>on_response()</code></td>
+</tr>
+</tbody>
+</table>
+<p>That is <strong>every</strong> line in the unsafe block that writes a
+counter that was exercised (4xx/5xx weren’t, since all 300 requests were
+200s). TSan didn’t need a lost update to happen to report these. It saw
+two threads touching the same memory with nothing ordering them. Compare
+Test 3, which needed 60,000 requests to show one lost
+<code>total_requests</code> update.</p>
+<h3 id="reading-the-first-full-report">Reading the first full
+report</h3>
+<pre><code>WARNING: ThreadSanitizer: data race (pid=163251)
+  Read of size 8 at 0x7fffffffe198 by thread T2:
+    #0 ServerStats::on_connection_opened() src/server_stats.cpp:35
+    #1 ActiveConnectionGuard::ActiveConnectionGuard(ServerStats&amp;) include/server_stats.hpp:159
+    #2 TcpServer::serve_connection(Socket) const src/tcp_server.cpp:296
+    ...  (std::thread&#39;s internals, down to where the thread started)
+  Previous write of size 8 at 0x7fffffffe198 by thread T1:
+    #0 ServerStats::on_connection_closed() src/server_stats.cpp:40
+    #1 ActiveConnectionGuard::~ActiveConnectionGuard() include/server_stats.hpp:160
+    #2 TcpServer::serve_connection(Socket) const src/tcp_server.cpp:314
+    ...
+  Location is stack of main thread.</code></pre>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Line</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Read of size 8 … by thread T2</code></td>
+<td>Worker T2 <strong>read</strong> 8 bytes, one <code>uint64_t</code>,
+at address <code>0x7fffffffe198</code>: the “read” step of
+<code>active_connections_++</code></td>
+</tr>
+<tr>
+<td><code>#0 … server_stats.cpp:35</code> →
+<code>#1 … server_stats.hpp:159</code> →
+<code>#2 … tcp_server.cpp:296</code></td>
+<td><strong>How it got there</strong>, newest call first:
+<code>serve_connection()</code> line 296 created the guard, the guard’s
+constructor (line 159) called <code>on_connection_opened()</code>, which
+ran <code>active_connections_++</code> (line 35). This is the “hidden”
+call explained earlier: TSan shows it explicitly</td>
+</tr>
+<tr>
+<td><code>Previous write of size 8 at 0x7fffffffe198 by thread T1</code></td>
+<td>A <strong>different</strong> worker, T1, had
+<strong>written</strong> the <strong>same address</strong>: the
+<code>active_connections_--</code></td>
+</tr>
+<tr>
+<td><code>#0 … :40</code> → <code>#1 … :160</code> →
+<code>#2 … tcp_server.cpp:314</code></td>
+<td>T1’s path: the closing <code>}</code> of
+<code>serve_connection()</code> (line 314) ran the guard’s
+<strong>destructor</strong> (line 160), which called
+<code>on_connection_closed()</code> (line 40). TSan even shows the
+destructor running at the closing brace, where no code is written</td>
+</tr>
+<tr>
+<td><code>Location is stack of main thread</code></td>
+<td>Where that memory lives: <strong>the main thread’s stack</strong>.
+That’s <code>ServerStats stats;</code> in <code>main()</code> (Week 3
+doc Part 8 / Week 2 doc Part 5: shared objects living in
+<code>main()</code>’s stack frame, reached by every worker through a
+reference). Same address in both accesses = same counter</td>
+</tr>
+</tbody>
+</table>
+<p><strong>In one sentence:</strong> one worker starting
+(<code>++</code>) and another finishing (<code>--</code>) touched
+<code>active_connections</code> at the same time with no lock, which is
+exactly the counter Test 3 caught drifting to 7, 9, 15.</p>
+<h3 id="the-unsafe-tsan-builds-own-numbers-were-wrong-too">The unsafe
+TSan build’s own numbers were wrong too</h3>
+<p>Running under TSan slows every memory access down, which changes the
+timing and makes threads overlap more. Even at 300 requests,
+<code>/stats</code> came out wrong on <strong>both</strong> runs of the
+unsafe TSan build:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Run 1 (first attempt)</th>
+<th>Run 2</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active_connections</code></td>
+<td><strong>18446744073709551615</strong></td>
+<td><strong>4</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>total_requests</code></td>
+<td>300</td>
+<td><strong>299</strong></td>
+<td>300</td>
+</tr>
+<tr>
+<td><code>responses_2xx</code></td>
+<td><strong>299</strong></td>
+<td>300</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>18446744073709551615</code> is 2⁶⁴ − 1</strong>, the
+largest number a <code>uint64_t</code> can hold.
+<code>active_connections</code> went <strong>below zero</strong>: a lost
+<code>+1</code> followed by both <code>−1</code>s took it from 0 to
+“−1”, and an unsigned integer can’t be negative, so it <strong>wraps
+around</strong> to its maximum. That’s exactly the failure the comment
+in <code>server_stats.cpp</code>’s unsafe block warned about. A server
+checking “am I overloaded?” would think it had 18 quintillion
+connections.</li>
+<li><strong><code>responses_2xx</code> ≠
+<code>total_requests</code></strong>, in both directions. Both are
+incremented one line apart in <code>on_response()</code>, so a lost
+update in one but not the other breaks the “they always add up”
+invariant. In run 2, <code>2xx</code> (300) is even <strong>greater
+than</strong> <code>total_requests</code> (299), which a correct program
+can never produce.</li>
+</ul>
+<p>The mutex and atomic TSan builds both read
+<code>active 1, requests 300, 2xx 300</code>: exact.</p>
+<p>(Run 1 is from a first attempt that stalled: the test script couldn’t
+stop the server, because <code>kill -INT</code> is ignored by programs
+started in the background of a script. Only its <code>/stats</code>
+reading is used here. Run 2 used <code>kill -TERM</code> and is the full
+run below. In your own terminal, Ctrl+C works as normal.)</p>
+<h3 id="why-this-test-matters-even-if-its-just-a-check">Why this test
+matters, even if it’s just a check</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Way of finding the bug</th>
+<th>What it needed</th>
+<th>What it told us</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Watching the numbers (Test 3)</td>
+<td>60,000 requests, and checking the <em>right</em> counter</td>
+<td><em>that</em> something is wrong</td>
+</tr>
+<tr>
+<td>ThreadSanitizer (this test)</td>
+<td>300 requests</td>
+<td><em>exactly which lines</em>, <em>which threads</em>, <em>which
+variable</em>, <em>where it lives in memory</em></td>
+</tr>
+</tbody>
+</table>
+<p>And a clean TSan run (mutex, atomic) is the evidence that the fix
+covers <strong>every</strong> access, not just the ones a particular
+load test happened to collide on.</p>
+<details>
+<summary>
+Raw output: Test 5 (run by Claude)
+</summary>
+<pre><code>built build-tsan-unsafe
+built build-tsan-mutex
+built build-tsan-atomic
+################ unsafe
+Complete requests:      300
+Failed requests:        0
+stats_mode: unsafe
+total_connections: 301
+active_connections: 4
+total_requests: 299
+responses_2xx: 300
+responses_4xx: 0
+responses_5xx: 0
+data race warnings: 10
+---- first full report:
+WARNING: ThreadSanitizer: data race (pid=163251)
+  Read of size 8 at 0x7fffffffe198 by thread T2:
+    #0 ServerStats::on_connection_opened() src/server_stats.cpp:35 (pulse+0x1e708)
+    #1 ActiveConnectionGuard::ActiveConnectionGuard(ServerStats&amp;) include/server_stats.hpp:159 (pulse+0xfade)
+    #2 TcpServer::serve_connection(Socket) const src/tcp_server.cpp:296 (pulse+0xe7f4)
+    #3 void std::__invoke_impl&lt;void, void (TcpServer::*)(Socket) const, TcpServer*, Socket&gt;(std::__invoke_memfun_deref, void (TcpServer::*&amp;&amp;)(Socket) const, TcpServer*&amp;&amp;, Socket&amp;&amp;) /usr/include/c++/15/bits/invoke.h:76 (pulse+0x127d2)
+    #4 std::__invoke_result&lt;void (TcpServer::*)(Socket) const, TcpServer*, Socket&gt;::type std::__invoke&lt;void (TcpServer::*)(Socket) const, TcpServer*, Socket&gt;(void (TcpServer::*&amp;&amp;)(Socket) const, TcpServer*&amp;&amp;, Socket&amp;&amp;) /usr/include/c++/15/bits/invoke.h:98 (pulse+0x1262e)
+    #5 void std::thread::_Invoker&lt;std::tuple&lt;void (TcpServer::*)(Socket) const, TcpServer*, Socket&gt; &gt;::_M_invoke&lt;0ul, 1ul, 2ul&gt;(std::_Index_tuple&lt;0ul, 1ul, 2ul&gt;) /usr/include/c++/15/bits/std_thread.h:303 (pulse+0x124f2)
+    #6 std::thread::_Invoker&lt;std::tuple&lt;void (TcpServer::*)(Socket) const, TcpServer*, Socket&gt; &gt;::operator()() /usr/include/c++/15/bits/std_thread.h:310 (pulse+0x1245e)
+    #7 std::thread::_State_impl&lt;std::thread::_Invoker&lt;std::tuple&lt;void (TcpServer::*)(Socket) const, TcpServer*, Socket&gt; &gt; &gt;::_M_run() /usr/include/c++/15/bits/std_thread.h:255 (pulse+0x12410)
+    #8 &lt;null&gt; &lt;null&gt; (libstdc++.so.6+0xf5ef8)
+  Previous write of size 8 at 0x7fffffffe198 by thread T1:
+    #0 ServerStats::on_connection_closed() src/server_stats.cpp:40 (pulse+0x1e782)
+    #1 ActiveConnectionGuard::~ActiveConnectionGuard() include/server_stats.hpp:160 (pulse+0xfb3a)
+    #2 TcpServer::serve_connection(Socket) const src/tcp_server.cpp:314 (pulse+0xe852)
+    #3 ... (same std::thread frames as above)
+  Location is stack of main thread.
+SUMMARY lines (count, then line):
+      2 SUMMARY: ThreadSanitizer: data race src/server_stats.cpp:34 in ServerStats::on_connection_opened()
+      3 SUMMARY: ThreadSanitizer: data race src/server_stats.cpp:35 in ServerStats::on_connection_opened()
+      1 SUMMARY: ThreadSanitizer: data race src/server_stats.cpp:40 in ServerStats::on_connection_closed()
+      2 SUMMARY: ThreadSanitizer: data race src/server_stats.cpp:45 in ServerStats::on_response(int)
+      2 SUMMARY: ThreadSanitizer: data race src/server_stats.cpp:46 in ServerStats::on_response(int)
+################ mutex
+Complete requests:      300
+Failed requests:        0
+stats_mode: mutex
+total_connections: 301
+active_connections: 1
+total_requests: 300
+responses_2xx: 300
+responses_4xx: 0
+responses_5xx: 0
+data race warnings: 0
+################ atomic
+Complete requests:      300
+Failed requests:        0
+stats_mode: atomic
+total_connections: 301
+active_connections: 1
+total_requests: 300
+responses_2xx: 300
+responses_4xx: 0
+responses_5xx: 0
+data race warnings: 0</code></pre>
+<p>Run 1’s unsafe <code>/stats</code> (first attempt, which stalled at
+shutdown):</p>
+<pre><code>stats_mode: unsafe
+total_connections: 301
+active_connections: 18446744073709551615
+total_requests: 300
+responses_2xx: 299
+responses_4xx: 0
+responses_5xx: 0</code></pre>
+<p>(Paths shortened to <code>src/…</code>. The <code>(BuildId: …)</code>
+suffixes on each frame are removed for readability.)</p>
+</details>
+<hr />
+<h1 id="test-6-scrambled-log-lines-gone">Test 6 — Scrambled log lines:
+gone?</h1>
+<p><strong>Question:</strong> Week 2 / Test 6 sometimes had lines from
+two threads mixed into one. With <code>log_line()</code>, can that still
+happen?</p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># T1: the mutex build, log to /tmp, line-buffered (both Week 2 lessons)</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stdbuf</span> <span class="at">-oL</span> ./build-mutex/pulse 8080 <span class="op">&gt;</span> /tmp/pulse3.log <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># T2</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ab</span> <span class="at">-n</span> 5000 <span class="at">-c</span> 20 http://localhost:8080/hello <span class="op">&gt;</span> /dev/null</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Parsed lines:          </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-o</span> Parsed /tmp/pulse3.log <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span><span class="va">)</span><span class="st">&quot;</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;lines with 2+ TIDs:    </span><span class="va">$(</span><span class="fu">grep</span> <span class="at">-c</span> <span class="st">&#39;TID.*TID&#39;</span> /tmp/pulse3.log<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
+<p><strong>Paste back:</strong> T2.</p>
+<h2 id="where-the-log-went">Where the log went</h2>
+<p>T1’s command ends in <code>&gt; /tmp/pulse3.log 2&gt;&amp;1</code>,
+so <strong>nothing appears in T1</strong>: everything Pulse prints goes
+into the file <code>/tmp/pulse3.log</code> instead of the screen.
+<code>/tmp</code> is inside WSL’s own Linux filesystem,
+<strong>not</strong> in the Windows Pulse folder, so it doesn’t show up
+in VS Code’s file list. That’s deliberate: Week 2 / Test 6 measured that
+logging to the Windows drive (<code>/mnt/c</code>) cuts throughput
+~3.5×. To look at it from WSL:</p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> /tmp/pulse3.log          <span class="co"># is it there, and how big?</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> /tmp/pulse3.log           <span class="co"># first 10 lines</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span> /tmp/pulse3.log           <span class="co"># last 10 lines</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> /tmp/pulse3.log           <span class="co"># scroll through it (q to quit)</span></span></code></pre></div>
+<p>(Windows can also open it at
+<code>\\wsl$\Ubuntu\tmp\pulse3.log</code>.)</p>
+<h2 id="result-zero-scrambled-lines-in-5000-requests">Result: zero
+scrambled lines in 5,000 requests</h2>
+<p>The T2 output wasn’t pasted, so the log file itself was analysed
+afterwards (it was still in <code>/tmp</code>, with Pulse still
+running).</p>
+<div class="tldr">
+<p><b>What happened:</b> <b>5,000</b> requests, <b>5,000</b>
+<code>Parsed</code> lines, <b>0</b> lines containing two threads’
+output, and <b>0</b> lines that aren’t a complete, well-formed log line.
+Every one of the 10,017 lines is whole. <br><br> <b>Compared with Week
+2:</b> the same kind of test produced a line like <code>[TID [TID
+549548] Parsed (] Parsed (87 bytes total): 87 bytes total)…</code>. With
+<code>log_line()</code> building each line privately and writing it
+under the log mutex, a line can no longer be split.</p>
+</div>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Check on <code>/tmp/pulse3.log</code></th>
+<th>Result</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Parsed</code> occurrences</td>
+<td><strong>5,000</strong></td>
+<td>one per request: every line made it into the file
+(<code>stdbuf -oL</code>, Week 2’s lesson)</td>
+</tr>
+<tr>
+<td>lines with 2+ <code>TID</code> tags</td>
+<td><strong>0</strong></td>
+<td>no worker’s line was mixed with another’s</td>
+</tr>
+<tr>
+<td>lines with 2+ <code>Client connected</code></td>
+<td><strong>0</strong></td>
+<td>no main-thread line was mixed either</td>
+</tr>
+<tr>
+<td>lines <strong>not</strong> matching any known complete format</td>
+<td><strong>0</strong></td>
+<td>the strictest check: every line is exactly one of
+<code>Pulse listening…</code>, <code>Client connected: IP:port</code>,
+or <code>[TID n] Parsed / Client disconnected / …</code>, start to
+end</td>
+</tr>
+<tr>
+<td><code>Client connected</code> lines</td>
+<td>5,008</td>
+<td>5,000 requests + <strong>8</strong> of <code>ab</code>’s unused
+extra connections (Test 4’s finding, at <code>-c 20</code>)</td>
+</tr>
+<tr>
+<td><code>Client disconnected before completing a request (0 bytes …)</code></td>
+<td><strong>8</strong></td>
+<td>exactly those 8 extras, which are the <strong>last lines in the
+file</strong>, closed by <code>ab</code> after the final response</td>
+</tr>
+</tbody>
+</table>
+<h3 id="predicted-vs-actual-4">Predicted vs actual</h3>
+<p>The <code>notes.txt</code> line was left blank. The design (Week 3
+doc Part 9, <code>logger.hpp</code>) predicts 0.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Expected</th>
+<th>Actual</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lines with 2+ TIDs</td>
+<td>0</td>
+<td><strong>0</strong></td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="why-0-means-more-here-than-week-2s-0">Why “0” means more here
+than Week 2’s “0”</h3>
+<p>Week 2 / Test 6 <em>also</em> happened to get 0 scrambled lines on
+one run, and a different run of the same test got 11. Back then, “0” was
+<strong>luck</strong>: nothing stopped the mixing, it just didn’t happen
+that time (the Experiment 1 “98 / 2” lesson). Now it’s
+<strong>guaranteed by design</strong>:</p>
+<ol type="1">
+<li>Each line is built completely in a local
+<code>std::ostringstream</code>, on the worker’s own stack. Nothing is
+shared while it’s being built.</li>
+<li><code>log_line()</code> writes the finished line with
+<strong>one</strong> <code>&lt;&lt;</code>, while holding
+<code>log_mutex</code>, so only one thread can be writing at any
+moment.</li>
+</ol>
+<p>So no line can ever be split, on any run, at any load. What
+<em>can</em> still vary is the <strong>order</strong> of whole lines.
+Lines from different workers still interleave as whole lines, as in Week
+2’s Test 3. That’s expected and fine.</p>
+<h3 id="what-the-last-lines-show">What the last lines show</h3>
+<pre><code>[TID 169291] Client disconnected before completing a request (0 bytes received so far).
+[TID 169290] Client disconnected before completing a request (0 bytes received so far).
+[TID 169293] Client disconnected before completing a request (0 bytes received so far).</code></pre>
+<p>These are the end of the run: <code>ab</code> closing the connections
+it opened but never used (Test 4). They came from three different
+workers finishing at almost the same moment, in the order 169291,
+169290, 169293 (not sorted, because finish order isn’t creation order).
+Each one is still a complete, separate line.</p>
+<details>
+<summary>
+Raw output: Test 6 (log file analysed afterwards)
+</summary>
+<pre><code>-rw-r--r-- 1 aagam aagam 461028 Oct 24 10:19 /tmp/pulse3.log
+first lines:
+Pulse listening on port 8080... (stats mode: mutex)
+Client connected: 127.0.0.1:33546
+[TID 164289] Parsed (87 bytes total): GET /hello HTTP/1.0
+Client connected: 127.0.0.1:33560
+last lines:
+[TID 169291] Client disconnected before completing a request (0 bytes received so far).
+[TID 169290] Client disconnected before completing a request (0 bytes received so far).
+[TID 169293] Client disconnected before completing a request (0 bytes received so far).
+Client connected lines: 5008
+Parsed lines:           5000
+disconnected-before:    8
+lines with 2+ TIDs:     0
+lines with 2+ &#39;Client connected&#39;: 0
+lines not matching any known format: 0</code></pre>
+<p>The “known format” check was:</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-vcE</span> <span class="st">&#39;^(Pulse listening on port|Client connected: [0-9.]+:[0-9]+$|\[TID [0-9]+\] (Parsed|Client disconnected|Malformed|handler threw|connection error|read:|Request exceeded))&#39;</span> /tmp/pulse3.log</span></code></pre></div>
+<p><code>-v</code> = lines that do <strong>not</strong> match.
+<code>-c</code> = count them. <code>-E</code> = extended regex.
+<code>^</code> = the match must start at the beginning of the line. So
+this counts lines that don’t <strong>start</strong> exactly like one of
+Pulse’s log lines.</p>
+</details>
+<hr />
+<h1 id="test-7-mutex-vs-atomic-vs-unsafe-throughput">Test 7 — Mutex vs
+atomic vs unsafe: throughput</h1>
+<p><strong>Question:</strong> the spec’s “do NOT conclude atomics are
+always faster. Measure.” The doc’s microbenchmark had atomic about 3×
+faster than mutex. Does that show up in Pulse? (Only run this
+<em>after</em> Tests 3–5, because the unsafe build’s speed doesn’t count
+if its numbers are wrong.)</p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For each build, one at a time. T1:</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./build-unsafe/pulse</span> 8080 <span class="op">&gt;</span> /dev/null <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span>      <span class="co"># then mutex, then atomic</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># T2, twice per build:</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ab</span> <span class="at">-n</span> 20000 <span class="at">-c</span> 10 http://localhost:8080/hello <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-E</span> <span class="st">&quot;Requests per second|Failed&quot;</span></span></code></pre></div>
+<p>Run all three builds back to back in one session (same conditions).
+Then do one more round of all three, to see how much the numbers move
+between runs of the <em>same</em> build.</p>
+<p><strong>Paste back:</strong> all six results.</p>
+<h2
+id="result-all-three-builds-run-at-the-same-speed-and-thats-the-point">Result:
+all three builds run at the same speed, and that’s the point</h2>
+<div class="tldr">
+<p><b>What happened:</b> every run came out at <b>~8,000–8,500
+requests/s</b>, whichever build. The differences between unsafe, mutex
+and atomic are <b>smaller than the difference between two runs of the
+same build</b>. In Pulse, the choice of mutex vs atomic has <b>no
+measurable effect on speed</b>. <br><br> <b>Why:</b> each request makes
+<b>3</b> counter updates, costing tens of nanoseconds each. The rest of
+the request (a new thread, <code>accept</code>, <code>read</code>,
+parse, route, <code>write</code>, <code>close</code>, two log lines)
+costs <b>thousands</b> of times more. The doc’s microbenchmark, where
+atomic was ~3× faster than mutex, measured a loop doing <i>nothing
+but</i> incrementing. In a real server, that difference disappears into
+everything else. <br><br> <b>So the choice is made on correctness, not
+speed:</b> mutex, because it keeps the <code>/stats</code> snapshot
+consistent (Test 4, and the decisions at the top of this file). The
+unsafe build isn’t “free speed”: it’s the same speed, with wrong
+numbers.</p>
+</div>
+<h3 id="the-results">The results</h3>
+<p><strong>Your run</strong> (six <code>ab -n 20000 -c 10</code> runs,
+log to <code>/dev/null</code>). The pasted output doesn’t show which
+build each line came from, because the <code>stats mode:</code> line was
+printed in T1:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Run</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>req/s</td>
+<td>8,172.67</td>
+<td>8,341.75</td>
+<td>8,372.38</td>
+<td>8,517.66</td>
+<td>8,456.96</td>
+<td>8,489.93</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>All six within <strong>8,173–8,518</strong>, a spread of about
+4%.</p>
+<p><strong>A labelled run</strong> (by Claude, in the same session,
+immediately afterwards: each build started fresh on its own port, log to
+<code>/dev/null</code>, <code>ab -n 20000 -c 10</code>):</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>unsafe</th>
+<th>mutex</th>
+<th>atomic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Round 1</td>
+<td>8,494</td>
+<td>8,367</td>
+<td>8,357</td>
+</tr>
+<tr>
+<td>Round 2</td>
+<td>8,274</td>
+<td>8,392</td>
+<td>8,048</td>
+</tr>
+<tr>
+<td><strong>Spread within the same build</strong></td>
+<td>220 (2.6%)</td>
+<td>25 (0.3%)</td>
+<td><strong>309 (3.7%)</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>No consistent winner.</strong> Unsafe was fastest in round
+1. Mutex was fastest in round 2.</li>
+<li><strong>Run-to-run noise is as big as the gap between
+builds.</strong> Atomic alone moved 309 req/s between two identical
+runs. The largest gap between two <em>different</em> builds in the same
+round was 344 (round 2: mutex vs atomic). Any “winner” here is
+noise.</li>
+<li><strong>Every run: 0 failed.</strong></li>
+</ul>
+<h3 id="predicted-vs-actual-5">Predicted vs actual</h3>
+<p>The <code>notes.txt</code> lines were left blank.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Expected (Week 3 doc, Part 7)</th>
+<th>Actual</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Atomic ~3× faster than mutex, as in the microbenchmark?</td>
+<td>No: the doc warned the microbenchmark wouldn’t carry over</td>
+<td>All three the same, within noise</td>
+<td><span class="verdict-right">As the doc warned</span></td>
+</tr>
+<tr>
+<td>The unsafe build faster, since it does no locking?</td>
+<td>No measurable difference</td>
+<td>Same speed</td>
+<td><span class="verdict-right">As expected</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="why-the-counter-method-doesnt-show-up-the-arithmetic">Why the
+counter method doesn’t show up: the arithmetic</h3>
+<p><strong>Cost of the stats per request.</strong> Each request makes
+<strong>3</strong> counter updates: <code>on_connection_opened</code>
+(guard constructor), <code>on_response</code>,
+<code>on_connection_closed</code> (guard destructor). From the Week 3
+doc’s microbenchmark (4 million increments):</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Time per increment, worst case (4 threads fighting over one
+counter)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unprotected</td>
+<td>0.044 s ÷ 4,000,000 ≈ <strong>11 ns</strong></td>
+</tr>
+<tr>
+<td>atomic</td>
+<td>0.054 s ÷ 4,000,000 ≈ <strong>14 ns</strong></td>
+</tr>
+<tr>
+<td>mutex</td>
+<td>0.17 s ÷ 4,000,000 ≈ <strong>43 ns</strong></td>
+</tr>
+</tbody>
+</table>
+<p>So even mutex, the slowest, costs about <strong>3 × 43 ns ≈ 0.13 µs
+per request</strong>, and that’s in a worst-case pile-up. In Pulse,
+workers rarely hit the stats mutex at the same instant (Test 3 needed
+60,000 requests to lose one <code>total_requests</code> update), so it’s
+usually less.</p>
+<p><strong>Cost of everything else per request.</strong> At ~8,400 req/s
+with 10 in flight, each request takes about 10 ÷ 8,400 ≈ <strong>1.2
+ms</strong> from the client’s side. Even counting only the server’s own
+CPU work per request, it’s tens to hundreds of
+<strong>microseconds</strong>: creating and destroying a thread (Week 1
+/ Experiment 3: ~1 ms of kernel time per ~100 threads), the
+<code>accept</code> / <code>read</code> / <code>write</code> /
+<code>close</code> system calls, parsing, routing, building the
+response, and two <code>log_line()</code> calls.</p>
+<p><strong>Ratio:</strong> about 0.13 µs out of at least tens of µs, so
+<strong>well under 1%</strong> of each request, and run-to-run noise
+here is <strong>~4%</strong>. A difference of under 1% can’t be seen
+through 4% of noise. That’s why all three builds look identical.</p>
+<p>The doc’s microbenchmark wasn’t <em>wrong</em>. It measured the
+counter in isolation, where the counter is 100% of the work.
+<strong>Where an operation sits in the real program decides whether its
+cost matters.</strong> That’s the spec’s “do not conclude atomics are
+always faster: measure”, demonstrated.</p>
+<h3
+id="a-side-observation-todays-numbers-are-much-higher-than-earlier-ones">A
+side observation: today’s numbers are much higher than earlier ones</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>When</th>
+<th>Same kind of test (<code>ab -c 10</code>, log to
+<code>/dev/null</code>)</th>
+<th>req/s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Week 2 write-up (2026-10-18)</td>
+<td>Week 2 build</td>
+<td>~4,300</td>
+</tr>
+<tr>
+<td>Week 3 implementation check (2026-10-23)</td>
+<td>all three Week 3 builds</td>
+<td>~3,200</td>
+</tr>
+<tr>
+<td><strong>This test (2026-10-24)</strong></td>
+<td>all three Week 3 builds</td>
+<td><strong>~8,000–8,500</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The code didn’t get 2.5× faster overnight: the Week 3 builds measured
+on 10-23 and today are the same code. What changed is the
+<strong>machine’s conditions</strong>: this is a laptop running WSL2
+under Windows, so CPU boost speed (plugged in or not, heat), Windows’
+power mode, and whatever else Windows is doing all move the numbers a
+lot. This wasn’t measured, so it’s a likely explanation rather than a
+proven one.</p>
+<p><strong>The lesson, which Week 4 depends on:</strong> a throughput
+number only means something <strong>compared with another number from
+the same session</strong>. Today’s 8,400 can’t be compared with Month
+1’s 5,380 (a different day), or with Week 3’s 3,200 (a different day).
+That’s why Test 7 runs every build back to back, and why Week 4’s Month
+1 vs Month 2 benchmark must run <strong>both versions in the same
+sitting</strong>.</p>
+<details>
+<summary>
+Raw output: Test 7
+</summary>
+<p><strong>Your run</strong></p>
+<pre><code>aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ab -n 20000 -c 10 http://localhost:8080/hello 2&gt;&amp;1 | grep -E &quot;Requests per second|Failed&quot;
+Failed requests:        0
+Requests per second:    8172.67 [#/sec] (mean)
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ab -n 20000 -c 10 http://localhost:8080/hello 2&gt;&amp;1 | grep -E &quot;Requests per second|Failed&quot;
+Failed requests:        0
+Requests per second:    8341.75 [#/sec] (mean)
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ab -n 20000 -c 10 http://localhost:8080/hello 2&gt;&amp;1 | grep -E &quot;Requests per second|Failed&quot;
+Failed requests:        0
+Requests per second:    8372.38 [#/sec] (mean)
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ab -n 20000 -c 10 http://localhost:8080/hello 2&gt;&amp;1 | grep -E &quot;Requests per second|Failed&quot;
+Failed requests:        0
+Requests per second:    8517.66 [#/sec] (mean)
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ab -n 20000 -c 10 http://localhost:8080/hello 2&gt;&amp;1 | grep -E &quot;Requests per second|Failed&quot;
+Failed requests:        0
+Requests per second:    8456.96 [#/sec] (mean)
+aagam@Galu-PC:/mnt/c/Users/aagam/OneDrive/Desktop/Pulse$ ab -n 20000 -c 10 http://localhost:8080/hello 2&gt;&amp;1 | grep -E &quot;Requests per second|Failed&quot;
+Failed requests:        0
+Requests per second:    8489.93 [#/sec] (mean)</code></pre>
+<p><strong>Labelled run (Claude, same session)</strong></p>
+<pre><code>round 1  unsafe: 8493.98
+round 1  mutex: 8366.72
+round 1  atomic: 8357.37
+round 2  unsafe: 8274.27
+round 2  mutex: 8392.59
+round 2  atomic: 8047.66</code></pre>
+</details>
+<hr />
+<h1 id="week-3-done-when">Week 3 done when</h1>
+<ul>
+<li><label><input type="checkbox" checked="" />Shared statistics added:
+total and active connections, total requests, 2xx / 4xx / 5xx, plus
+<code>GET /stats</code></label></li>
+<li><label><input type="checkbox" checked="" />Built three ways, unsafe
+→ mutex → atomic, the spec’s order, from one codebase
+(<code>PULSE_STATS_MODE</code>)</label></li>
+<li><label><input type="checkbox" checked="" /><strong>Unsafe counter
+observed going wrong</strong> (Test 3: 1 lost request count,
+<code>active_connections</code> 7 → 9 → 15; Test 5: active wrapped to
+2⁶⁴ − 1)</label></li>
+<li><label><input type="checkbox" checked="" /><strong>Mutex and atomic
+exact</strong> under the same load (Test 4)</label></li>
+<li><label><input type="checkbox" checked="" />ThreadSanitizer: 10 races
+in unsafe (every counter write), 0 in mutex and atomic (Test
+5)</label></li>
+<li><label><input type="checkbox"
+checked="" /><code>active_connections</code> returns to 1 on every exit
+path, via RAII (Tests 2, 4)</label></li>
+<li><label><input type="checkbox" checked="" />5xx responses exist and
+are counted (<code>/fail</code> → 500, Test 1)</label></li>
+<li><label><input type="checkbox" checked="" />Log lines can no longer
+be split (Test 6: 0 in 5,000 requests, guaranteed by
+design)</label></li>
+<li><label><input type="checkbox" checked="" />Mutex vs atomic measured
+in Pulse: no difference within noise (Test 7)</label></li>
+<li><label><input type="checkbox" checked="" />Shared state documented
+(<code>tcp_server.hpp</code>’s inventory,
+<code>server_stats.hpp</code>’s decisions)</label></li>
+<li><label><input type="checkbox" />Predictions written before running:
+only Test 3’s was given (in chat). Worth doing in Week 4, where the
+questions are numbers</label></li>
+<li><strong>Default chosen: <code>mutex</code>.</strong> Same speed as
+atomic (Test 7), and it keeps <code>/stats</code> consistent:
+<code>total_requests</code> always equals <code>2xx + 4xx + 5xx</code>
+in any snapshot (Tests 1, 2)</li>
+<li>Carried forward to <strong>Week 4</strong>:
+<ul>
+<li>thread limits and stress: what happens at 100s and 1000s of
+connections</li>
+<li>the Month 1 vs Month 2 benchmark, <strong>both run in the same
+session</strong> (Test 7’s lesson)</li>
+</ul></li>
+</ul>
+</body>
+</html>

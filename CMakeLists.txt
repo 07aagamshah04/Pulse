@@ -50,6 +50,8 @@ add_executable(pulse
     src/http_response.cpp
     src/http_parser.cpp
     src/router.cpp
+    src/logger.cpp        # MONTH 2 / WEEK 3: thread-safe log_line()/log_error()
+    src/server_stats.cpp  # MONTH 2 / WEEK 3: the shared counters (3 build modes, below)
 )
 
 # Tells the compiler to also look in include/ when a .cpp file writes
@@ -68,3 +70,32 @@ target_include_directories(pulse PRIVATE include)
 # See Part 8 of the Month 2 / Week 2 doc.
 find_package(Threads REQUIRED)
 target_link_libraries(pulse PRIVATE Threads::Threads)
+
+# MONTH 2 / WEEK 3 — which ServerStats implementation to build.
+# The spec's Week 3 path is: unsafe counter -> mutex -> atomic, compared.
+# Instead of editing code to switch, pick one when configuring:
+#
+#   cmake -S . -B build-unsafe -DPULSE_STATS_MODE=unsafe
+#   cmake -S . -B build-mutex  -DPULSE_STATS_MODE=mutex
+#   cmake -S . -B build-atomic -DPULSE_STATS_MODE=atomic
+#
+# and you get three separate Pulse binaries side by side. Plain `cmake ..`
+# in build/ gets the default, mutex.
+#
+#   set(... CACHE STRING "...")  -> a user-settable option with a default.
+#                                   "CACHE" = CMake remembers it in that build
+#                                   folder, so you only pass -D once.
+#   target_compile_definitions   -> passes -DPULSE_STATS_MUTEX (etc.) to the
+#                                   compiler, which is exactly what the #if
+#                                   blocks in server_stats.hpp/.cpp test for.
+set(PULSE_STATS_MODE "mutex" CACHE STRING "ServerStats implementation: unsafe | mutex | atomic")
+if(PULSE_STATS_MODE STREQUAL "unsafe")
+    target_compile_definitions(pulse PRIVATE PULSE_STATS_UNSAFE)
+elseif(PULSE_STATS_MODE STREQUAL "mutex")
+    target_compile_definitions(pulse PRIVATE PULSE_STATS_MUTEX)
+elseif(PULSE_STATS_MODE STREQUAL "atomic")
+    target_compile_definitions(pulse PRIVATE PULSE_STATS_ATOMIC)
+else()
+    message(FATAL_ERROR "PULSE_STATS_MODE must be unsafe, mutex or atomic (got '${PULSE_STATS_MODE}')")
+endif()
+message(STATUS "Pulse stats mode: ${PULSE_STATS_MODE}")

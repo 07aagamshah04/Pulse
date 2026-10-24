@@ -60,6 +60,28 @@ public:
         return HttpResponse(405, "Method Not Allowed");
     }
 
+    /* MONTH 2 / WEEK 3 — 500 Internal Server Error: "the SERVER broke while
+       handling a request that was itself fine" (unlike 4xx = "your request
+       was the problem"). Pulse never sent one before Week 3: a handler that
+       threw just had its connection dropped by serve_connection(), so the
+       client got nothing at all. Now handle_client() catches a throwing
+       handler and answers with this instead — a real reply for the client,
+       and something for the 5xx counter to count (Week 3 doc, Part 8). */
+    static HttpResponse internal_server_error()
+    {
+        return HttpResponse(500, "Internal Server Error");
+    }
+
+    /* MONTH 2 / WEEK 3: read-only access to the status code, so
+       handle_client() can tell ServerStats whether this was a 2xx/4xx/5xx.
+       status_code_ itself stays private — callers can read it, never change
+       it. C++ note: `const` after the () = calling this doesn't modify the
+       response (same meaning as Socket::fd() const). */
+    int status_code() const
+    {
+        return status_code_;
+    }
+
     void add_header(std::string name, std::string value)
     {
         headers_.emplace_back(std::move(name), std::move(value));

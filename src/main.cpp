@@ -1,10 +1,13 @@
 #include "router.hpp"
+#include "server_stats.hpp" // MONTH 2 / WEEK 3: ServerStats, read by GET /stats
 #include "tcp_server.hpp"
 
 #include <chrono>   // MONTH 2 / WEEK 2: std::chrono::seconds — for GET /slow
 #include <csignal>  // MONTH 2 / WEEK 2: std::signal, SIGPIPE, SIG_IGN — see main()
 #include <cstdlib>
 #include <iostream>
+#include <sstream>  // MONTH 2 / WEEK 3: std::ostringstream — builds the /stats body
+#include <stdexcept> // MONTH 2 / WEEK 3: std::runtime_error — thrown by GET /fail
 #include <thread>   // MONTH 2 / WEEK 2: std::this_thread::sleep_for — for GET /slow
 
 /* =============================================================================
@@ -39,7 +42,9 @@
  * ============================================================================= */
 namespace
 {
-    Router build_router()
+    /* MONTH 2 / WEEK 3: now takes the ServerStats by reference, so the
+       /stats handler below can capture it. */
+    Router build_router(ServerStats &stats)
     {
         Router router;   // Month 1 / Week 2: starts with zero routes registered
 
@@ -105,6 +110,55 @@ namespace
             std::this_thread::sleep_for(std::chrono::seconds(5));
             return HttpResponse::ok("Slow response from Pulse (slept 5 s)");
         });
+
+        /* MONTH 2 / WEEK 3 — GET /stats: the shared counters, as text.
+
+           C++ note — the capture list [&stats]: this lambda keeps a
+           REFERENCE to the `stats` object that lives in main(). It's the
+           first route handler that captures anything — every earlier one had
+           an empty []. A reference capture is only safe if the object
+           outlives every call of the lambda (Week 2 doc, Part 3's "owner by
+           reference" warning). Here it does: `stats` is created in main()
+           before the server and is never destroyed while workers run, for
+           the same reason `server` isn't (Week 2 doc, Part 5).
+
+           Thread safety: many workers can run this lambda at once, and
+           every other worker keeps updating the counters meanwhile.
+           stats.snapshot() is what makes reading safe — under the mutex
+           (mutex build) or via atomic loads (atomic build). In the unsafe
+           build, reading here is part of the data race too.
+
+           What the numbers include: this /stats request itself is an ACTIVE
+           connection while it runs (so active_connections is at least 1),
+           but it hasn't been counted as a request yet — on_response() runs
+           after this handler returns. */
+        router.add_route("GET", "/stats", [&stats](const HttpRequest&) {
+            StatsSnapshot s = stats.snapshot();
+            std::ostringstream body;
+            body << "stats_mode: " << ServerStats::mode_name() << "\n"
+                 << "total_connections: " << s.total_connections << "\n"
+                 << "active_connections: " << s.active_connections << "\n"
+                 << "total_requests: " << s.total_requests << "\n"
+                 << "responses_2xx: " << s.responses_2xx << "\n"
+                 << "responses_4xx: " << s.responses_4xx << "\n"
+                 << "responses_5xx: " << s.responses_5xx << "\n";
+            return HttpResponse::ok(body.str());
+        });
+
+        /* MONTH 2 / WEEK 3 — GET /fail: a handler that always throws, to
+           exercise the new 500 path (Week 3 doc, Part 8). Stands in for a
+           real handler hitting a bug or a failed database call. Expected:
+           the client gets "500 Internal Server Error", the log says
+           "handler threw", responses_5xx goes up — and the server and its
+           other connections carry on. */
+        router.add_route("GET", "/fail", [](const HttpRequest&) -> HttpResponse {
+            throw std::runtime_error("GET /fail always fails (deliberate, for testing 5xx)");
+        });
+        /* C++ note: `-> HttpResponse` spells out the lambda's return type.
+           Normally the compiler works it out from the `return` statements,
+           but this lambda has none (it only throws), so there's nothing to
+           work it out from — without the arrow it would be deduced as
+           `void`, which doesn't fit Router::Handler. */
 
         /* Month 1 / Week 2 — C++ note, ties back to the &/&& discussion in
            socket.hpp: `router` has a name, so on its own it's an lvalue.
@@ -186,7 +240,17 @@ int main(int argc, char *argv[])
            That's only safe because run() below never returns, so `server`
            is never destroyed while workers exist. If Pulse ever gets a clean
            shutdown path, this has to be revisited. */
-        TcpServer server(static_cast<uint16_t>(port), build_router());
+        /* MONTH 2 / WEEK 3 — the ONE ServerStats object for the whole
+           server. Created here, BEFORE `server`, because:
+             - build_router() hands a reference to it to the /stats handler,
+             - TcpServer keeps a reference to it (stats_),
+           and both need it to exist for as long as they do. C++ destroys
+           local variables in REVERSE order of creation, so `stats` (created
+           first) is destroyed after `server` — it can never disappear while
+           the server still points at it. (In practice run() never returns,
+           so neither is ever destroyed — but the order is correct anyway.) */
+        ServerStats stats;
+        TcpServer server(static_cast<uint16_t>(port), build_router(stats), stats);
         server.run(); // blocks forever — see tcp_server.cpp
     }
     /* MONTH 2 / WEEK 2: this catch now only sees errors thrown on the MAIN

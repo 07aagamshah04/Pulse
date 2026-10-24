@@ -1,6 +1,7 @@
 #pragma once
 
 #include "router.hpp"
+#include "server_stats.hpp" // MONTH 2 / WEEK 3
 #include "socket.hpp"
 #include <cstdint>
 
@@ -34,6 +35,26 @@
  * handler now blocks only its own thread. handle_client()'s read/parse/
  * route/write logic is unchanged — only WHICH thread runs it changed. See
  * the Month 2 / Week 2 doc, Parts 2–6.
+ *
+ * MONTH 2 / WEEK 3 UPDATE — shared state that threads WRITE. Workers now
+ * update a ServerStats object (connections, requests, 2xx/4xx/5xx) — the
+ * first thing every thread writes, protected according to the build's
+ * PULSE_STATS_MODE (server_stats.hpp). All log output goes through
+ * log_line()/log_error() (logger.hpp), so lines from different threads can
+ * no longer split each other. A route handler that throws now gets a 500
+ * response instead of a dropped connection. See the Month 2 / Week 3 doc.
+ *
+ * SHARED-STATE INVENTORY (the spec's Week 3 deliverable: "documented shared
+ * state"). Everything a worker thread touches, and why it's safe:
+ *   per-connection (worker's own stack, never shared):
+ *     the client Socket, raw_request, chunk, response, parse result
+ *   shared, READ-ONLY after run() starts (safe without locks):
+ *     router_, port_ — written once before any worker exists
+ *   shared, only the MAIN thread uses it:
+ *     listen_socket_
+ *   shared and WRITTEN by workers — each protected:
+ *     stats_ (ServerStats)   -> its own mutex or atomics, per build mode
+ *     stdout / stderr        -> log_mutex inside logger.cpp
  * ============================================================================= */
 class TcpServer
 {
@@ -49,8 +70,14 @@ public:
       whatever routes it wants registered before the server starts —
       see main.cpp. Taken BY VALUE and moved into router_ (see the .cpp) —
       ownership of the Router transfers into the TcpServer, main.cpp
-      doesn't need it afterward. */
-   explicit TcpServer(uint16_t port, Router router, int backlog = 128);
+      doesn't need it afterward.
+
+      MONTH 2 / WEEK 3: also takes a ServerStats& — a REFERENCE to the one
+      stats object, which lives in main() (so the /stats route handler,
+      built in main.cpp, can read the very same object). TcpServer doesn't
+      own it, it just updates it. Safe for the same lifetime reason as
+      `server` itself: main() never returns while workers run. */
+   explicit TcpServer(uint16_t port, Router router, ServerStats &stats, int backlog = 128);
 
    /* Month 1 / Week 1: blocks forever, repeatedly doing
       accept -> handle one client -> close -> accept the next.
@@ -104,4 +131,16 @@ private:
    uint16_t port_;        // just remembered for the log message in the constructor
    Router router_;        // Month 1 / Week 2: what handle_client() consults to turn a parsed HttpRequest into an HttpResponse
                           // MONTH 2 / WEEK 2: now READ by many worker threads at once (through `this`). Safe because nobody WRITES to it after run() starts — see Part 5 of the Month 2 / Week 2 doc
+
+   /* MONTH 2 / WEEK 3: the shared statistics, WRITTEN by every worker.
+      C++ note: a reference member. Two consequences worth knowing:
+        - it must be set in the constructor's initializer list and can never
+          be re-pointed at another object afterwards;
+        - handle_client()/serve_connection() are `const`, yet they can still
+          call non-const ServerStats methods through it. `const` on a member
+          function makes the REFERENCE itself unchangeable, not the object it
+          refers to. (That's why TcpServer needs no `mutable` here — the
+          `mutable std::mutex` lives inside ServerStats instead, where the
+          const snapshot() needs it.) */
+   ServerStats &stats_;
 };

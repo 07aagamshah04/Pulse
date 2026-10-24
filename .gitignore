@@ -1,4 +1,5 @@
 build/
+build-*/
 *.o
 *.out
 compile_commands.json
