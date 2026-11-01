@@ -1,18 +1,37 @@
 # Pulse
 
-A raw-socket HTTP server built from scratch in C++ on Linux/POSIX, as a systems-programming learning project. See `CLAUDE.md — Pulse Month 1.md` for the project's goals and ground rules, and `Month1/` for that month's week-by-week concept docs and test logs.
+A multi-threaded HTTP/1.1 server built from scratch in C++17 on Linux/POSIX sockets, as a systems-programming learning project. No networking frameworks: every socket call (`socket`, `bind`, `listen`, `accept`, `read`, `write`, `close`) is made directly.
+
+| Month | Architecture | Status |
+|---|---|---|
+| 1 | Single-threaded, blocking: one client at a time | Done ([`Month1/`](Month1/)) |
+| 2 | **Thread-per-connection**: one thread per client, thread-safe shared statistics | **Done** ([`Month2/`](Month2/)) |
+| 3 | Non-blocking I/O | Planned |
+| 4 | `epoll` event loop | Planned |
+| 5 | Controlled worker pool | Planned |
+
+Each month's folder has its spec (a `CLAUDE.md…` file) and, for every week, a concepts doc (`WeekN_Concepts.html`) and the test results (`notes.html`).
 
 ## Build
 
 ```bash
-mkdir -p build && cd build
-cmake ..
-make
+cmake -S . -B build
+cmake --build build
 ```
 
-- `cmake ..` reads `CMakeLists.txt` (the `..` = "one directory up," since you're inside `build/`) and **generates** the actual platform build files — a `Makefile`, on Linux. It does not compile anything itself; it's a translator from CMake's platform-independent instructions to your platform's real build tool.
-- `make` reads that generated `Makefile` and does the real work: runs `g++` on each `.cpp` to produce object files, then links them into the `pulse` executable.
-- Building inside a separate `build/` folder (instead of the project root) is called an "out-of-source build" — everything generated lands in one folder you can wipe entirely with `rm -rf build` without touching any actual source code. That's why `.gitignore` excludes it.
+- `cmake -S . -B build` reads `CMakeLists.txt` from this folder (`-S .`) and **generates** the real build files into `build/` (`-B build`). It doesn't compile anything itself.
+- `cmake --build build` does the compiling and linking, producing `build/pulse`.
+- Everything generated lives in `build/`, so `rm -rf build` wipes it without touching any source. That's why `.gitignore` excludes `build/` and `build-*/`.
+
+**Statistics mode (Month 2 / Week 3).** The shared request counters can be built three ways, to compare them:
+
+```bash
+cmake -S . -B build-mutex  -DPULSE_STATS_MODE=mutex    # default: correct, consistent /stats snapshots
+cmake -S . -B build-atomic -DPULSE_STATS_MODE=atomic   # correct, each counter is a std::atomic
+cmake -S . -B build-unsafe -DPULSE_STATS_MODE=unsafe   # NO synchronization: has data races, on purpose, for the experiment
+```
+
+Pulse prints its mode at startup: `Pulse listening on port 8080... (stats mode: mutex)`.
 
 ## Run
 
@@ -24,124 +43,139 @@ make
 
 | Method | Path | Response |
 |---|---|---|
-| GET | `/` | `200 OK` — `Hello from Pulse!` |
-| GET | `/hello` | `200 OK` — `Hello from Pulse!` |
-| GET | `/health` | `200 OK` — `OK` |
-| POST | `/echo` | `200 OK` — request body, echoed back |
+| GET | `/` | `200 OK`: `Hello from Pulse!` |
+| GET | `/hello` | `200 OK`: `Hello from Pulse!` |
+| GET | `/health` | `200 OK`: `OK` |
+| POST | `/echo` | `200 OK`: the request body, echoed back |
+| GET | `/slow` | `200 OK` after a **5-second** sleep: a deliberately slow handler, to show it doesn't block other clients |
+| GET | `/stats` | `200 OK`: server statistics (connections, active connections, requests, 2xx / 4xx / 5xx counts) |
+| GET | `/fail` | `500 Internal Server Error`: a handler that always throws, to test error handling |
 | any other path | | `404 Not Found` |
 | registered path, wrong method | | `405 Method Not Allowed` |
+| malformed request | | `400 Bad Request` |
 
 ```bash
 curl -i http://localhost:8080/hello
-curl -i http://localhost:8080/health
 curl -i -X POST http://localhost:8080/echo -d "hello"
-curl -i http://localhost:8080/does-not-exist     # 404
-curl -i -X POST http://localhost:8080/hello      # 405 — GET-only route
-```
-
-Or talk to it raw, by hand:
-
-```bash
-nc localhost 8080
-```
-```http
-GET /hello HTTP/1.1
-Host: localhost
-
+curl    http://localhost:8080/stats
+curl -i http://localhost:8080/fail                # 500
+curl -i http://localhost:8080/does-not-exist      # 404
 ```
 
 Inspect it while it's running:
 
 ```bash
-ss -ltnp
-ls -l /proc/<PID>/fd
+ps -L -o tid,stat,wchan:22,comm -p $(pgrep -x pulse)    # one row per thread, and what each is waiting in
+grep Threads /proc/$(pgrep -x pulse)/status              # 1 + number of open connections
+ls /proc/$(pgrep -x pulse)/fd                            # 0,1,2 + listening socket (3) + one per client
 ```
 
-## Architecture
+## Architecture (Month 2)
 
 ```
-Browser / curl
-      |
-      | TCP connection
-      v
- socket() -> bind() -> listen()        (once, at startup — TcpServer's constructor)
-      |
-      v
-+---- accept() -----------------------------+   <-- blocks here until a client connects
-|          |                                 |
-|          v                                 |
-|   read() (looped, accumulating bytes       |
-|   until a complete request is buffered —   |
-|   see Week 3)                              |
-|          |                                 |
-|          v                                 |
-|   HttpParser::parse()                      |
-|          |                                 |
-|          v                                 |
-|   Router::route()                          |
-|          |                                 |
-|          v                                 |
-|   a handler (a lambda in main.cpp)         |
-|          |                                 |
-|          v                                 |
-|   HttpResponse::to_string()                |
-|          |                                 |
-|          v                                 |
-|   write()                                  |
-|          |                                 |
-|          v                                 |
-|   close()  (Socket's destructor, RAII) ----+---> back to accept(), for the next client
-|
-v
-Browser / curl
+                         Main thread  (TcpServer::run)
+                              │
+          socket() → bind() → listen()     once, at startup (TcpServer's constructor)
+                              │
+                ┌──────────► accept() ◄─────────────────────────────────┐
+                │             │   blocks until a client connects        │
+                │             ▼                                         │
+                │   std::thread(serve_connection, std::move(socket))    │
+                │             .detach()  ── hand the connection over ───┘  back to accept() at once
+                │             │
+                │             ▼  one NEW thread per connection
+                │   ┌──────────────────────────────────────────────┐
+                │   │ Worker thread  (serve_connection)            │
+                │   │   ActiveConnectionGuard: stats +1 / -1       │
+                │   │   try {                                       │
+                │   │     read()  looped until the request is whole │
+                │   │     HttpParser::parse()                       │
+                │   │     Router::route()  → handler (main.cpp)     │
+                │   │        (a handler that throws → 500)          │
+                │   │     stats.on_response(status)                 │
+                │   │     write()                                   │
+                │   │   } catch (...) { log; this connection ends } │
+                │   │   close()  ← Socket's destructor (RAII)       │
+                │   └──────────────────────────────────────────────┘
+                │             the thread ends
 ```
 
-One client is handled fully — accept, read, parse, route, respond, close — before the loop goes back to `accept()` for the next one. No threads, no event loop; that's a deliberate Month 1 boundary (see below), not an oversight.
+- **The main thread only accepts.** Every connection is moved into its own detached thread, and the main thread goes straight back to `accept()`. A slow client or slow handler blocks only its own thread.
+- **Ownership is moved, never shared.** The client `Socket` is move-only. After `std::move` into the thread, the main thread's copy is empty, so exactly one thread owns and closes each connection.
+- **One bad client can't kill the server.** Every worker catches all exceptions, and `SIGPIPE` is ignored, so a client that disconnects mid-request ends only its own connection.
+
+### Shared state
+
+Everything a worker touches, and why it's safe:
+
+| Data | Shared? | Protection |
+|---|---|---|
+| client `Socket`, request buffer, response, parser state | No: each lives on its own worker's stack | none needed |
+| `Router` (routes) | Yes, but **read-only** after startup | none needed |
+| listening socket | Only the main thread uses it | none needed |
+| `ServerStats` (the counters) | Yes, **written** by every worker | `std::mutex` (default) or `std::atomic`, chosen at build time |
+| stdout / stderr (the log) | Yes, written by every worker | a log mutex: each line is built first, then written whole |
 
 ## Syscalls used
 
 | Syscall | Why |
 |---|---|
-| `socket()` | Allocates the endpoint; nothing is addressed or listening yet. |
-| `setsockopt(SO_REUSEADDR)` | Lets the server rebind its port immediately after a restart, instead of waiting out the kernel's `TIME_WAIT` hold on the previous process's now-dead socket. |
-| `bind()` | Claims a specific local `(address, port)` for the socket. |
-| `listen()` | Switches the socket from "outgoing only" to passive, and sets the backlog queue size for handshake-completed-but-not-yet-`accept()`ed connections. |
-| `accept()` | Blocks until a client's TCP handshake completes, then returns a *new* fd for that one connection — the listening socket itself is untouched and keeps listening. |
-| `read()` | Pulls whatever bytes have arrived so far; not guaranteed to return a complete request in one call (Week 3's core lesson). |
-| `write()` | Sends response bytes back; also not guaranteed to send everything in one call for larger responses. |
-| `close()` | Releases the fd and tears down the connection — handled automatically by `Socket`'s destructor (RAII), on every exit path. |
+| `socket()` | Allocates the endpoint. Nothing is addressed or listening yet |
+| `setsockopt(SO_REUSEADDR)` | Lets the server rebind its port straight after a restart, instead of waiting out `TIME_WAIT` |
+| `bind()` | Claims a local `(address, port)` |
+| `listen()` | Makes the socket passive, and sets the backlog: how many finished connections can wait to be `accept()`ed |
+| `accept()` | Blocks until a client connects, then returns a **new** fd for that one connection |
+| `read()` | Returns whatever bytes have arrived. Not guaranteed to be a whole request, so it's looped |
+| `write()` | Sends the response. Looped, since it isn't guaranteed to send everything at once |
+| `close()` | Releases the fd. Done by `Socket`'s destructor (RAII), on every exit path |
+| `clone()` | Creates each worker thread (called for us by `std::thread` → `pthread_create`) |
+| `signal(SIGPIPE, SIG_IGN)` | Makes writing to a vanished client return an error instead of killing the whole process |
 
 ## Deliberate simplifications
 
 These are decisions, not gaps that were missed:
 
-- **Single-threaded, one client at a time.** Concurrency (threads, `epoll`, async I/O) is explicitly out of scope for Month 1 — see the project spec's own "WHAT NOT TO WORRY ABOUT YET" list.
-- **`Connection: close` on every response, no keep-alive, no pipelining.** Each connection serves exactly one request, matching behavior the server has had since Week 1.
-- **No `Server:` header sent.** Never implemented — purely optional per the HTTP spec.
-- **A hard 1 MiB cap on an accumulating request (`kMaxRequestSize` in `tcp_server.cpp`).** Bounds memory for a client that never sends a complete request.
-- **No TLS, no HTTP/2, no database, nothing distributed.** All explicitly later-month territory per the project spec.
+- **No limit on the number of threads.** Every connection gets a new thread, by design, so Week 4 could measure what happens without a limit. A bounded worker pool is Month 5.
+- **Detached threads, no graceful shutdown.** `Ctrl+C` ends the process immediately, including requests in progress. Workers reach the server through a pointer, which is safe only because `run()` never returns.
+- **`Connection: close` on every response.** No keep-alive or pipelining: one request per connection.
+- **A 1 MiB cap on a request** (`kMaxRequestSize`), so one client can't grow memory without limit.
+- **No TLS, no HTTP/2, no database, nothing distributed.** Later-month territory.
 
-## Benchmark — Month 1 baseline
+## Results
 
-Per the project spec: this is a **baseline**, not a performance claim. The goal is a trustworthy "before" number for comparing future architectural changes against — not proof the server is fast. Full raw data, every field explained, and the actual experiment log live in [`Month1/Week4/test_explain.html`](Month1/Week4/test_explain.html).
+All numbers were measured on one laptop (Ryzen 5 5600H, 6 cores / 12 threads, Pulse running inside WSL2 with 3.5 GiB of RAM). They are **measurements for comparison, not performance claims**: on this machine the same code's throughput varied up to ~2.5× between days, so only numbers from the same session are compared with each other.
 
-```
-Machine:      Windows 11 PC, running Pulse inside WSL2 (Ubuntu)
-CPU:          12 logical processors visible to WSL2 (nproc) — not necessarily the full host core count
-RAM:          3.5 GiB allocated to the WSL2 VM (not the host's total physical RAM)
-OS:           Ubuntu 26.04 LTS, under WSL2 on Windows 11 — not bare-metal Linux
+### What thread-per-connection fixed (Month 2, Week 2)
 
-Concurrency:  1                        10
-Requests:     1000                     1000 (confirmed again at 50,000)
-Throughput:   2023 req/s               ~5380 req/s
-Latency:      0.494 ms/request (mean)  1.86 ms/request (mean)
-CPU usage:    0.0%                     up to ~12.6% of one core, under sustained load
-Memory (RSS): 3840 KB                  3840 KB — identical, including at 50,000 requests
-Failed:       0                        0
-```
+| Scenario | Month 1 | Month 2 |
+|---|---|---|
+| `/hello` while another client is connected but silent | **timed out after 30 s** | **18 ms** |
+| `/hello` while a 5-second `/slow` is running | waits behind it | **30 ms** |
+| 5 × `/slow` at the same time | ~25 s (one after another) | **~5 s** (side by side) |
 
-**What these numbers actually mean:**
+### Thread safety (Month 2, Week 3)
 
-- **Throughput went up with concurrency, latency went up too — both true at once.** The server's own request-handling work never parallelizes (still exactly one client at a time), but at `-c 10` the kernel can complete TCP handshakes for the next several clients *while* the current one is being served — connection-setup overlap, not request-processing overlap. Any individual request, meanwhile, waits behind whichever ones arrived first — hence the higher per-request latency.
-- **CPU usage stays low even under sustained load, and not remotely close to saturating even one of the 12 available cores.** This server is not CPU-bound; its throughput ceiling comes from the sequential `accept()` loop, not a lack of processing power. That's precisely the kind of bottleneck later-month concurrency work (threads, `epoll`) would exist to address.
-- **Memory is flat — same `3840 KB` at idle, at 1,000 requests, and at 50,000 requests.** Every per-request allocation (`raw_request`, the parsed `HttpRequest`, the response) is a local variable scoped to one call of `handle_client()`, freed the instant it returns — there is no global cache, connection pool, or shared mutable state for a request to leak into. This number is the baseline to compare against once future months add exactly that kind of state.
+- Without synchronization, the shared counters **lost updates** under load (20,000 requests × 3 rounds, 50 clients at once): the active-connection count drifted to 15 instead of 1. ThreadSanitizer reported **10 data races** on exactly the unprotected counter lines.
+- With a **mutex** or **atomics**: exact counts, **0 races**.
+- Mutex vs atomic made **no measurable throughput difference** inside the server (~8,000–8,500 req/s, same session), even though a microbenchmark showed atomic ~3× faster. Mutex was kept, because it gives consistent `/stats` snapshots.
+
+### The trade-off: Month 1 vs Month 2, same session (Month 2, Week 4)
+
+`ab -n 20000` to `/hello`, both servers run back to back, twice:
+
+| Clients at once | 1 | 10 | 50 | 100 | 200 |
+|---|---|---|---|---|---|
+| Month 1 req/s | ~4,800 | ~11,600 | ~13,800 | ~13,900 | ~13,900 |
+| Month 2 req/s | ~3,500 | ~8,000 | ~8,800 | ~8,400 | ~8,500 |
+| Month 1 slowest request | 1 ms | 2–3 ms | 5 ms | 9–12 ms | **~1,000 ms** |
+| Month 2 slowest request | 1–16 ms | 2–17 ms | 15–16 ms | 15–24 ms | **33 ms** |
+
+- **For quick requests, Month 1 is faster.** Month 2 creates a new thread for every request (~0.13 ms), about as long as the whole `/hello` takes.
+- **Month 2 never makes anyone wait seconds.** With 200 clients, Month 1's waiting line overflowed and some clients had to retry a second later.
+- **Both hit the load tool's limit** (`ab`, single-threaded, at 98–99% CPU), so neither number is the server's true maximum. Pulse itself used only ~1.2 of 6 cores.
+
+**Cost of each open connection in Month 2:** 1 thread + 1 file descriptor + **~49 KB** of real memory, growing in a straight line (2,000 idle connections ≈ 98 MB). Idle connections cost no CPU. On this machine the first hard limit is the open-file limit, at about 10,000 simultaneous connections.
+
+**In one line:** Month 2 didn't make Pulse faster. It made Pulse **not get stuck**, at the price of a thread per connection. Months 3–5 aim to keep the first without paying the second.
+
+Full details and raw data: [`Month2/Week2/notes.html`](Month2/Week2/notes.html), [`Month2/Week3/notes.html`](Month2/Week3/notes.html), [`Month2/Week4/notes.html`](Month2/Week4/notes.html). The Month 1 baseline: [`Month1/Week4/test_explain.html`](Month1/Week4/test_explain.html).

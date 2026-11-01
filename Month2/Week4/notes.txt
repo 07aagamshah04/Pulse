@@ -1,0 +1,30 @@
+MONTH 2 / WEEK 4 — PREDICTIONS SCRATCHPAD
+
+The test plan and all results live in notes.html.
+Write predictions here BEFORE running each test — this week they're numbers.
+
+
+TEST A — hold N idle connections (Month 2)
+  - threads DURING with N = 1000: 1001   open fds: 1003
+  - VmSize per connection: 38 kB     KernelStack per connection: 8 kB
+  - MemAvailable used per connection (the true cost): 38 kB
+  - context switches/s while all are idle: high or low? low
+  - AFTER: back to exactly the BEFORE values? yes
+
+
+TEST B — Month 2 sweep (c = 1, 10, 50, 100, 200)
+  - req/s at c=1: ____   c=10: ____   c=200: ____
+  - p99 at c=200: ____ ms
+  - main% at c=200: near 100% (doorman is the bottleneck) or not? ____
+  - peakThr at c=200: ____
+
+
+TEST C — Month 1 sweep, same session
+  - which is faster at c=1? ____   at c=10? ____   at c=200? ____
+  - why? ____
+  - Month 1 peakThr at every c: ____
+  - Month 1 main%: ____ (hint: how many threads does Month 1 have?)
+
+
+TEST D — repeat
+  - how much will the same server's req/s move between two runs? ____ %

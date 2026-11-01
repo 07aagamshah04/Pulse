@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Pulse Month 2 Week 4</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+      @page { margin: 1in; }
+      body {
+        font-family: -apple-system, "Segoe UI", Calibri, Arial, sans-serif;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2em 1em;
+        line-height: 1.55;
+        color: #1a1a1a;
+        font-size: 15px;
+      }
+      h1 { font-size: 1.7em; border-bottom: 2px solid #333; padding-bottom: 0.2em; margin-top: 1.6em; }
+      h2 { font-size: 1.3em; border-bottom: 1px solid #ccc; padding-bottom: 0.15em; margin-top: 1.4em; }
+      h3 { font-size: 1.08em; margin-top: 1.2em; }
+      pre {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.8em 1em;
+        overflow-x: auto;
+        font-size: 0.85em;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      pre code { background: none; padding: 0; }
+      table { border-collapse: collapse; margin: 1em 0; }
+      th, td { border: 1px solid #ccc; padding: 0.4em 0.8em; }
+      blockquote { border-left: 3px solid #999; margin-left: 0; padding-left: 1em; color: #444; }
+      #TOC { background: #f9f9f9; border: 1px solid #ddd; padding: 1em 1.5em; border-radius: 4px; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+      .analogy {
+        background: #eef6ff;
+        border-left: 4px solid #3b82f6;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .example {
+        background: #f6fff0;
+        border-left: 4px solid #4caf50;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .analogy p:first-child, .example p:first-child { margin-top: 0; }
+      .analogy p:last-child, .example p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Pulse — Month 2, Week 4: Concepts</h1>
+<p class="subtitle">Every connection costs a thread. What happens when
+there are lots of them?</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#the-whole-week-in-one-paragraph"
+id="toc-the-whole-week-in-one-paragraph">The whole week in one
+paragraph</a></li>
+<li><a href="#part-1-the-picture-one-thread-per-open-connection"
+id="toc-part-1-the-picture-one-thread-per-open-connection">Part 1 — The
+picture: one thread per open connection</a></li>
+<li><a href="#part-2-what-each-thread-costs"
+id="toc-part-2-what-each-thread-costs">Part 2 — What each thread
+costs</a>
+<ul>
+<li><a href="#cost-1-time-to-create-it"
+id="toc-cost-1-time-to-create-it">Cost 1: time to create it</a></li>
+<li><a href="#cost-2-memory" id="toc-cost-2-memory">Cost 2:
+memory</a></li>
+<li><a href="#cost-3-one-file-descriptor"
+id="toc-cost-3-one-file-descriptor">Cost 3: one file descriptor</a></li>
+<li><a href="#the-three-costs-together"
+id="toc-the-three-costs-together">The three costs together</a></li>
+</ul></li>
+<li><a href="#part-3-how-many-connections-can-pulse-hold"
+id="toc-part-3-how-many-connections-can-pulse-hold">Part 3 — How many
+connections can Pulse hold?</a></li>
+<li><a href="#part-4-lots-of-threads-but-only-6-cores"
+id="toc-part-4-lots-of-threads-but-only-6-cores">Part 4 — Lots of
+threads, but only 6 cores</a></li>
+<li><a href="#part-5-the-doorman-pulses-main-thread"
+id="toc-part-5-the-doorman-pulses-main-thread">Part 5 — The doorman:
+Pulse’s main thread</a></li>
+<li><a href="#part-6-measuring-how-long-did-it-take-latency"
+id="toc-part-6-measuring-how-long-did-it-take-latency">Part 6 —
+Measuring “how long did it take?”: latency</a></li>
+<li><a href="#part-7-the-three-experiments-this-week"
+id="toc-part-7-the-three-experiments-this-week">Part 7 — The three
+experiments this week</a>
+<ul>
+<li><a href="#experiment-a-hold-lots-of-connections-open"
+id="toc-experiment-a-hold-lots-of-connections-open">Experiment A: hold
+lots of connections open</a></li>
+<li><a href="#experiment-b-increasing-concurrency-on-month-2"
+id="toc-experiment-b-increasing-concurrency-on-month-2">Experiment B:
+increasing concurrency on Month 2</a></li>
+<li><a href="#experiment-c-the-same-on-month-1-side-by-side"
+id="toc-experiment-c-the-same-on-month-1-side-by-side">Experiment C: the
+same on Month 1, side by side</a></li>
+<li><a href="#the-tools-youve-used-all-of-them-before"
+id="toc-the-tools-youve-used-all-of-them-before">The tools (you’ve used
+all of them before)</a></li>
+</ul></li>
+<li><a href="#part-8-comparing-month-1-and-month-2-fairly"
+id="toc-part-8-comparing-month-1-and-month-2-fairly">Part 8 — Comparing
+Month 1 and Month 2 fairly</a></li>
+<li><a href="#part-9-concept-check" id="toc-part-9-concept-check">Part 9
+— Concept check</a></li>
+</ul>
+</nav>
+<style>
+details { background:#fafafa; border:1px solid #ddd; border-radius:6px; padding:0.3em 1.2em 1em; margin:1.2em 0; }
+details[open] { padding-bottom:1.2em; }
+summary { cursor:pointer; font-weight:600; padding:0.8em 0; color:#444; }
+.big { background:#fff8e1; border:2px solid #f0c040; border-radius:8px; padding:1em 1.4em; margin:1.4em 0; font-size:1.05em; }
+</style>
+<h1 id="the-whole-week-in-one-paragraph">The whole week in one
+paragraph</h1>
+<p>Since Week 2, Pulse gives <strong>every connection its own
+thread</strong>. That fixed the big Month 1 problem: one slow client no
+longer blocks everyone. But it means <strong>more clients = more
+threads</strong>, with nothing to stop it. This week asks two simple
+questions:</p>
+<ol type="1">
+<li><strong>What does each thread cost Pulse?</strong> (time, memory,
+CPU)</li>
+<li><strong>What happens when there are a lot of them?</strong>
+(hundreds, thousands)</li>
+</ol>
+<p>Then we <strong>measure</strong> it, and run Month 1 and Month 2 side
+by side to see what thread-per-connection really gained, and what it
+costs.</p>
+<p>There’s no new feature to build this week. It’s all about
+understanding.</p>
+<p><strong>How to read this doc:</strong> the main text explains each
+idea in plain words. Grey boxes marked <strong>“▶ The measured
+numbers”</strong> hold the exact measurements from your machine. They’re
+optional: open them if you’re curious, skip them if not.</p>
+<hr />
+<h1 id="part-1-the-picture-one-thread-per-open-connection">Part 1 — The
+picture: one thread per open connection</h1>
+<p>You already saw this in Week 2, Test 3:</p>
+<pre><code>5 clients sending /slow  →  Pulse had 6 threads  (1 main + 5 workers)
+all 5 finished           →  Pulse had 1 thread   (just main)</code></pre>
+<p>The rule is simple:</p>
+<div class="big">
+<p><b>Pulse’s thread count = 1 (the main thread) + 1 for every
+connection that’s open right now.</b></p>
+</div>
+<p>So if 1,000 clients are connected at the same moment, Pulse has 1,001
+threads. There’s no limit in Pulse’s code: <code>run()</code> creates a
+thread for every connection, always.</p>
+<p><strong>One important detail: “open right now”.</strong> A fast
+request like <code>/hello</code> finishes in a fraction of a
+millisecond, and its thread ends straight away. So sending 1,000
+<em>quick</em> requests doesn’t give you 1,000 threads at once. They
+mostly come and go one at a time. You only get lots of threads when lots
+of connections <strong>stay open at the same time</strong>: - slow
+clients (like the silent <code>nc</code> from Week 1, Experiment 0) -
+slow handlers (like <code>/slow</code>) - very many clients sending at
+the same moment</p>
+<div class="analogy">
+<p><b>Analogy:</b> Pulse is a restaurant that hires <b>one waiter per
+customer</b>, the moment the customer walks in. The waiter stays with
+that customer until they leave, then goes home. A customer who orders
+quickly and leaves needs their waiter for a minute. A customer who sits
+there for an hour (a slow client) keeps their waiter for an hour. So the
+number of waiters at any moment = the number of customers sitting in the
+restaurant right now.</p>
+</div>
+<p>The rest of this doc asks: <strong>what does each waiter cost, and
+how many can the restaurant hold?</strong></p>
+<hr />
+<h1 id="part-2-what-each-thread-costs">Part 2 — What each thread
+costs</h1>
+<p>Each connection’s thread costs Pulse three things.</p>
+<h3 id="cost-1-time-to-create-it">Cost 1: time to create it</h3>
+<p>Every time a client connects, the main thread has to <strong>create a
+brand-new thread</strong>. That isn’t free: the operating system has to
+set up a new stack and new bookkeeping, then start it running. On your
+machine, creating (and later finishing) one thread takes about
+<strong>0.13 milliseconds</strong>.</p>
+<p>That sounds tiny, but compare it with how long one
+<code>/hello</code> takes. In Week 3, Pulse handled about 8,000 requests
+per second, which is about <strong>0.12 milliseconds per
+request</strong>. So <strong>creating the thread takes about as long as
+the whole request.</strong> For fast requests, Pulse spends roughly as
+much effort <em>hiring the waiter</em> as the waiter spends <em>serving
+the customer</em>.</p>
+<div class="analogy">
+<p><b>Analogy:</b> hiring a new waiter for every customer means
+paperwork every time someone walks in. If customers stay an hour, a
+minute of paperwork doesn’t matter. If customers stay one minute, the
+paperwork takes as long as serving them.</p>
+</div>
+<h3 id="cost-2-memory">Cost 2: memory</h3>
+<p>Each thread needs memory, mainly for its <strong>stack</strong> (its
+“notebook”, Week 1, Part 4). There are two numbers to keep apart:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Amount per thread</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reserved</strong></td>
+<td>8 MB</td>
+<td>Memory <em>set aside</em> for the stack in case it’s needed. Like
+booking a hotel room: booking costs nothing until someone actually
+sleeps there</td>
+</tr>
+<tr>
+<td><strong>Actually used</strong></td>
+<td>about <strong>38 KB</strong></td>
+<td>The memory that’s really taken: the small part of the stack actually
+used, plus the operating system’s own bookkeeping for the thread</td>
+</tr>
+</tbody>
+</table>
+<p>So <strong>1,000 open connections ≈ 38 MB of real memory</strong>,
+which is easy for your 3.5 GB machine. Memory is <strong>not</strong>
+what breaks first.</p>
+<p>One surprise: Pulse’s own memory number (<code>VmRSS</code>, from
+Week 1) shows <strong>less</strong> than 38 KB per thread. That’s
+because every thread also has a small <strong>second stack inside the
+kernel</strong> (16 KB), used when the thread makes a system call like
+<code>read()</code>. That kernel memory isn’t counted in Pulse’s own
+number. To see the true cost, look at the <strong>whole
+system’s</strong> free memory instead.</p>
+<details>
+<summary>
+▶ The measured numbers: memory (optional)
+</summary>
+<p>A test program created N threads that just sleep (like N slow
+clients), and measured memory:</p>
+<pre><code>PID 40506: created 1000 sleeping threads in 120.5 ms
+n=1000: VmSize: 8203152 kB VmRSS: 11904 kB Threads: 1001
+      KernelStack +15984 kB  (= 15 kB per thread);  MemAvailable -39416 kB (= 39 kB per thread)
+
+PID 41525: created 3000 sleeping threads in 432.3 ms
+n=3000: VmSize: 24595944 kB VmRSS: 28416 kB Threads: 3001
+      KernelStack +47952 kB  (= 15 kB per thread);  MemAvailable -112604 kB (= 37 kB per thread)</code></pre>
+<ul>
+<li><code>VmSize</code> = reserved. 3,000 threads reserved <strong>24.6
+GB</strong>, on a machine with only 3.5 GB of RAM. That’s possible
+because reserving costs nothing until it’s used.</li>
+<li><code>VmRSS</code> = Pulse’s own used memory: 28 MB for 3,000
+threads.</li>
+<li><code>KernelStack</code> = the kernel’s second stack: exactly 16 KB
+per thread, and <strong>not</strong> included in
+<code>VmRSS</code>.</li>
+<li><code>MemAvailable</code> = how much free memory the whole system
+lost: <strong>~38 KB per thread</strong>. That’s the true cost.</li>
+</ul>
+</details>
+<h3 id="cost-3-one-file-descriptor">Cost 3: one file descriptor</h3>
+<p>Each connection is one open <strong>file descriptor</strong> (fd),
+the numbers 4, 5, 6… you saw in Week 2, Test 3. A process can only have
+so many fds open at once. That’s the first limit Pulse will hit. See
+Part 3.</p>
+<h3 id="the-three-costs-together">The three costs together</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Cost per connection</th>
+<th>Amount</th>
+<th>Does it matter?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time to create its thread</td>
+<td>~0.13 ms</td>
+<td><strong>Yes, for fast requests</strong>: it’s about the same as the
+request itself</td>
+</tr>
+<tr>
+<td>Real memory</td>
+<td>~38 KB</td>
+<td>Not until many thousands of connections</td>
+</tr>
+<tr>
+<td>File descriptors</td>
+<td>1</td>
+<td><strong>Yes</strong>: there’s a fixed maximum per process (next
+part)</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+▶ The measured numbers: thread creation time (optional)
+</summary>
+<p>A test program created a thread that does nothing, then waited for it
+to finish, 20,000 times in a row:</p>
+<pre><code>20000 threads created+joined one after another: 3047 ms total, 152.3 us per thread
+20000 threads created+joined one after another: 2552 ms total, 127.6 us per thread</code></pre>
+<p>130–150 µs (microseconds) = 0.13–0.15 ms per thread.</p>
+</details>
+<hr />
+<h1 id="part-3-how-many-connections-can-pulse-hold">Part 3 — How many
+connections can Pulse hold?</h1>
+<p>Every connection needs <strong>one thread and one fd</strong>. Linux
+limits both. Whichever limit comes first is Pulse’s maximum.</p>
+<p>On your machine:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+<th>What it means for Pulse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Open files per process</strong></td>
+<td><strong>10,240</strong></td>
+<td>Pulse can hold about <strong>10,000</strong> connections, then
+<code>accept()</code> fails with “Too many open files”. <strong>This is
+the first wall.</strong></td>
+</tr>
+<tr>
+<td>Threads per user</td>
+<td>14,293</td>
+<td>Would stop Pulse at ~14,000 threads, but the fd limit comes
+first</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>3.5 GB</td>
+<td>~38 KB per thread gives room for ~80,000+ threads. Not the
+problem</td>
+</tr>
+</tbody>
+</table>
+<p>So on this machine, <strong>Pulse tops out at about 10,000
+simultaneous connections</strong>, because of the open-file limit.</p>
+<p><strong>We won’t go near that this week.</strong> The spec says not
+to push the machine to its limits. The tests stay at 2,000 connections
+or fewer. That’s enough to see the trend without breaking anything.</p>
+<p><strong>A question to think about (no answer here, it’s for your
+predictions):</strong> look at what <code>run()</code> does when
+<code>accept()</code> fails:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> client_fd <span class="op">=</span> <span class="op">::</span>accept<span class="op">(</span><span class="va">listen_socket_</span><span class="op">.</span>fd<span class="op">(),</span> <span class="op">...);</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>client_fd <span class="op">==</span> <span class="op">-</span><span class="dv">1</span><span class="op">)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// log the error, then...</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span><span class="op">;</span>     <span class="co">// ...go straight back and call accept() again</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>When the error is “Too many open files”, the client that couldn’t be
+accepted is <strong>still waiting in line</strong> to be accepted. So
+what happens the next time round the loop? And the time after that?</p>
+<details>
+<summary>
+▶ All the limits on this machine (optional)
+</summary>
+<pre><code>ulimit -n (open files per process): 10240   hard: 1048576
+ulimit -u (processes+threads per user): 14293
+ulimit -s (stack KiB): 8192
+threads-max: 28587
+pid_max: 4194304
+max_map_count: 1048576
+somaxconn: 4096
+ip_local_port_range: 32768  60999</code></pre>
+<ul>
+<li><code>ulimit -n</code> = max open files per process (the first wall
+for Pulse).</li>
+<li><code>ulimit -u</code> = max threads + processes for your user,
+counting everything you run.</li>
+<li><code>threads-max</code> = max threads on the whole system.</li>
+<li><code>somaxconn</code> = the biggest “waiting line” (backlog) any
+program may ask for. Pulse asks for 128.</li>
+<li><code>ip_local_port_range</code> = how many client-side ports exist.
+This limits how many connections a client like <code>ab</code> can open,
+not Pulse.</li>
+</ul>
+<p>The <strong>client</strong> has the same open-file limit:
+<code>ab</code> opening 2,000 connections needs 2,000 fds of its
+own.</p>
+</details>
+<hr />
+<h1 id="part-4-lots-of-threads-but-only-6-cores">Part 4 — Lots of
+threads, but only 6 cores</h1>
+<p>Your laptop has <strong>6 real CPU cores</strong> (Week 1, Experiment
+2 found this). Only 6 threads can truly run at the same instant. So what
+happens with 100 threads?</p>
+<p>It depends on what the threads are doing, and you already measured
+both cases in Week 1:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Threads that are <strong>waiting</strong> (Week 1, Experiment
+3)</th>
+<th>Threads that are <strong>working</strong> (Week 1, Experiment
+2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Example in Pulse</td>
+<td>a slow client, <code>/slow</code>, an idle connection</td>
+<td>100 clients all sending <code>/hello</code> at the same moment</td>
+</tr>
+<tr>
+<td>Need a CPU?</td>
+<td><strong>No.</strong> They’re asleep</td>
+<td><strong>Yes</strong>, all of them at once</td>
+</tr>
+<tr>
+<td>Cost of having many</td>
+<td>almost nothing (just memory)</td>
+<td>they <strong>queue for the 6 cores</strong>, so each request waits
+longer</td>
+</tr>
+</tbody>
+</table>
+<div class="analogy">
+<p><b>Analogy:</b> the restaurant has <b>6 cooks</b> (cores). Waiters
+whose customers are still reading the menu (waiting threads) don’t need
+a cook at all, so you can have 100 of them and the kitchen is fine. But
+if 100 customers all order at the same moment (working threads), the 6
+cooks can only cook 6 dishes at a time. The other 94 orders wait. More
+waiters doesn’t mean more cooking. It means a longer queue in the
+kitchen.</p>
+</div>
+<p><strong>Taking turns also costs something.</strong> When the CPU
+switches from one thread to another, it has to save one thread’s place
+and load the next one’s (a <strong>context switch</strong>, Week 1, Part
+5). That takes a few microseconds every time. With 6 threads on 6 cores,
+there’s almost no switching. With 100 busy threads sharing 6 cores, the
+system switches constantly, and that switching is wasted time.</p>
+<div class="big">
+<p><b>So more threads helps when they’re <i>waiting</i> (that’s why Week
+2 worked so well for slow clients), but not when they’re
+<i>working</i>.</b> Past the number of cores, extra working threads just
+add queueing and switching.</p>
+</div>
+<details>
+<summary>
+▶ The measured number: one context switch (optional)
+</summary>
+<p>Two threads passed a message back and forth 200,000 times, both on
+the same CPU, so every hand-off was a real switch:</p>
+<pre><code>200000 round trips = 400000 switches in 2431 ms -&gt; 6.08 us per switch (incl. the pipe read/write)</code></pre>
+<p>About <strong>6 µs</strong> per switch on your machine, inside WSL2.
+(On normal Linux, without the virtual machine, it’s usually less.)</p>
+<p>You can watch switches happening with <code>vmstat 1</code>. Its
+<code>cs</code> column is “context switches per second” for the whole
+machine.</p>
+</details>
+<hr />
+<h1 id="part-5-the-doorman-pulses-main-thread">Part 5 — The doorman:
+Pulse’s main thread</h1>
+<p>Here’s something special about Pulse’s design. <strong>Every single
+connection goes through the same one thread: the main thread.</strong>
+For each client it does:</p>
+<pre><code>accept() the connection  →  write the &quot;Client connected&quot; log line  →  create a new thread  →  back to accept()</code></pre>
+<p>This is a <strong>one-at-a-time job</strong>. It doesn’t matter if
+you have 6 cores or 600 worker threads: there is only
+<strong>one</strong> main thread, and it handles connections one after
+another.</p>
+<div class="analogy">
+<p><b>Analogy:</b> the restaurant has <b>one doorman</b>. Every
+customer, without exception, is greeted by him, and he personally hires
+a waiter for them (that’s the ~0.13 ms of paperwork from Part 2) before
+he can greet the next one. However many waiters and cooks are inside,
+customers can’t get in faster than the doorman can do his paperwork.</p>
+</div>
+<p>This leads to a real <strong>hypothesis</strong> to test this
+week:</p>
+<blockquote>
+<p><strong>When lots of fast requests arrive, Pulse’s speed may be
+limited by the main thread creating threads, not by the
+workers.</strong></p>
+</blockquote>
+<p>The numbers make it believable: creating a thread takes ~0.13 ms, and
+Pulse handled about one request every ~0.12 ms. Those are suspiciously
+close.</p>
+<p><strong>How we’ll check it, rather than guess:</strong> during a
+heavy load test, look at <strong>each thread’s CPU usage</strong>
+(<code>top -H</code>, Week 1). If the main thread is near
+<strong>100%</strong> busy while the workers are mostly idle, the
+doorman is the bottleneck.</p>
+<p>(This is exactly what <strong>Month 5’s worker pool</strong> fixes.
+Instead of hiring a new waiter for every customer, you keep a fixed team
+of waiters and reuse them, so there’s no paperwork per customer.)</p>
+<hr />
+<h1 id="part-6-measuring-how-long-did-it-take-latency">Part 6 —
+Measuring “how long did it take?”: latency</h1>
+<p>So far we’ve measured <strong>throughput</strong>: requests per
+second. This week we also measure <strong>latency</strong>: how long
+<em>each</em> request took. The spec asks for “p50, p95, p99”. Here’s
+what that means, with a tiny example.</p>
+<p>Say 10 requests took these times (in milliseconds), sorted from
+fastest to slowest:</p>
+<pre><code>1   1   1   1   1   1   1   1   2   50</code></pre>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Name</th>
+<th>Meaning</th>
+<th>In this example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>average</strong> (mean)</td>
+<td>add them all, divide by 10</td>
+<td>(8 + 2 + 50) ÷ 10 = <strong>6 ms</strong></td>
+</tr>
+<tr>
+<td><strong>p50</strong> (median)</td>
+<td>the middle one: half were faster, half slower</td>
+<td><strong>1 ms</strong></td>
+</tr>
+<tr>
+<td><strong>p90</strong></td>
+<td>90% were this fast or faster</td>
+<td><strong>2 ms</strong></td>
+</tr>
+<tr>
+<td><strong>max</strong></td>
+<td>the slowest one</td>
+<td><strong>50 ms</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>average says 6 ms, but no request actually took 6
+ms</strong>: nine took 1–2 ms and one took 50 ms. The average mixes them
+together and hides what really happened. That’s why the spec asks for
+<strong>percentiles</strong>:</p>
+<ul>
+<li><strong>p50</strong> tells you what a <strong>typical</strong>
+request experienced.</li>
+<li><strong>p95 / p99</strong> tell you what the
+<strong>unlucky</strong> ones experienced: 1 in 20 or 1 in 100 requests
+were slower than this.</li>
+</ul>
+<p>The unlucky ones matter, because a real web page makes many requests,
+and the page is only as fast as its <strong>slowest</strong> one.</p>
+<p><code>ab</code> prints this for you, as the table <strong>“Percentage
+of the requests served within a certain time (ms)”</strong>. The
+<code>50%</code> row is p50, <code>95%</code> is p95, <code>99%</code>
+is p99, and <code>100%</code> is the max.</p>
+<p><strong>What makes the unlucky requests slow in Pulse, at high
+load:</strong> - waiting for one of the 6 cores (Part 4) - waiting for
+the doorman (Part 5) - the <strong>waiting line overflowing</strong>:
+Pulse lets 128 connections wait to be accepted. If more arrive faster
+than the main thread can accept them, the kernel turns them away, and
+the client automatically <strong>tries again after 1 second</strong>. So
+if you ever see some requests taking <strong>about 1,000 ms</strong>
+while the rest take a few ms, that’s the cause.</p>
+<details>
+<summary>
+▶ A shortcut for predicting latency (optional)
+</summary>
+<p><code>ab -c 10</code> always keeps exactly <strong>10</strong>
+requests in flight. If Pulse finishes <strong>1,000</strong> requests
+per second, then each request must take about <strong>10 ÷ 1,000 = 0.01
+s = 10 ms</strong>. In general:</p>
+<pre><code>average time per request  ≈  how many in flight (ab&#39;s -c)  ÷  requests per second</code></pre>
+<p>So once you know the requests per second, you can predict the average
+latency before looking. If you raise <code>-c</code> from 10 to 100 and
+requests per second stays the same, each request must take about
+<strong>10× longer</strong>. This rule is called <strong>Little’s
+law</strong>.</p>
+</details>
+<hr />
+<h1 id="part-7-the-three-experiments-this-week">Part 7 — The three
+experiments this week</h1>
+<p>Everything above turns into three experiments.</p>
+<h3 id="experiment-a-hold-lots-of-connections-open">Experiment A: hold
+lots of connections open</h3>
+<p><strong>Question:</strong> how does Pulse’s cost grow as connections
+grow?</p>
+<p><strong>How:</strong> a small test client opens N connections to
+Pulse and sends <strong>nothing</strong>, like Week 1’s silent
+<code>nc</code> client, N times over. Each one makes Pulse create a
+thread that sits waiting. Repeat for N = 100, 500, 1,000, 2,000.</p>
+<p><strong>What to watch:</strong> Pulse’s thread count (should be N +
+1), its open fds, and the system’s memory. Prediction from Part 2:
+memory grows by about 38 KB per connection, in a straight line.</p>
+<h3 id="experiment-b-increasing-concurrency-on-month-2">Experiment B:
+increasing concurrency on Month 2</h3>
+<p><strong>Question:</strong> what happens to speed and latency as more
+clients send at the same time?</p>
+<p><strong>How:</strong> <code>ab</code> with <code>-c</code> = 1, 10,
+50, 100, 200.</p>
+<p><strong>What to watch:</strong> requests per second, p50 / p95 / p99,
+CPU use, and <strong>the main thread’s CPU</strong> (the Part 5
+hypothesis).</p>
+<h3 id="experiment-c-the-same-on-month-1-side-by-side">Experiment C: the
+same on Month 1, side by side</h3>
+<p><strong>Question:</strong> what did thread-per-connection actually
+gain, and what did it cost?</p>
+<p><strong>How:</strong> rebuild the Month 1 version of Pulse (from git,
+Part 8) and run Experiment B against <strong>both</strong>, back to
+back, in the same sitting.</p>
+<p><strong>Be ready for a surprise.</strong> Month 2 was built to stop
+<strong>slow</strong> clients from blocking everyone, and it does that
+(Week 2). For <strong>fast</strong> <code>/hello</code> requests, Month
+2 pays the thread-creation cost on every request, and Month 1 doesn’t.
+So it’s genuinely not obvious which one is faster here. Predict before
+you measure.</p>
+<h3 id="the-tools-youve-used-all-of-them-before">The tools (you’ve used
+all of them before)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>What</th>
+<th>Tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requests per second, latency percentiles</td>
+<td><code>ab</code></td>
+</tr>
+<tr>
+<td>CPU per thread (is the main thread at 100%?)</td>
+<td><code>top -H -p &lt;PID&gt;</code>, or
+<code>pidstat -t -p &lt;PID&gt; 1</code></td>
+</tr>
+<tr>
+<td>Thread count</td>
+<td><code>grep Threads /proc/&lt;PID&gt;/status</code></td>
+</tr>
+<tr>
+<td>Pulse’s memory</td>
+<td><code>grep VmRSS /proc/&lt;PID&gt;/status</code></td>
+</tr>
+<tr>
+<td>System memory</td>
+<td><code>free -m</code></td>
+</tr>
+<tr>
+<td>Context switches</td>
+<td><code>vmstat 1</code> (the <code>cs</code> column)</td>
+</tr>
+</tbody>
+</table>
+<p>The exact commands go in the test plan
+(<code>Week4/notes.html</code>), as in Weeks 2 and 3.</p>
+<hr />
+<h1 id="part-8-comparing-month-1-and-month-2-fairly">Part 8 — Comparing
+Month 1 and Month 2 fairly</h1>
+<p><strong>Why not just use Month 1’s numbers from the README?</strong>
+Because on this laptop, the <strong>same code</strong> measured ~3,200
+requests/s one day and ~8,400 the next (Week 3, Test 7). Numbers from
+different days can’t be compared. So <strong>both versions must run on
+the same day, one after the other.</strong></p>
+<p><strong>But Month 1’s code is gone.</strong> It was changed in Weeks
+2 and 3. Git still has it, though. This command puts the Month 1 version
+into a <strong>separate folder</strong>, without touching your current
+code:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> worktree add ../pulse-month1 dc0ce76</span></code></pre></div>
+<ul>
+<li><code>dc0ce76</code> is the commit called <strong>“Week4
+benchmarking completed”</strong>: the last commit of Month 1.</li>
+<li><code>../pulse-month1</code> is the new folder, next to your Pulse
+folder.</li>
+<li>Your current Pulse folder isn’t changed at all.</li>
+</ul>
+<p>Then build it as usual, and you have a Month 1 <code>pulse</code> and
+a Month 2 <code>pulse</code> to run next to each other. When finished,
+<code>git worktree remove ../pulse-month1</code> deletes that extra
+folder.</p>
+<p><strong>The fairness rules:</strong> 1. Same day, back to back. 2.
+Same <code>ab</code> command for both. 3. Pulse’s log goes to
+<code>/dev/null</code> for both (Week 2’s lesson: logging to
+<code>/mnt/c</code> slows Pulse down a lot). 4. Run each test at least
+twice, to see how much it moves on its own.</p>
+<p>And the spec’s reminder: <strong>the goal isn’t “Month 2 must win”.
+The goal is “I understand <em>why</em> the numbers
+changed.”</strong></p>
+<hr />
+<h1 id="part-9-concept-check">Part 9 — Concept check</h1>
+<p><strong>1. How many threads does Pulse have when 50 clients are
+connected at the same moment?</strong> 51: one main thread, plus one per
+open connection.</p>
+<p><strong>2. If 1,000 <code>/hello</code> requests are sent quickly,
+one after another, does Pulse reach 1,000 threads?</strong> Usually not.
+Each <code>/hello</code> finishes in a fraction of a millisecond and its
+thread ends, so they mostly don’t overlap. Lots of threads only build up
+when connections stay open at the same time.</p>
+<p><strong>3. What are the three costs of each connection?</strong> Time
+to create its thread (~0.13 ms), real memory (~38 KB), and one file
+descriptor.</p>
+<p><strong>4. Why does the thread-creation time matter so much for
+<code>/hello</code>?</strong> Because a whole <code>/hello</code>
+request takes about the same time (~0.12 ms). Pulse spends roughly as
+long creating the thread as doing the actual work.</p>
+<p><strong>5. “Reserved” 8 MB vs “used” 38 KB per thread: what’s the
+difference?</strong> Reserved is memory set aside in case the stack
+grows, which costs nothing until it’s used. Used is what’s really taken.
+Only the used amount fills up RAM.</p>
+<p><strong>6. What limit does Pulse hit first on this machine, and at
+roughly what number?</strong> The open-files limit: about 10,000
+simultaneous connections, because each connection is one fd.</p>
+<p><strong>7. Why are 100 <em>waiting</em> threads cheap, but 100
+<em>working</em> threads expensive?</strong> Waiting threads are asleep
+and don’t need a CPU. Working threads all need one of only 6 cores at
+once, so they queue, and the system wastes time switching between
+them.</p>
+<p><strong>8. What is the “doorman problem”?</strong> Every connection
+must pass through the single main thread, which accepts it and creates
+its thread one at a time. However many cores or workers there are, Pulse
+can’t accept connections faster than that one thread can.</p>
+<p><strong>9. How would you check whether the main thread is the
+bottleneck?</strong> During a heavy load test, look at per-thread CPU
+(<code>top -H</code>). If the main thread is near 100% and the workers
+aren’t, it’s the bottleneck.</p>
+<p><strong>10. Why is the average latency not enough?</strong> It can
+describe no real request. Nine 1 ms requests and one 50 ms request
+average 6 ms, which hides both the typical case and the slow one. p50
+shows the typical case, p99 the unlucky one.</p>
+<p><strong>11. Some requests take ~1,000 ms while most take a few ms.
+What’s the likely cause?</strong> The waiting line (backlog) overflowed,
+so the kernel turned connections away, and the clients retried after 1
+second.</p>
+<p><strong>12. Why must Month 1 and Month 2 be measured on the same
+day?</strong> This laptop’s speed changes a lot from day to day (the
+same code gave ~3,200 and ~8,400 req/s on different days), so only
+same-session numbers can be compared.</p>
+<p><strong>13. Why might Month 1 be as fast as, or faster than, Month 2
+on <code>/hello</code>?</strong> Month 2 pays to create a new thread for
+every request, and Month 1 doesn’t. Month 2’s real advantage is with
+slow clients and slow handlers, not fast requests.</p>
+</body>
+</html>
