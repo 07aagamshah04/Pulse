@@ -1,0 +1,31 @@
+MONTH 3 / WEEK 1 — PREDICTIONS SCRATCHPAD
+
+The full plan, every command explained, and all results live in notes.html.
+This file is only for writing predictions BEFORE running each experiment.
+After we go through the results, they get copied into notes.html.
+
+
+EXPERIMENT A — blocking vs non-blocking (client connects, sends nothing)
+  1. blocking.out: how many "calling read()" lines while you don't type?
+  2. blocking.out: STAT ____   WCHAN ____
+  3. nonblocking.out: what does the FIRST read() return? errno?
+  4. nonblocking.out: how long does a "nothing yet" read() take?  ~____
+  5. nonblocking.out: STAT ____   WCHAN ____  (same place as blocking?)
+  6. flags before = 0x____   flags after = 0x____
+  7. patient mode: you press Enter -> how long until your text shows up?
+
+
+EXPERIMENT B — busy polling (client connected, idle)
+  1. read() calls per second in busy mode: about ____
+  2. %CPU:   busy ____   patient ____   blocking ____
+  3. busy mode STAT ____
+  4. Who notices your text faster, busy or patient? Why?
+
+
+EXPERIMENT C — errors
+  1. EAGAIN = ____   EWOULDBLOCK = ____  (same or different?)
+  2. kill -USR1 in "eintr" mode: what does read() return? does hello still arrive?
+  3. kill -USR1 in "restart" mode: what do you see?
+  4. kill -USR1 in "plain" mode: what happens to the program? to nc?
+  5. Pulse's handle_client() today: what would it do if read() returned
+     -1 with EAGAIN?

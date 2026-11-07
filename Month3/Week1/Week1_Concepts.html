@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Pulse Month 3 Week 1</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+      @page { margin: 1in; }
+      body {
+        font-family: -apple-system, "Segoe UI", Calibri, Arial, sans-serif;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2em 1em;
+        line-height: 1.55;
+        color: #1a1a1a;
+        font-size: 15px;
+      }
+      h1 { font-size: 1.7em; border-bottom: 2px solid #333; padding-bottom: 0.2em; margin-top: 1.6em; }
+      h2 { font-size: 1.3em; border-bottom: 1px solid #ccc; padding-bottom: 0.15em; margin-top: 1.4em; }
+      h3 { font-size: 1.08em; margin-top: 1.2em; }
+      pre {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.8em 1em;
+        overflow-x: auto;
+        font-size: 0.85em;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      pre code { background: none; padding: 0; }
+      table { border-collapse: collapse; margin: 1em 0; }
+      th, td { border: 1px solid #ccc; padding: 0.4em 0.8em; }
+      blockquote { border-left: 3px solid #999; margin-left: 0; padding-left: 1em; color: #444; }
+      #TOC { background: #f9f9f9; border: 1px solid #ddd; padding: 1em 1.5em; border-radius: 4px; }
+      hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+      .analogy {
+        background: #eef6ff;
+        border-left: 4px solid #3b82f6;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .example {
+        background: #f6fff0;
+        border-left: 4px solid #4caf50;
+        padding: 0.7em 1.1em;
+        margin: 1em 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .analogy p:first-child, .example p:first-child { margin-top: 0; }
+      .analogy p:last-child, .example p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Pulse — Month 3, Week 1: Concepts</h1>
+<p class="subtitle">Making read() stop waiting: non-blocking sockets,
+O_NONBLOCK and EAGAIN</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#the-whole-week-in-one-paragraph"
+id="toc-the-whole-week-in-one-paragraph">The whole week in one
+paragraph</a></li>
+<li><a href="#part-1-the-line-in-pulse-that-waits"
+id="toc-part-1-the-line-in-pulse-that-waits">Part 1 — The line in Pulse
+that waits</a>
+<ul>
+<li><a href="#what-this-meant-for-month-1-and-month-2"
+id="toc-what-this-meant-for-month-1-and-month-2">What this meant for
+Month 1 and Month 2</a></li>
+</ul></li>
+<li><a href="#part-2-o_nonblock-a-switch-on-the-socket"
+id="toc-part-2-o_nonblock-a-switch-on-the-socket">Part 2 —
+<code>O_NONBLOCK</code>: a switch on the socket</a>
+<ul>
+<li><a href="#why-read-the-flags-first"
+id="toc-why-read-the-flags-first">Why read the flags first?</a></li>
+</ul></li>
+<li><a href="#part-3-what-read-returns-now"
+id="toc-part-3-what-read-returns-now">Part 3 — What <code>read()</code>
+returns now</a>
+<ul>
+<li><a href="#eagain-vs-ewouldblock"
+id="toc-eagain-vs-ewouldblock"><code>EAGAIN</code> vs
+<code>EWOULDBLOCK</code></a></li>
+<li><a href="#save-errno-straight-away"
+id="toc-save-errno-straight-away">Save <code>errno</code> straight
+away</a></li>
+</ul></li>
+<li><a href="#part-4-eintr-interrupted-not-broken"
+id="toc-part-4-eintr-interrupted-not-broken">Part 4 —
+<code>EINTR</code>: interrupted, not broken</a>
+<ul>
+<li><a href="#when-does-it-happen" id="toc-when-does-it-happen">When
+does it happen?</a></li>
+<li><a href="#where-pulse-will-actually-need-it"
+id="toc-where-pulse-will-actually-need-it">Where Pulse will actually
+need it</a></li>
+<li><a href="#what-to-do-when-you-see-it"
+id="toc-what-to-do-when-you-see-it">What to do when you see it</a></li>
+<li><a href="#what-the-experiment-shows"
+id="toc-what-the-experiment-shows">What the experiment shows</a></li>
+</ul></li>
+<li><a href="#part-5-the-catch-when-do-you-call-read-again-busy-polling"
+id="toc-part-5-the-catch-when-do-you-call-read-again-busy-polling">Part
+5 — The catch: when do you call <code>read()</code> again? (busy
+polling)</a>
+<ul>
+<li><a href="#option-1-ask-again-immediately-forever-busy-polling"
+id="toc-option-1-ask-again-immediately-forever-busy-polling">Option 1 —
+ask again immediately, forever (“busy polling”)</a></li>
+<li><a href="#option-2-ask-once-a-second-patient"
+id="toc-option-2-ask-once-a-second-patient">Option 2 — ask once a second
+(“patient”)</a></li>
+<li><a href="#the-three-options-side-by-side"
+id="toc-the-three-options-side-by-side">The three options side by
+side</a></li>
+</ul></li>
+<li><a href="#part-6-non-blocking-is-not-asynchronous"
+id="toc-part-6-non-blocking-is-not-asynchronous">Part 6 — Non-blocking
+is not “asynchronous”</a></li>
+<li><a href="#part-7-why-o_nonblock-alone-doesnt-fix-pulse"
+id="toc-part-7-why-o_nonblock-alone-doesnt-fix-pulse">Part 7 — Why
+<code>O_NONBLOCK</code> alone doesn’t fix Pulse</a></li>
+<li><a href="#part-8-the-experiments-this-week"
+id="toc-part-8-the-experiments-this-week">Part 8 — The experiments this
+week</a></li>
+<li><a href="#part-9-concept-check" id="toc-part-9-concept-check">Part 9
+— Concept check</a></li>
+</ul>
+</nav>
+<style>
+details { background:#fafafa; border:1px solid #ddd; border-radius:6px; padding:0.3em 1.2em 1em; margin:1.2em 0; }
+details[open] { padding-bottom:1.2em; }
+summary { cursor:pointer; font-weight:600; padding:0.8em 0; color:#444; }
+.big { background:#fff8e1; border:2px solid #f0c040; border-radius:8px; padding:1em 1.4em; margin:1.4em 0; font-size:1.05em; }
+</style>
+<h1 id="the-whole-week-in-one-paragraph">The whole week in one
+paragraph</h1>
+<p>In Months 1 and 2, every time Pulse calls <code>read()</code> on a
+client and the client hasn’t sent anything yet, <strong>the thread falls
+asleep inside <code>read()</code></strong> and stays asleep until bytes
+arrive. Month 1 had one thread, so one silent client froze everyone.
+Month 2 fixed that by giving every client its own thread, so a sleeping
+thread only freezes its own client, but each of those threads costs
+about 49 KB (Month 2, Week 4). Month 3’s goal is <strong>one thread
+looking after many clients</strong>. That can only work if the thread is
+<strong>never allowed to fall asleep inside one client’s
+<code>read()</code></strong>. This week learns the switch that stops it:
+<strong><code>O_NONBLOCK</code></strong>. With it, <code>read()</code>
+answers immediately: either “here are some bytes”, or “nothing yet”
+(<code>-1</code> with <code>errno = EAGAIN</code>). We test it in two
+small standalone programs, and find the catch: if <code>read()</code>
+never waits, <strong>when do you call it again?</strong> Calling it
+again straight away burns a whole CPU core. That catch is what Weeks 2
+and 3 solve.</p>
+<p><strong>Nothing in Pulse’s own code changes this week.</strong> Only
+two small experiment programs on port 9090.</p>
+<p><strong>How to read this doc:</strong> the main text explains each
+idea in plain words. Grey boxes marked <strong>“▶ … (optional)”</strong>
+hold the exact output from real runs on your machine.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Part</th>
+<th>The Pulse question it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>What exactly happens at the <code>read()</code> line in
+<code>handle_client()</code> when the client is silent?</td>
+</tr>
+<tr>
+<td>2</td>
+<td>What is <code>O_NONBLOCK</code>, and how do we turn it on for a
+<code>client_fd</code>?</td>
+</tr>
+<tr>
+<td>3</td>
+<td>What does <code>read()</code> return now, and what would Pulse’s
+current code do with each answer?</td>
+</tr>
+<tr>
+<td>4</td>
+<td>What is <code>EINTR</code>, and why isn’t it an error either?</td>
+</tr>
+<tr>
+<td>5</td>
+<td>If <code>read()</code> doesn’t wait, how often do we call it? (busy
+polling)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>“Non-blocking” vs “asynchronous”: are they the same thing?</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Why isn’t <code>O_NONBLOCK</code> enough on its own to fix
+Pulse?</td>
+</tr>
+<tr>
+<td>8</td>
+<td>The experiments this week</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Concept check</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="part-1-the-line-in-pulse-that-waits">Part 1 — The line in Pulse
+that waits</h1>
+<p>This is the line in <a
+href="../../src/tcp_server.cpp">src/tcp_server.cpp</a>, inside
+<code>handle_client()</code>, that every Pulse connection has run since
+Month 1:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">ssize_t</span> n <span class="op">=</span> <span class="op">::</span>read<span class="op">(</span>client<span class="op">.</span>fd<span class="op">(),</span> chunk<span class="op">,</span> <span class="kw">sizeof</span><span class="op">(</span>chunk<span class="op">));</span></span></code></pre></div>
+<p>You have already seen what happens when the client sends nothing. In
+Month 2, Week 1 (Experiment 0) you connected a silent <code>nc</code>,
+and <code>ps</code> showed the Pulse thread in state
+<strong><code>S</code></strong> (sleeping), waiting inside the
+kernel.</p>
+<p>That is what <strong>blocking</strong> means:</p>
+<div class="big">
+<p><b>A blocking <code>read()</code> = “don’t come back to me until
+there is at least one byte to give you (or the connection
+closes).”</b><br> While it waits, the thread is <b>asleep inside the
+kernel</b>. It isn’t using any CPU, but it also <b>can’t do anything
+else at all</b>.</p>
+</div>
+<p><code>blocking_socket_experiment.cpp</code> is that one line on its
+own, with a timer around it. A client connected, waited 3 seconds, sent
+<code>GET /hel</code>, then <code>lo\r\n</code>, then closed:</p>
+<pre><code>[  0.000 s] calling read() ... (if nothing has arrived, this thread now sleeps INSIDE read())
+[  3.000 s] read() returned 8 after waiting 3.000 s: &quot;GET /hel&quot;
+[  3.000 s] calling read() ...
+[  4.201 s] read() returned 4 after waiting 1.200 s: &quot;lo\r\n&quot;
+[  4.201 s] calling read() ...
+[  5.401 s] read() returned 0 after waiting 1.200 s: the client closed its side (EOF). Done.</code></pre>
+<p><code>read()</code> returned <strong>exactly when the client sent
+something</strong>, never before. For 3 whole seconds the program was
+stuck on that one line. <code>ps</code> at that moment:</p>
+<pre><code>    PID STAT WCHAN                  CMD
+    421 S+   wait_woken             /tmp/blocking.out</code></pre>
+<p><code>WCHAN</code> = “the kernel function this thread is sleeping
+in”. <code>wait_woken</code> = “sleeping until someone wakes me up”, and
+the thing that wakes it is data arriving on the socket.</p>
+<p>(Also notice: one request arrived as <strong>two
+<code>read()</code>s</strong>, <code>"GET /hel"</code> then
+<code>"lo\r\n"</code>. That’s the Month 1, Week 3 lesson again: one
+<code>read()</code> is not one request.)</p>
+<h3 id="what-this-meant-for-month-1-and-month-2">What this meant for
+Month 1 and Month 2</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Who is asleep in <code>read()</code>?</th>
+<th>What can’t happen while they sleep?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Month 1</strong></td>
+<td>the only thread</td>
+<td><strong>everything</strong>: no <code>accept()</code>, no other
+clients</td>
+</tr>
+<tr>
+<td><strong>Month 2</strong></td>
+<td>that client’s own worker thread</td>
+<td>only that client’s work. Fine, but it costs a whole thread per
+client</td>
+</tr>
+<tr>
+<td><strong>Month 3 goal</strong></td>
+<td><strong>nobody, ever</strong></td>
+<td>one thread serves many clients, so it must never sleep on any one of
+them</td>
+</tr>
+</tbody>
+</table>
+<div class="analogy">
+<p><b>Analogy:</b> a blocking <code>read()</code> is standing at your
+mailbox until a letter arrives. If you have one mailbox, that’s fine.
+Month 2 hired one person to stand at each mailbox. Month 3 wants one
+person to look after a whole street of mailboxes, so that person cannot
+stand at any single one of them.</p>
+</div>
+<hr />
+<h1 id="part-2-o_nonblock-a-switch-on-the-socket">Part 2 —
+<code>O_NONBLOCK</code>: a switch on the socket</h1>
+<p>Every open file descriptor carries a small set of <strong>status
+flags</strong>: one <code>int</code>, one bit per flag. One of those
+bits is <strong><code>O_NONBLOCK</code></strong>. When it is on, any
+call that would normally wait (<code>read()</code>,
+<code>write()</code>, <code>accept()</code>) <strong>returns immediately
+instead</strong>.</p>
+<p>You read and change those flags with
+<strong><code>fcntl()</code></strong> (“file control”):</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> flags <span class="op">=</span> fcntl<span class="op">(</span>client_fd<span class="op">,</span> F_GETFL<span class="op">);</span>           <span class="co">// 1. read ALL the current flags</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fcntl<span class="op">(</span>client_fd<span class="op">,</span> F_SETFL<span class="op">,</span> flags <span class="op">|</span> O_NONBLOCK<span class="op">);</span>   <span class="co">// 2. write them back with ONE extra bit turned on</span></span></code></pre></div>
+<p>Real output from <code>nonblocking_socket_experiment.cpp</code>:</p>
+<pre><code>flags before = 0x2   (O_NONBLOCK OFF)
+flags after  = 0x802 (O_NONBLOCK ON, O_NONBLOCK bit = 0x800)</code></pre>
+<ul>
+<li><code>0x2</code> is <code>O_RDWR</code>: “this fd can be read and
+written”. It was already there.</li>
+<li><code>0x800</code> is the <code>O_NONBLOCK</code> bit.</li>
+<li><code>0x802</code> = both. The old flag was <strong>kept</strong>,
+and the new one was added.</li>
+</ul>
+<h3 id="why-read-the-flags-first">Why read the flags first?</h3>
+<p><code>F_SETFL</code> <strong>replaces</strong> the whole set of
+flags. If you wrote just:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fcntl<span class="op">(</span>client_fd<span class="op">,</span> F_SETFL<span class="op">,</span> O_NONBLOCK<span class="op">);</span>   <span class="co">// wrong habit</span></span></code></pre></div>
+<p>you’d be saying “the flags should be <strong>only</strong>
+<code>O_NONBLOCK</code>”, which switches off any other status flag that
+was on. On a socket that usually changes nothing visible, but on a file
+opened with <code>O_APPEND</code> it would silently stop appending. So
+the habit is always <strong>read, add your bit with <code>|</code>,
+write back</strong>. It’s the same idea as “don’t overwrite, append”
+from Pulse’s <code>raw_request.append(...)</code>.</p>
+<div class="example">
+<p><b>Where this would go in Pulse (Week 2, not now):</b> right after
+<code>accept()</code> in <code>TcpServer::run()</code>, before the new
+<code>client_fd</code> is used. A socket fresh from
+<code>accept()</code> is always blocking (the experiment prints
+<code>O_NONBLOCK is OFF</code> right after accept). Linux does
+<b>not</b> copy the flag from the listening socket to the accepted
+one.</p>
+</div>
+<hr />
+<h1 id="part-3-what-read-returns-now">Part 3 — What <code>read()</code>
+returns now</h1>
+<p>Same experiment, same client (connects, waits, sends
+<code>GET /hel</code>, then <code>lo\r\n</code>, then closes), but now
+the socket is non-blocking and the program tries <code>read()</code>
+once per second:</p>
+<pre><code>attempt #1: read() returned -1, errno = EAGAIN (11, &quot;Resource temporarily unavailable&quot;) in 3 us
+attempt #2: read() returned -1, errno = EAGAIN (11, ...) in 8 us
+attempt #3: read() returned -1, errno = EAGAIN (11, ...) in 12 us
+attempt #4: read() returned 8 (in 29 us): &quot;GET /hel&quot;
+attempt #5: read() returned 4 (in 22 us): &quot;lo\r\n&quot;
+attempt #6: read() returned 0 (in 20 us): client closed its side (EOF). Done.</code></pre>
+<p>Compare with Part 1: <strong>the blocking <code>read()</code> took 3
+seconds to come back. The non-blocking one came back in 3
+microseconds</strong>, with the answer “nothing yet”. It never waits,
+whatever the answer is.</p>
+<p>So <code>read()</code> now has four kinds of answer, and Pulse’s code
+needs to treat them differently:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th><code>read()</code> returns</th>
+<th>Meaning</th>
+<th>What Pulse’s <code>handle_client()</code> does
+<strong>today</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>n &gt; 0</code></td>
+<td>here are <code>n</code> bytes (maybe not the whole request)</td>
+<td>appends them to <code>raw_request</code>, parses again ✔</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>the client closed its sending side (EOF)</td>
+<td>logs “disconnected”, closes ✔</td>
+</tr>
+<tr>
+<td><code>-1</code>, <code>errno = EAGAIN</code> /
+<code>EWOULDBLOCK</code></td>
+<td><strong>nothing to read right now.</strong> Connection is fine</td>
+<td>logs <code>read: Resource temporarily unavailable</code> and
+<strong>drops the connection</strong> ✘</td>
+</tr>
+<tr>
+<td><code>-1</code>, <code>errno = EINTR</code></td>
+<td>a signal interrupted the call (Part 4). Connection is fine</td>
+<td>logs and <strong>drops the connection</strong> ✘</td>
+</tr>
+<tr>
+<td><code>-1</code>, any other <code>errno</code></td>
+<td>a real problem (e.g. <code>ECONNRESET</code>)</td>
+<td>logs and drops the connection ✔</td>
+</tr>
+</tbody>
+</table>
+<p>Look at the <code>n &lt; 0</code> branch in
+<code>handle_client()</code>:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>n <span class="op">&lt;</span> <span class="dv">0</span><span class="op">)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span> log_error<span class="op">(</span><span class="st">&quot;read: &quot;</span> <span class="op">+</span> strerror<span class="op">(</span>errno<span class="op">));</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span>   <span class="co">// connection closed</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>It treats <strong>every</strong> <code>-1</code> as fatal. With a
+blocking socket that was nearly true, because <code>read()</code> waited
+until something real happened. With a non-blocking socket,
+<code>-1 / EAGAIN</code> is the <strong>normal</strong> answer whenever
+the client hasn’t sent yet. So if we just turned on
+<code>O_NONBLOCK</code> in Pulse today and changed nothing else, a
+client whose request arrived even slightly after Pulse’s first
+<code>read()</code> would get its connection <strong>closed with no
+response at all</strong>. That’s the first concrete reason this week
+says: <em>don’t touch Pulse’s architecture yet.</em></p>
+<div class="big">
+<p><b>The rule:</b> <code>-1</code> from <code>read()</code> is not one
+thing. Always look at <code>errno</code>.<br> <code>EAGAIN</code> /
+<code>EWOULDBLOCK</code> = “not now, try later”. <code>EINTR</code> =
+“interrupted, try again”. Everything else = real error.</p>
+</div>
+<h3 id="eagain-vs-ewouldblock"><code>EAGAIN</code> vs
+<code>EWOULDBLOCK</code></h3>
+<p>The experiment printed <code>EAGAIN = 11, EWOULDBLOCK = 11</code>.
+<strong>On Linux they are the same number</strong>, two names for one
+thing (“try <strong>again</strong>” / “this <strong>would
+block</strong>”). Some older Unix systems gave them different numbers,
+which is why portable code checks both:
+<code>err == EAGAIN || err == EWOULDBLOCK</code>.</p>
+<h3 id="save-errno-straight-away">Save <code>errno</code> straight
+away</h3>
+<p><code>errno</code> is overwritten by the next call that fails, and
+even <code>printf</code> is allowed to change it. That’s why both
+experiments do <code>int err = errno;</code> on the very next line after
+<code>read()</code>, before printing anything.</p>
+<hr />
+<h1 id="part-4-eintr-interrupted-not-broken">Part 4 —
+<code>EINTR</code>: interrupted, not broken</h1>
+<div class="big">
+<p><b><code>EINTR</code> in one sentence:</b> “I stopped waiting early
+because a signal woke me up. Nothing is wrong with the connection. Just
+call me again.”</p>
+</div>
+<h3 id="when-does-it-happen">When does it happen?</h3>
+<p>Only when <strong>both</strong> of these are true:</p>
+<ol type="1">
+<li>The thread is <strong>waiting</strong> inside a call (a blocking
+<code>read()</code>, <code>accept()</code>, or later
+<code>poll()</code>).</li>
+<li>A <strong>signal</strong> arrives, <em>and</em> the program has its
+own function set up to handle that signal.</li>
+</ol>
+<p>A <strong>signal</strong> is a short message the kernel sends to a
+program from outside. You already know one: <strong>Ctrl+C</strong>
+sends <code>SIGINT</code> (“please stop”). Right now Pulse doesn’t
+handle any signals itself, so Ctrl+C simply kills it on the spot. Pulse
+<strong>never sees <code>EINTR</code> today</strong>.</p>
+<h3 id="where-pulse-will-actually-need-it">Where Pulse will actually
+need it</h3>
+<p>The day Pulse handles Ctrl+C itself, <code>EINTR</code> will appear.
+Here’s an example of why it might:</p>
+<blockquote>
+<p><strong>Graceful shutdown:</strong> on Ctrl+C, instead of dying
+instantly in the middle of sending someone a response, Pulse sets a flag
+<code>stop = true</code>, finishes the requests it’s working on, then
+exits cleanly.</p>
+</blockquote>
+<p>To do that, Pulse installs a small Ctrl+C handler. Now picture Pulse
+waiting in <code>accept()</code> (or, from Week 3, in
+<code>poll()</code>) when you press Ctrl+C:</p>
+<ul>
+<li>The kernel wakes Pulse up to run the handler, which sets
+<code>stop = true</code>.</li>
+<li>The call Pulse was waiting in returns <code>-1</code>,
+<code>errno = EINTR</code>.</li>
+<li>Pulse’s loop goes round again, sees <code>stop == true</code>, and
+shuts down cleanly.</li>
+</ul>
+<p><strong>That’s exactly why <code>EINTR</code> exists:</strong> it’s
+how a waiting thread gets woken up so it can notice “something changed,
+check your flags”. Without it, Pulse could sit in <code>accept()</code>
+forever, never noticing you pressed Ctrl+C.</p>
+<h3 id="what-to-do-when-you-see-it">What to do when you see it</h3>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>What the code does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EINTR</code> and nothing needs to change</td>
+<td>call the same function again</td>
+</tr>
+<tr>
+<td><code>EINTR</code> and a flag like <code>stop</code> is set</td>
+<td>stop waiting and clean up</td>
+</tr>
+<tr>
+<td>Never</td>
+<td>treat it as a broken connection and close the client</td>
+</tr>
+</tbody>
+</table>
+<p>Pulse’s current <code>handle_client()</code> breaks the third rule:
+any <code>-1</code> from <code>read()</code> makes it log an error and
+close the connection (Part 3). That’s harmless today because Pulse never
+gets <code>EINTR</code>. It becomes a bug the moment Pulse handles
+signals.</p>
+<h3 id="what-the-experiment-shows">What the experiment shows</h3>
+<p><code>blocking.out eintr</code>: you send a signal with
+<code>kill -USR1 &lt;PID&gt;</code> while <code>read()</code> is
+waiting:</p>
+<pre><code>[  0.000 s] calling read() ...
+[  1.455 s] read() returned -1, errno = EINTR ... Connection is fine -&gt; calling read() again.
+[  1.455 s] calling read() ...
+[  3.000 s] read() returned 8 after waiting 1.545 s: &quot;GET /hel&quot;</code></pre>
+<p>The signal woke <code>read()</code> up early. The program called it
+again, and the client’s data still arrived normally. <strong>The
+connection was never broken.</strong></p>
+<div class="analogy">
+<p><b>Analogy:</b> you’re waiting at the mailbox and your phone rings.
+You answer it. Afterwards you either go back to waiting (call
+<code>read()</code> again), or, if the call said “come home, we’re
+leaving”, you leave (<code>stop = true</code>). The mailbox was fine the
+whole time.</p>
+</div>
+<details>
+<summary>
+▶ The other two modes: <code>restart</code> and <code>plain</code>
+(optional)
+</summary>
+<ul>
+<li><p><strong><code>restart</code></strong>: the handler is set up with
+the flag <code>SA_RESTART</code>, which tells the kernel “after the
+handler, restart the call for me”. The program never sees
+<code>EINTR</code>:</p>
+<pre><code>[  3.000 s] read() returned 8 after waiting 3.000 s: &quot;GET /hel&quot;  (signals received so far: 1 — read() was restarted, we never saw EINTR)</code></pre>
+<p>Convenient, but it doesn’t help with graceful shutdown, because the
+thread goes straight back to waiting and never gets a chance to check
+<code>stop</code>. (And some calls, including <code>poll()</code>, are
+never restarted, whatever the flag says.)</p></li>
+<li><p><strong><code>plain</code></strong>: no handler at all.
+<code>SIGUSR1</code>’s default action is to kill the program, like
+Ctrl+C kills Pulse today. There’s no <code>EINTR</code> because there’s
+no program left to return to.</p></li>
+</ul>
+Also: a <strong>non-blocking</strong> <code>read()</code> basically
+never gets <code>EINTR</code>, because it never waits, so there’s
+nothing for a signal to interrupt. <code>EINTR</code> comes back in Week
+3, because <code>poll()</code> is a call that <strong>does</strong>
+wait.
+</details>
+<hr />
+<h1 id="part-5-the-catch-when-do-you-call-read-again-busy-polling">Part
+5 — The catch: when do you call <code>read()</code> again? (busy
+polling)</h1>
+<p>Non-blocking <code>read()</code> said “nothing yet” in 3
+microseconds. Good, the thread is free. But the data
+<strong>will</strong> arrive at some point, and nobody is going to tell
+us. The only way to find out is to <strong>ask again</strong>. How
+often?</p>
+<p>The experiment tries both extremes.</p>
+<h3 id="option-1-ask-again-immediately-forever-busy-polling">Option 1 —
+ask again immediately, forever (“busy polling”)</h3>
+<p><code>nonblocking.out busy</code>: call <code>read()</code>, get
+<code>EAGAIN</code>, call it again straight away, and so on:</p>
+<pre><code>[  1.000 s] last second: 685569 read() calls, 685569 returned EAGAIN, 0 bytes received
+[  2.000 s] last second: 692924 read() calls, 692924 returned EAGAIN, 0 bytes received
+[  2.500 s] DATA after 339693 read() calls this second: &quot;GET /hel&quot;</code></pre>
+<p>About <strong>690,000 <code>read()</code> calls every
+second</strong>, every single one answering “nothing”. <code>ps</code>
+shows the state is <strong><code>R</code></strong> (running), not
+<code>S</code>. The thread is using a whole CPU core to ask a question
+whose answer is “no” 690,000 times a second. Data is noticed the instant
+it arrives, but at the price of a full core spent on
+<strong>nothing</strong>. And the core it burns is one that Pulse’s
+actual work (parsing, routing) could have used.</p>
+<h3 id="option-2-ask-once-a-second-patient">Option 2 — ask once a second
+(“patient”)</h3>
+<p><code>nonblocking.out</code> (default): try, then
+<code>sleep(1)</code>:</p>
+<pre><code>[  2.001 s] attempt #3: read() returned -1, errno = EAGAIN ...
+[  3.001 s] attempt #4: read() returned 8 (in 29 us): &quot;GET /hel&quot;</code></pre>
+<p>Hardly any CPU. <code>ps</code> shows <code>S</code> with
+<code>WCHAN = hrtimer_nanosleep</code>, so the thread is asleep
+<strong>in <code>sleep()</code></strong>, not in <code>read()</code>.
+But look at the times: the client sent <code>GET /hel</code> at
+<strong>2.5 s</strong>, and the program noticed at <strong>3.0
+s</strong>. The data <strong>sat there unnoticed for half a
+second.</strong> For a web server, that’s a terrible delay added to
+every request.</p>
+<h3 id="the-three-options-side-by-side">The three options side by
+side</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>CPU while the client is silent</th>
+<th>How fast data is noticed</th>
+<th>Can one thread watch many clients?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Blocking <code>read()</code></strong> (Months 1–2)</td>
+<td>none (asleep)</td>
+<td>instantly</td>
+<td><strong>no</strong>, it’s stuck on one fd</td>
+</tr>
+<tr>
+<td><strong>Non-blocking, busy polling</strong></td>
+<td><strong>a whole core</strong></td>
+<td>instantly</td>
+<td>yes, but burning a core</td>
+</tr>
+<tr>
+<td><strong>Non-blocking, patient (sleep 1 s)</strong></td>
+<td>almost none</td>
+<td><strong>up to 1 s late</strong></td>
+<td>yes, but slow</td>
+</tr>
+<tr>
+<td><strong>What we actually want</strong></td>
+<td>none</td>
+<td>instantly</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<p>The last row is: “<strong>put the thread to sleep, and wake it the
+moment ANY of my clients has data.</strong>” Only the kernel knows when
+data arrives, so only the kernel can do that. That’s
+<strong><code>poll()</code></strong>, Week 3. Blocking was “sleep until
+<strong>this one</strong> fd is ready”. <code>poll()</code> is “sleep
+until <strong>any</strong> of these fds is ready”.</p>
+<div class="analogy">
+<p><b>Analogy:</b> busy polling is opening every mailbox on the street,
+over and over, as fast as you can run, all day. Patient polling is
+checking once an hour, so letters wait. <code>poll()</code> is asking
+the post office to ring your doorbell when any letter arrives on your
+street, then sleeping until it rings.</p>
+</div>
+<details>
+<summary>
+▶ Raw output: all five runs (optional)
+</summary>
+<p>The client for every run: connect, wait (3 s blocking / 2.5 s
+non-blocking), send <code>GET /hel</code>, wait 1.2 s, send
+<code>lo\r\n</code>, wait 1.2 s, close.</p>
+<pre><code>=== blocking.out (plain)
+PID 421, mode: plain
+[  0.000 s] accepted client, fd 4. O_NONBLOCK is OFF -&gt; read() will WAIT for data.
+[  0.000 s] calling read() ... (if nothing has arrived, this thread now sleeps INSIDE read())
+[  3.000 s] read() returned 8 after waiting 3.000 s: &quot;GET /hel&quot;
+[  3.000 s] calling read() ... (if nothing has arrived, this thread now sleeps INSIDE read())
+[  4.201 s] read() returned 4 after waiting 1.200 s: &quot;lo\r\n&quot;
+[  4.201 s] calling read() ... (if nothing has arrived, this thread now sleeps INSIDE read())
+[  5.401 s] read() returned 0 after waiting 1.200 s: the client closed its side (EOF). Done.
+ps during the wait:   421 S+   wait_woken   /tmp/blocking.out
+
+=== blocking.out eintr   (kill -USR1 at ~1.5 s)
+[  0.000 s] calling read() ...
+[  1.455 s] read() returned -1, errno = EINTR (4, &quot;Interrupted system call&quot;) after 1.455 s. A signal interrupted the wait. Connection is fine -&gt; calling read() again.
+[  1.455 s] calling read() ...
+[  3.000 s] read() returned 8 after waiting 1.545 s: &quot;GET /hel&quot;
+[  4.201 s] read() returned 4 after waiting 1.200 s: &quot;lo\r\n&quot;
+[  5.401 s] read() returned 0 after waiting 1.200 s: the client closed its side (EOF). Done.
+
+=== blocking.out restart   (kill -USR1 at ~1.5 s)
+[  3.000 s] read() returned 8 after waiting 3.000 s: &quot;GET /hel&quot;  (signals received so far: 1 — read() was restarted, we never saw EINTR)
+[  4.201 s] read() returned 4 after waiting 1.200 s: &quot;lo\r\n&quot;  (signals received so far: 1 — ...)
+[  5.401 s] read() returned 0 after waiting 1.200 s: the client closed its side (EOF). Done.
+
+=== nonblocking.out (patient)
+On this system: EAGAIN = 11, EWOULDBLOCK = 11
+[  0.000 s] accepted client, fd 4. flags before = 0x2 (O_NONBLOCK OFF)
+[  0.000 s] flags after  = 0x802 (O_NONBLOCK ON, O_NONBLOCK bit = 0x800)
+[  0.000 s] attempt #1: read() returned -1, errno = EAGAIN (11, &quot;Resource temporarily unavailable&quot;) in 3 us -&gt; nothing yet, try again in 1 s
+[  1.000 s] attempt #2: read() returned -1, errno = EAGAIN (11, &quot;Resource temporarily unavailable&quot;) in 8 us -&gt; nothing yet, try again in 1 s
+[  2.001 s] attempt #3: read() returned -1, errno = EAGAIN (11, &quot;Resource temporarily unavailable&quot;) in 12 us -&gt; nothing yet, try again in 1 s
+[  3.001 s] attempt #4: read() returned 8 (in 29 us): &quot;GET /hel&quot;
+[  4.001 s] attempt #5: read() returned 4 (in 22 us): &quot;lo\r\n&quot;
+[  5.002 s] attempt #6: read() returned 0 (in 20 us): client closed its side (EOF). Done.
+ps during the run:    444 S+   hrtimer_nanosleep   /tmp/nonblocking.out
+
+=== nonblocking.out busy
+[  1.000 s] last second: 685569 read() calls, 685569 returned EAGAIN, 0 bytes received
+[  2.000 s] last second: 692924 read() calls, 692924 returned EAGAIN, 0 bytes received
+[  2.500 s] DATA after 339693 read() calls this second: &quot;GET /hel&quot;
+[  3.000 s] last second: 670977 read() calls, 670976 returned EAGAIN, 8 bytes received
+[  3.701 s] DATA after 484764 read() calls this second: &quot;lo\r\n&quot;
+[  4.000 s] last second: 695839 read() calls, 695838 returned EAGAIN, 4 bytes received
+[  4.901 s] read() returned 0: client closed its side (EOF). Done.
+ps 1 s in:            452 R+   -   72.9 %CPU   /tmp/nonblocking.out busy</code></pre>
+(<code>ps</code>’s <code>%CPU</code> is an average over the process’s
+whole life, including the part before the client connected, so it reads
+below 100%. Your <code>top</code> / <code>pidstat</code> measurement in
+Experiment B is the real per-second number.)
+</details>
+<hr />
+<h1 id="part-6-non-blocking-is-not-asynchronous">Part 6 — Non-blocking
+is not “asynchronous”</h1>
+<p>These two words are easy to mix up:</p>
+<ul>
+<li><strong>Non-blocking:</strong> “if the call <strong>can’t</strong>
+do its job right now, return immediately and tell me so.” When data
+<strong>is</strong> there, <code>read()</code> still does all the work
+right then, copying the bytes into your buffer before it returns.
+Nothing happens in the background. If it says <code>EAGAIN</code>,
+nothing has been started for you, and <strong>you</strong> have to come
+back and ask again later.</li>
+<li><strong>Asynchronous:</strong> “start this operation, go do
+something else, and <strong>I’ll tell you when it’s finished</strong>.”
+The work carries on without you. (Linux has this too,
+<code>io_uring</code>, explicitly out of scope until much later.)</li>
+</ul>
+<div class="analogy">
+<p><b>Analogy:</b> non-blocking = you ring the bakery: “is my bread
+ready?” “No.” Click. You have to ring again later. Asynchronous = the
+bakery takes your number and calls <b>you</b> when it’s ready.</p>
+</div>
+<p>That’s why Part 5 happened: non-blocking alone gives you “no” fast,
+but <strong>you</strong> still have to decide when to ask again.
+<code>poll()</code> (Week 3) doesn’t make Pulse asynchronous either. It
+tells you <strong>when to ask</strong>: “this socket now has data, a
+<code>read()</code> will not say <code>EAGAIN</code>”. The
+<code>read()</code> itself is still yours to do.</p>
+<hr />
+<h1 id="part-7-why-o_nonblock-alone-doesnt-fix-pulse">Part 7 — Why
+<code>O_NONBLOCK</code> alone doesn’t fix Pulse</h1>
+<p>Imagine we turned <code>O_NONBLOCK</code> on in Pulse and fixed the
+<code>EAGAIN</code> branch in <code>handle_client()</code> to say “try
+again”. What would that loop do?</p>
+<ul>
+<li>It would spin on <strong>that one client</strong>, getting
+<code>EAGAIN</code> hundreds of thousands of times a second (Part 5,
+busy mode), and <strong>still not leave</strong>
+<code>handle_client()</code> until the request is complete. Other
+clients are no better off than with blocking <code>read()</code>, and
+now we’re burning a CPU core as well.</li>
+<li>To actually move on to another client after <code>EAGAIN</code>,
+<code>handle_client()</code> would have to <strong>return</strong>
+halfway through a request. But look at where the half-request
+lives:</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> TcpServer<span class="op">::</span>handle_client<span class="op">(</span>Socket client<span class="op">)</span> <span class="at">const</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">std::</span>string raw_request<span class="op">;</span>   <span class="co">// &quot;GET /hel&quot; lives HERE: a local variable</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">char</span> chunk<span class="op">[</span><span class="dv">4096</span><span class="op">];</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span></code></pre></div>
+<p><code>raw_request</code> is a <strong>local variable on this
+function’s stack</strong>. In Month 2 that was fine: the worker thread
+stays inside this function for the whole connection, so the stack frame
+(and <code>raw_request</code>) stays alive. But if a single thread
+returns from <code>handle_client()</code> to go and serve another
+client, the frame is gone and <code>"GET /hel"</code> is gone with
+it.</p>
+<p>So the information “how far this client has got” has to move
+<strong>out of the stack and into an object</strong> that outlives each
+visit: the socket, the bytes received so far, the response bytes not yet
+sent, and which step the connection is on. That’s the
+<strong><code>Connection</code></strong> object and its <strong>state
+machine</strong>, <strong>Week 2</strong>.</p>
+<div class="big">
+<p><b>The plan for the month, in one line each:</b><br> Week 1:
+<code>read()</code> must not wait → <code>O_NONBLOCK</code>,
+<code>EAGAIN</code>.<br> Week 2: if we leave a client halfway, where is
+its progress kept? → a <code>Connection</code> object + state
+machine.<br> Week 3: how do we know when to come back to it without busy
+polling? → <code>poll()</code>.</p>
+</div>
+<hr />
+<h1 id="part-8-the-experiments-this-week">Part 8 — The experiments this
+week</h1>
+<p>The full commands, what each one does, and space for results are in
+<strong>notes.html</strong>. Write your predictions in
+<strong>notes.txt</strong> first.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Program</th>
+<th>The Pulse question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A — Blocking vs non-blocking</strong></td>
+<td><code>blocking.out</code> and <code>nonblocking.out</code> with a
+silent <code>nc</code> client</td>
+<td>When a client connects but sends nothing, where does each version
+spend its time, and what does <code>read()</code> return?</td>
+</tr>
+<tr>
+<td><strong>B — CPU behavior</strong></td>
+<td><code>nonblocking.out busy</code> vs <code>patient</code>, watched
+with <code>top</code> / <code>pidstat</code></td>
+<td>What does “never wait” cost when you keep retrying?</td>
+</tr>
+<tr>
+<td><strong>C — Error handling</strong></td>
+<td><code>blocking.out eintr</code> / <code>restart</code> /
+<code>plain</code> with <code>kill -USR1</code></td>
+<td>Which <code>-1</code>s are real errors, and which mean “try
+again”?</td>
+</tr>
+</tbody>
+</table>
+<p>Both programs use <strong>port 9090</strong>, so they never clash
+with Pulse on 8080.</p>
+<hr />
+<h1 id="part-9-concept-check">Part 9 — Concept check</h1>
+<p>Try answering these in your own words (they’re this week’s success
+criteria):</p>
+<ol type="1">
+<li>What does <strong>blocking</strong> I/O mean? Where exactly is the
+thread while a blocking <code>read()</code> waits, and what is it
+doing?</li>
+<li>What does <code>O_NONBLOCK</code> change about <code>read()</code>?
+What doesn’t it change?</li>
+<li>Why do we <code>F_GETFL</code> before <code>F_SETFL</code>? What
+goes wrong if we don’t?</li>
+<li>Why is <code>-1</code> with <code>EAGAIN</code> <strong>not</strong>
+a failure? What would Pulse’s <code>handle_client()</code> do with it
+today?</li>
+<li>Why is <code>EINTR</code> not a failure either? What does
+<code>SA_RESTART</code> change?</li>
+<li>Why does busy polling burn a whole CPU core, even though no data is
+arriving?</li>
+<li>Why doesn’t <code>O_NONBLOCK</code> on its own let one thread serve
+many Pulse clients? (Hint: where does <code>raw_request</code>
+live?)</li>
+</ol>
+</body>
+</html>
